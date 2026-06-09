@@ -1,0 +1,205 @@
+/* Basic Navbar Styling */
+.navbar-container {
+  background-color: white;
+  width: 100%;
+}
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 80px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #003049;
+  /* padding: 15px 8px; */
+  padding-right: 20px;
+  padding-left: 10px;
+  color: white;
+  z-index: 1000;
+}
+
+.logo {
+  width: 250px;
+}
+
+/* Hamburger Menu Styling */
+#nav-icon3 {
+  width: 30px;
+  height: 25px;
+  position: relative;
+  cursor: pointer;
+  -webkit-transform: rotate(0deg);
+  transform: rotate(0deg);
+  -webkit-transition: .5s ease-in-out;
+  transition: .5s ease-in-out;
+  display: none;  
+}
+
+#nav-icon3 span {
+  display: block;
+  position: absolute;
+  height: 2px;
+  width: 100%;
+  background: white;
+  border-radius: 9px;
+  opacity: 1;
+  left: 0;
+  transform: rotate(0deg);
+  transition: .25s ease-in-out;
+}
+
+#nav-icon3 span:nth-child(1) {
+  top: 0px;
+}
+
+#nav-icon3 span:nth-child(2),
+#nav-icon3 span:nth-child(3) {
+  top: 10px;
+}
+
+#nav-icon3 span:nth-child(4) {
+  top: 20px;
+}
+
+/* Transformations for open state */
+#nav-icon3.open span:nth-child(1) {
+  top: 10px;
+  width: 0%;
+  left: 50%;
+}
+
+#nav-icon3.open span:nth-child(2) {
+  transform: rotate(45deg);
+}
+
+#nav-icon3.open span:nth-child(3) {
+  transform: rotate(-45deg);
+}
+
+#nav-icon3.open span:nth-child(4) {
+  top: 10px;
+  width: 0%;
+  left: 50%;
+}
+
+/* Navbar Items Styling */
+.navbar-items {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  margin: 0;
+  padding: 0;
+  
+}
+@keyframes slideTopBottom {
+  0% {
+      opacity: 0;
+      transform: translateY(-100%);
+  }
+  100% {
+      opacity: 1;
+      transform: translateX(0);
+  }
+}
+
+.navbar-items a {
+  position: relative;
+  color: white;
+  text-decoration: none;
+  padding-bottom: 5px;
+  font-size: 1.2rem;
+}
+
+/* Hover Effect for Navbar Links */
+.navbar-items a::after {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  display: block;
+  margin-top: 5px;
+  right: 0;
+  background: #ededed;
+  transition: width 0.5s ease, right 0.5s ease;
+}
+
+.navbar-items a:hover::after,
+.navbar-items a.active::after {
+  width: 100%;
+  left: 0;
+}
+
+/* Login Button */
+.login-button-hero {
+  width: 100px;
+  height: 45px;
+  background-color: red;
+  color: white;
+  font-size: 20px;
+  border-radius: 12px;
+  border: none;
+  font-weight: bold;
+  transition: 0.3s ease-in;
+}
+
+.login-button-hero:hover {
+  color: #FF0000;
+  background-color: #FDD5D5;
+}
+
+/* Responsive Media Queries */
+
+/* Show hamburger only on tablet and mobile screens */
+@media only screen and (max-width: 1024px) {
+  #nav-icon3 {
+    display: block; /* Show hamburger on mobile/tablet views */
+  }
+
+  .navbar-items {
+    display: none; /* Hide navbar items in mobile view */
+    flex-direction: column;
+    width: 100%;
+    height: 100vh;
+    background-color: #003049;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    padding: 20px;
+    animation: slideTopBottom 0.3s ease-out;
+  }
+
+  .navbar-items.open {
+    display: flex; /* Show navbar items when menu is open */
+  }
+
+  .navbar-items li {
+    padding: 1rem 0;
+  }
+
+  .logo {
+    width: 280px;
+  }
+}
+
+/* Hide hamburger in desktop view */
+@media only screen and (min-width: 1025px) {
+  #nav-icon3 {
+    display: none; /* Hide the hamburger in desktop view */
+  }
+}
+
+@media screen and (max-width: 426px) {
+  .logo {
+    width: 200px;
+  }
+}
+
+@media screen and (max-width: 769px) and (min-width:426px) {
+  .logo {
+    width: 250px;
+  }
+}

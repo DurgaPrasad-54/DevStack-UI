@@ -1,0 +1,55 @@
+.notifications-container {
+    padding: 20px;
+    max-width: 800px;
+    margin: 20px auto;
+  }
+  
+  .notifications-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .notification-item {
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+  }
+  
+  .notification-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  }
+  
+  .notification-item.unread {
+    background-color: #f0f7ff;
+    border-left: 4px solid #669BBC;
+  }
+  
+  .notification-item.read {
+    background-color: white;
+    border-left: 4px solid #ddd;
+  }
+  
+  .notification-item h3 {
+    margin: 0 0 10px 0;
+    color: #333;
+  }
+  
+  .notification-item p {
+    margin: 0 0 10px 0;
+    color: #666;
+    line-height: 1.4;
+  }
+  
+  .notification-item small {
+    color: #999;
+    font-size: 0.85rem;
+  }
+  
+  .no-notifications {
+    text-align: center;
+    color: #666;
+    padding: 20px;
+  }

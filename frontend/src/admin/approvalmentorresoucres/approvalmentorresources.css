@@ -1,0 +1,685 @@
+/* MentorResources Admin Dashboard Custom CSS */
+
+/* Base Styles */
+.mentorresources-dashboard {
+  min-height: 100vh;
+  background-color: #f9fafb;
+  padding: 1.5rem;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+.mentorresources-container {
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+/* Header */
+.mentorresources-header {
+  background: white;
+  border-radius: 0.5rem;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.mentorresources-header-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.mentorresources-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #111827;
+  margin: 0;
+}
+
+/* Buttons */
+.mentorresources-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+  border: none;
+  text-decoration: none;
+}
+
+.mentorresources-btn-primary {
+  background-color: #2563eb;
+  color: white;
+}
+
+.mentorresources-btn-primary:hover:not(:disabled) {
+  background-color: #1d4ed8;
+}
+
+.mentorresources-btn-success {
+  background-color: #16a34a;
+  color: white;
+}
+
+.mentorresources-btn-success:hover:not(:disabled) {
+  background-color: #15803d;
+}
+
+.mentorresources-btn-danger {
+  background-color: #dc2626;
+  color: white;
+}
+
+.mentorresources-btn-danger:hover:not(:disabled) {
+  background-color: #b91c1c;
+}
+
+.mentorresources-btn-secondary {
+  background-color: white;
+  color: #374151;
+  border: 1px solid #d1d5db;
+}
+
+.mentorresources-btn-secondary:hover:not(:disabled) {
+  background-color: #f9fafb;
+}
+
+.mentorresources-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.mentorresources-btn-icon {
+  padding: 0.25rem;
+  background: none;
+  border-radius: 0.25rem;
+  transition: all 0.2s;
+}
+
+.mentorresources-btn-icon-blue {
+  color: #2563eb;
+}
+
+.mentorresources-btn-icon-blue:hover {
+  color: #1d4ed8;
+  background-color: #dbeafe;
+}
+
+.mentorresources-btn-icon-green {
+  color: #16a34a;
+}
+
+.mentorresources-btn-icon-green:hover {
+  color: #15803d;
+  background-color: #dcfce7;
+}
+
+.mentorresources-btn-icon-red {
+  color: #dc2626;
+}
+
+.mentorresources-btn-icon-red:hover {
+  color: #b91c1c;
+  background-color: #fef2f2;
+}
+
+/* Stats Cards */
+.mentorresources-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.mentorresources-stat-card {
+  background: white;
+  border-radius: 0.5rem;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+  padding: 1.5rem;
+}
+
+.mentorresources-stat-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.mentorresources-stat-label {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #6b7280;
+  margin: 0 0 0.25rem 0;
+}
+
+.mentorresources-stat-value {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin: 0;
+}
+
+.mentorresources-stat-value-blue {
+  color: #2563eb;
+}
+
+.mentorresources-stat-value-yellow {
+  color: #d97706;
+}
+
+.mentorresources-stat-value-green {
+  color: #16a34a;
+}
+
+.mentorresources-stat-value-red {
+  color: #dc2626;
+}
+
+.mentorresources-stat-icon {
+  width: 2rem;
+  height: 2rem;
+}
+
+.mentorresources-stat-icon-blue {
+  color: #3b82f6;
+}
+
+.mentorresources-stat-icon-yellow {
+  color: #eab308;
+}
+
+.mentorresources-stat-icon-green {
+  color: #22c55e;
+}
+
+.mentorresources-stat-icon-red {
+  color: #ef4444;
+}
+
+/* Filter Section */
+.mentorresources-filters {
+  background: white;
+  border-radius: 0.5rem;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.mentorresources-filters-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+@media (min-width: 768px) {
+  .mentorresources-filters-content {
+    flex-direction: row;
+  }
+}
+
+.mentorresources-filter-group {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.mentorresources-filter-group:last-child {
+  flex: 1;
+}
+
+/* Form Elements */
+.mentorresources-select,
+.mentorresources-input,
+.mentorresources-textarea {
+  border: 1px solid #d1d5db;
+  border-radius: 0.5rem;
+  padding: 0.5rem 0.75rem;
+  transition: all 0.2s;
+  font-size: 0.875rem;
+}
+
+.mentorresources-select:focus,
+.mentorresources-input:focus,
+.mentorresources-textarea:focus {
+  outline: none;
+  ring: 2px;
+  ring-color: #3b82f6;
+  border-color: transparent;
+}
+
+.mentorresources-input-full {
+  width: 100%;
+}
+
+.mentorresources-textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+/* Error Display */
+.mentorresources-error {
+  background-color: #fef2f2;
+  border: 1px solid #fecaca;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.mentorresources-error-content {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.mentorresources-error-text {
+  color: #b91c1c;
+  margin: 0;
+}
+
+.mentorresources-error-icon {
+  color: #ef4444;
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
+/* Table Container */
+.mentorresources-table-container {
+  background: white;
+  border-radius: 0.5rem;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.mentorresources-table-wrapper {
+  overflow-x: auto;
+}
+
+.mentorresources-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.mentorresources-table-header {
+  background-color: #f9fafb;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.mentorresources-table-th {
+  text-align: left;
+  padding: 0.75rem 1rem;
+  font-weight: 500;
+  color: #111827;
+  font-size: 0.875rem;
+}
+
+.mentorresources-table-body {
+  background: white;
+}
+
+.mentorresources-table-row {
+  border-bottom: 1px solid #e5e7eb;
+  transition: background-color 0.2s;
+}
+
+.mentorresources-table-row:hover {
+  background-color: #f9fafb;
+}
+
+.mentorresources-table-cell {
+  padding: 1rem;
+  vertical-align: top;
+}
+
+/* Type Icons */
+.mentorresources-type-icon {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.mentorresources-type-text {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #111827;
+  text-transform: capitalize;
+}
+
+/* Title Display */
+.mentorresources-title-container {
+  max-width: 300px;
+}
+
+.mentorresources-title-main {
+  font-weight: 500;
+  color: #111827;
+  margin: 0 0 0.25rem 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.mentorresources-title-description {
+  font-size: 0.875rem;
+  color: #6b7280;
+  margin: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Mentor Info */
+.mentorresources-mentor-name {
+  font-weight: 500;
+  color: #111827;
+  margin: 0 0 0.25rem 0;
+}
+
+.mentorresources-mentor-email {
+  font-size: 0.875rem;
+  color: #6b7280;
+  margin: 0;
+}
+
+/* Status Badges */
+.mentorresources-status-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.25rem 0.5rem;
+  font-size: 0.75rem;
+  font-weight: 500;
+  border-radius: 0.375rem;
+  border: 1px solid;
+}
+
+.mentorresources-status-pending {
+  background-color: #fef3c7;
+  color: #92400e;
+  border-color: #fcd34d;
+}
+
+.mentorresources-status-approved {
+  background-color: #d1fae5;
+  color: #065f46;
+  border-color: #a7f3d0;
+}
+
+.mentorresources-status-rejected {
+  background-color: #fee2e2;
+  color: #991b1b;
+  border-color: #fca5a5;
+}
+
+.mentorresources-status-icon {
+  width: 0.75rem;
+  height: 0.75rem;
+}
+
+/* Date Display */
+.mentorresources-date {
+  font-size: 0.875rem;
+  color: #6b7280;
+}
+
+/* Action Buttons */
+.mentorresources-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* Loading States */
+.mentorresources-loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem;
+}
+
+.mentorresources-loading-text {
+  margin-left: 0.5rem;
+  color: #6b7280;
+}
+
+.mentorresources-empty {
+  text-align: center;
+  padding: 3rem;
+}
+
+.mentorresources-empty-icon {
+  width: 3rem;
+  height: 3rem;
+  color: #d1d5db;
+  margin: 0 auto 1rem;
+}
+
+.mentorresources-empty-text {
+  color: #6b7280;
+  margin: 0;
+}
+
+/* Modal */
+.mentorresources-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  z-index: 50;
+}
+
+.mentorresources-modal {
+  background: white;
+  border-radius: 0.5rem;
+  max-width: 64rem;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+.mentorresources-modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.5rem;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.mentorresources-modal-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+.mentorresources-modal-close {
+  color: #9ca3af;
+  transition: color 0.2s;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.25rem;
+}
+
+.mentorresources-modal-close:hover {
+  color: #6b7280;
+}
+
+.mentorresources-modal-body {
+  padding: 1.5rem;
+}
+
+.mentorresources-modal-footer {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 0.75rem;
+  padding: 1.5rem;
+  border-top: 1px solid #e5e7eb;
+  background-color: #f9fafb;
+}
+
+/* Detail Sections */
+.mentorresources-details-section {
+  margin-bottom: 1.5rem;
+}
+
+.mentorresources-details-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.mentorresources-details-title {
+  font-size: 1.125rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+.mentorresources-details-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+@media (min-width: 768px) {
+  .mentorresources-details-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.mentorresources-field-group {
+  margin-bottom: 1rem;
+}
+
+.mentorresources-field-label {
+  display: block;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #374151;
+  margin-bottom: 0.25rem;
+}
+
+.mentorresources-field-value {
+  font-size: 0.875rem;
+  color: #111827;
+  margin: 0;
+  word-break: break-word;
+}
+
+.mentorresources-field-link {
+  color: #2563eb;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  font-size: 0.875rem;
+}
+
+.mentorresources-field-link:hover {
+  color: #1d4ed8;
+}
+
+.mentorresources-field-link-icon {
+  width: 0.75rem;
+  height: 0.75rem;
+}
+
+/* Special Field Styles */
+.mentorresources-rejection-reason {
+  background-color: #fef2f2;
+  padding: 0.5rem;
+  border-radius: 0.25rem;
+  color: #7f1d1d;
+  font-size: 0.875rem;
+  margin: 0;
+}
+
+.mentorresources-admin-notes {
+  background-color: #f9fafb;
+  padding: 0.5rem;
+  border-radius: 0.25rem;
+  color: #111827;
+  font-size: 0.875rem;
+  margin: 0;
+}
+
+.mentorresources-rejection-label {
+  color: #b91c1c;
+  font-weight: 500;
+}
+
+/* Action Section */
+.mentorresources-action-section {
+  border-top: 1px solid #e5e7eb;
+  padding-top: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.mentorresources-action-title {
+  font-size: 1.125rem;
+  font-weight: 500;
+  margin: 0 0 1rem 0;
+}
+
+/* Animations */
+.mentorresources-spin {
+  animation: mentorresources-spin 1s linear infinite;
+}
+
+@keyframes mentorresources-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Utility Classes */
+.mentorresources-text-capitalize {
+  text-transform: capitalize;
+}
+
+.mentorresources-icon-sm {
+  width: 1rem;
+  height: 1rem;
+}
+
+.mentorresources-icon-md {
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
+.mentorresources-icon-lg {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.mentorresources-required {
+  color: #dc2626;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .mentorresources-dashboard {
+    padding: 1rem;
+  }
+  
+  .mentorresources-header-content {
+    flex-direction: column;
+    gap: 1rem;
+    align-items: stretch;
+  }
+  
+  .mentorresources-stats-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .mentorresources-modal {
+    margin: 0.5rem;
+    max-height: 95vh;
+  }
+}

@@ -1,0 +1,331 @@
+.git-hub-overall {
+  padding-top: 80px;
+}
+
+.github-container {
+  padding-top: 10px;
+  text-align: center;
+  background-color: #02121a;
+  color: #fff;
+  width: 100%;
+}
+
+.github-title {
+  margin-bottom: 15px;
+  font-weight: bold;
+  font-size: 2rem;
+  color: #fffefe;
+}
+
+.github-header {
+  display: flex;
+  justify-content: flex-end; /* Aligns the team selection dropdown to the right */
+  align-items: center;
+  padding: 10px 20px;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.github-back-button {
+  background-color: #24292e;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+  display: inline-block;
+  order: 1;
+  margin-right: 1060px;
+}
+
+.github-back-button:hover {
+  background-color: #0366d6;
+}
+
+.github-select-dropdown {
+  border: 1px solid #ccc;
+  padding: 10px;
+  border-radius: 5px;
+  font-size: 1rem;
+  width: 100%;
+  max-width: 300px;
+  order: 2;
+}
+
+.github-team-section {
+  margin-top: 20px;
+  padding: 20px;
+}
+
+.github-team-title {
+  font-weight: bold;
+  font-size: 1.5rem;
+  text-align: center;
+  color: #fff;
+}
+
+.github-team-grid {
+  display: flex;
+  flex-direction: row;
+  gap: 15px;
+  padding: 10px;
+  justify-content: center;
+  flex-wrap: wrap;
+  max-width: 100%;
+}
+
+.github-card {
+  display: flex;
+  flex-direction: column; /* Stack content properly for small screens */
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 300px; /* Prevents overflowing */
+  min-height: 200px; /* Adjust height based on content */
+  padding: 16px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  background-color: #fff;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  color: #000;
+  text-align: center;
+  word-wrap: break-word;
+}
+
+.github-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.15);
+}
+
+.github-card div {
+  width: 100%;
+  text-align: center;
+  padding: 5px;
+}
+
+.github-card strong {
+  font-size: 1.2rem;
+}
+
+.github-card p {
+  font-size: 0.9rem;
+  margin: 5px 0;
+  word-break: break-word;
+}
+
+.github-avatar {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Loader */
+.loading-animation {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.spinner {
+  border: 4px solid rgba(0, 0, 0, 0.1);
+  border-left-color: #09f;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Responsive Design - Above 427px (Avatar Left, Details Right) */
+@media (min-width: 428px) {
+  .github-card {
+    flex-direction: row; /* Display the avatar and details side by side */
+    align-items: center; /* Center the content vertically */
+    max-width: 600px; /* Allows more space for content */
+  }
+
+  .github-avatar {
+    margin-right: 20px; /* Adds spacing between the avatar and details */
+    margin-bottom: 0; /* Removes bottom margin */
+  }
+
+  .github-card div {
+    text-align: left; /* Aligns details to the left */
+    width: auto; /* Let the details section take full width */
+  }
+
+  .github-card strong {
+    font-size: 1.3rem;
+  }
+
+  .github-card p {
+    font-size: 1rem;
+    margin: 5px 0;
+  }
+}
+
+/* Responsive Design for mobile */
+@media (max-width: 768px) {
+  .github-header {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .github-back-button {
+    font-size: 14px;
+    padding: 8px 12px;
+    order: 1;
+    margin-right: 0;
+  }
+
+  .github-select-dropdown {
+    width: 100%;
+    max-width: 300px;
+    order: 2;
+  }
+
+  .github-card {
+    max-width: 90%;
+  }
+}
+
+@media (max-width: 480px) {
+  .github-container {
+    text-align: center;
+  }
+
+  .github-header {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .github-back-button,
+  .github-select-dropdown {
+    width: 100%;
+    max-width: 300px;
+  }
+
+  .github-card {
+    max-width: 95%;
+  }
+}
+
+/* General styling for the repository section */
+.repo-grid {
+  display: grid;
+  gap: 15px;
+  /* padding: 20px; */
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+/* Mobile: 1 repo per row */
+@media (max-width: 599px) {
+  .repo-grid {
+    grid-template-columns: 1fr;
+    /* width: 90%; */
+  }
+  .repo-card {
+    width: 100%;
+    padding: 10px;
+    margin: 0px;
+    }
+}
+
+/* Tablet: 2 repos per row */
+@media (min-width: 600px) and (max-width: 899px) {
+  .repo-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Laptop: 3 repos per row */
+@media (min-width: 900px) and (max-width: 1199px) {
+  .repo-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .repo-card {
+    width: 100%;
+    padding: 10px;
+    margin: 0px;
+    }
+}
+
+/* Desktop: 4 repos per row */
+@media (min-width: 1200px) {
+  .repo-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (max-width: 376px) {
+  .GITHUB-title{
+    font-size: 1.5rem;
+  }
+  
+}
+
+/* Repo Card */
+/* .repo-grid {
+  background-color: #fff;
+  color: #000;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  cursor: pointer;
+  word-break: break-word;
+}
+
+.repo-grid:hover {
+  transform: translateY(-5px);
+  box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.15);
+}
+
+.repo-grid h3 {
+  font-size: 1.2rem;
+  margin-bottom: 5px;
+  color: #0366d6;
+  word-wrap: break-word;
+}
+
+.repo-grid p {
+  font-size: 0.9rem;
+  color: #333;
+  margin-top: 5px;
+  word-break: break-word;
+}
+
+Button inside Repo Card
+.repo-grid a {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 8px 12px;
+  background-color: #0366d6;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 0.9rem;
+  transition: background 0.2s;
+}
+
+.repo-grid a:hover {
+  background-color: #024ea2;
+} */

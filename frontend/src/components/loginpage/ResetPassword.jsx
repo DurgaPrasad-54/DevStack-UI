@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './LoginPage.css';
 import config from '../../config';
@@ -8,7 +8,7 @@ const ResetPassword = () => {
   const [oldPassword, setOldPassword] = useState('');
   const [newPassword, setNewPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
-  const [userType, setUserType] = useState('student'); // student, mentor, coordinator
+  const [userType, setUserType] = useState('student'); // student, mentor
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
@@ -64,12 +64,6 @@ const ResetPassword = () => {
                 onClick={() => setUserType('mentor')}
               >
                 Mentor
-              </button>
-              <button 
-                className={userType === 'coordinator' ? 'selected' : ''} 
-                onClick={() => setUserType('coordinator')}
-              >
-                Coordinator
               </button>
             </div>
           </div>

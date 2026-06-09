@@ -1,0 +1,54 @@
+.feedback-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  padding-top: 100px;
+}
+
+.feedback-card {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+}
+
+.feedback-form {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  padding: 20px 0;
+}
+
+.rating-section,
+.feedback-section {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.rating-section .ant-rate {
+  font-size: 36px;
+}
+
+label {
+  font-weight: 500;
+  color: #333;
+  font-size: 16px;
+}
+
+.feedback-section .ant-input {
+  font-size: 14px;
+  padding: 12px;
+  min-height: 120px;
+}
+
+.ant-btn-primary {
+  height: 40px;
+  font-size: 16px;
+  align-self: center;
+  margin-top: 16px;
+}
+
+@media (max-width: 768px) {
+  .feedback-container {
+    padding: 80px 16px 16px;
+  }
+}

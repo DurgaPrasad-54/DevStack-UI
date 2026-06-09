@@ -1,0 +1,174 @@
+/* Admin Form Styles */
+.admin-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 30px;
+    background-color: #f9fafb;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  }
+  
+  .admin-title {
+    color: #1e3a8a;
+    font-size: 28px;
+    margin-bottom: 30px;
+    border-bottom: 2px solid #e5e7eb;
+    padding-bottom: 15px;
+  }
+  
+  .form-group {
+    margin-bottom: 20px;
+  }
+  
+  .form-label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #374151;
+  }
+  
+  .form-input {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid #d1d5db;
+    border-radius: 6px;
+    font-size: 16px;
+    transition: border-color 0.2s;
+  }
+  
+  .form-input:focus {
+    outline: none;
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
+  }
+  
+  .form-textarea {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid #d1d5db;
+    border-radius: 6px;
+    font-size: 16px;
+    min-height: 120px;
+    resize: vertical;
+    transition: border-color 0.2s;
+  }
+  
+  .form-textarea:focus {
+    outline: none;
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
+  }
+  
+  /* Custom styling for the react-select component */
+  .custom-select {
+    margin-bottom: 20px;
+  }
+  
+  .custom-select > div {
+    border-color: #d1d5db;
+    border-radius: 6px;
+    min-height: 42px;
+  }
+  
+  .custom-select > div:hover {
+    border-color: #9ca3af;
+  }
+  
+  /* Test Cases Section */
+  .test-cases-section {
+    margin-top: 30px;
+  }
+  
+  .test-case-title {
+    font-size: 20px;
+    color: #1e3a8a;
+    margin-bottom: 20px;
+  }
+  
+  .test-case {
+    background-color: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 6px;
+    padding: 20px;
+    margin-bottom: 20px;
+  }
+  
+  .test-case-input {
+    margin-bottom: 15px;
+  }
+  
+  .points-input {
+    width: 100px;
+  }
+  
+  /* Buttons */
+  .button-container {
+    display: flex;
+    gap: 15px;
+    margin-top: 30px;
+  }
+  
+  .primary-button {
+    background-color: #2563eb;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    padding: 12px 20px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.2s;
+  }
+  
+  .primary-button:hover {
+    background-color: #1d4ed8;
+  }
+  
+  .secondary-button {
+    background-color: #f3f4f6;
+    color: #374151;
+    border: 1px solid #d1d5db;
+    border-radius: 6px;
+    padding: 12px 20px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.2s;
+  }
+  
+  .secondary-button:hover {
+    background-color: #e5e7eb;
+  }
+  
+  .add-test-case-button {
+    background-color: #f3f4f6;
+    color: #374151;
+    border: 1px solid #d1d5db;
+    border-radius: 6px;
+    padding: 8px 16px;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin-bottom: 30px;
+    cursor: pointer;
+  }
+  
+  .add-test-case-button:hover {
+    background-color: #e5e7eb;
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .admin-container {
+      padding: 20px;
+    }
+    
+    .button-container {
+      flex-direction: column;
+    }
+    
+    .primary-button, .secondary-button {
+      width: 100%;
+    }
+  }

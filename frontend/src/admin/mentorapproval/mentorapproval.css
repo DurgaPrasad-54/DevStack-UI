@@ -1,0 +1,175 @@
+/* mentorapproval.css */
+.mentor-containers {
+  width: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.mentor-card {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.dashboard-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+  width: 100%;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.search-icon {
+  color: #bfbfbf;
+}
+
+.filter-space {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+}
+
+/* Smaller search input with reduced height */
+.search-input {
+  width: 180px !important;
+  max-width: 180px !important;
+  height: 32px !important; /* Reduced height */
+}
+
+/* Make the input inside shorter too */
+.search-input input {
+  height: 20px !important;
+}
+
+/* Style for the status dropdown */
+.status-select {
+  min-width: 120px;
+  height: 32px !important; /* Match height with search input */
+}
+
+.stats-section {
+  margin-bottom: 24px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  width: 100%;
+}
+
+.stats-col {
+  flex: 1;
+  min-width: 150px;
+  margin-bottom: 12px;
+}
+
+.mentor-tabss {
+  margin-bottom: 16px;
+}
+
+.table-container {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.mentor-details {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.detail-section {
+  margin-bottom: 16px;
+}
+
+/* Replace Tailwind text utilities */
+.text-success {
+  color: #52c41a;
+}
+
+.text-error {
+  color: #ff4d4f;
+}
+
+/* Make sure the table takes full width */
+.ant-table {
+  min-width: 800px; /* Ensures table maintains minimum width for content */
+}
+
+/* Exact 767px screen width layout */
+@media (width: 767px) {
+  .dashboard-header {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  
+  .filter-space {
+    flex-direction: row;
+    justify-content: flex-end;
+    width: auto;
+  }
+}
+
+/* Mobile experience (up to 769px) */
+@media (max-width: 769px) {
+  .filter-space {
+    width: 100%;
+    justify-content: space-between;
+  }
+  
+  /* Two cards per row on mobile */
+  .stats-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+  }
+  
+  .stats-col {
+    width: 100%;
+    min-width: unset;
+  }
+}
+
+/* Very small screens (426px and below) */
+@media (max-width: 426px) {
+  .dashboard-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .filter-space {
+    flex-direction: column;
+    /* align-items: flex-start; */
+    width: 100%;
+  }
+  
+  .search-input,
+  .status-select {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin-bottom: 8px;
+  }
+}
+
+/* Custom scrollbar for better UX */
+.table-container::-webkit-scrollbar {
+  height: 6px;
+}
+
+.table-container::-webkit-scrollbar-track {
+  background: #f0f0f0;
+}
+
+.table-container::-webkit-scrollbar-thumb {
+  background-color: #d9d9d9;
+  border-radius: 3px;
+}
+
+.table-container::-webkit-scrollbar-thumb:hover {
+  background-color: #bfbfbf;
+}
+
+/* Better touch experience for mobile scrolling */
+.table-container {
+  -webkit-overflow-scrolling: touch;
+}

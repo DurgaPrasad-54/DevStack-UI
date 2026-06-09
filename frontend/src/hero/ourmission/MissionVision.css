@@ -1,0 +1,137 @@
+.mission-vision-container {
+    padding: 40px;
+    background-color: #ffffff;
+    margin-top: 0px;
+}
+
+.content-wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.mission, .vision {
+    display: flex;
+    flex-direction: column;
+}
+
+.section-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.vertical-line {
+    width: 4px;
+    height: 30px;
+    background-color: #ff0000;
+    margin-right: 10px;
+}
+
+.missionvision {
+    font-size: clamp(24px, 4vw, 32px);
+    font-weight: bold;
+    margin: 0;
+    color: #003049;
+}
+
+.mission-content, .vision-content {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+}
+
+.para {
+    flex: 1;
+    line-height: 1.7;
+    font-size: clamp(16px, 2vw, 20px);
+    margin: 0;
+}
+
+.mission-image, .vision-image {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    aspect-ratio: 16 / 10;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Tablet-specific styles */
+@media (min-width: 601px) and (max-width: 1024px) {
+    .mission-vision-container {
+        padding: 30px;
+    }
+
+    .content-wrapper {
+        gap: 30px;
+    }
+
+    .mission-content, .vision-content {
+        gap: 15px;
+    }
+
+    .mission-image, .vision-image {
+        max-width: 300px; /* Reduced from 455px */
+        min-width: 250px; /* Ensures image doesn't get too small */
+    }
+
+    .para {
+        font-size: 16px; /* Slightly smaller text for better fit */
+    }
+}
+
+/* Mobile styles */
+@media (max-width: 600px) {
+    .mission-vision-container {
+        padding: 20px;
+    }
+
+    .content-wrapper {
+        gap: 40px;
+    }
+
+    .mission-content, .vision-content {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .mission-image, .vision-image {
+        max-width: 100%;
+        margin: 0;
+    }
+
+    .mission .mission-image {
+        order: -1;
+    }
+
+    .vision-content {
+        flex-direction: column;
+    }
+
+    .vision-text {
+        order: -1;
+    }
+}
+
+/* Small mobile styles */
+@media (max-width: 480px) {
+    .mission-vision-container {
+        padding: 15px;
+    }
+
+    .content-wrapper {
+        gap: 30px;
+    }
+
+    .section-header {
+        margin-bottom: 15px;
+    }
+
+    .vertical-line {
+        height: 24px;
+    }
+}

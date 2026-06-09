@@ -1,6 +1,5 @@
-import { useState } from "react";
-
-import { Form, Input, Button, Card, Typography } from "antd";
+import React, { useState } from "react";
+import { Form, Input, Button, Card, Typography, Divider } from "antd";
 import { LockOutlined, MailOutlined, KeyOutlined } from "@ant-design/icons";
 import { toast } from "react-toastify";
 import axios from "axios";

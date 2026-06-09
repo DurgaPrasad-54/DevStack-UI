@@ -1,0 +1,261 @@
+.mentor-dashboard {
+  padding: 10px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.side-by-side-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  width: 100%;
+}
+
+.team-selection-container {
+  flex: 1;
+  min-width: 280px; /* Reduced from 300px */
+  width: 100%;
+}
+
+.speedometer-container {
+  flex: 1;
+  min-width: 280px; /* Reduced from 300px */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.team-select {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.team-members-list {
+  list-style: none;
+  padding: 0;
+  width: 100%;
+}
+
+.team-members-list li {
+  cursor: pointer;
+  padding: 8px 0;
+  font-size: 14px; /* Added for better readability on small screens */
+  word-break: break-word; /* Prevents text overflow */
+}
+
+.task-completion-progress {
+  margin-top: 10px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 425px) {
+  .mentor-dashboard {
+    padding: 8px;
+  }
+
+  .side-by-side-container {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .team-selection-container,
+  .speedometer-container {
+    width: 100%;
+    min-width: 100%;
+  }
+
+  .speedometer-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+  }
+
+  .speedometer-title {
+    text-align: center;
+    margin-bottom: 15px !important;
+    font-size: 18px !important;
+  }
+
+  .team-select {
+    font-size: 14px;
+  }
+}
+
+/* Extra Small Devices */
+@media (max-width: 320px) {
+  .mentor-dashboard {
+    padding: 5px;
+  }
+
+  .side-by-side-container {
+    gap: 10px;
+  }
+
+  .speedometer-container {
+    padding: 0;
+    margin: 0 auto;
+    width: 100%;
+    overflow: hidden;
+  }
+
+  .speedometer-container > div {
+    transform-origin: center center;
+    transform: scale(0.85);
+    margin: -20px auto; /* Negative margin to compensate for the scale */
+  }
+
+  .team-select {
+    font-size: 12px;
+  }
+
+  .team-members-list li {
+    font-size: 12px;
+    padding: 6px 0;
+  }
+
+  .speedometer-title {
+    font-size: 16px !important;
+    margin-bottom: 10px !important;
+  }
+}
+
+/* Small Devices */
+@media (min-width: 321px) and (max-width: 375px) {
+  .speedometer-container > div {
+    transform: scale(0.9);
+    margin: -15px auto;
+  }
+}
+
+/* Medium Devices */
+@media (min-width: 376px) and (max-width: 425px) {
+  .speedometer-container > div {
+    transform: scale(0.95);
+    margin: -10px auto;
+  }
+}
+
+.mentor-dashboard {
+  padding: 20px;
+}
+
+.dashboard-title {
+  margin-bottom: 20px;
+  color: #1890ff;
+}
+
+.team-submissions-card {
+  margin-bottom: 20px;
+}
+
+.side-by-side-container {
+  display: flex;
+  flex-direction: row;
+  gap: 30px;
+}
+
+@media (max-width: 768px) {
+  .side-by-side-container {
+    flex-direction: column;
+  }
+}
+
+.team-selection-container {
+  flex: 1;
+  min-width: 250px;
+}
+
+.team-select {
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+.speedometer-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.speedometer-title {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.team-details {
+  margin-top: 20px;
+}
+
+.task-completion-progress {
+  margin-top: 10px;
+}
+
+.team-members-list {
+  list-style-type: none;
+  padding-left: 0;
+  margin-bottom: 20px;
+}
+
+.team-members-list li {
+  padding: 8px 10px;
+  margin-bottom: 5px;
+  border-radius: 4px;
+  background-color: #f5f5f5;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.team-members-list li:hover {
+  background-color: #e6f7ff;
+  color: #1890ff;
+}
+
+/* Loading animations */
+.loading-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 150px;
+  padding: 20px 0;
+}
+
+/* Task list styling */
+.task-item {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 5px 0;
+}
+
+.task-status-icon {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 24px;
+  height: 24px;
+  margin-right: 10px;
+  border-radius: 50%;
+  font-size: 14px;
+}
+
+.completed .task-status-icon {
+  background-color: #52c41a;
+  color: white;
+}
+
+.not-completed .task-status-icon {
+  border: 1px solid #d9d9d9;
+  color: #d9d9d9;
+}
+
+.task-title {
+  flex: 1;
+}

@@ -1,0 +1,555 @@
+/* Calendar Wrapper */
+.usercld-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  background-color: #f5f8ff;
+}
+
+/* Calendar Container */
+.usercld-container {
+  width: 100%;
+  max-width: 800px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  padding: 2rem;
+  margin-top: 70px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+}
+
+/* Calendar Header */
+.usercld-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  padding: 0.5rem;
+}
+
+.usercld-h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #333333;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.usercld-h2::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #1677ff;
+}
+
+.usercld-h2:hover {
+  transition: all 0.3s ease;
+}
+
+.usercld-header button:hover {
+  background-color: #f5f8ff;
+  transform: scale(1.1);
+}
+
+/* Year and Month Selectors */
+.usercld-year-selector,
+.usercld-month-selector {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+
+.usercld-year-option,
+.usercld-month-option {
+  background-color: #f5f8ff;
+  padding: 0.75rem;
+  text-align: center;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.usercld-year-option:hover,
+.usercld-month-option:hover {
+  background-color: #1677ff;
+  color: white;
+  transform: translateY(-2px);
+}
+
+/* Calendar Grid */
+.usercld-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 0.5rem;
+  background-color: #ffffff;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.usercld-day-name {
+  background-color: #e7e9ee;
+  padding: 0.75rem;
+  text-align: center;
+  font-weight: 600;
+  font-size: 0.875rem;
+  color: #333333;
+  border-radius: 8px;
+}
+
+.usercld-day {
+  background-color: #c6c4c4;
+  padding: 0.75rem;
+  border-radius: 8px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  min-height: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.usercld-day:hover {
+  background-color: #f5f8ff;
+}
+
+.usercld-day.usercld-selected {
+  background-color: #1677ff;
+  color: white;
+}
+
+.usercld-day.usercld-has-event {
+  background-color: #1677ff;
+  color: white;
+  font-weight: 500;
+}
+
+.usercld-day.usercld-has-event:hover {
+  background-color: #0056b3;
+}
+
+.usercld-day.usercld-current-day {
+  font-weight: 600;
+}
+
+.usercld-day.usercld-current-day::after {
+  content: '';
+  position: absolute;
+  bottom: 4px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 6px;
+  height: 6px;
+  background-color: #0c921e;
+  border-radius: 50%;
+}
+
+/* Modal Overlay */
+.usercld-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5); /* Dark overlay */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+/* Modal Content */
+.usercld-modal-content {
+  background-color: #ffffff;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+  max-width: 500px;
+  width: 90%;
+  position: relative;
+  /* text-align: center; */
+  display: flex;
+  align-items: center;
+  justify-content: center;  
+  flex-direction: column;
+}
+
+/* Close Button Top - For screens above 426px */
+.usercld-close-button-top {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  /* background-color: transparent; */
+  /* color: #666; */
+  border: none;
+  border-radius: 50%;
+  /* width: 30px; */
+  /* height: 30px; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: auto;
+  background-color: #f5f5f5;
+
+  color: #333;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+  /* transform: scale(1.05); */
+  /* margin-top: 1rem; */
+  /* display: block; */
+  /* width: 100%; */
+}
+
+.usercld-close-button-top:hover {
+  background-color: grey;
+  color: white;
+}
+
+/* Close Button Bottom - For screens below 426px */
+.usercld-close-button-bottom {
+  /* background-color: grey; */
+  /* color: white; */
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+  margin-top: 1rem;
+  display: block;
+  width: 100%;
+  background-color: #f5f5f5;
+  color: #333;
+}
+
+.usercld-close-button-bottom:hover {
+  /* background-color: #0056b3; */
+  transform: scale(1.05);
+  /* background-color: white; */
+  background-color: grey;
+  color: white;
+}
+
+/* Event Title */
+.usercld-modal-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #1677ff;
+  margin-bottom: 0.75rem;
+}
+
+/* Event Details */
+.usercld-modal-subtitle {
+  font-size: 1.15rem;
+  font-weight: 500;
+  color: #333333;
+  margin-bottom: 0.5rem;
+}
+
+.usercld-modal-description {
+  font-size: 1rem;
+  color: #666666;
+  margin-bottom: 1.25rem;
+  line-height: 1.5;
+  word-wrap: break-word; /* Break long words */
+  overflow-wrap: break-word; /* Ensure proper wrapping */
+  white-space: pre-wrap; /* Preserve line breaks and wrap text */
+  max-width: 100%; /* Ensure it doesn't exceed container width */
+}
+
+/* Form Elements */
+.usercld-description {
+  width: 100%;
+  padding: 0.75rem;
+  margin: 0.5rem 0;
+  border: 1px solid #0056b3;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.usercld-description {
+  min-height: 120px;
+  resize: vertical;
+}
+
+.usercld-description:focus {
+  outline: none;
+  border-color: #1677ff;
+  box-shadow: 0 0 0 2px rgba(22, 119, 255, 0.1);
+}
+
+/* Button Styles */
+.usercld-button-group {
+  display: flex;
+  gap: 0.75rem;
+  justify-content: flex-end;
+  margin-top: 1.5rem;
+}
+
+.usercld-button {
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 8px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.usercld-button.primary {
+  background-color: #1677ff;
+  color: white;
+}
+
+.usercld-button.success {
+  background-color: #1ece12;
+  color: white;
+}
+
+.usercld-button.danger {
+  background-color: #ff4d4f;
+  color: white;
+}
+
+.usercld-button.close {
+  background-color: transparent;
+  color: #489;
+  border: 1px solid #4891d9;
+}
+
+.usercld-button.close:hover {
+  color: #fff;
+  background-color: #0056b3;
+}
+
+.usercld-button:hover {
+  opacity: 0.9;
+  transform: translateY(-1px);
+}
+
+/* Error Message */
+.usercld-error-message {
+  color: #ff4d4f;
+  text-align: center;
+  margin-top: 1rem;
+  font-size: 0.9rem;
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+  .usercld-container {
+    padding: 1.5rem;
+    max-width: 700px;
+  }
+}
+
+@media (max-width: 768px) {
+  .usercld-wrapper {
+    padding: 1rem;
+  }
+
+  .usercld-container {
+    padding: 1rem;
+  }
+
+  .usercld-modal-content {
+    padding: 1.5rem;
+    width: 95%;
+  }
+
+  .usercld-day {
+    padding: 0.5rem;
+    min-height: 2rem;
+    font-size: 0.75rem; /* Adjust font size for smaller screens */
+  }
+  
+  .usercld-h2 {
+    font-size: 22px;
+  }
+}
+
+@media (max-width: 480px) {
+  .usercld-h2 {
+    font-size: 1.25rem;
+  }
+
+  .usercld-day, 
+  .usercld-day-name {
+    padding: 0.4rem;
+    font-size: 0.65rem; /* Further adjust font size for smaller screens */
+  }
+
+  .usercld-button-group {
+    flex-wrap: wrap;
+  }
+
+  .usercld-button {
+    padding: 0.5rem 1rem;
+    font-size: 0.75rem;
+  }
+
+  .usercld-year-selector,
+  .usercld-month-selector {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 426px) {
+  .usercld-close-button-bottom {
+    margin-top: 1rem;
+    /* width: 100%; */
+    width: 90px;
+  }
+}
+
+@media (max-width: 320px) {
+  .usercld-container {
+    padding: 0.75rem;
+  }
+
+  .usercld-grid {
+    gap: 0.25rem;
+  }
+
+  .usercld-day, 
+  .usercld-day-name {
+    padding: 0.3rem;
+    font-size: 0.6rem; /* Further adjust font size for the smallest screens */
+  }
+}
+
+
+
+
+
+
+/* Add these styles to your existing usercalendar.css file */
+
+/* Year view styling */
+.usercld-year-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-top: 10px;
+}
+
+.usercld-month {
+  background-color: #f5f5f5;
+  border-radius: 6px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 0;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.usercld-month:hover {
+  background-color: #e0e0e0;
+  transform: scale(1.03);
+}
+
+.usercld-month.usercld-has-event {
+  border-bottom: 3px solid #1677ff;
+  color: #2e7031;
+}
+
+.usercld-month.usercld-current-month {
+  background-color: #e8f5e9;
+  border: 1px solid #a5d6a7;
+  font-weight: bold;
+}
+
+/* Years view styling */
+.usercld-years-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  margin-top: 10px;
+}
+
+.usercld-year {
+  background-color: #f5f5f5;
+  border-radius: 6px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 16px 0;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.usercld-year:hover {
+  background-color: #e0e0e0;
+  transform: scale(1.03);
+}
+
+.usercld-year.usercld-has-event {
+  border-bottom: 3px solid #1677ff;
+  color: #2e7031;
+}
+
+.usercld-year.usercld-current-year {
+  background-color: #e3f2fd;
+  border: 1px solid #90caf9;
+  font-weight: bold;
+}
+
+.usercld-year-clickable {
+  text-decoration: underline;
+  color: #1976d2;
+  cursor: pointer;
+}
+
+.usercld-h2 {
+  cursor: pointer;
+}
+
+.usercld-h2:hover {
+  color: #1976d2;
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 768px) {
+  .usercld-year-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .usercld-years-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media screen and (max-width: 426px) {
+  .usercld-year-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+  }
+  
+  .usercld-years-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+  }
+  
+  .usercld-month, .usercld-year {
+    padding: 15px 0;
+    font-size: 14px;
+  }
+}
+

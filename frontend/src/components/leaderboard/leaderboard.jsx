@@ -1,160 +1,208 @@
-import { useState, useEffect } from 'react';
-import { Card, Table, Avatar, Tag, Spin, Space, Empty, Typography } from 'antd';
-import { TrophyOutlined, CrownOutlined, UserOutlined } from '@ant-design/icons';
+import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+import './leaderboard.css';
+import firstPlace from '../../assests/1stplace.png';
+import secondPlace from '../../assests/2ndplace.png';
+import thirdPlace from '../../assests/3rdplace.png';
 import config from '../../config';
 
-const { Text } = Typography;
+// Format time from minutes to hours and minutes
+const formatTime = (minutes) => {
+  const hours = Math.floor(minutes / 60);
+  const mins = minutes % 60;
+  return hours > 0 ? `${hours}h ${mins}m` : `${mins}m`;
+};
 
-const LeaderboardComponent = ({ showOnlyActiveTime = false }) => {
-  const [leaderboard, setLeaderboard] = useState([]);
+const LeaderboardComponent = () => {
+  const [leaderboardType, setLeaderboardType] = useState('marks'); // 'marks' or 'time'
+  const [marksData, setMarksData] = useState([]);
+  const [timeData, setTimeData] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [search, setSearch] = useState("");
 
   useEffect(() => {
-    fetchLeaderboardData();
+    const fetchData = async () => {
+      setLoading(true);
+      try {
+        // Fetch marks data
+        const marksResponse = await axios.post(
+          `${config.backendUrl}/api/reports/get-total-marks-all-students`, 
+          {}, 
+          {
+            headers: {
+              Authorization: `Bearer ${localStorage.getItem("token")}`,
+            },
+          }
+        );
+        
+        if (marksResponse.data.success) {
+          const sortedMarksData = marksResponse.data.data
+            .filter(user => user.totalMarks > 0)
+            .sort((a, b) => b.totalMarks - a.totalMarks);
+          setMarksData(sortedMarksData);
+        }
+
+        // Fetch active time data
+        const timeResponse = await axios.get(`${config.backendUrl}/activetime/active-times`);
+        if (timeResponse.data && timeResponse.data.data) {
+          const sortedTimeData = timeResponse.data.data
+            .filter(item => item.studentId && item.studentId.name && item.activeTime > 0) // Filter out invalid entries
+            .map(item => ({
+              name: item.studentId.name,
+              activeTime: item.activeTime,
+              _id: item.studentId._id
+            }))
+            .sort((a, b) => b.activeTime - a.activeTime);
+          
+          console.log('Processed Time Data:', sortedTimeData);
+          setTimeData(sortedTimeData);
+        } else {
+          console.error('Invalid time response structure:', timeResponse.data);
+          setTimeData([]);
+        }
+      } catch (error) {
+        console.error("Error fetching leaderboard data:", error);
+        // Set empty arrays on error
+        setTimeData([]);
+        setMarksData([]);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchData();
   }, []);
 
-  const fetchLeaderboardData = async () => {
-    try {
-      setLoading(true);
-      const token = localStorage.getItem('token');
-      // Retrieve the hackathon ID. It might be stored in context or localStorage under various keys.
-      const hackathonId = localStorage.getItem('selectedHackathonId') || 
-                          localStorage.getItem('hackathonId') || 
-                          localStorage.getItem('activeHackathonId');
+ // Get current data based on selected type
+  const currentData = leaderboardType === 'marks' ? marksData : timeData;
 
-      if (!hackathonId) {
-        setLoading(false);
-        return;
-      }
-
-      const res = await axios.get(
-        `${config.backendUrl}/teamprogress/teams/progress/leaderboard?hackathonId=${hackathonId}&limit=10`,
-        { headers: { Authorization: `Bearer ${token}` } }
-      );
-
-      if (res.data?.success) {
-        setLeaderboard(res.data.leaderboard || []);
-      }
-    } catch (error) {
-      console.error('Error fetching leaderboard:', error);
-    } finally {
-      setLoading(false);
-    }
-  };
-
-  if (loading) {
-    return (
-      <div style={{ textAlign: 'center', padding: '40px 0' }}>
-        <Spin size="large" tip="Loading leaderboard..." />
-      </div>
-    );
-  }
-
-  if (leaderboard.length === 0) {
-    return (
-      <Card style={{ borderRadius: '12px', boxShadow: '0 4px 12px rgba(0, 0, 0, 0.05)' }}>
-        <Empty 
-          image={Empty.PRESENTED_IMAGE_SIMPLE} 
-          description={
-            <span>
-              No team progress recorded yet. 
-              <br />
-              <Text type="secondary">Once teams update their progress, the leaderboard will display here.</Text>
-            </span>
-          } 
-        />
-      </Card>
-    );
-  }
-
-  const getMedalIcon = (rank) => {
-    if (rank === 1) return <CrownOutlined style={{ color: '#FFD700', fontSize: '24px' }} />;
-    if (rank === 2) return <TrophyOutlined style={{ color: '#C0C0C0', fontSize: '20px' }} />;
-    if (rank === 3) return <TrophyOutlined style={{ color: '#CD7F32', fontSize: '18px' }} />;
-    return <span style={{ fontWeight: 'bold', color: '#8c8c8c' }}>#{rank}</span>;
-  };
-
-  const columns = [
-    {
-      title: 'Rank',
-      dataIndex: 'rank',
-      key: 'rank',
-      align: 'center',
-      width: 80,
-      render: (rank) => getMedalIcon(rank),
-    },
-    {
-      title: 'Team Name',
-      dataIndex: 'name',
-      key: 'name',
-      render: (name, record) => (
-        <Space>
-          <Avatar 
-            style={{ 
-              backgroundColor: record.rank === 1 ? '#FFF9E6' : record.rank === 2 ? '#F5F5F5' : record.rank === 3 ? '#FFF2E8' : '#F0F5FF',
-              color: record.rank === 1 ? '#D4B106' : record.rank === 2 ? '#595959' : record.rank === 3 ? '#D4380D' : '#1890FF' 
-            }}
-            icon={<UserOutlined />} 
-          />
-          <Text strong>{name}</Text>
-        </Space>
-      ),
-    },
-    {
-      title: 'Team Lead',
-      dataIndex: 'teamLead',
-      key: 'teamLead',
-      render: (lead) => lead ? lead.name : 'N/A',
-    },
-    {
-      title: 'Progress',
-      dataIndex: 'progress',
-      key: 'progress',
-      align: 'center',
-      render: (progress) => (
-        <Tag color={progress?.percentage === 100 ? 'success' : 'processing'} style={{ padding: '4px 12px', borderRadius: '4px', fontWeight: 600 }}>
-          {progress?.percentage}%
-        </Tag>
-      ),
-    },
-    {
-      title: 'Status',
-      dataIndex: 'progress',
-      key: 'status',
-      render: (progress) => {
-        const status = progress?.status || 'Not Started';
-        const color = status === 'Completed' ? 'green' : status === 'In Progress' ? 'blue' : 'gray';
-        return <Tag color={color}>{status}</Tag>;
-      }
-    }
-  ];
+  // Filter data based on search query
+  const filteredData = currentData.filter(user => {
+    const name = leaderboardType === 'marks' ? user.student.name : user.name;
+    return name.toLowerCase().includes(search.toLowerCase());
+  });
 
   return (
-    <Card 
-      title={
-        <Space>
-          <CrownOutlined style={{ color: '#faad14' }} />
-          <span>Hackathon Leaderboard</span>
-        </Space>
-      }
-      style={{ 
-        borderRadius: '16px', 
-        boxShadow: '0 8px 24px rgba(0, 0, 0, 0.08)',
-        border: 'none',
-        overflow: 'hidden'
-      }}
-      bodyStyle={{ padding: '0px' }}
-    >
-      <Table 
-        dataSource={leaderboard} 
-        columns={columns} 
-        rowKey="_id"
-        pagination={false}
-        size="middle"
-        style={{ borderRadius: '16px' }}
-      />
-    </Card>
+    <div className="leaderboard-wrapper">
+      <div className="leaderboard-container">
+        <div className="leaderboard-header sticky-header">
+
+         {/* Toggle stays on the left */}
+        <div>
+          <div className="toggle-container">
+            <button 
+              className={`toggle-btn ${leaderboardType === 'marks' ? 'active' : ''}`}
+              onClick={() => setLeaderboardType('marks')}
+            >
+              Total Points
+            </button>
+            <button 
+              className={`toggle-btn ${leaderboardType === 'time' ? 'active' : ''}`}
+              onClick={() => setLeaderboardType('time')}
+            >
+              Active Time
+            </button>
+          </div>
+        </div>
+        {/* Search bar on the right */}
+        <div className="search-bar-container" style={{ marginBottom: "0", marginLeft: "16px" }}>
+          <input
+            type="text"
+            placeholder="Search by name..."
+            value={search}
+            onChange={e => setSearch(e.target.value)}
+            className="leaderboard-search-bar"
+            style={{
+              padding: "8px 12px",
+              borderRadius: "4px",
+              border: "1px solid #ccc",
+              fontSize: "1rem",
+              minWidth: "220px"
+            }}
+          />
+        </div>
+      </div>
+      {/* ...rest of your code... */}
+        {/* Podium Section */}
+        <div className="podium-section">
+          {[1, 0, 2].map((pos, index) => {
+            const user = filteredData[pos];
+            const value = leaderboardType === 'marks' 
+              ? user?.totalMarks 
+              : user?.activeTime;
+            const displayValue = leaderboardType === 'marks'
+              ? (value ? `${value} Pts` : '--')
+              : (value ? formatTime(value) : '--');
+            const name = leaderboardType === 'marks'
+              ? user?.student?.name
+              : user?.name;
+              
+            return (
+              <div key={index} className={`podium-spot ${['second-place', 'first-place', 'third-place'][index]}`}>
+                <div className="avatar-container">
+                  <img 
+                    src={[secondPlace, firstPlace, thirdPlace][index]} 
+                    alt={`Position ${index + 1}`} 
+                    className="position-icon"
+                  />
+                  {user && <span className="user-name">{name}</span>}
+                </div>
+                <div className={`podium-platform ${['second', 'first', 'third'][index]}`}>
+                  <span className="place-text">{['2nd', '1st', '3rd'][index]}</span>
+                  <span className="points-text">{displayValue}</span>
+                </div>
+              </div>
+            );
+          })}
+        </div>
+        
+        {/* Table Section with Fixed Header */}
+        <div className="table-container-wrapper">
+          <div className="table-header">
+            <table className="leaderboard-table">
+              <thead>
+                <tr>
+                  <th>Place</th>
+                  <th>Name</th>
+                  <th>{leaderboardType === 'marks' ? 'Total Points' : 'Active Time'}</th>
+                </tr>
+              </thead>
+            </table>
+          </div>
+          
+          <div className="table-body-container">
+            <table className="leaderboard-table">
+              <tbody>
+                {loading ? (
+                  Array.from({ length: 5 }).map((_, index) => (
+                    <tr key={index} className="shimmer-row">
+                      <td><div className="shimmer-animation"></div></td>
+                      <td><div className="shimmer-animation"></div></td>
+                      <td><div className="shimmer-animation"></div></td>
+                    </tr>
+                  ))
+                ) : (
+                  filteredData.map((user, index) => {
+                    const name = leaderboardType === 'marks' ? user.student.name : user.name;
+                    const value = leaderboardType === 'marks' 
+                      ? user.totalMarks 
+                      : formatTime(user.activeTime);
+                      
+                    return (
+                      <tr key={leaderboardType === 'marks' ? user.student._id : user._id} className="fade-in">
+                        <td>{index + 1}</td>
+                        <td className="name-cell">{name}</td>
+                        <td>{value}</td>
+                      </tr>
+                    );
+                  })
+                )}
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
   );
 };
 

@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './signup.css';
 import { FaEye, FaEyeSlash } from 'react-icons/fa';
@@ -34,29 +34,13 @@ const SignupPage = () => {
   const [studentStep, setStudentStep] = useState(1);
   const [mentorStep, setMentorStep] = useState(1);
 
-  // Branch options
-  const branchOptions = [
-    { value: 'Artificial Intelligence (AI)', label: 'Artificial Intelligence (AI)' },
-    { value: 'Artificial Intelligence and Machine Learning (CSM)', label: 'Artificial Intelligence and Machine Learning (CSM)' },
-    { value: 'Artificial Intelligence and Data Science (AID)', label: 'Artificial Intelligence and Data Science (AID)' },
-    { value: 'Cyber Security (CSC)', label: 'Cyber Security (CSC)' },
-    { value: 'Data Science (CSD)', label: 'Data Science (CSD)' }
-  ];
-
   // Current Year options
   const currentYearOptions = [
     { value: 'first year', label: 'First Year' },
     { value: 'second year', label: 'Second Year' },
-    // { value: 'third year', label: 'Third Year' },
-    // { value: 'fourth year', label: 'Fourth Year' },
-    // { value: 'alumni', label: 'Alumni' }
-  ];
-
-  // College options
-  const collegeOptions = [
-    { value: 'KIET', label: 'KIET' },
-    { value: 'KIET+', label: 'KIET+' },
-    { value: 'KIEW', label: 'KIEW' }
+    { value: 'third year', label: 'Third Year' },
+    { value: 'fourth year', label: 'Fourth Year' },
+    { value: 'alumni', label: 'Alumni' }
   ];
 
   const handleRoleSelect = (role) => {
@@ -300,24 +284,15 @@ const SignupPage = () => {
               required
             />
             {errors.rollNo && <span className="error">{errors.rollNo}</span>}
-            
-            {/* Updated Branch dropdown */}
-            <select
+            <input
               className="signup-input-field"
               name="branch"
+              placeholder="Branch"
               value={studentFormData.branch}
               onChange={handleStudentInputChange}
               required
-            >
-              <option value="">Select Branch</option>
-              {branchOptions.map((option) => (
-                <option key={option.value} value={option.value}>
-                  {option.label}
-                </option>
-              ))}
-            </select>
+            />
             {errors.branch && <span className="error">{errors.branch}</span>}
-            
             <input
               className="signup-input-field"
               name="year"
@@ -327,7 +302,6 @@ const SignupPage = () => {
               required
             />
             {errors.year && <span className="error">{errors.year}</span>}
-            
             <select
               className="signup-input-field"
               name="currentYear"
@@ -343,22 +317,14 @@ const SignupPage = () => {
               ))}
             </select>
             {errors.currentYear && <span className="error">{errors.currentYear}</span>}
-            
-            {/* Updated College dropdown */}
-            <select
+            <input
               className="signup-input-field"
               name="college"
+              placeholder="College"
               value={studentFormData.college}
               onChange={handleStudentInputChange}
               required
-            >
-              <option value="">Select College</option>
-              {collegeOptions.map((option) => (
-                <option key={option.value} value={option.value}>
-                  {option.label}
-                </option>
-              ))}
-            </select>
+            />
             {errors.college && <span className="error">{errors.college}</span>}
           </div>
         );

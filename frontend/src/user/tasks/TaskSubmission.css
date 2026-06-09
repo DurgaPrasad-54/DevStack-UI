@@ -1,0 +1,279 @@
+/* Container */
+.task-submission-container {
+  padding: 104px 24px 24px; /* Increase top padding to move the container down */
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.task-submission-heading {
+  text-align: center;
+  color: #262626;
+  font-size: 24px;
+  margin-bottom: 24px;
+  font-weight: 600;
+}
+
+/* Loading Animation */
+.loading-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 200px;
+  width: 100%;
+  grid-column: 1 / -1; /* Span all columns in the grid */
+}
+
+.loading-text {
+  margin-top: 16px;
+  color: #1890ff;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+/* Customize Ant Design Spin */
+.ant-spin-dot-item {
+  background-color: #1890ff;
+}
+
+/* Toggle Navigation */
+.task-blog-list {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  margin-bottom: 32px;
+}
+
+.blog-item {
+  padding: 12px 24px;
+  background: white;
+  color: #1890ff;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border-radius: 8px;
+  font-weight: 500;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.blog-item.active {
+  background: #1890ff;
+  color: white;
+  transform: scale(1.05);
+}
+
+.blog-item:hover {
+  background: #40a9ff;
+  color: white;
+  transform: scale(1.05);
+}
+
+.blog-item:focus {
+  background: #1890ff;
+  color: white;
+  transform: scale(1.05);
+}
+
+/* Card Grid */
+.task-card-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Decrease card size */
+  gap: 24px;
+  padding: 8px;
+}
+
+/* no-tasks-message */
+.no-tasks-message{
+  text-align: center;
+  color: #262626;
+  font-size: 24px;
+  margin-bottom: 24px;
+  font-weight: 600;
+  grid-column: 1 / -1; /* Span all columns in the grid */
+}
+
+/* Task Card */
+.task-card {
+  border: 1px solid #e8e8e8;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+  background: white;
+  overflow: hidden;
+  height: 100%;
+}
+
+.single-task-card {
+  width: 100%; /* Make the card take full width */
+}
+
+.task-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.task-card .ant-card-head {
+  border-bottom: 1px solid #f0f0f0;
+  padding: 16px;
+  background: #fafafa;
+}
+
+.task-card .ant-card-head-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: #1890ff;
+}
+
+.task-card-description {
+  padding: 16px;
+  color: #595959;
+  font-size: 14px;
+  line-height: 1.6;
+  margin-bottom: 16px;
+}
+
+/* Submission Details */
+.submission-details {
+  padding: 16px;
+  background: #f8f9fa;
+  border-radius: 8px;
+}
+
+.submission-card-horizontal {
+  border: 1px solid #e8e8e8;
+  border-radius: 8px;
+  padding: 16px;
+  margin-bottom: 12px;
+  background: white;
+  transition: transform 0.2s ease;
+}
+
+.submission-card-horizontal:last-child {
+  margin-bottom: 0;
+}
+
+.submission-card-horizontal:hover {
+  transform: translateX(4px);
+  border-left: 3px solid #1890ff;
+}
+
+.submission-card-horizontal p {
+  margin: 8px 0;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.submission-card-horizontal p strong {
+  min-width: 100px;
+  color: #262626;
+  font-weight: 500;
+}
+
+.submission-card-horizontal a {
+  color: #1890ff;
+  text-decoration: none;
+  word-break: break-all;
+}
+
+.submission-card-horizontal a:hover {
+  text-decoration: underline;
+}
+
+.marks-badge {
+  padding: 4px 12px;
+  background: #f6ffed;
+  border: 1px solid #b7eb8f;
+  border-radius: 4px;
+  color: #52c41a;
+}
+
+/* Submit Button */
+.task-card-button {
+  width: 100%;
+  height: 40px;
+  font-weight: 500;
+  transition: background-color 0.3s ease;
+}
+
+.task-card-button:hover {
+  background-color: #40a9ff;
+}
+
+.task-card-button:focus {
+  background-color: #1890ff;
+}
+
+/* Modal Styling */
+.task-submission-modal .ant-modal-content {
+  border-radius: 12px;
+  padding: 24px;
+}
+
+.task-submission-modal .ant-modal-header {
+  text-align: center;
+  border-bottom: 1px solid #f0f0f0;
+  padding-bottom: 16px;
+}
+
+.task-submission-form {
+  margin-top: 24px;
+}
+
+.task-submission-form-item {
+  margin-bottom: 24px;
+}
+
+.task-submission-input {
+  border-radius: 6px;
+  height: 40px;
+}
+
+.task-submission-submit-button {
+  width: 100%;
+  height: 40px;
+  font-weight: 500;
+}
+
+/* View All Button */
+.view-all-button {
+  display: block;
+  margin: 10px 0 10px auto; /* Align to the right */
+  color: #1890ff;
+  font-weight: 500;
+  text-align: center;
+  cursor: pointer;
+}
+
+.view-all-button:hover {
+  color: #40a9ff;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .task-submission-container {
+    padding: 86px 26px 26px; /* Increase top padding to move the container down */
+  }
+
+  .task-card-container {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .blog-item {
+    padding: 8px 16px;
+    font-size: 14px;
+  }
+
+  .submission-card-horizontal p {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+  }
+
+  .submission-card-horizontal p strong {
+    min-width: auto;
+  }
+
+  .task-card .ant-card-head-title {
+    font-size: 20px; /* Increase title font size */
+  }
+}

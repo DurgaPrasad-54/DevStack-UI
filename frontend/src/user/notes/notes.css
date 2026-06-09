@@ -1,0 +1,271 @@
+/* notes.css */
+.notes-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 120px;
+  text-align: center;
+}
+
+.pdf-title {
+  text-align: center;
+  color: #333;
+}
+
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+
+.search-input {
+  display: block;
+  padding: 10px;
+  width: 100%;
+  max-width: 400px;
+  border: 1px solid #121111e3;
+  border-radius: 4px;
+  font-size: 16px;
+  margin-left: auto;
+  margin-bottom: 20px; /* Added margin-bottom */
+}
+
+.folder-title {
+  flex-grow: 1;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.folders-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  justify-content: center;
+  margin: 0 auto;
+}
+
+.folder-card-notes {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 15px;
+  text-align: center;
+  overflow: hidden;
+  word-wrap: break-word;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 150px;
+  cursor: pointer;
+  transition: scale 0.1s ease-in;
+}
+
+.folder-card-notes:hover {
+  scale: 1.02;
+}
+
+.folder-card-notes h3 {
+  font-size: 18px;
+  margin: 0 0 10px;
+  color: #333;
+}
+
+.folder-card-notes p {
+  font-size: 14px;
+  margin: 0;
+  color: #555;
+}
+
+.pdf-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.pdf-viewer-container {
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 10px;
+  text-align: center;
+  word-wrap: break-word;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Updated PDF title styles */
+.pdf-viewer-container h3 {
+  font-size: 16px;
+  margin-bottom: 10px;
+  color: #333;
+  padding: 0 10px;
+  width: 100%;
+  min-height: 40px;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  white-space: normal;
+  line-height: 1.3;
+  text-overflow: ellipsis;
+}
+
+.pdf-scroll-container {
+  height: 800px;
+  overflow-y: auto;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 10px;
+  width: 100%;
+  overflow-x: auto;
+}
+
+/* Loading Animation */
+.loading-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(175, 175, 175, 0.968); /* Light grey background */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.loading-spinner {
+  border: 4px solid rgba(0, 0, 0, 0.1);
+  border-left-color: #1890ff;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* New Loading Animation */
+.loading-dots {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+}
+
+.loading-dots div {
+  width: 10px;
+  height: 10px;
+  background-color: #1890ff;
+  border-radius: 50%;
+  animation: bounce 0.6s infinite alternate;
+}
+
+.loading-dots div:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.loading-dots div:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+@keyframes bounce {
+  to {
+    opacity: 0.3;
+    transform: translateY(-10px);
+  }
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 1200px) {
+  .folders-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 992px) {
+  .folders-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .pdf-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .pdf-viewer-container {
+    height: 300px;
+  }
+
+  .pdf-viewer-container h3 {
+    font-size: 15px;
+    min-height: 35px;
+  }
+}
+
+@media (max-width: 768px) {
+  .folders-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .search-input {
+    width: 90%;
+    margin-top: 40px;
+  }
+
+  .pdf-viewer-container {
+    height: 400px;
+  }
+
+  .pdf-viewer-container h3 {
+    font-size: 14px;
+    min-height: 32px;
+  }
+}
+
+@media (max-width: 576px) {
+  .notes-container {
+
+    padding: 20px;
+  }
+  .folders-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .pdf-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .pdf-viewer-container {
+    height: 500px;
+  }
+
+  .pdf-viewer-container h3 {
+    font-size: 16px;
+    min-height: 40px;
+    padding: 0 15px;
+  }
+
+  .folder-card-notes {
+    height: 100px;
+    padding: 15px;
+  }
+
+  .folder-card-notes h3 {
+    font-size: 16px;
+  }
+
+  .folder-card-notes p {
+    font-size: 12px;
+  }
+}

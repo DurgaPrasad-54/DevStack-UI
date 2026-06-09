@@ -1,0 +1,269 @@
+.project-container {
+    display: flex;
+    padding: 30px;
+    gap: 20px;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE and Edge */
+    /* padding-top: 90px; */
+    /* margin-top: 90px; */
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.project-container::-webkit-scrollbar {
+    display: none;
+}
+.project-titles
+{
+    width: 100%;
+    text-align: center;
+    margin-top: 25px;
+    color: #003049;
+    font-size: 32px;
+    padding-top: 90px;
+}
+.box1 {
+    min-width: 411px;
+    height: 300px;
+    position: relative;
+    transition: opacity 0.5s ease;
+    overflow: hidden;
+    border-radius: 13px 20px 20px 20px;
+}
+
+.box1 img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.box2 {
+    width: 100%;
+    /* height: 700px; */
+    position: absolute;
+    top: 100%;
+    left: 0;
+    opacity: 0;
+    transition: transform 0.5s ease, opacity 0.5s ease;
+    z-index: 1;
+    /* margin: 10px; */
+    display: flex;
+    /* align-items: center; */
+    justify-content: center;
+    flex-direction: column;
+    gap: 15px;
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 15px;
+}
+
+.heading {
+    color: white;
+    font-size: 1.5rem;
+}
+
+.box2 p {
+    font-size: 22px;
+    width: 100%;
+    color: white;
+}
+
+.more-details {
+    text-decoration: underline;
+}
+
+.our-information ul {
+    list-style: none;
+    display: flex;
+    gap: 10px;
+    color: white;
+    font-size: 1.5rem;
+}
+
+.our-information a {
+    color: white;
+}
+
+.box1:hover {
+    opacity: 1;
+}
+
+.box1:hover .box2 {
+    opacity: 1;
+    transform: translateY(-45%);
+}
+
+/* YouTube popup styles */
+.youtube-popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; /* Ensure it appears above other content */
+}
+
+.youtube-iframe {
+    width: 80%; /* Adjust width as needed */
+    height: 80%; /* Adjust height as needed */
+    border: none; /* Remove border */
+}
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: red; /* Use background-color for clarity */
+    border: none;
+    color: white;
+    cursor: pointer;
+    padding: 8px 12px; /* Added padding for better touch target */
+    border-radius: 4px; /* Rounded corners for a softer look */
+    font-size: 16px; /* Set a font size for consistency */
+    transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.close-btn:hover {
+    background-color: darkred; /* Change background on hover for better UX */
+}
+
+@media (max-width: 426px) {
+    .box1 {
+        min-width: 100%;
+        height: 300px;
+    }
+    
+    .box2 p {
+        font-size: 16.5px;
+    }
+    
+    .our-information ul {
+        font-size: 35px;
+    }
+    
+    .box1:hover .box2 {
+        transform: translateY(-46%);
+        opacity: 1.5;
+    }
+
+    .box2{
+        height:400px;
+        top: 50%;
+    }
+}
+
+@media (min-width: 427px) and (max-width: 1039px) {
+    .box1 {
+        min-width: calc(50% - 10px);
+        height: 300px;
+    }
+    
+    .box2 p {
+        font-size: 18px;
+    }
+    
+    .our-information ul {
+        font-size: 40px;
+    }
+    
+    .box1:hover .box2 {
+        transform: translateY(-59.5%);
+        opacity: 1.5;
+    }
+
+    .box2{
+        height:1400px;
+    }
+}
+
+@media (min-width: 1040px) and (max-width: 2559px) {
+    .box1 {
+        min-width: calc(33.33% - 14px);
+    }
+    
+    .box2 p {
+        font-size: 15px;
+    }
+    
+    .our-information ul {
+        font-size: 40px;
+    }
+    
+    .box1:hover .box2 {
+        transform: translateY(-70%);
+    }
+
+    .box2{
+        height:600px;
+    }
+}
+
+@media (min-width: 2560px) {
+    .box1 {
+        min-width: calc(25% - 15px);
+        height: 400px;
+    }
+    
+    .box1:hover .box2 {
+        transform: translateY(-54%);
+        opacity: 1.5;
+    }
+
+    .box2{
+        height:4000px;
+    }
+}
+
+
+
+
+
+/* Center the loading spinner */
+.loading-spinner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Spinner animation */
+.spinner {
+    width: 50px;
+    height: 50px;
+    border: 5px solid rgba(0, 0, 0, 0.2);
+    border-top: 5px solid #007bff;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+/* Keyframes for rotating animation */
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Placeholder for images */
+.image-placeholder {
+    width: 100%;
+    height: 150px;
+    background: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Loading shimmer effect */
+.loading-animation {
+    background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+    background-size: 200% 100%;
+    animation: shimmer 1.5s infinite;
+}
+
+@keyframes shimmer {
+    0% { background-position: -200% 0; }
+    100% { background-position: 200% 0; }
+}

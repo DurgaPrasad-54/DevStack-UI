@@ -1,9 +1,6 @@
-import { useState, useRef } from "react";
-
-import { Form, Input, Button, Typography, Card } from "antd";
-
-
-import { LockOutlined, MailOutlined } from "@ant-design/icons";
+import React, { useState, useRef } from "react";
+import { Form, Input, Button, Spin, Typography, Card } from "antd";
+import { LockOutlined, MailOutlined, KeyOutlined } from "@ant-design/icons";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import axios from "axios";
@@ -72,7 +69,7 @@ const AdminLogin = () => {
       }
       
       // Use navigate for redirection after delay
-      setTimeout(() => navigate("/hackadmin"), 2000);
+      setTimeout(() => navigate("/admin"), 2000);
     } catch (error) {
       toast.error(error.response?.data?.message || "OTP verification failed.");
     } finally {

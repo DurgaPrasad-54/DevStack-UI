@@ -1,0 +1,140 @@
+/* General Styles */
+.page-container {
+  position: relative;
+  padding: 2rem;
+  top: 2rem; /* Adjust vertical positioning */
+}
+
+.outer-border {
+  border: 8px solid white;
+  border-radius: 1rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  padding: 1rem;
+  margin: auto;
+  width: calc(100% - 2rem); /* Ensures it fits within the page container */
+  background-color: white;
+  margin-top: 50px; /* Space below fixed header */
+}
+
+/* Card Styles */
+.bg-blue-50 {
+  background-color: #ebf8ff;
+  padding: 1rem;
+  margin: 1rem auto; /* Centers the blue background section */
+  border-radius: 0.75rem;
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+   transition: transform 0.3s ease, box-shadow 0.3s ease; 
+   display: flex; /* Use flexbox to manage layout */
+   flex-direction: column; /* Stack items vertically */
+}
+
+.bg-blue-50:hover {
+   transform: translateY(-5px); /* Moves the card up slightly */
+   box-shadow: 0px 8px 20px rgba(0,0,0,0.3); /* Increases shadow for depth */
+}
+
+.item-container {
+   display: flex; /* Align bullet point and title in a row */
+   align-items: center; /* Center vertically */
+   gap: .5rem; /* Space between bullet point and title */
+   flex-grow: 1; /* Allow this container to grow and take available space */
+}
+
+.bullet-point {
+   width:10px;
+   height:10px;
+   border-radius:50%;
+   background-color:black;
+}
+
+.item-title {
+  font-size: 1rem;
+  font-weight: bold; /* Changed to bold for better visibility */
+  overflow-wrap: break-word; /* Allows long words to break and wrap */
+  word-wrap: break-word; /* Fallback for older browsers */
+  hyphens: auto; /* Adds hyphenation for better text flow */
+}
+
+
+.item-description {
+   font-size:.875rem;
+   margin-top:.5rem; /* Add some space above description */
+   overflow-wrap: break-word; /* Ensure long words break to fit inside the card */
+}
+
+/* Modal Styles */
+.ant-modal-header {
+    background-color: #4c92f3; /* Header color for modals */
+    color: white; /* Text color for header */
+}
+
+/* Button Styles */
+.ant-btn-primary {
+    background-color: #4c92f3; /* Primary button color */
+    border-color: #4c92f3; /* Border color for primary button */
+}
+
+.ant-btn-primary:hover {
+    background-color: #3a7bbf; /* Darker shade on hover */
+}
+
+/* Loading Animation Styles */
+.loading-spinner {
+  border: 4px solid rgba(0, 0, 0, 0.1);
+  border-left-color: #4c92f3;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  animation: spin 1s linear infinite;
+  margin: 2rem auto; /* Center the spinner */
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Loading Delay Animation Styles */
+.loading-delay {
+  animation: loadingDelay 0.5s ease-in-out;
+}
+
+@keyframes loadingDelay {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Fade-in Animation Styles */
+.fade-in {
+  animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Responsive Styles */
+@media (max-width:768px) {
+  
+    .bg-blue-50 {
+      width: calc(100% - (2 * var(--padding))); /* Adjust width for smaller screens */
+    }
+
+    .page-container {
+      max-width: calc(100% - (2 * var(--padding))); /* Adjust max-width for smaller screens */
+      margin-top: calc(80px + var(--padding)); /* Ensure margin accounts for header height */
+      padding-left: var(--padding);
+      padding-right: var(--padding);
+    }
+}

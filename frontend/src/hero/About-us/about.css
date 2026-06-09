@@ -1,0 +1,128 @@
+.about-container {
+    width: 100%;
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 1rem;
+    padding-top: 90px;
+}
+
+.about-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.title-container {
+    display: flex;
+    align-items: center; /* Center the line vertically with the text */
+  }
+  
+  .about-title {
+    margin-left: 2px; /* Space between the vertical line and the title */
+    color: #003049;
+  }
+/* Default style for content and image sections */
+.content-section,
+.image-section {
+    flex: 1;
+}
+
+/* Laptop and Tablet View (Description left, Image right) */
+@media (min-width: 481px) {
+    .about-wrapper {
+        flex-direction: row; /* Side by side on tablet and desktop */
+        align-items: flex-start;
+    }
+
+    .content-section {
+        order: 1; /* Content section on the left */
+    }
+
+    .image-section {
+        order: 2; /* Image section on the right */
+    }
+
+    .about-title {
+        font-size: 2rem;
+        font-weight: bold;
+        margin-bottom: 0.3rem;
+    }
+
+    .about-description {
+        font-size: 1.4rem;
+        line-height: 1.6;
+        color: #020202;
+        text-align: justify;
+    }
+}
+
+/* Mobile View (Image first, then Description) */
+@media (max-width: 480px) {
+    .about-wrapper {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .image-section {
+        order: 1; /* Image comes first */
+    }
+
+    .content-section {
+        order: 2; /* Content section comes second */
+    }
+
+    .about-title {
+        font-size: 1.75rem;
+        margin-bottom: 0.2rem;
+    }
+
+    .about-description {
+        font-size: 1rem;
+        margin-top: 1rem;
+        text-align: justify;
+    }
+}
+
+/* Image settings */
+.about-image {
+    width: 100%;
+    height: 330px; /* Default height for larger screens */
+    border-radius: 8px;
+    object-fit: cover;
+}
+
+/* Adjust image size for mobile view */
+@media (max-width: 426px) {
+    .about-image {
+        height: auto; /* Maintain aspect ratio on mobile */
+    }
+}
+@media (min-width:481px) and (max-width:769px) {
+    .about-description
+    {
+        line-height: 1.2;
+    }
+    
+}
+ 
+@media (min-width: 769px) and (max-width: 1025px){
+    .about-container{
+        margin-bottom: -120px;
+    }
+}
+
+@media only screen and (max-width: 768px){
+    .about-container{
+        margin-bottom: -180px;
+    }
+}
+@media (max-width: 769px) and (min-width:425px){
+    .about-container{
+        margin-bottom: 240px;
+    }
+}
+@media (max-width: 426px){
+    .about-container{
+        margin-bottom: 10px;
+    }
+}

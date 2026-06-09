@@ -1,0 +1,749 @@
+/* General Styles */
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f5f5f5;
+    padding: 20px;
+  }
+  
+  .login-box {
+    display: flex;
+    background-color: #0a344a;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    max-width: 900px;
+    width: 100%;
+    flex-direction: row;
+    height: 90%;
+  }
+  
+  /* Form Styles */
+  .login-form {
+    padding: 20px;
+    color: white;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+  
+  .login-form h2 {
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    text-align: center;
+    justify-content: center;
+  }
+  
+  .login-form p {
+    margin-bottom: 15px;
+    text-align: center;
+    justify-content: center;
+  
+  }
+  
+  .input-group {
+    margin-bottom: 20px;
+  }
+  
+  /* Add margin to the bottom of the password input group */
+  .input-group:last-of-type {
+    margin-bottom: 40px;
+  }
+  
+  .input-group label {
+    display: block;
+    margin-bottom: 5px;
+    color: #ffffffb3;
+    text-align: left; /* Align labels to the start */
+  }
+  .input-group {
+    position: relative;
+  }
+  
+  .input-group button {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #ffffffb3;
+  }
+  
+  .input-group input {
+    width: 350px;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 20px;
+    border: 1px solid blue;
+    background-color: #0f4561;
+    color: #fff;
+    outline: none;
+  }
+  
+  .input-group input::placeholder {
+    color: #ffffffb3;
+  }
+  
+  /* Options Styles */
+  .options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    flex-direction: row; /* Adjusted margin to create gap */
+  }
+  
+  .options label {
+    font-size: 16px;
+    color: #ffffffb3; /* Light gray text color */
+    cursor: pointer;
+  }
+  
+  .options input[type="checkbox"] {
+    margin-right: 8px; /* Adds space between the checkbox and label */
+  }
+  
+  .options .resetPassword,
+  .options .forgotPassword {
+    margin: 0; /* Remove any extra vertical margin */
+    color: #ffffffb3; /* Light gray text color */
+    cursor: pointer; /* Adds pointer cursor on hover */
+    text-decoration: none; /* Removes underline */
+    display: flexbox;
+    flex-direction: row;/* Ensures inline alignment */
+  }
+  .forgot-password, .reset-password {
+    cursor: pointer;
+    color: #ffffffb3;
+    display: flex-box;
+    /*text-decoration: underline;*/
+    /* margin-right: 20px; */
+    flex-direction: row; /* Add some space between the two items */
+  }
+  
+  
+  /* Forgot Password Link */
+  .options .forgot-password {
+    cursor: pointer;
+    color: #ffffffb3;
+    display: flex;
+  }
+  
+  /* Reset Password Checkbox */
+  #resetpassword {
+    accent-color: #ff0000; /* Changes checkbox highlight color */
+  }
+  
+  /* Sign-in Button */
+  .sign-in-button {
+    width: 100%;
+    background-color: #ff0000;
+    color: white;
+    padding: 10px;
+    font-size: 18px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .sign-in-button:hover {
+    color: #FF0000;
+    background-color: #FDD5D5;
+  }
+  
+  /* Admin Login */
+  .admin-login {
+    margin-top: 20px;
+    text-align: center;
+    color: #ffffffb3;
+  }
+  
+  .admin-login a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  /* Image Styles */
+  .login-image {
+    background-color: #02121a;
+    padding: 50px;
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+  }
+  
+  .login-image img {
+    width: 100%;
+    height: 620px;
+    object-fit: cover;
+    object-position: bottom; /* Ensure the image touches the bottom border */
+   /* border-bottom: 5px solid #000;*/ /* Add bottom border */
+  }
+  
+  /* Toggle Switch Styles */
+  .toggle-switch {
+    display: flex;
+    gap: 0px; /* Increase gap between buttons */
+  }
+  
+  .toggle-switch button {
+    background-color: transparent;
+    border: none;
+    color: #ffffffb3;
+    cursor: pointer;
+    padding: 10px 20px;
+    font-size: 16px;
+    transition: color 0.3s ease;
+  }
+  
+  .toggle-switch button.selected {
+    color: white;
+    background-color:  #ff0000;
+    border-radius: 40px;
+    color: white;
+    padding: 10px;
+    font-size: 18px;
+    border: none;
+    cursor: pointer;
+  }
+  .toggle-switch button:hover {
+    opacity: 0.7;
+  }
+  
+  /* Add gap between role toggle and email input */
+  .role-toggle {
+    margin-bottom: 20px;
+  }
+  .password-input {
+    position: relative;
+    width: 100%;
+  }
+  
+  .password-input button {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none; /* Remove background */
+    border: none; /* Remove border */
+    cursor: pointer;
+    color: #ffffffb3;
+    padding: 0; /* Remove padding */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  
+  .password-input input {
+    padding-right: 40px;
+  }
+  
+  /* Media Queries for Responsive Design */
+  
+  @media (max-width: 1024px) {
+    .login-box {
+      max-width: 800px;
+      height: auto;
+      flex-direction: row;
+    }
+  
+    .login-form {
+      padding: 20px;
+      flex: 1.5;
+    }
+  
+    .login-image {
+      flex: 1;
+      padding: 0px;
+    }
+  
+    .login-image img {
+      width: 100%;
+      height: auto;
+    }
+  
+    .input-group input {
+      padding: 12px;
+      font-size: 16px;
+    }
+  
+    .sign-in-button {
+      padding: 12px;
+      font-size: 16px;
+    }
+  
+    .options {
+      margin-top: -10px;
+    }
+  
+    .forgot-password {
+      margin-left: 40px;
+    }
+  }
+  @media (max-width: 1440px) {
+    .login-box {
+      max-width: 800px;
+      height: auto;
+      flex-direction: row;
+    }
+  
+    .login-form {
+      padding: 20px;
+      flex: 1.5;
+    }
+  
+    .login-image {
+      flex: 1;
+      padding: 0px;
+      flex-direction: row;
+    }
+  
+    .login-image img {
+      width: 100%;
+      height: auto;
+    }
+  
+    .input-group input {
+      padding: 12px;
+      font-size: 16px;
+    }
+  
+    .sign-in-button {
+      padding: 12px;
+      font-size: 16px;
+    }
+  
+    .options {
+      margin-top: -10px;
+    }
+  
+    .forgot-password {
+      margin-left: 40px;
+    }
+  }
+  
+  
+  @media (max-width: 768px) {
+    .login-box {
+      flex-direction: row;
+      height: auto;
+    }
+  
+    .login-image {
+      padding: 0px;
+    }
+  
+    .login-form {
+      padding: 20px;
+    }
+  
+    .login-image img {
+      width: 100%;
+      height: auto;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .login-form h2 {
+      font-size: 24px;
+    }
+  
+    .login-form p {
+      margin-bottom: 20px;
+    }
+  
+    .input-group input {
+      padding: 8px;
+      font-size: 14px;
+    }
+  
+    .sign-in-button {
+      padding: 8px;
+      font-size: 16px;
+    }
+  
+    .login-image {
+      display: none;
+    }
+  }
+  
+  @media (max-width: 376px) {
+    .login-box {
+      flex-direction: column;
+      height: auto;
+      max-width: 100%;
+      border-radius: 15px;
+      padding: 10px;
+      box-shadow: none;
+      overflow: hidden; /* Ensure content is not hidden */
+    }
+  
+    .login-form {
+      padding: 15px;
+      flex: 1;
+    }
+  
+    .login-form h2 {
+      font-size: 20px; /* Adjust heading font size */
+    }
+  
+    .login-form p {
+      font-size: 14px;
+      margin-bottom: 15px; /* Reduce spacing for compact layout */
+    }
+  
+    .input-group {
+      margin-bottom: 15px;
+    }
+  
+    .input-group input {
+      width: 290px; /* Decrease input width */
+      padding: 8px; /* Adjust padding */
+      font-size: 14px; /* Adjust font size */
+      margin: 0 auto; /* Center the input boxes */
+    }
+  
+    .sign-in-button {
+      width: 250px; /* Match input width */
+      padding: 8px; /* Adjust padding */
+      font-size: 14px;
+      margin: 0 auto; /* Center the button */
+    }
+  
+    .options {
+      align-items: flex-start;
+    }
+  }
+  
+  @media (max-width: 320px) {
+    .login-box {
+      flex-direction: column;
+      height: auto;
+      max-width: 100%;
+      border-radius: 15px;
+      padding: 10px;
+      box-shadow: none;
+    }
+  
+    .login-form {
+      padding: 15px;
+      flex: 1;
+    }
+    /* General Styles */
+  .login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f5f5f5;
+    padding: 20px;
+  }
+  
+  .login-box {
+    display: flex;
+    background-color: #0a344a;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    max-width: 900px;
+    width: 100%;
+    flex-direction: row;
+  }
+  
+  .options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: -10px;
+  }
+  
+  .forgot-password, .reset-password {
+    margin: 0;
+    cursor: pointer;
+    color: #ffffffb3;
+    text-decoration: underline;
+    margin-right: 20px; /* Add some space between the two items */
+  }
+  
+  .admin-login .clickable-text {
+    cursor: pointer;
+    color: #ffffffb3;
+    text-decoration: underline;
+  }
+  
+  .password-input {
+    position: relative;
+    width: 100%;
+  }
+  
+  .password-input button {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none; /* Remove background */
+    border: none; /* Remove border */
+    cursor: pointer;
+    color: #ffffffb3;
+    padding: 0; /* Remove padding */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .sign-in-button {
+    background-color: #ff0000;
+    border-radius: 40px;
+    color: white;
+    padding: 10px;
+    font-size: 18px;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .toggle-switch button:hover {
+    opacity: 0.7;
+  }
+  
+  /* Add gap between role toggle and email input */
+  .role-toggle {
+    margin-bottom: 20px;
+  }
+  
+  /* Responsive Styles */
+  @media (max-width: 320px) {
+    .password-input button {
+      right: 17px; /* Adjust the position to ensure it stays inside the input box */
+    }
+  }
+  
+    .login-form h2 {
+      font-size: 20px;
+      margin-bottom: 8px;
+    }
+  
+    .login-form p {
+      font-size: 12px;
+      margin-bottom: 15px;
+    }
+  
+    .input-group {
+      margin-bottom: 15px;
+    }
+  
+    .input-group input {
+      width: 240px;
+      padding: 8px;
+      font-size: 14px;
+      border-radius: 30px;
+      border: 1px solid blue;
+      background-color: #0f4561;
+      color: #333;
+    }
+  
+    .input-group input::placeholder {
+      color: #aaa;
+      font-size: 12px;
+    }
+  
+    .sign-in-button {
+      width: 100%;
+      background-color: #ff0000;
+      color: white;
+      padding: 8px;
+      font-size: 16px;
+      font-weight: bold;
+      border-radius: 15px;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+  
+    .options {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      font-size: 15px;
+      margin-top: 8px;
+    }
+  
+    .forgot-password {
+      color: #666;
+      cursor: pointer;
+      /* font-size: 12px; */
+    }
+  
+    .admin-login {
+      font-size: 10px;
+      text-align: center;
+      margin-top: 10px;
+    }
+  
+    .admin-login a {
+      color: #ff0000;
+      text-decoration: none;
+    }
+  
+    .login-image {
+      display: none;
+    }
+  }/* Add gap between role toggle and email input */
+  .role-toggle {
+    margin-bottom: 20px;
+  }
+  
+  /* Responsive Styles */
+  @media (max-width: 320px) {
+    .password-input button {
+      right: 17px; /* Adjust the position to ensure it stays inside the input box */
+    }
+  
+    .login-form h2 {
+      font-size: 20px;
+      margin-bottom: 8px;
+    }
+  
+    .login-form p {
+      font-size: 12px;
+    }
+  }
+  
+  .password-input {
+    position: relative;
+    width: 100%;
+  }
+  
+  .password-input button {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none; /* Remove background */
+    border: none; /* Remove border */
+    cursor: pointer;
+    color: #ffffffb3;
+    padding: 0; /* Remove padding */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+  }
+  
+  .forgot-password, .reset-password {
+    margin: 0;
+    cursor: pointer;
+    color: #ffffffb3;
+    text-decoration: none; /* Remove underline */
+  }
+  
+  .admin-login .clickable-text {
+    cursor: pointer;
+    color: #ffffffb3;
+    text-decoration: underline;
+  }
+  
+  .sign-in-button {
+    background-color: #ff0000;
+    border-radius: 40px;
+    color: white;
+    padding: 10px;
+    font-size: 18px;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .toggle-switch {
+    display: flex;
+    gap: 10px; /* Increase gap between buttons */
+  }
+  
+  .toggle-switch button {
+    background-color: transparent;
+    border: none;
+    color: #ffffffb3;
+    cursor: pointer;
+    padding: 10px 20px;
+    font-size: 16px;
+    transition: color 0.3s ease;
+  }
+  
+  .toggle-switch button.selected {
+    color: white;
+    background-color: #ff0000;
+    border-radius: 20px;
+  }
+  
+  .toggle-switch button:hover {
+    opacity: 0.7;
+  }
+  
+  .form-control{
+    margin-top: 10px;
+  }
+  
+  /* Specific styles for OTP input */
+  .otp-container {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    margin: 20px 0;
+  }
+  
+  .otp-input {
+    width: 50px;
+    height: 50px;
+    padding: 0;
+    font-size: 24px;
+    text-align: center;
+    border-radius: 8px;
+    border: 1px solid #0f4561;
+    background-color: #0f4561;
+    color: white;
+  }
+  
+  .otp-input:focus {
+    outline: none;
+    border-color: #ff0000;
+  }
+  
+  /* Error message styling */
+  .error-message {
+    color: #ff4444;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  /* Signup Link */
+  .signup-link {
+    text-align: center;
+    margin-top: 10px;
+    color: #fafbfc;
+  }
+  
+  .signup-link .clickable-text {
+    cursor: pointer;
+    color: #1890ff;
+    text-decoration: underline;
+  }
+  
+  .signup-link .clickable-text:hover {
+    color: #40a9ff;
+  }

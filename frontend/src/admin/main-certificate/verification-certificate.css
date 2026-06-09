@@ -1,0 +1,66 @@
+.certificate-verification-container {
+    max-width: 900px;
+    margin: auto;
+    padding: 0 10px;
+    padding-top: 90px;
+  }
+  
+  .verification-card {
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+  
+  .verification-info {
+    margin-bottom: 20px;
+    font-size: 16px;
+    color: #666;
+  }
+  
+  .verification-form {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+  
+  .verification-form .ant-input-affix-wrapper {
+    flex: 1;
+  }
+  
+  .verification-alert {
+    margin-bottom: 20px;
+  }
+  
+  .verification-loading {
+    text-align: center;
+    padding: 40px 0;
+  }
+  
+  .verification-loading p {
+    margin-top: 15px;
+    color: #666;
+  }
+  
+  .verification-success {
+    margin-top: 20px;
+  }
+  
+  .certificate-preview {
+    margin-top: 30px;
+    border: 1px dashed #ccc;
+    /* padding: 5px; */
+    border-radius: 8px;
+    background-color: #fafafa;
+  }
+  .certificate-container {
+    width: 100%;
+  }
+  
+  @media (max-width: 576px) {
+    .verification-form {
+      flex-direction: column;
+    }
+    
+    .verification-form .ant-btn {
+      width: 100%;
+    }
+  }

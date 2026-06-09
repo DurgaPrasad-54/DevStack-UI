@@ -1,0 +1,127 @@
+.admin-header-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+}
+
+.admin-header-logo {
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.admin-header-menu-button {
+  margin-left: auto;
+}
+
+.admin-header-ant-drawer-close {
+  right: 16px; /* Adjust the position of the close button */
+}
+
+.admin-header {
+  background: #001529;
+  padding: 0;
+  position: fixed;
+  width: 100%;
+  z-index: 1000;
+  height: 64px;
+}
+
+.admin-header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 24px;
+  height: 100%;
+}
+
+.admin-header-menu-container {
+  position: relative;
+}
+
+.admin-header-menu-trigger {
+  color: white;
+  font-size: 24px;
+  cursor: pointer;
+  padding: 8px;
+  transition: color 0.3s;
+}
+
+.admin-header-menu-trigger:hover {
+  color: #1890ff;
+}
+
+.admin-header-menu-dropdown {
+  position: fixed;
+  top: 64px; /* Height of header */
+  right: 0;
+  background: #ffffff;
+  width: 250px;
+  height: calc(100vh - 64px); /* Full height minus header */
+  padding: 4px 0; /* Reduced top/bottom padding */
+  box-shadow: -2px 0 8px rgba(0, 0, 0, 0.15);
+  overflow-y: auto;
+  transition: transform 0.3s ease;
+}
+
+.admin-header-menu-item {
+  padding: 4px 16px; /* Reduced vertical padding */
+  display: flex;
+  align-items: center;
+  color: #001529;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border-left: 3px solid transparent;
+  margin: 0; /* Removed margin */
+  height: 36px; /* Fixed height */
+}
+
+.admin-header-menu-item:hover {
+  background-color: #f0f0f0;
+  border-left: 3px solid #1890ff;
+}
+
+.admin-header-menu-icon {
+  margin-right: 8px; /* Reduced margin */
+  font-size: 16px; /* Slightly smaller icons */
+  display: flex;
+  align-items: center;
+  color: #1890ff;
+}
+
+.admin-header-menu-label {
+  font-size: 14px; /* Slightly smaller text */
+  font-weight: 500;
+}
+
+/* .admin-header-dropdown-menu {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  min-width: 200px;
+  margin-top: 4px;
+  border-radius: 4px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+} */
+
+/* Additional styles for menu items */
+.admin-header-ant-menu-item {
+  margin: 0 !important;
+  height: 40px !important;
+  line-height: 40px !important;
+}
+
+.admin-header-ant-menu-item:hover {
+  background-color: #1890ff !important;
+}
+
+/* .dropdown-menu {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  min-width: 200px;
+  margin-top: 4px;
+  border-radius: 4px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+} */

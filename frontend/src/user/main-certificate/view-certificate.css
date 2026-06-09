@@ -1,0 +1,56 @@
+.student-certificates-container {
+    padding: 20px;
+    padding-top: 90px;
+  }
+  
+  .page-title {
+    /* margin-bottom: 30px; */
+    font-size: 24px;
+    color: #1a5276;
+    border-bottom: 1px solid #eee;
+    /* padding-bottom: 10px; */
+  }
+  
+  .certificates-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+  }
+  
+  .certificate-card {
+    height: 100%;
+  }
+  
+  .certificate-card-cover {
+    height: 150px;
+    background-color: #f0f8ff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+  }
+  
+  .certificate-icon {
+    font-size: 48px;
+    color: #1a5276;
+    margin-bottom: 10px;
+  }
+  
+  .certificate-type {
+    font-weight: bold;
+    text-align: center;
+    color: #1a5276;
+  }
+  
+  @media (max-width: 768px) {
+    .certificates-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+  @media (max-width:326px) {
+    .page-title{
+      font-size: 20px;
+    }
+    
+  }

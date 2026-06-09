@@ -1,0 +1,236 @@
+.project-nest {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+  }
+  
+  .slideshow {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .slideshow-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: relative;
+  }
+  
+  .bottom-bars {
+    position: absolute;
+    bottom: 80px; /* Move bars closer to the bottom */
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+  }
+  
+  .bar {
+    width: 50px;
+    height: 6px;
+    border-radius: 3px;
+  }
+  
+  .yellow {
+    background-color: #003049;
+  }
+  
+  .white {
+    background-color: white;
+  }
+  
+  .overlay {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    padding: 20px;
+  }
+  
+  .content {
+    position: relative;
+    font-size: 1.5rem;
+    top: 130px;
+    left: 50px; /* Move text slightly to the right */
+  }
+
+  
+  
+  .letter {
+    display: inline-block;
+    opacity: 0;
+    animation: reveal 0.5s ease forwards;
+    animation-delay: calc(var(--char-index) * 0.05s);
+  }
+  
+  .space {
+    display: inline-block;
+    width: 0.5rem;
+  }
+  
+ .content h1, .subtitle, .description {
+    opacity: 0;
+    animation: reveal 1s ease forwards;
+    animation-delay: 0.5s;
+  }
+  
+  .subtitle {
+    animation-delay: 1.5s;
+  }
+  
+  .description-hero {
+    animation-delay: 2.5s;
+  }
+  
+  @keyframes reveal {
+    0% {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .nav-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%) scale(0.8);
+    padding: 0;
+    border: none;
+    background: none;
+    cursor: pointer;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    opacity: 0;
+    color: #ffffff;
+  }
+  
+  .nav-button:hover {
+    transform: translateY(-50%) scale(1.1);
+    opacity: 1;
+  }
+  
+  .prev-button {
+    left: 1rem;
+  }
+  
+  .next-button {
+    right: 1rem;
+  }
+  
+  .project-nest:hover .nav-button {
+    opacity: 1;
+    transform: translateY(-50%) scale(1);
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 1440px) {
+    .content {
+      font-size: 1.4rem;
+    }
+  }
+  
+  @media (max-width: 1200px) {
+    .content {
+      font-size: 1.3rem;
+    }
+  }
+  
+  @media (max-width: 1024px) {
+    .content {
+      font-size: 1.2rem;
+      padding: 15px;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .content {
+      font-size: 1rem;
+      padding: 10px;
+    }
+    .nav-button {
+      padding: 0.4rem;
+    }
+  }
+
+  @media (max-width: 426px) {
+    .overlay {
+      padding: 0%;
+      justify-content: center;
+      align-items: center;
+
+    }
+    .content {
+      font-size: 0.9rem; /* Smaller font size for better readability */
+      padding: 10px; /* Reduce padding to fit smaller screens */
+      left: 0; /* Remove left offset */
+    top: 0; /* Remove top offset */
+    text-align: center; /* Center-align text */
+    width: 100%; /* Full width */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-height: 100%; /* Limit height to prevent overflow */
+    }
+  
+    .nav-button {
+      padding: 0.3rem; /* Smaller padding for navigation buttons */
+      transform: translateY(-50%) scale(0.7); /* Scale down buttons */
+    }
+  
+    .bottom-bars {
+      bottom: 20px; /* Move bars slightly up to fit content */
+      gap: 5px; /* Reduce gap between bars */
+    }
+  
+    .bar {
+      width: 30px; /* Narrower bars */
+      height: 4px; /* Shorter height */
+    }
+  
+    .content h1 {
+      font-size: 2.2rem; /* Adjust heading size */
+    }
+  
+    .subtitle, .description {
+      font-size: 0.8rem; /* Smaller font size for subtitles and description */
+    }
+  
+    .slideshow-image {
+      object-fit: cover;
+      height: 100vh; /* Ensure the image fills the viewport */
+    }
+  }
+
+  @media (max-width: 320px) {
+    .content {
+      font-size: 0.8rem;
+    }
+  
+   .content h1 {
+      font-size: 1.5rem;
+    }
+  
+    .subtitle, .description {
+      font-size: 0.7rem;
+    }
+
+    .bottom-bars {
+      bottom: 5px;
+    }
+  
+    .bar {
+      width: 25px;
+      height: 3px;
+    }
+  }

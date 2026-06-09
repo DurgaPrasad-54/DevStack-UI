@@ -1,0 +1,61 @@
+.notifications-container {
+  margin-top: 20px;
+  width: 100%; /* Use full width of the parent */
+  max-width: 800px; /* Set a maximum width if needed */
+  margin-left: auto; /* Center the container */
+  margin-right: auto; /* Center the container */
+  margin-top: auto;
+  /* background-color: yellow; */
+  padding-top: 100px;
+}
+
+.notifications-list {
+  margin-top: 20px;
+}
+
+.notification-item {
+  display: flex;
+  align-items: flex-start; /* Align items to the top */
+  padding: 15px; /* Padding around each notification */
+  border: 1px solid #ddd; /* Optional border for clarity */
+  border-radius: 8px; /* Rounded corners */
+  width: 100%; /* Full width of the container */
+  box-sizing: border-box; /* Include padding and border in the element's total width */
+  margin-bottom: 10px; /* Spacing between notification items */
+  background-color: #fff; /* Background color for clarity */
+}
+
+.notification-item img.avatar {
+  width: 50px; /* Avatar size */
+  height: 50px; /* Avatar size */
+  border-radius: 50%;
+  margin-right: 15px;
+}
+
+.notification-content {
+  flex-grow: 1; /* Allow the content to take available space */
+  display: flex;
+  flex-direction: column; /* Stack title and description vertically */
+  overflow: hidden; /* Prevent overflow */
+}
+
+.notification-content h3 {
+  font-size: 18px; /* Increase font size */
+  font-weight: 600;
+  margin: 0;
+  white-space: normal; /* Allow wrapping */
+  overflow-wrap: break-word; /* Ensure long words break to the next line */
+}
+
+.notification-content p {
+  font-size: 16px; /* Increase font size */
+  color: #666;
+  margin: 5px 0;
+  white-space: normal; /* Allow wrapping */
+  overflow-wrap: break-word; /* Ensure long words break to the next line */
+}
+
+.notification-content small {
+  font-size: 14px; /* Increase font size */
+  color: #999;
+}

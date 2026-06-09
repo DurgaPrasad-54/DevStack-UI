@@ -1,32 +1,24 @@
-/* ==========================================
-   Profile Page Premium Stylesheet
-   ========================================== */
-@import '../../Devstack/devstack-common.css';
-
+/* ProfilePage.css */
 .profile-page {
-  min-height: 100vh;
-  background: var(--ds-bg-secondary, #f8fafc);
-  padding: 80px 20px 40px;
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  font-family: var(--ds-font-family, 'Inter', sans-serif);
+  padding: 80px 20px 20px;
 }
 
 .profile-containers {
+  background-color: #fdfdfd;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
   width: 100%;
-  max-width: 1000px;
-  background: var(--ds-bg-primary, #ffffff);
-  border-radius: 16px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-  overflow: hidden;
-  border: 1px solid rgba(0, 0, 0, 0.05);
+  max-width: 1200px;
+  padding: 90px;
+  margin: 0 auto;
+  margin-top: 20px;
 }
 
 .profile-header {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  padding: 32px;
-  color: white;
+  margin-bottom: 30px;
 }
 
 .header-content {
@@ -41,52 +33,42 @@
   display: flex;
   align-items: center;
   gap: 20px;
-  flex-wrap: wrap;
 }
 
 .profile-image {
-  width: 90px;
-  height: 90px;
+  width: 80px;
+  height: 80px;
   border-radius: 50%;
   object-fit: cover;
-  border: 3px solid rgba(255, 255, 255, 0.8);
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
 }
 
 .profile-title {
-  font-size: 26px;
-  font-weight: 700;
-  color: white;
+  font-size: 24px;
+  font-weight: 600;
+  color: #333;
   margin: 0;
 }
 
 .edit-button {
-  background: rgba(255, 255, 255, 0.2);
+  background-color: #3498db;
   color: white;
-  border: 1.5px solid rgba(255, 255, 255, 0.6);
-  padding: 10px 24px;
-  border-radius: 8px;
-  font-weight: 600;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
   cursor: pointer;
-  transition: all 0.3s ease;
+  font-size: 16px;
+  transition: background-color 0.2s;
 }
 
 .edit-button:hover {
-  background: white;
-  color: #667eea;
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-}
-
-.profile-content {
-  padding: 32px;
+  background-color: #2980b9;
 }
 
 .grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 24px;
-  margin-bottom: 32px;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 25px;
+  margin-bottom: 30px;
 }
 
 .form-group {
@@ -98,130 +80,146 @@
 .form-label {
   font-size: 14px;
   font-weight: 600;
-  color: #4a5568;
-}
-
-.form-input, .form-value {
-  padding: 12px 16px;
-  border-radius: 8px;
-  border: 1.5px solid #e2e8f0;
-  font-size: 15px;
-  color: #1a202c;
-  background: #f8fafc;
-  transition: all 0.3s ease;
-}
-
-.form-input:focus {
-  outline: none;
-  border-color: #667eea;
-  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.15);
-  background: white;
-}
-
-.form-input.disabled, .form-value {
-  background: #f1f5f9;
-  color: #64748b;
-  border-color: #e2e8f0;
-  cursor: not-allowed;
+  color: #666;
 }
 
 .form-value {
-  min-height: 48px;
+  padding: 12px;
+  background-color: #f8f9fa;
+  border-radius: 6px;
+  border: 1px solid #dee2e6;
+  font-size: 16px;
+  color: #333;
+}
+
+.form-input {
+  padding: 12px;
+  border: 1px solid #dee2e6;
+  border-radius: 6px;
+  font-size: 16px;
+}
+
+/* Enhanced Contact Info Section */
+.contact-info {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 24px;
+  margin-top: 24px;
+}
+
+.contact-item {
   display: flex;
   align-items: center;
+  gap: 6px;
+  font-size: 1.1rem;
+}
+
+.contact-item:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+.contact-item a {
+  color: #4a5568;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+
+.contact-item a:hover {
+  text-decoration: underline;
+}
+
+.profile-page-icon {
+  color: #007bff;
+  font-size: 1.3rem;
+  vertical-align: middle;
+}
+
+.save-button {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.2s;
+}
+
+.save-button:hover {
+  background-color: #388E3C;
 }
 
 .button-group {
   display: flex;
-  justify-content: flex-end;
-}
-
-.save-button {
-  background: #667eea;
-  color: white;
-  border: none;
-  padding: 12px 32px;
-  border-radius: 8px;
-  font-weight: 600;
-  font-size: 16px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.2);
-}
-
-.save-button:hover {
-  background: #5a67d8;
-  transform: translateY(-2px);
-  box-shadow: 0 6px 16px rgba(102, 126, 234, 0.3);
-}
-
-.contact-icons {
-  display: flex;
-  gap: 20px;
-  flex-wrap: wrap;
-  padding-top: 24px;
-  border-top: 1px solid #e2e8f0;
-}
-
-.icon-link {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  text-decoration: none;
-  color: #4a5568;
-  font-size: 15px;
-  transition: color 0.3s ease;
-}
-
-.icon-link:hover {
-  color: #667eea;
-}
-
-.icon-circle {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  background: #f0f4ff;
-  color: #667eea;
-  display: flex;
-  align-items: center;
   justify-content: center;
-  font-size: 18px;
-  transition: all 0.3s ease;
+  margin-top: 20px;
 }
 
-.icon-link:hover .icon-circle {
-  background: #667eea;
-  color: white;
-  transform: scale(1.1);
+.form-input.disabled {
+  background-color: #f5f5f5;
+  color: #666;
+  cursor: not-allowed;
+  border: 1px solid #ddd;
 }
 
-.icon-text {
-  font-weight: 500;
-}
-
-/* ==========================================
-   Responsive Adjustments
-   ========================================== */
+/* Responsive styles */
 @media (max-width: 768px) {
-  .profile-page {
-    padding: 60px 16px 20px;
+  .profile-containers {
+    padding: 40px 30px;
   }
   
-  .profile-header {
-    padding: 24px;
+  .header-content {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
   }
-  
+
+  .profile-info {
+    flex-direction: column;
+    text-align: center;
+  }
+
   .profile-title {
     font-size: 22px;
   }
-  
+
   .grid {
     grid-template-columns: 1fr;
-    gap: 16px;
+    gap: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .profile-page {
+    padding: 60px 10px 10px;
+  }
+
+  .profile-containers {
+    padding: 30px 15px;
+  }
+
+  .profile-image {
+    width: 60px;
+    height: 60px;
+  }
+
+  .profile-title {
+    font-size: 20px;
+  }
+
+  .contact-info {
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    padding: 20px 10px;
   }
   
-  .profile-content {
-    padding: 24px;
+  .contact-item {
+    width: 100%;
+    justify-content: center;
   }
 }

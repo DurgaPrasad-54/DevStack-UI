@@ -1,0 +1,258 @@
+/* ProfilePage.css - Complete overhaul for responsiveness */
+.profile-page {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 20px;
+  width: 100%;
+  box-sizing: border-box;
+  padding-top: 90px;
+}
+
+.profile-container {
+  background-color: #fdfdfd;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  width: 100%;
+  max-width: 1200px;
+  padding: 20px;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+.profile-header {
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 15px;
+  width: 100%;
+}
+
+.profile-info {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.profile-image {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.profile-title {
+  font-size: 22px;
+  font-weight: 600;
+  color: #333;
+  margin: 0;
+  word-break: break-word;
+}
+
+.edit-button {
+  background-color: #3498db;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.2s;
+}
+
+.edit-button:hover {
+  background-color: #2980b9;
+}
+
+/* Simplified grid layout to ensure fields fit */
+.grid {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+  margin-bottom: 25px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 100%;
+}
+
+.form-label {
+  font-size: 14px;
+  font-weight: 600;
+  color: #666;
+}
+
+.form-value {
+  padding: 12px;
+  background-color: #f8f9fa;
+  border-radius: 6px;
+  border: 1px solid #dee2e6;
+  font-size: 16px;
+  color: #333;
+  width: 100%;
+  box-sizing: border-box;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  word-break: break-word;
+}
+
+.form-input {
+  padding: 12px;
+  border: 1px solid #dee2e6;
+  border-radius: 6px;
+  font-size: 16px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.contact-info {
+  display: none;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.contact-item a {
+  color: #4a5568;
+  text-decoration: none;
+  font-size: 16px;
+  transition: color 0.2s;
+}
+
+.contact-item a:hover {
+  color: #2d3748;
+}
+
+.profile-page-icon {
+  color: #3498db;
+  font-size: 20px;
+}
+
+.save-button {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.2s;
+  max-width: 200px;
+}
+
+.save-button:hover {
+  background-color: #388E3C;
+}
+
+.form-input.disabled {
+  background-color: #f5f5f5;
+  color: #666;
+  cursor: not-allowed;
+  border: 1px solid #ddd;
+}
+
+.loading-container, .error-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 60vh;
+}
+
+.loading-text, .error-text {
+  font-size: 18px;
+  color: #666;
+}
+
+.button-groupsssss {
+  display: flex;
+  justify-content: flex-start;
+  width: 100%;
+}
+
+/* Media query for tablet and larger screens */
+@media (min-width: 768px) {
+  .profile-container {
+    padding: 30px;
+  }
+  
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+  }
+}
+
+/* Mobile specific overrides */
+@media (max-width: 480px) {
+  .profile-page {
+    padding: 10px;
+  }
+  .header-content{
+    margin-top: 50px;
+  }
+
+  .profile-container {
+    padding: 50px;
+    border-radius: 8px;
+  }
+
+  .profile-image {
+    width: 50px;
+    height: 50px;
+  }
+
+  .profile-title {
+    font-size: 18px;
+  }
+
+  .edit-button, .save-button {
+    width: 100%;
+    max-width: none;
+  }
+  
+  .header-content {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .profile-info {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .button-groupsssss {
+    justify-content: center;
+  }
+}
+
+
+@media (max-width: 321px) {
+  .profile-container{
+    padding: 10px;
+  }
+  .header-content{
+    margin-top: 70px;
+  }
+}
+@media (min-width:321px) and (max-width: 376px) {
+  .profile-container{
+    padding: 10px;
+  }
+  .header-content{
+    margin-top: 70px;
+  }
+}

@@ -17,13 +17,11 @@ const RoleBasedProtectedRoute = ({ allowedRoles }) => {
     // Redirect to the dashboard based on their role
     let redirectPath;
     if (userRole === 'admin') {
-      redirectPath = '/hackadmin';
+      redirectPath = '/admin';
     } else if (userRole === 'mentor') {
-      redirectPath = '/hackmentor';
-    } else if (userRole === 'coordinator') {
-      redirectPath = '/coordinator';
+      redirectPath = '/mentor';
     } else {
-      redirectPath = '/hackstudent';
+      redirectPath = '/user';
     }
     return <Navigate to={redirectPath} replace />;
   }

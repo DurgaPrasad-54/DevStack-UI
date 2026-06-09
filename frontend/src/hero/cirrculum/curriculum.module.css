@@ -1,0 +1,74 @@
+
+.curriculumSection {
+    scroll-margin-top: 7rem; /* 28px * 0.25 = 7rem */
+    margin-bottom: 3rem;
+  }
+  
+  @media (min-width: 640px) {
+    .curriculumSection {
+      margin-bottom: 0rem; /* 40px * 0.25 = 10rem */
+    }
+  }
+  
+  .heading {
+    text-align: center;
+    font-size: 32px;
+    color: #003049;
+    margin-bottom: 20px;
+  }
+  
+  .timelineTitle {
+    font-weight: 700;
+    color: #003039;
+    text-transform: capitalize;
+  }
+  
+  .timelineLocation {
+    font-weight: normal;
+    margin-top: 0;
+  }
+  
+  .timelineDescription {
+    margin-top: 0.25rem !important;
+    font-weight: normal;
+    color: rgb(55, 65, 81);
+  }
+  
+ /* From Uiverse.io by barisdogansutcu */ 
+ .btn {
+    display: flex;
+    justify-content: center; /* Center the button horizontally */
+    margin-top: 20px; /* Optional: Add some margin for spacing */
+  }
+
+.readMoreButton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    font-family: inherit;
+    font-size: 13px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.4px;
+    color: #7e97b8;
+    background-color: #e0e8ef;
+    border-style: solid;
+    border-width: 2px 2px 2px 2px;
+    border-color: rgba(255, 255, 255, 0.333);
+    border-radius: 50px 50px 50px 50px;
+    padding: 12px 22px 12px 22px;
+    transform: translate(0px, 0px) rotate(0deg);
+    transition: 0.2s;
+    box-shadow: -4px -2px 16px 0px #ffffff, 4px 2px 16px 0px rgb(95 157 231 / 48%);
+   }
+   
+   .readMoreButton:hover {
+    color: #516d91;
+    background-color: #E5EDF5;
+    box-shadow: -2px -1px 8px 0px #ffffff, 2px 1px 8px 0px rgb(95 157 231 / 48%);
+   }
+   
+   .readMoreButton:active {
+    box-shadow: none;
+   }
