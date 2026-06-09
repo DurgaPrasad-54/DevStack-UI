@@ -1,0 +1,183 @@
+@import '../../devstack-common.css';
+
+/* ================================
+   Notification Management Page Styles
+   ================================ */
+
+.notification-management-page {
+  padding: 0;
+  margin: 0;
+  font-family: var(--ds-font-family);
+}
+
+/* Form Container */
+.notification-management-page .form-container {
+  margin: 0 auto;
+  padding: var(--ds-space-6);
+  padding-top: var(--ds-space-5);
+  max-width: 1200px;
+  background-color: var(--ds-bg-primary);
+  border-radius: var(--ds-radius-xl);
+  box-shadow: var(--ds-shadow);
+}
+
+/* Top View Notifications Button */
+.notification-management-page .view-notifications-btn-wrapper {
+  display: flex;
+  align-items: center;
+  margin-bottom: var(--ds-space-5);
+}
+
+/* Ant Form Headings */
+.notification-management-page h2.ant-typography {
+  margin-bottom: var(--ds-space-2);
+  color: var(--ds-text-primary);
+  font-weight: var(--ds-font-bold);
+}
+
+.notification-management-page h4.ant-typography {
+  margin-top: var(--ds-space-5);
+  margin-bottom: var(--ds-space-3);
+  color: var(--ds-text-primary);
+  font-weight: var(--ds-font-semibold);
+}
+
+/* Divider Styling */
+.notification-management-page .ant-divider {
+  margin: var(--ds-space-6) 0;
+}
+
+/* Buttons */
+.notification-management-page .ant-btn {
+  border-radius: var(--ds-radius-lg);
+  font-weight: var(--ds-font-medium);
+}
+
+.notification-management-page .ant-btn-primary {
+  background-color: var(--ds-primary);
+  border-color: var(--ds-primary);
+}
+
+.notification-management-page .ant-btn-primary:hover,
+.notification-management-page .ant-btn-primary:focus {
+  background-color: var(--ds-primary-hover);
+  border-color: var(--ds-primary-hover);
+}
+
+.notification-management-page .ant-btn-dangerous {
+  background-color: var(--ds-danger);
+  border-color: var(--ds-danger);
+}
+
+.notification-management-page .ant-btn-dangerous:hover,
+.notification-management-page .ant-btn-dangerous:focus {
+  background-color: #b91c1c;
+  border-color: #b91c1c
+}
+
+/* Table */
+.notification-management-page .ant-table {
+  margin-top: var(--ds-space-5);
+  border-radius: var(--ds-radius-xl);
+  overflow: hidden;
+}
+
+.notification-management-page .ant-table-thead > tr > th {
+  background: var(--ds-primary) !important;
+  color: var(--ds-text-inverse) !important;
+  font-weight: var(--ds-font-semibold);
+  text-align: center;
+}
+
+.notification-management-page .ant-table-tbody > tr > td {
+  text-align: center;
+  padding: var(--ds-space-3) var(--ds-space-2);
+}
+
+.notification-management-page .ant-table-tbody > tr:hover > td {
+  background-color: var(--ds-gray-50);
+}
+
+/* Popconfirm */
+.notification-management-page .ant-popover-message-title {
+  font-weight: var(--ds-font-medium);
+  color: var(--ds-text-secondary);
+}
+
+/* Toast Container positioning */
+.notification-management-page .Toastify__toast-container {
+  top: 80px;
+}
+
+/* Table Scroll Container for Mobile */
+.notification-management-page .table-scroll-container {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Mobile Responsive Styles */
+@media screen and (max-width: 768px) {
+  .notification-management-page .form-container {
+    padding: 16px;
+  }
+
+  .notification-management-page .table-scroll-container {
+    margin: 0 -16px;
+    padding: 0 16px;
+  }
+
+  .notification-management-page .ant-table {
+    min-width: 600px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .notification-management-page .form-container {
+    padding: 12px;
+  }
+
+  .notification-management-page .table-scroll-container {
+    margin: 0 -12px;
+    padding: 0 12px;
+  }
+
+  .notification-management-page .ant-table {
+    min-width: 550px;
+  }
+
+  .notification-management-page .ant-table-thead > tr > th,
+  .notification-management-page .ant-table-tbody > tr > td {
+    padding: 10px 6px;
+    font-size: 13px;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .notification-management-page .form-container {
+    padding: 10px;
+  }
+
+  .notification-management-page .table-scroll-container {
+    margin: 0 -10px;
+    padding: 0 10px;
+  }
+
+  .notification-management-page .ant-table {
+    min-width: 500px;
+  }
+
+  .notification-management-page .ant-table-thead > tr > th,
+  .notification-management-page .ant-table-tbody > tr > td {
+    padding: 8px 4px;
+    font-size: 12px;
+  }
+
+  .notification-management-page h2.ant-typography {
+    font-size: 20px;
+  }
+
+  .notification-management-page h4.ant-typography {
+    font-size: 16px;
+  }
+}

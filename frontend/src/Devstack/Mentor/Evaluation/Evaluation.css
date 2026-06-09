@@ -1,0 +1,528 @@
+/* ===========================
+   Mentor Evaluation Page Styles
+   =========================== */
+
+.mentor-evaluation-container {
+  padding: 24px;
+  min-height: 100vh;
+  background: #f5f7fa;
+}
+
+.evaluation-table-wrapper {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  width: 100%;
+}
+
+.evaluation-table-wrapper .ant-table-wrapper {
+  overflow-x: auto;
+  width: 100%;
+}
+
+/* Table responsive styles */
+.evaluation-table-wrapper .ant-table-content {
+  overflow-x: auto;
+}
+
+.evaluation-table-wrapper .ant-table-thead > tr > th {
+  background: #f0f2f5;
+  font-weight: 600;
+  white-space: nowrap;
+  padding: 12px 16px;
+}
+
+.evaluation-table-wrapper .ant-table-tbody > tr > td {
+  padding: 12px 16px;
+  word-break: break-word;
+}
+
+/* Mobile Responsive Styles */
+@media (max-width: 768px) {
+  .mentor-evaluation-container {
+    padding: 16px;
+  }
+
+  .evaluation-table-wrapper {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    overflow-x: auto;
+  }
+
+  .evaluation-table-wrapper .ant-table {
+    font-size: 13px;
+  }
+
+  /* Hide fixed column scrollbar gap issue */
+  .evaluation-table-wrapper .ant-table-fixed-left,
+  .evaluation-table-wrapper .ant-table-fixed-right {
+    box-shadow: none;
+  }
+
+  .evaluation-table-wrapper .ant-table-thead > tr > th {
+    padding: 10px 10px;
+    font-size: 13px;
+    white-space: nowrap;
+  }
+
+  .evaluation-table-wrapper .ant-table-tbody > tr > td {
+    padding: 10px 10px;
+    font-size: 13px;
+  }
+
+  /* Score column: stack tag and button */
+  .evaluation-table-wrapper .ant-space {
+    flex-wrap: wrap;
+    gap: 6px !important;
+  }
+
+  .evaluation-table-wrapper .ant-btn-sm {
+    font-size: 12px;
+  }
+
+  /* Adjust tag sizes */
+  .evaluation-table-wrapper .ant-tag {
+    font-size: 11px;
+    padding: 2px 6px;
+    margin: 0;
+  }
+
+  /* Statistics cards */
+  .evaluation-stats-row .ant-col {
+    margin-bottom: 12px;
+  }
+
+  .evaluation-stats-row .ant-statistic {
+    text-align: center;
+  }
+
+  .evaluation-stats-row .ant-statistic-title {
+    font-size: 13px;
+  }
+
+  .evaluation-stats-row .ant-statistic-content {
+    font-size: 20px;
+  }
+
+  /* Select hackathon */
+  .evaluation-select-wrapper {
+    margin-bottom: 16px;
+  }
+
+  .evaluation-select-wrapper .ant-select {
+    width: 100%;
+  }
+}
+
+@media (max-width: 576px) {
+  .mentor-evaluation-container {
+    padding: 10px;
+  }
+
+  /* Kill ALL overflow/width constraints on table ancestors */
+  .evaluation-table-wrapper,
+  .evaluation-table-wrapper .ant-table-wrapper,
+  .evaluation-table-wrapper .ant-spin-nested-loading,
+  .evaluation-table-wrapper .ant-spin-container,
+  .evaluation-table-wrapper .ant-table,
+  .evaluation-table-wrapper .ant-table-container,
+  .evaluation-table-wrapper .ant-table-content,
+  .evaluation-table-wrapper .ant-table-body {
+    overflow: visible !important;
+    overflow-x: visible !important;
+    width: 100% !important;
+    min-width: unset !important;
+    max-width: 100% !important;
+  }
+
+  /* Override Ant Design's scroll min-width on the inner table */
+  .evaluation-table-wrapper .ant-table-container table {
+    display: block;
+    width: 100% !important;
+    min-width: unset !important;
+    border: none;
+  }
+
+  /* Card-layout: hide header */
+  .evaluation-table-wrapper .ant-table-thead {
+    display: none;
+  }
+
+  /* Each row = a card */
+  .evaluation-table-wrapper .ant-table-tbody > tr {
+    display: block;
+    background: #fff;
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+    margin-bottom: 12px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.07);
+    overflow: hidden;
+    width: 100% !important;
+  }
+
+  /* Each cell = full-width block inside the card */
+  .evaluation-table-wrapper .ant-table-tbody > tr > td {
+    display: block;
+    width: 100% !important;
+    min-width: unset !important;
+    padding: 10px 14px;
+    border-bottom: 1px solid #f0f0f0;
+    font-size: 13px;
+    box-sizing: border-box;
+    word-break: break-word;
+    overflow-wrap: break-word;
+    white-space: normal !important;
+  }
+
+  .evaluation-table-wrapper .ant-table-tbody > tr > td:last-child {
+    border-bottom: none;
+  }
+
+  /* Remove table container border */
+  .evaluation-table-wrapper .ant-table-container {
+    border: none !important;
+    border-right: none !important;
+  }
+
+  .evaluation-table-wrapper .ant-table-container::before,
+  .evaluation-table-wrapper .ant-table-container::after {
+    display: none;
+  }
+
+  .evaluation-table-wrapper .ant-table-container tbody {
+    display: block;
+    width: 100%;
+  }
+
+  /* Score + button row */
+  .evaluation-table-wrapper .ant-space {
+    flex-wrap: wrap;
+    gap: 6px !important;
+    align-items: center;
+  }
+
+  /* Tags */
+  .evaluation-table-wrapper .ant-tag {
+    font-size: 12px;
+    padding: 2px 8px;
+    margin: 0;
+  }
+
+  /* Email / links: no overflow */
+  .evaluation-table-wrapper a,
+  .evaluation-table-wrapper .ant-typography {
+    word-break: break-word;
+    overflow-wrap: break-word;
+  }
+
+  /* Pagination */
+  .evaluation-table-wrapper .ant-pagination {
+    margin: 12px 0 0 0;
+    text-align: center;
+    padding-bottom: 4px;
+  }
+
+  .evaluation-table-wrapper .ant-pagination-item,
+  .evaluation-table-wrapper .ant-pagination-prev,
+  .evaluation-table-wrapper .ant-pagination-next {
+    min-width: 28px;
+    height: 28px;
+    line-height: 26px;
+    font-size: 12px;
+  }
+
+  /* Alerts */
+  .evaluation-container .ant-alert {
+    font-size: 12px;
+    padding: 12px 16px;
+  }
+
+  .evaluation-container .ant-alert-message {
+    font-size: 13px;
+    margin-bottom: 4px;
+  }
+
+  .evaluation-container .ant-alert-description {
+    font-size: 12px;
+  }
+
+  .evaluation-stats-row .ant-statistic-content {
+    font-size: 18px;
+  }
+
+  /* Descriptions: stack label and value, fix date breaking */
+  .evaluation-container .ant-descriptions-row {
+    display: block;
+  }
+
+  .evaluation-container .ant-descriptions-item {
+    display: block;
+    padding-bottom: 8px;
+  }
+
+  .evaluation-container .ant-descriptions-item-label,
+  .evaluation-container .ant-descriptions-item-content {
+    display: inline;
+    word-break: break-word;
+    overflow-wrap: break-word;
+  }
+
+  .evaluation-container .ant-descriptions-item-label::after {
+    content: ': ';
+  }
+}
+
+@media (max-width: 480px) {
+  .mentor-evaluation-container {
+    padding: 8px;
+  }
+
+  .evaluation-table-wrapper .ant-table-tbody > tr > td {
+    padding: 8px 12px;
+    font-size: 12px;
+  }
+
+  .evaluation-table-wrapper .ant-btn-sm {
+    font-size: 11px;
+    padding: 2px 8px;
+    height: auto;
+  }
+
+  .evaluation-table-wrapper .ant-tag {
+    font-size: 11px;
+    padding: 1px 6px;
+  }
+
+  /* Card padding */
+  .evaluation-container .ant-card-body {
+    padding: 12px;
+    margin-top: 30px;
+  }
+
+  /* Modal adjustments */
+  .evaluation-modal .ant-modal-body {
+    padding: 16px;
+    
+  }
+
+  .evaluation-modal .ant-form-item {
+    margin-bottom: 12px;
+  }
+}
+
+@media (max-width: 375px) {
+  .mentor-evaluation-container {
+    padding: 6px;
+  }
+
+  .evaluation-table-wrapper .ant-table-tbody > tr > td {
+    padding: 7px 10px;
+    font-size: 11px;
+  }
+
+  .evaluation-table-wrapper .ant-btn-sm {
+    font-size: 10px;
+    padding: 2px 6px;
+  }
+
+  .evaluation-stats-row .ant-statistic-content {
+    font-size: 16px;
+  }
+}
+
+/* Evaluation Modal Styles */
+.evaluation-modal .ant-modal-content {
+  border-radius: 12px;
+}
+
+.evaluation-modal .ant-modal-header {
+  border-radius: 12px 12px 0 0;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-bottom: none;
+  padding: 20px 24px;
+}
+
+.evaluation-modal .ant-modal-title {
+  color: white;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.evaluation-modal .ant-modal-close {
+  color: white;
+}
+
+.evaluation-modal .ant-modal-close:hover {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+/* Submission Detail Modal */
+.submission-detail-modal .ant-modal-content {
+  border-radius: 12px;
+}
+
+.submission-detail-modal .ant-modal-header {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-bottom: none;
+  padding: 20px 24px;
+  border-radius: 12px 12px 0 0;
+}
+
+.submission-detail-modal .ant-modal-title {
+  color: white;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.submission-detail-modal .ant-modal-close {
+  color: white;
+}
+
+.submission-detail-modal .ant-modal-close:hover {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+/* Document list styles */
+.document-list-item {
+  padding: 12px;
+  border: 1px solid #e8e8e8;
+  border-radius: 8px;
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: all 0.3s;
+}
+
+.document-list-item:hover {
+  border-color: #667eea;
+  box-shadow: 0 2px 8px rgba(102, 126, 234, 0.15);
+}
+
+.document-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex: 1;
+  min-width: 0;
+}
+
+.document-name {
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.document-actions {
+  display: flex;
+  gap: 8px;
+}
+
+@media (max-width: 576px) {
+  .document-list-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .document-info {
+    width: 100%;
+  }
+
+  .document-actions {
+    width: 100%;
+    justify-content: flex-end;
+  }
+
+  .evaluation-modal .ant-modal-header,
+  .submission-detail-modal .ant-modal-header {
+    padding: 16px 20px;
+  }
+
+  .evaluation-modal .ant-modal-title,
+  .submission-detail-modal .ant-modal-title {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 320px) {
+  .mentor-evaluation-container {
+    padding: 4px;
+  }
+
+  .evaluation-table-wrapper .ant-table-tbody > tr > td {
+    padding: 6px 8px;
+    font-size: 11px;
+  }
+
+  .evaluation-table-wrapper .ant-btn-sm {
+    font-size: 10px;
+    padding: 2px 5px;
+    height: auto;
+  }
+
+  .evaluation-table-wrapper .ant-tag {
+    font-size: 10px;
+    padding: 1px 4px;
+  }
+
+  /* Stat cards: single column */
+  .evaluation-stats-row .ant-col {
+    flex: 0 0 100%;
+    max-width: 100%;
+    margin-bottom: 8px;
+  }
+
+  .evaluation-stats-row .ant-statistic-content {
+    font-size: 15px;
+  }
+
+  .evaluation-stats-row .ant-statistic-title {
+    font-size: 11px;
+  }
+
+  .evaluation-container .ant-card-body {
+    padding: 8px;
+  }
+
+  .evaluation-modal .ant-modal,
+  .submission-detail-modal .ant-modal {
+    width: 98vw !important;
+    margin: 0 auto;
+  }
+
+  .evaluation-modal .ant-modal-header,
+  .submission-detail-modal .ant-modal-header {
+    padding: 12px 14px;
+  }
+
+  .evaluation-modal .ant-modal-title,
+  .submission-detail-modal .ant-modal-title {
+    font-size: 14px;
+  }
+
+  .evaluation-modal .ant-modal-body,
+  .submission-detail-modal .ant-modal-body {
+    padding: 10px;
+  }
+
+  .evaluation-table-wrapper .ant-pagination-item,
+  .evaluation-table-wrapper .ant-pagination-prev,
+  .evaluation-table-wrapper .ant-pagination-next {
+    min-width: 24px;
+    height: 24px;
+    line-height: 22px;
+    font-size: 11px;
+  }
+
+  .document-list-item {
+    padding: 8px;
+  }
+
+  .document-actions {
+    flex-direction: column;
+    gap: 4px;
+  }
+}

@@ -1,0 +1,981 @@
+@import '../../devstack-common.css';
+
+.viewhackathons-container {
+  margin: 0 auto;
+  width: 100%;
+  max-width: 100%;
+  background-color: var(--ds-bg-secondary);
+  min-height: calc(100vh - 80px);
+  padding: var(--ds-space-6);
+  font-family: var(--ds-font-family);
+}
+
+.view-page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--ds-space-6);
+  flex-wrap: wrap;
+  gap: 16px;
+  padding: 0;
+  background: transparent;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+.view-page-header .ant-typography {
+  color: var(--ds-text-primary) !important;
+  margin: 0 !important;
+  font-weight: 700 !important;
+  font-size: 28px !important;
+}
+
+.filter-container {
+  margin-bottom: var(--ds-space-6);
+  text-align: center;
+  display: flex;
+  justify-content: center;
+}
+
+.filter-container .ant-segmented {
+  background: var(--ds-bg-primary);
+  border-radius: 10px;
+  padding: 4px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  border: 1px solid #e8e8e8;
+}
+
+.filter-container .ant-segmented-item-selected {
+  background: linear-gradient(135deg, #1890ff 0%, #0050b3 100%) !important;
+  color: white !important;
+  border-radius: 6px !important;
+  font-weight: 600;
+  box-shadow: 0 2px 8px rgba(24, 144, 255, 0.15);
+}
+
+.loading {
+  text-align: center;
+  margin-top: 50px;
+}
+
+.view-hackathon-card {
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+  display: flex;
+  flex-direction: column;
+  background: var(--ds-bg-primary);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  min-height: 320px;
+  border: 1px solid #efefef;
+  width: 100%;
+}
+
+.view-hackathon-card .ant-card-body {
+  padding: 0 !important;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.view-hackathon-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.15);
+  border-color: #1890ff;
+  z-index: 5;
+}
+
+.view-hackathon-card:hover .hackathon-actions {
+  z-index: 20;
+}
+
+.hackathon-poster {
+  height: 140px;
+  min-height: 140px;
+  background-size: cover;
+  background-position: center top;
+  background-repeat: no-repeat;
+  border-radius: 0;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-end;
+  padding: 8px;
+  background-color: #f0f0f0;
+  margin: 0;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.hackathon-content {
+  padding: 16px 18px 14px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  width: 100%;
+  overflow: hidden;
+  gap: 6px;
+}
+
+.hackathon-name {
+  font-size: 15px;
+  font-weight: 700;
+  margin-bottom: 8px;
+  color: var(--ds-text-primary);
+  line-height: 1.4;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  display: block;
+}
+
+.hackathon-date,
+.hackathon-entry,
+.hackathon-location,
+.hackathon-description,
+.hackathon-prize {
+  margin: 3px 0;
+  font-size: 12px;
+  color: #777;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  line-height: 1.5;
+}
+
+.hackathon-date .anticon,
+.hackathon-location .anticon,
+.hackathon-entry .anticon {
+  color: var(--ds-primary);
+  font-size: var(--ds-text-xs);
+}
+
+.hackathon-regend {
+  margin: var(--ds-space-1) 0;
+  font-size: var(--ds-text-sm);
+  color: var(--ds-warning);
+  font-weight: var(--ds-font-medium);
+}
+
+.hackathon-description {
+  color: var(--ds-text-secondary);
+  flex-grow: 1; /* pushes footer to bottom */
+}
+
+.hackathon-prize span {
+  font-weight: var(--ds-font-bold);
+  color: var(--ds-success);
+}
+
+.hackathon-prizes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--ds-space-3);
+  margin-bottom: var(--ds-space-2);
+}
+
+.hackathon-actions {
+  margin-top: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  padding: 14px 0 0 0;
+  border-top: 1px solid #f0f0f0;
+  width: 100%;
+  position: relative;
+  z-index: 10;
+}
+
+.hackathon-actions button {
+  border-radius: 8px;
+  height: 38px;
+  font-size: 12px;
+  padding: 0 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 1 auto;
+  white-space: nowrap;
+  font-weight: 600;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  border: 1px solid transparent;
+  cursor: pointer;
+  pointer-events: auto;
+  position: relative;
+  z-index: 1;
+  background: #fff;
+  color: #262626;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+.hackathon-actions button:first-child {
+  flex: 1.5;
+  min-width: 110px;
+  background: linear-gradient(135deg, #1890ff 0%, #0050b3 100%) !important;
+  color: white !important;
+  border: none !important;
+  font-weight: 700;
+  font-size: 13px;
+  box-shadow: 0 3px 12px rgba(24, 144, 255, 0.3);
+}
+
+.hackathon-actions button:nth-child(2),
+.hackathon-actions button:nth-child(3) {
+  flex: 0 1 auto;
+  min-width: 40px;
+  width: 40px;
+  height: 38px;
+  padding: 0;
+  border: 2px solid #d9d9d9;
+  background: #fff !important;
+  color: #1890ff !important;
+  border-radius: 8px;
+}
+
+.hackathon-actions button:nth-child(3) {
+  color: #ff4d4f !important;
+  border-color: #ffa8a8 !important;
+}
+
+.hackathon-actions button .anticon {
+  font-size: 16px;
+  margin-right: 6px;
+}
+
+.hackathon-actions button:first-child .anticon {
+  font-size: 14px;
+}
+
+.hackathon-actions button span:not(.anticon) {
+  margin-left: 0;
+  font-size: 13px;
+}
+
+.hackathon-actions button:first-child:hover {
+  background: linear-gradient(135deg, #0050b3 0%, #003a8b 100%) !important;
+  box-shadow: 0 6px 20px rgba(24, 144, 255, 0.35) !important;
+  transform: translateY(-3px);
+}
+
+.hackathon-actions button:nth-child(2):hover {
+  background: #e6f7ff !important;
+  border-color: #1890ff !important;
+  color: #0050b3 !important;
+  transform: translateY(-2px);
+  box-shadow: 0 3px 12px rgba(24, 144, 255, 0.2);
+}
+
+.hackathon-actions button:nth-child(3):hover {
+  background: #fff1f0 !important;
+  border-color: #ff4d4f !important;
+  color: #d9363e !important;
+  transform: translateY(-2px);
+  box-shadow: 0 3px 12px rgba(255, 77, 79, 0.2);
+}
+
+.hackathon-actions button:active {
+  transform: translateY(-1px);
+}
+
+.hackathon-actions button:focus {
+  outline: none;
+}
+
+/* Responsive Layout: Cards per row based on screen size */
+.viewhackathons-container .ant-col {
+  display: flex;
+}
+
+/* Extra large screens: 6 cards per row */
+@media (min-width: 1600px) {
+  .viewhackathons-container .ant-col {
+    flex: 0 0 16.66% !important;
+    max-width: 16.66% !important;
+  }
+}
+
+/* Large screens: 5 cards per row */
+@media (min-width: 1400px) and (max-width: 1599px) {
+  .viewhackathons-container .ant-col {
+    flex: 0 0 20% !important;
+    max-width: 20% !important;
+  }
+}
+
+/* Medium-large screens: 4 cards per row */
+@media (min-width: 1200px) and (max-width: 1399px) {
+  .viewhackathons-container .ant-col {
+    flex: 0 0 25% !important;
+    max-width: 25% !important;
+  }
+}
+
+/* Medium screens: 3 cards per row */
+@media (min-width: 992px) and (max-width: 1199px) {
+  .viewhackathons-container .ant-col {
+    flex: 0 0 33.33% !important;
+    max-width: 33.33% !important;
+  }
+}
+
+/* Tablet screens: 2 cards per row */
+@media (min-width: 768px) and (max-width: 991px) {
+  .viewhackathons-container .ant-col {
+    flex: 0 0 50% !important;
+    max-width: 50% !important;
+  }
+}
+
+/* Small screens: 2 cards per row */
+@media (min-width: 576px) and (max-width: 767px) {
+  .viewhackathons-container .ant-col {
+    flex: 0 0 50% !important;
+    max-width: 50% !important;
+  }
+}
+
+/* Mobile screens: 1 card per row */
+@media (max-width: 575px) {
+  .viewhackathons-container .ant-col {
+    flex: 0 0 100% !important;
+    max-width: 100% !important;
+  }
+}
+
+@media (max-width: 1024px) {
+  .view-hackathon-card {
+    min-height: 290px;
+  }
+}
+
+@media (max-width: 768px) {
+  .viewhackathons-container {
+    padding: 16px;
+  }
+
+  .view-page-header {
+    flex-direction: column;
+    gap: 12px;
+    text-align: center;
+    align-items: stretch;
+    padding: 0;
+  }
+
+  .view-page-header > .ant-typography,
+  .view-page-header > button {
+    width: 100%;
+    margin: 0;
+  }
+
+  .hackathon-poster {
+    height: 120px;
+    min-height: 120px;
+    margin: 0;
+    width: 100%;
+  }
+
+  .hackathon-content {
+    padding: 14px 16px 12px;
+  }
+
+  .view-hackathon-card {
+    min-height: 290px;
+    border-radius: 10px;
+  }
+
+  .hackathon-actions {
+    gap: 10px;
+    padding: 12px 0 0 0;
+  }
+
+  .hackathon-actions button {
+    height: 36px;
+    font-size: 11px;
+    padding: 0 14px;
+  }
+
+  .hackathon-actions button:nth-child(2),
+  .hackathon-actions button:nth-child(3) {
+    width: 36px;
+    height: 36px;
+  }
+}
+
+@media (max-width: 480px) {
+  .viewhackathons-container {
+    padding: 12px;
+  }
+
+  .view-page-header {
+    padding: 0;
+  }
+
+  .hackathon-poster {
+    height: 100px;
+    min-height: 100px;
+    margin: 0;
+    border-radius: 0;
+    width: 100%;
+  }
+
+  .hackathon-name {
+    font-size: 12px;
+  }
+
+  .hackathon-actions {
+    justify-content: space-between;
+    gap: 8px;
+    padding: 10px 0 0 0;
+    flex-wrap: wrap;
+  }
+
+  .hackathon-actions button {
+    height: 34px;
+    font-size: 11px;
+    padding: 0 12px;
+  }
+
+  .hackathon-actions button:first-child {
+    flex: 1;
+    min-width: 90px;
+    font-size: 12px;
+  }
+
+  .hackathon-actions button:nth-child(2),
+  .hackathon-actions button:nth-child(3) {
+    width: 34px;
+    height: 34px;
+    padding: 0;
+  }
+
+  .hackathon-actions button span:not(.anticon) {
+    display: inline;
+  }
+
+  .hackathon-actions button .anticon {
+    margin-right: 3px;
+  }
+
+  .view-hackathon-card {
+    height: auto;
+    border-radius: 6px;
+  }
+
+  .filter-container .ant-segmented {
+    font-size: 11px;
+  }
+}
+
+/* Extra small screens: 320px */
+@media (max-width: 320px) {
+  .viewhackathons-container {
+    padding: 6px;
+  }
+
+  .viewhackathons-container .ant-row {
+    margin-left: -4px !important;
+    margin-right: -4px !important;
+  }
+
+  .viewhackathons-container .ant-col {
+    padding-left: 4px !important;
+    padding-right: 4px !important;
+    margin-bottom: 8px !important;
+  }
+
+  .view-page-header {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .view-page-header .ant-typography {
+    font-size: 16px !important;
+  }
+
+  .view-page-header > button {
+    width: 100%;
+    font-size: 11px;
+    height: 32px;
+  }
+
+  .filter-container {
+    margin-bottom: 12px;
+  }
+
+  .filter-container .ant-segmented {
+    font-size: 10px;
+    padding: 2px;
+  }
+
+  .hackathon-poster {
+    height: 85px;
+    min-height: 85px;
+    margin: 0;
+    width: 100%;
+  }
+
+  .hackathon-content {
+    padding: 4px 8px 6px;
+  }
+
+  .hackathon-name {
+    font-size: 11px;
+    margin-bottom: 4px;
+  }
+
+  .hackathon-date,
+  .hackathon-entry,
+  .hackathon-location,
+  .hackathon-description,
+  .hackathon-prize {
+    font-size: 9px;
+    margin: 2px 0;
+    gap: 6px;
+  }
+
+  .hackathon-date .anticon,
+  .hackathon-location .anticon,
+  .hackathon-entry .anticon {
+    font-size: 9px;
+  }
+
+  .view-hackathon-card {
+    height: auto;
+    border-radius: 4px;
+    font-size: 11px;
+  }
+
+  .hackathon-actions {
+    gap: 3px;
+    padding-top: 4px;
+  }
+
+  .hackathon-poster {
+    height: 85px;
+    min-height: 85px;
+    margin: 0;
+    width: 100%;
+    padding: 6px;
+  }
+
+  .hackathon-content {
+    padding: 8px 10px 6px;
+    gap: 2px;
+  }
+
+  .hackathon-name {
+    font-size: 11px;
+    margin-bottom: 3px;
+  }
+
+  .hackathon-date,
+  .hackathon-entry,
+  .hackathon-location,
+  .hackathon-description,
+  .hackathon-prize {
+    font-size: 9px;
+    margin: 1px 0;
+    gap: 5px;
+  }
+
+  .hackathon-actions {
+    gap: 6px;
+    padding: 8px 0 0 0;
+  }
+
+  .hackathon-actions button {
+    height: 30px;
+    font-size: 10px;
+    padding: 0 10px;
+  }
+
+  .hackathon-actions button:first-child {
+    flex: 1;
+    min-width: 75px;
+    font-size: 11px;
+  }
+
+  .hackathon-actions button:nth-child(2),
+  .hackathon-actions button:nth-child(3) {
+    width: 30px;
+    height: 30px;
+    padding: 0;
+  }
+
+  .hackathon-actions button .anticon {
+    font-size: 14px;
+    margin-right: 2px;
+  }
+
+  .hackathon-actions button:first-child .anticon {
+    font-size: 12px;
+  }
+}
+
+/* Modal Styles */
+.hackathon-modal {
+  z-index: 1050;
+}
+
+.hackathon-modal .ant-modal-mask {
+  background-color: rgba(0, 0, 0, 0.75);
+  z-index: 1049;
+  backdrop-filter: blur(4px);
+}
+
+.hackathon-modal .ant-modal-wrap {
+  z-index: 1050;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hackathon-modal .ant-modal {
+  top: 0;
+  padding: 0;
+  margin: 0;
+  max-width: 520px;
+}
+
+.hackathon-modal .ant-modal-content {
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: none;
+  margin: 0;
+  border: none;
+}
+
+.hackathon-modal .ant-modal-header {
+  background: transparent;
+  border-radius: 0;
+  padding: 16px;
+  border-bottom: none;
+  box-shadow: none;
+}
+
+.hackathon-modal .ant-modal-title {
+  color: #262626 !important;
+  font-weight: 600;
+}
+
+.hackathon-modal .ant-modal-close {
+  color: #595959 !important;
+  top: 12px;
+  right: 12px;
+  width: 32px;
+  height: 32px;
+  background: rgba(0, 0, 0, 0.06);
+  border-radius: 4px;
+  transition: all 0.3s;
+}
+
+.hackathon-modal .ant-modal-close-x {
+  color: #595959 !important;
+  font-size: 16px;
+  line-height: 32px;
+}
+
+.hackathon-modal .ant-modal-close:hover {
+  color: #262626 !important;
+  background: rgba(0, 0, 0, 0.12);
+}
+
+.hackathon-modal .ant-modal-body {
+  padding: 18px;
+  max-height: 65vh;
+  overflow-y: auto;
+  box-shadow: none;
+  border: none;
+}
+
+.hackathon-modal .ant-modal-footer {
+  border-top: 1px solid #e8e8e8;
+  padding: 14px 18px;
+  margin: 0;
+  box-shadow: none;
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  background: #f9f9f9;
+}
+
+.modal-header {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: #fff;
+  font-size: 15px;
+  font-weight: 600;
+  background: linear-gradient(135deg, #1890ff 0%, #096dd9 100%);
+  padding: 8px 16px;
+  border-radius: 6px;
+  box-shadow: 0 2px 8px rgba(24, 144, 255, 0.2);
+}
+
+.modal-content {
+  padding: 0;
+  width: 100%;
+  box-shadow: none;
+  border: none;
+}
+
+.modal-poster {
+  width: 100%;
+  height: 180px;
+  background-size: cover;
+  background-position: center top;
+  background-repeat: no-repeat;
+  border-radius: 0;
+  margin-bottom: 10px;
+  box-shadow: none;
+  border: none;
+  background-color: #f0f0f0;
+}
+
+.modal-details {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 0;
+  width: 100%;
+  box-shadow: none;
+  border: none;
+}
+
+.detail-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 12px 12px;
+  border: none;
+  width: 100%;
+  box-shadow: none;
+  background: #f9f9f9;
+  border-radius: 8px;
+  border-left: 3px solid #1890ff;
+}
+
+.detail-row:last-child {
+  border: none;
+}
+
+.detail-icon {
+  font-size: 18px;
+  color: #1890ff;
+  flex-shrink: 0;
+  width: 22px;
+  margin-top: 2px;
+  display: inline-flex !important;
+}
+
+.detail-icon.warning {
+  color: #fa8c16;
+}
+
+.detail-row strong {
+  display: block;
+  font-size: 10px;
+  color: #999;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 4px;
+  font-weight: 700;
+}
+
+.detail-row p {
+  margin: 0;
+  font-size: 14px;
+  color: #333;
+  line-height: 1.5;
+  font-weight: 500;
+}
+
+.detail-row > div {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  flex: 1;
+}
+
+.warning-text {
+  color: #fa8c16 !important;
+  font-weight: 500;
+}
+
+.detail-section {
+  margin-top: 6px;
+  padding: 14px 16px;
+  border-top: none;
+  width: 100%;
+  background: #f9f9f9;
+  border-radius: 8px;
+}
+
+.detail-section strong {
+  display: block;
+  font-size: 10px;
+  color: #999;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 10px;
+  text-align: center;
+  font-weight: 700;
+}
+
+.detail-section p {
+  margin: 0;
+  font-size: 14px;
+  color: #333;
+  line-height: 1.6;
+  text-align: center;
+  font-weight: 500;
+  margin-bottom: 0;
+}
+
+.modal-prizes {
+  margin-top: 2px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 100%;
+  gap: 8px;
+}
+
+.modal-prizes .ant-tag {
+  margin: 0;
+  font-size: 13px;
+  font-weight: 600;
+  padding: 6px 12px;
+  border-radius: 6px;
+}
+
+@media (max-width: 768px) {
+  .hackathon-modal .ant-modal {
+    max-width: 92%;
+    margin: 0 auto;
+    width: 92% !important;
+  }
+
+  .hackathon-modal .ant-modal-body {
+    padding: 10px;
+    max-height: 60vh;
+  }
+
+  .hackathon-modal .ant-modal-close {
+    top: 10px;
+    right: 10px;
+    width: 28px;
+    height: 28px;
+  }
+
+  .hackathon-modal .ant-modal-close-x {
+    font-size: 14px;
+    line-height: 28px;
+  }
+
+  .modal-header {
+    font-size: 13px;
+    padding: 6px 12px;
+  }
+
+  .modal-poster {
+    height: 140px;
+  }
+
+  .detail-row {
+    gap: 8px;
+    padding: 6px 0;
+  }
+
+  .detail-icon {
+    font-size: 16px;
+    width: 20px;
+  }
+
+  .detail-row strong {
+    font-size: 10px;
+  }
+
+  .detail-row p {
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hackathon-modal .ant-modal {
+    max-width: 95%;
+    margin: 0 auto;
+    width: 95% !important;
+  }
+
+  .hackathon-modal .ant-modal-body {
+    padding: 8px;
+    max-height: 55vh;
+  }
+
+  .hackathon-modal .ant-modal-header {
+    padding: 12px;
+  }
+
+  .hackathon-modal .ant-modal-footer {
+    padding: 10px 12px;
+  }
+
+  .hackathon-modal .ant-modal-close {
+    top: 8px;
+    right: 8px;
+    width: 26px;
+    height: 26px;
+  }
+
+  .hackathon-modal .ant-modal-close-x {
+    font-size: 13px;
+    line-height: 26px;
+  }
+
+  .modal-header {
+    font-size: 12px;
+    gap: 6px;
+    padding: 5px 10px;
+  }
+
+  .modal-poster {
+    height: 120px;
+    margin-bottom: 8px;
+  }
+
+  .detail-row {
+    gap: 6px;
+    padding: 5px 0;
+  }
+
+  .detail-icon {
+    font-size: 14px;
+    width: 18px;
+  }
+
+  .detail-row strong {
+    font-size: 9px;
+  }
+
+  .detail-row p {
+    font-size: 12px;
+  }
+
+  .detail-section strong {
+    font-size: 9px;
+  }
+
+  .detail-section p {
+    font-size: 12px;
+  }
+
+  .modal-prizes .ant-tag {
+    font-size: 10px;
+    padding: 2px 6px;
+  }
+}

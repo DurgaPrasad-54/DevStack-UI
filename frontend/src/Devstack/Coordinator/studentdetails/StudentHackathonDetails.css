@@ -1,0 +1,970 @@
+/* ============================================
+   Student Hackathon Details - Coordinator View
+   ============================================ */
+
+.student-hackathon-details-container {
+  padding: 24px;
+  max-width: 1400px;
+  margin: 0 auto;
+  margin-top: 80px;
+  min-height: calc(100vh - 80px);
+  background-color: #f8fafc;
+}
+
+/* Page Header */
+.page-header {
+  margin-bottom: 24px;
+}
+
+.page-header h1 {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #1e293b;
+  margin-bottom: 8px;
+}
+
+.page-header p {
+  color: #64748b;
+  font-size: 0.95rem;
+}
+
+/* Selection Panel */
+.selection-panel {
+  background: white;
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  margin-bottom: 24px;
+}
+
+.filter-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+@media (max-width: 1024px) {
+  .filter-row {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .filter-row {
+    grid-template-columns: 1fr;
+  }
+}
+
+.filter-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.filter-group label {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #374151;
+}
+
+/* Custom Select */
+.custom-select {
+  position: relative;
+  cursor: pointer;
+}
+
+.select-display {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 16px;
+  background: white;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  color: #374151;
+  transition: all 0.2s;
+}
+
+.select-display:hover {
+  border-color: #3b82f6;
+}
+
+.select-display.disabled {
+  background: #f3f4f6;
+  color: #9ca3af;
+  cursor: not-allowed;
+}
+
+.chevron {
+  color: #9ca3af;
+  transition: transform 0.2s;
+}
+
+.chevron.open {
+  transform: rotate(180deg);
+}
+
+.select-dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: white;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  z-index: 100;
+  max-height: 300px;
+  overflow-y: auto;
+  margin-top: 4px;
+}
+
+.select-option {
+  padding: 12px 16px;
+  cursor: pointer;
+  transition: background 0.15s;
+  font-size: 0.9rem;
+}
+
+.select-option:hover {
+  background: #f3f4f6;
+}
+
+.select-option.selected {
+  background: #eff6ff;
+  color: #3b82f6;
+  font-weight: 500;
+}
+
+/* Student Dropdown */
+.student-dropdown {
+  min-width: 350px;
+}
+
+.search-input-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 16px;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.search-input-wrapper input {
+  flex: 1;
+  border: none;
+  outline: none;
+  font-size: 0.9rem;
+}
+
+.options-list {
+  max-height: 250px;
+  overflow-y: auto;
+}
+
+.student-option {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.student-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.student-name {
+  font-weight: 500;
+  color: #1e293b;
+}
+
+.student-roll {
+  font-size: 0.8rem;
+  color: #64748b;
+}
+
+.hackathon-count {
+  font-size: 0.75rem;
+  color: #3b82f6;
+  background: #eff6ff;
+  padding: 4px 8px;
+  border-radius: 12px;
+}
+
+/* Hackathon Option */
+.hackathon-option {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Loading & Empty States */
+.loading-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 20px;
+  color: #64748b;
+}
+
+.spinner {
+  width: 40px;
+  height: 40px;
+  border: 3px solid #e5e7eb;
+  border-top-color: #3b82f6;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+  margin-bottom: 16px;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 80px 20px;
+  color: #94a3b8;
+  text-align: center;
+}
+
+.empty-state h3 {
+  font-size: 1.25rem;
+  color: #475569;
+  margin: 16px 0 8px;
+}
+
+.empty-state p {
+  max-width: 400px;
+}
+
+.loading-text, .no-results {
+  padding: 16px;
+  text-align: center;
+  color: #64748b;
+}
+
+/* Details Container */
+.details-container {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* Overview Section */
+.overview-section {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+@media (max-width: 1024px) {
+  .overview-section {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .overview-section {
+    grid-template-columns: 1fr;
+  }
+}
+
+.overview-card {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.card-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 16px 20px;
+  background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.card-header h3 {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #374151;
+  margin: 0;
+}
+
+.student-card .card-header {
+  background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
+}
+
+.hackathon-card .card-header {
+  background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%);
+}
+
+.registration-card .card-header {
+  background: linear-gradient(135deg, #fefce8 0%, #fef9c3 100%);
+}
+
+.card-content {
+  padding: 16px 20px;
+}
+
+.info-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.info-row:last-child {
+  margin-bottom: 0;
+}
+
+.info-row .label {
+  font-size: 0.8rem;
+  color: #64748b;
+  min-width: 100px;
+  flex-shrink: 0;
+}
+
+.info-row .value {
+  font-size: 0.9rem;
+  color: #1e293b;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.info-row .value.highlight {
+  color: #3b82f6;
+  font-weight: 600;
+}
+
+.info-row .value.code {
+  font-family: monospace;
+  background: #f3f4f6;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-size: 0.8rem;
+}
+
+.info-row .value.score {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #10b981;
+}
+
+.link-value {
+  color: #3b82f6;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.9rem;
+}
+
+.link-value:hover {
+  text-decoration: underline;
+}
+
+.status-display {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.status-icon {
+  width: 24px;
+  height: 24px;
+}
+
+.status-icon.approved {
+  color: #10b981;
+}
+
+.status-icon.pending {
+  color: #f59e0b;
+}
+
+.status-icon.rejected {
+  color: #ef4444;
+}
+
+/* Status Badges */
+.status-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+.badge-green {
+  background: #d1fae5;
+  color: #065f46;
+}
+
+.badge-yellow {
+  background: #fef3c7;
+  color: #92400e;
+}
+
+.badge-red {
+  background: #fee2e2;
+  color: #b91c1c;
+}
+
+.badge-blue {
+  background: #dbeafe;
+  color: #1e40af;
+}
+
+.badge-purple {
+  background: #ede9fe;
+  color: #5b21b6;
+}
+
+.badge-gray {
+  background: #f3f4f6;
+  color: #4b5563;
+}
+
+/* Section Cards */
+.section-card {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.section-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 24px;
+  background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.section-header h3 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #1e293b;
+  margin: 0;
+  flex: 1;
+}
+
+.section-header .team-name {
+  background: #3b82f6;
+  color: white;
+  padding: 4px 12px;
+  border-radius: 16px;
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+.section-content {
+  padding: 24px;
+}
+
+/* Team Members Grid */
+.team-members-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.member-card {
+  background: #f8fafc;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  padding: 16px;
+  position: relative;
+}
+
+.member-card.team-lead {
+  border-color: #3b82f6;
+  background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
+}
+
+.lead-badge {
+  position: absolute;
+  top: -8px;
+  right: 12px;
+  background: #3b82f6;
+  color: white;
+  padding: 2px 10px;
+  border-radius: 10px;
+  font-size: 0.7rem;
+  font-weight: 600;
+}
+
+.member-name {
+  font-weight: 600;
+  color: #1e293b;
+  margin-bottom: 8px;
+}
+
+.member-detail {
+  font-size: 0.8rem;
+  color: #64748b;
+  margin-bottom: 4px;
+}
+
+.member-links {
+  margin-top: 12px;
+  display: flex;
+  gap: 12px;
+}
+
+.member-links a {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  color: #3b82f6;
+  font-size: 0.8rem;
+  text-decoration: none;
+}
+
+.member-links a:hover {
+  text-decoration: underline;
+}
+
+/* Mentor Info */
+.mentor-info {
+  background: #f0fdf4;
+  border: 1px solid #bbf7d0;
+  border-radius: 10px;
+  padding: 16px 20px;
+}
+
+.mentor-info h4 {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #166534;
+  font-size: 0.9rem;
+  margin-bottom: 12px;
+}
+
+.mentor-details {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.mentor-name {
+  font-weight: 600;
+  color: #1e293b;
+}
+
+.mentor-email, .mentor-phone {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.85rem;
+  color: #64748b;
+}
+
+/* Problem Statement */
+.problem-statement h4 {
+  font-size: 1.1rem;
+  color: #1e293b;
+  margin-bottom: 12px;
+}
+
+.problem-statement .description {
+  color: #4b5563;
+  line-height: 1.6;
+  margin-bottom: 16px;
+}
+
+.difficulty-badge {
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: 16px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: capitalize;
+  margin-right: 12px;
+}
+
+.difficulty-badge.easy {
+  background: #d1fae5;
+  color: #065f46;
+}
+
+.difficulty-badge.medium {
+  background: #fef3c7;
+  color: #92400e;
+}
+
+.difficulty-badge.hard {
+  background: #fee2e2;
+  color: #b91c1c;
+}
+
+.tech-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.tech-tag {
+  background: #e0e7ff;
+  color: #4338ca;
+  padding: 4px 12px;
+  border-radius: 16px;
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
+/* Submission Info */
+.submission-info .info-row.full-width {
+  flex-direction: column;
+  gap: 8px;
+}
+
+.submission-info .description,
+.feedback-text {
+  color: #4b5563;
+  line-height: 1.6;
+  background: #f8fafc;
+  padding: 12px 16px;
+  border-radius: 8px;
+  border-left: 3px solid #3b82f6;
+}
+
+.documents-section {
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 1px solid #e5e7eb;
+}
+
+.documents-section h4 {
+  font-size: 0.9rem;
+  color: #374151;
+  margin-bottom: 12px;
+}
+
+.documents-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.document-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 16px;
+  background: #f8fafc;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  color: #374151;
+}
+
+.doc-size, .doc-type {
+  margin-left: auto;
+  color: #94a3b8;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+}
+
+/* Score Badge in Header */
+.score-badge {
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+  color: white;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-left: auto;
+}
+
+/* Team Contributions Section */
+.team-contributions-section {
+  margin-top: 24px;
+  padding-top: 24px;
+  border-top: 1px solid #e5e7eb;
+}
+
+.team-contributions-section h4 {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1rem;
+  color: #1e293b;
+  margin-bottom: 16px;
+}
+
+.contributions-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 16px;
+}
+
+.contribution-card {
+  background: #f8fafc;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 16px;
+  position: relative;
+  transition: all 0.2s ease;
+}
+
+.contribution-card:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transform: translateY(-2px);
+}
+
+.contribution-card.team-lead {
+  background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
+  border-color: #3b82f6;
+}
+
+.contribution-card .lead-badge {
+  position: absolute;
+  top: -10px;
+  right: 12px;
+  background: #3b82f6;
+  color: white;
+  padding: 3px 12px;
+  border-radius: 12px;
+  font-size: 0.7rem;
+  font-weight: 600;
+}
+
+.contributor-info {
+  margin-bottom: 12px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.contributor-name {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #1e293b;
+  margin-bottom: 4px;
+}
+
+.contributor-details {
+  display: flex;
+  gap: 12px;
+  font-size: 0.8rem;
+  color: #64748b;
+}
+
+.contribution-text {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.contribution-label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #6b7280;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.contribution-text p {
+  font-size: 0.85rem;
+  color: #374151;
+  line-height: 1.5;
+  margin: 0;
+  background: white;
+  padding: 10px 12px;
+  border-radius: 8px;
+  border-left: 3px solid #3b82f6;
+}
+
+.contribution-card.team-lead .contribution-text p {
+  border-left-color: #1d4ed8;
+}
+
+/* Star Rating */
+.star-rating {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.star {
+  color: #e5e7eb;
+}
+
+.star.filled {
+  color: #fbbf24;
+  fill: #fbbf24;
+}
+
+.rating-text {
+  margin-left: 8px;
+  font-size: 0.9rem;
+  color: #64748b;
+}
+
+/* Feedback Display */
+.feedback-display {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.rating-display {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.feedback-text-container {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+/* Certificate Card */
+.certificate-card .section-header {
+  background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+}
+
+.trophy-icon {
+  color: #f59e0b;
+}
+
+.certificate-display {
+  display: flex;
+  gap: 32px;
+  align-items: center;
+}
+
+@media (max-width: 640px) {
+  .certificate-display {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+.certificate-badge {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.award-icon {
+  color: #64748b;
+}
+
+.award-icon.champion {
+  color: #fbbf24;
+}
+
+.award-icon.runner-up {
+  color: #94a3b8;
+}
+
+.award-icon.third-place {
+  color: #cd7f32;
+}
+
+.award-icon.participant {
+  color: #3b82f6;
+}
+
+.achievement-type {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #1e293b;
+}
+
+.certificate-details {
+  flex: 1;
+}
+
+/* No Data Cards */
+.no-data-card {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  background: #f8fafc;
+  border: 1px dashed #cbd5e1;
+  border-radius: 12px;
+  padding: 24px 32px;
+  color: #94a3b8;
+}
+
+.no-data-card p {
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 480px) {
+  .student-hackathon-details-container {
+    padding: 16px;
+    margin-top: 70px;
+  }
+
+  .page-header h1 {
+    font-size: 1.4rem;
+  }
+
+  .selection-panel {
+    padding: 16px;
+  }
+
+  .section-content {
+    padding: 16px;
+  }
+
+  .team-members-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .certificate-display {
+    flex-direction: column;
+  }
+
+  .info-row {
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .info-row .label {
+    min-width: auto;
+  }
+
+  .contributions-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .contribution-card {
+    padding: 14px;
+  }
+
+  .contributor-details {
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .score-badge {
+    font-size: 0.8rem;
+    padding: 4px 12px;
+  }
+}

@@ -1,0 +1,725 @@
+/* UserRoomAllocationBatch.css */
+.coordinator-roomalloc-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 20px 15px 15px 15px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', sans-serif;
+  background-color: #f5f7fa;
+  min-height: 100vh;
+}
+
+/* Form Header */
+.coordinator-roomalloc-form-header {
+  text-align: center;
+  margin-bottom: 20px;
+  color: black;
+}
+
+.coordinator-roomalloc-form-header h1 {
+  margin: 0 0 6px 0;
+  font-size: 1.75rem;
+  font-weight: 600;
+}
+
+.coordinator-roomalloc-form-header p {
+  margin: 0;
+  font-size: 0.95rem;
+  opacity: 0.9;
+}
+
+/* Info Card */
+.coordinator-roomalloc-info-card {
+  background: white;
+  border-radius: 10px;
+  padding: 16px 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+  border-left: 3px solid #667eea;
+}
+
+.coordinator-roomalloc-info-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 12px;
+  margin-bottom: 10px;
+}
+
+.coordinator-roomalloc-info-item {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.coordinator-roomalloc-info-label {
+  font-size: 0.75rem;
+  color: #6b7280;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+}
+
+.coordinator-roomalloc-info-value {
+  font-size: 0.95rem;
+  color: #1f2937;
+  font-weight: 600;
+}
+
+.coordinator-roomalloc-info-note {
+  color: #6b7280 !important;
+  font-style: italic;
+  margin-top: 6px !important;
+  padding-top: 10px;
+  border-top: 1px solid #e5e7eb;
+  font-size: 0.85rem;
+}
+
+/* Form Styling */
+.coordinator-roomalloc-form {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  overflow: hidden;
+}
+
+.coordinator-roomalloc-form-section {
+  margin-bottom: 0;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.coordinator-roomalloc-form-section:last-child {
+  border-bottom: none;
+}
+
+.coordinator-roomalloc-section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 20px;
+  background: #f9fafb;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.coordinator-roomalloc-section-header h2 {
+  margin: 0;
+  color: #1f2937;
+  font-size: 1.15rem;
+  font-weight: 600;
+}
+
+/* Create Batch Section */
+.coordinator-roomalloc-create-batch-section {
+  padding: 24px;
+  text-align: center;
+  background: #f9fafb;
+}
+
+.coordinator-roomalloc-create-batch-btn {
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+  border: none;
+  color: white;
+  padding: 12px 28px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 4px rgba(16, 185, 129, 0.2);
+}
+
+.coordinator-roomalloc-create-batch-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(16, 185, 129, 0.3);
+}
+
+/* Form Groups */
+.coordinator-roomalloc-form-group {
+  margin-bottom: 0;
+  padding: 16px 20px;
+}
+
+.coordinator-roomalloc-form-group label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: 600;
+  color: #374151;
+  font-size: 0.875rem;
+}
+
+.coordinator-roomalloc-form-group input,
+.coordinator-roomalloc-form-group select {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  transition: all 0.2s ease;
+  background: white;
+  box-sizing: border-box;
+  color: #1f2937;
+}
+
+.coordinator-roomalloc-form-group input:focus,
+.coordinator-roomalloc-form-group select:focus {
+  outline: none;
+  border-color: #667eea;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.coordinator-roomalloc-form-group input::placeholder {
+  color: #9ca3af;
+}
+
+/* Allocation Form */
+.coordinator-roomalloc-allocation-form {
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.coordinator-roomalloc-form-content {
+  padding: 20px;
+}
+
+.coordinator-roomalloc-input-section {
+  background: #f9fafb;
+  border-radius: 10px;
+  padding: 18px;
+  margin-bottom: 20px;
+  border: 1px solid #e5e7eb;
+}
+
+.coordinator-roomalloc-input-section h3 {
+  margin: 0 0 14px 0;
+  color: #1f2937;
+  font-size: 1rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.coordinator-roomalloc-form-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 14px;
+  margin-bottom: 14px;
+}
+
+.coordinator-roomalloc-form-grid .coordinator-roomalloc-form-group {
+  padding: 0;
+  margin: 0;
+}
+
+.coordinator-roomalloc-add-to-table-section {
+  text-align: center;
+  padding-top: 4px;
+}
+
+.coordinator-roomalloc-add-to-table-btn {
+  background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+  border: none;
+  color: white;
+  padding: 10px 24px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 4px rgba(59, 130, 246, 0.2);
+}
+
+.coordinator-roomalloc-add-to-table-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(59, 130, 246, 0.3);
+}
+
+/* Table Section */
+.coordinator-roomalloc-table-section {
+  margin-top: 20px;
+  background: white;
+  border-radius: 10px;
+  padding: 18px;
+  border: 1px solid #e5e7eb;
+}
+
+.coordinator-roomalloc-table-section h3 {
+  margin: 0 0 12px 0;
+  color: #1f2937;
+  font-size: 1rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.coordinator-roomalloc-table-wrapper {
+  overflow-x: auto;
+  border-radius: 8px;
+  border: 1px solid #e5e7eb;
+}
+
+.coordinator-roomalloc-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+  font-size: 0.875rem;
+}
+
+.coordinator-roomalloc-table thead {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+}
+
+.coordinator-roomalloc-table th {
+  padding: 12px 14px;
+  text-align: left;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  letter-spacing: 0.5px;
+  white-space: nowrap;
+  background-color: #669bbc;
+  color: black;
+}
+
+.coordinator-roomalloc-table tbody tr {
+  border-bottom: 1px solid #f3f4f6;
+  transition: background-color 0.15s ease;
+}
+
+.coordinator-roomalloc-table tbody tr:hover {
+  background: #f9fafb;
+}
+
+.coordinator-roomalloc-table tbody tr:last-child {
+  border-bottom: none;
+}
+
+.coordinator-roomalloc-table td {
+  padding: 10px 14px;
+  color: #374151;
+  vertical-align: middle;
+}
+
+.coordinator-roomalloc-table-actions {
+  display: flex;
+  gap: 6px;
+  justify-content: center;
+}
+
+.coordinator-roomalloc-table-edit-btn,
+.coordinator-roomalloc-table-delete-btn {
+  border: none;
+  cursor: pointer;
+  font-size: 0.9rem;
+  padding: 4px 8px;
+  border-radius: 6px;
+  transition: all 0.15s ease;
+}
+
+.coordinator-roomalloc-table-edit-btn {
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+  color: #ffffff;
+  box-shadow: 0 1px 3px rgba(16, 185, 129, 0.12);
+}
+
+.coordinator-roomalloc-table-edit-btn:hover,
+.coordinator-roomalloc-table-edit-btn:focus {
+  background: linear-gradient(135deg, #059669 0%, #047857 100%);
+  transform: translateY(-1px);
+  box-shadow: 0 3px 6px rgba(6, 95, 70, 0.18);
+  outline: none;
+}
+
+.coordinator-roomalloc-table-delete-btn {
+  background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+  color: #ffffff;
+  box-shadow: 0 1px 3px rgba(239, 68, 68, 0.12);
+}
+
+.coordinator-roomalloc-table-delete-btn:hover,
+.coordinator-roomalloc-table-delete-btn:focus {
+  background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%);
+  transform: translateY(-1px);
+  box-shadow: 0 3px 6px rgba(153, 27, 27, 0.18);
+  outline: none;
+}
+
+/* Batch Table */
+.coordinator-roomalloc-batch-table {
+  margin-top: 12px;
+}
+
+.coordinator-roomalloc-batch-table thead {
+  background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+}
+
+/* Messages */
+.coordinator-roomalloc-message {
+  margin: 12px 20px;
+  padding: 10px 14px;
+  border-radius: 8px;
+  font-weight: 500;
+  font-size: 0.875rem;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.coordinator-roomalloc-success-message {
+  background: #d1fae5;
+  color: #065f46;
+  border: 1px solid #6ee7b7;
+}
+
+.coordinator-roomalloc-error-message {
+  background: #fee2e2;
+  color: #991b1b;
+  border: 1px solid #fca5a5;
+}
+
+.coordinator-roomalloc-warning-message {
+  background: #fef3c7;
+  color: #92400e;
+  border: 1px solid #fcd34d;
+}
+
+.coordinator-roomalloc-info-message {
+  background: #dbeafe;
+  color: #1e40af;
+  border: 1px solid #93c5fd;
+}
+
+/* Form Actions */
+.coordinator-roomalloc-form-actions {
+  padding: 18px 20px;
+  background: #f9fafb;
+  text-align: center;
+  border-top: 1px solid #e5e7eb;
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+}
+
+.coordinator-roomalloc-submit-btn {
+  background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+  border: none;
+  color: white;
+  padding: 12px 32px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 4px rgba(102, 126, 234, 0.25);
+  min-width: 160px;
+}
+
+.coordinator-roomalloc-submit-btn:hover:not(:disabled) {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(102, 126, 234, 0.35);
+}
+
+.coordinator-roomalloc-submit-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+  position: relative;
+}
+
+.coordinator-roomalloc-submit-btn:disabled::after {
+  content: '';
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  margin: auto;
+  border: 2px solid transparent;
+  border-top-color: white;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.coordinator-roomalloc-cancel-btn {
+  background: #e5e7eb;
+  border: none;
+  color: #374151;
+  padding: 12px 24px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: all 0.2s ease;
+}
+
+.coordinator-roomalloc-cancel-btn:hover {
+  background: #d1d5db;
+}
+
+/* Batches Section */
+.coordinator-roomalloc-batches-section {
+  margin-top: 0;
+}
+
+.coordinator-roomalloc-batch-card {
+  background: white;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  margin: 16px 20px;
+  padding: 20px;
+  transition: all 0.2s ease;
+}
+
+.coordinator-roomalloc-batch-card:hover {
+  border-color: #667eea;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.coordinator-roomalloc-batch-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 14px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid #e5e7eb;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.coordinator-roomalloc-batch-meta {
+  color: #6b7280;
+  font-size: 0.8rem;
+}
+
+.coordinator-roomalloc-status-badge {
+  display: inline-block;
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.coordinator-roomalloc-status-pending {
+  background: #fef3c7;
+  color: #92400e;
+}
+
+.coordinator-roomalloc-status-approved {
+  background: #d1fae5;
+  color: #065f46;
+}
+
+.coordinator-roomalloc-status-rejected {
+  background: #fee2e2;
+  color: #991b1b;
+}
+
+.coordinator-roomalloc-rejection-reason {
+  background: #fef2f2;
+  border-left: 3px solid #f87171;
+  padding: 10px 12px;
+  margin-bottom: 14px;
+  border-radius: 6px;
+  color: #7f1d1d;
+  font-weight: 500;
+  font-size: 0.875rem;
+}
+
+.coordinator-roomalloc-batch-card h4 {
+  margin: 14px 0 10px 0;
+  color: #1f2937;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.coordinator-roomalloc-batch-actions {
+  display: flex;
+  gap: 8px;
+  margin-top: 14px;
+  padding-top: 14px;
+  border-top: 1px solid #e5e7eb;
+}
+
+.coordinator-roomalloc-edit-btn {
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+  border: none;
+  color: white;
+  padding: 9px 18px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.85rem;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 4px rgba(16, 185, 129, 0.2);
+}
+
+.coordinator-roomalloc-edit-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(16, 185, 129, 0.3);
+}
+
+.coordinator-roomalloc-delete-btn {
+  background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+  border: none;
+  color: white;
+  padding: 9px 18px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.85rem;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 4px rgba(239, 68, 68, 0.2);
+}
+
+.coordinator-roomalloc-delete-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(239, 68, 68, 0.3);
+}
+
+.coordinator-roomalloc-view-only {
+  margin-top: 14px;
+  padding: 10px;
+  background: #f9fafb;
+  border-radius: 6px;
+  color: #6b7280;
+  font-style: italic;
+  text-align: center;
+  border: 1px dashed #d1d5db;
+  font-size: 0.85rem;
+}
+
+/* Animations */
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .coordinator-roomalloc-form-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .coordinator-roomalloc-container {
+    padding: 70px 10px 10px 10px;
+  }
+  
+  .coordinator-roomalloc-form-header {
+    padding: 18px 16px;
+  }
+  
+  .coordinator-roomalloc-form-header h1 {
+    font-size: 1.5rem;
+  }
+  
+  .coordinator-roomalloc-info-grid {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+  
+  .coordinator-roomalloc-form-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .coordinator-roomalloc-form-group {
+    padding: 14px 16px;
+  }
+  
+  .coordinator-roomalloc-section-header {
+    padding: 14px 16px;
+    flex-direction: column;
+    gap: 10px;
+    align-items: stretch;
+  }
+  
+  .coordinator-roomalloc-input-section {
+    padding: 14px;
+  }
+  
+  .coordinator-roomalloc-form-actions {
+    padding: 14px 16px;
+    flex-direction: column;
+  }
+  
+  .coordinator-roomalloc-submit-btn,
+  .coordinator-roomalloc-cancel-btn {
+    width: 100%;
+  }
+  
+  .coordinator-roomalloc-batch-card {
+    margin: 12px 10px;
+    padding: 16px;
+  }
+  
+  .coordinator-roomalloc-batch-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .coordinator-roomalloc-batch-actions {
+    flex-direction: column;
+  }
+  
+  .coordinator-roomalloc-edit-btn,
+  .coordinator-roomalloc-delete-btn {
+    width: 100%;
+  }
+  
+  .coordinator-roomalloc-table {
+    font-size: 0.8rem;
+  }
+  
+  .coordinator-roomalloc-table th,
+  .coordinator-roomalloc-table td {
+    padding: 8px 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .coordinator-roomalloc-form-header h1 {
+    font-size: 1.35rem;
+  }
+  
+  .coordinator-roomalloc-input-section {
+    padding: 12px;
+  }
+  
+  .coordinator-roomalloc-table-section {
+    padding: 12px;
+  }
+  
+  .coordinator-roomalloc-table {
+    font-size: 0.75rem;
+  }
+  
+  .coordinator-roomalloc-table th,
+  .coordinator-roomalloc-table td {
+    padding: 6px 8px;
+  }
+  
+  .coordinator-roomalloc-message {
+    font-size: 0.8rem;
+    padding: 8px 10px;
+    margin: 10px 12px;
+  }
+}

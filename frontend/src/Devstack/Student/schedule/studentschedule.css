@@ -1,0 +1,444 @@
+@import '../../devstack-common.css';
+
+/* Schedule.css */
+
+.student-schedule-container {
+  max-width: 1200px;
+  margin: 0px auto;
+  /* padding: 20px; */
+  font-family: var(--ds-font-family);
+  padding-top: var(--ds-space-5);
+}
+
+.student-schedule-header-section {
+  text-align: center;
+  margin-bottom: var(--ds-space-5);
+}
+
+.student-schedule-subtitle {
+  margin: 0;
+  font-size: var(--ds-text-xl);
+  font-weight: var(--ds-font-semibold);
+  color: var(--ds-text-primary);
+}
+
+.student-schedule-loading, .student-schedule-error, .student-schedule-no-schedules {
+  text-align: center;
+  padding: var(--ds-space-10);
+  font-size: var(--ds-text-lg);
+  color: var(--ds-text-secondary);
+  background: var(--ds-bg-secondary);
+  border-radius: var(--ds-radius-lg);
+  margin: var(--ds-space-5) 0;
+}
+
+.student-schedule-error {
+  color: var(--ds-danger);
+  background: var(--ds-danger-light);
+  border: 1px solid var(--ds-danger-border);
+}
+
+/* Schedule Selector */
+.student-schedule-selector {
+  margin-bottom: var(--ds-space-8);
+  padding: var(--ds-space-5);
+  background: var(--ds-bg-secondary);
+  border-radius: var(--ds-radius-lg);
+  border: 2px solid var(--ds-gray-200);
+}
+
+.student-schedule-selector h3 {
+  margin: 0 0 var(--ds-space-4) 0;
+  color: var(--ds-text-secondary);
+  font-size: var(--ds-text-lg);
+}
+
+.student-schedule-dropdown {
+  width: 100%;
+  max-width: 400px;
+  padding: var(--ds-space-3) var(--ds-space-4);
+  font-size: var(--ds-text-base);
+  border: 2px solid var(--ds-gray-300);
+  border-radius: var(--ds-radius-lg);
+  background: var(--ds-bg-primary);
+  color: var(--ds-text-secondary);
+  cursor: pointer;
+  transition: border-color var(--ds-transition-slow);
+}
+
+.student-schedule-dropdown:focus {
+  outline: none;
+  border-color: var(--ds-primary);
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+/* Schedule Wrapper - Removed big box */
+.student-schedule-wrapper {
+  background: transparent;
+  border-radius: 0;
+  box-shadow: none;
+  overflow: visible;
+  border: none;
+}
+
+/* Schedule Header - Hidden since we use main header now */
+.student-schedule-header {
+  display: none;
+}
+
+.student-schedule-header h2 {
+  margin: 0 0 var(--ds-space-4) 0;
+  font-size: var(--ds-text-3xl);
+  font-weight: var(--ds-font-semibold);
+}
+
+.student-schedule-info {
+  display: flex;
+  justify-content: center;
+  gap: var(--ds-space-8);
+  flex-wrap: wrap;
+}
+
+.student-schedule-hackathon-name, .student-schedule-hackathon-year {
+  background: rgba(255, 255, 255, 0.2);
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 14px;
+  backdrop-filter: blur(10px);
+}
+
+/* Schedule Display Container */
+.student-schedule-display {
+  padding: 20px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* Day Selector Buttons */
+.student-schedule-day-selector-buttons {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.student-schedule-day-btn {
+  padding: 8px 16px;
+  font-size: 13px;
+  font-weight: 600;
+  border: 2px solid #667eea;
+  background: white;
+  color: #667eea;
+  cursor: pointer;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.student-schedule-day-btn:hover {
+  background: #f0f4ff;
+  transform: translateY(-1px);
+}
+
+.student-schedule-day-btn.active {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border-color: #667eea;
+}
+
+/* Single Schedule Box */
+.student-schedule-single-box {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  border: 2px solid #e9ecef;
+}
+
+.student-schedule-box-header {
+  background: linear-gradient(135deg, #6c9bd1 0%, #5a8bc4 100%);
+  color: white;
+  padding: 15px 20px;
+  font-size: 20px;
+  font-weight: 600;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.student-schedule-box-content {
+  overflow-x: auto;
+}
+
+.student-schedule-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+
+.student-schedule-table thead tr {
+  background: #f1f3f4;
+}
+
+.student-schedule-time-header, .student-schedule-session-header {
+  padding: 12px 15px;
+  text-align: left;
+  font-weight: 600;
+  font-size: 14px;
+  color: #495057;
+  border-bottom: 2px solid #dee2e6;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.student-schedule-time-header {
+  width: 30%;
+  min-width: 120px;
+}
+
+.student-schedule-session-header {
+  width: 70%;
+}
+
+.student-schedule-table tbody tr:nth-child(even) {
+  background: #f8f9fa;
+}
+
+.student-schedule-table tbody tr:nth-child(odd) {
+  background: white;
+}
+
+.student-schedule-table tbody tr:hover {
+  background: #e3f2fd;
+  transition: background-color 0.2s ease;
+}
+
+/* Days Container */
+.student-schedule-days-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+  padding: 20px;
+  background: transparent;
+}
+
+/* Individual Day Schedule Box */
+.student-schedule-day-box {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  border: 2px solid #e9ecef;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.student-schedule-day-box:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Day Title */
+.student-schedule-day-title {
+  background: linear-gradient(135deg, #6c9bd1 0%, #5a8bc4 100%);
+  color: white;
+  padding: 15px 20px;
+  font-size: 20px;
+  font-weight: 600;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Day Table Container */
+.student-schedule-day-table-container {
+  overflow-x: auto;
+}
+
+/* Day Schedule Table */
+.student-schedule-day-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+
+/* Table Headers */
+.student-schedule-day-table thead tr {
+  background: #f1f3f4;
+}
+
+.student-schedule-time-column-header, .student-schedule-session-column-header {
+  padding: 12px 15px;
+  text-align: left;
+  font-weight: 600;
+  font-size: 14px;
+  color: #495057;
+  border-bottom: 2px solid #dee2e6;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.student-schedule-time-column-header {
+  width: 30%;
+  min-width: 120px;
+}
+
+.student-schedule-session-column-header {
+  width: 70%;
+}
+
+/* Table Body */
+.student-schedule-day-table tbody tr:nth-child(even) {
+  background: #f8f9fa;
+}
+
+.student-schedule-day-table tbody tr:nth-child(odd) {
+  background: white;
+}
+
+.student-schedule-day-table tbody tr:hover {
+  background: #e3f2fd;
+  transition: background-color 0.2s ease;
+}
+
+/* Table Cells */
+.student-schedule-day-table .student-schedule-time-cell {
+  padding: 12px 15px;
+  text-align: left;
+  font-weight: 600;
+  color: #495057;
+  border: 1px solid #dee2e6;
+  white-space: nowrap;
+  background: #f8f9fa;
+}
+
+.student-schedule-day-table .student-schedule-session-cell {
+  padding: 12px 15px;
+  text-align: left;
+  border: 1px solid #dee2e6;
+  color: #212529;
+  font-weight: 500;
+}
+
+.student-schedule-day-table .student-schedule-session-cell:not(:empty) {
+  border-left: 4px solid #007bff;
+}
+
+.student-schedule-no-sessions {
+  padding: 20px;
+  text-align: center;
+  color: #6c757d;
+  font-style: italic;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .student-schedule-container {
+    padding: 10px;
+    margin: 10px;
+  }
+
+  .student-schedule-subtitle {
+    font-size: 18px;
+  }
+  
+  .student-schedule-display {
+    padding: 10px;
+  }
+
+  .student-schedule-day-selector-buttons {
+    gap: 8px;
+  }
+
+  .student-schedule-day-btn {
+    padding: 6px 12px;
+    font-size: 11px;
+  }
+  
+  .student-schedule-box-header {
+    font-size: 18px;
+    padding: 12px 15px;
+  }
+  
+  .student-schedule-table {
+    font-size: 12px;
+  }
+  
+  .student-schedule-time-header, .student-schedule-session-header {
+    padding: 10px 12px;
+    font-size: 12px;
+  }
+  
+  .student-schedule-table .student-schedule-time-cell,
+  .student-schedule-table .student-schedule-session-cell {
+    padding: 8px 12px;
+  }
+
+  .student-schedule-time-header {
+    min-width: 100px;
+  }
+}
+
+@media (max-width: 480px) {
+  .student-schedule-subtitle {
+    font-size: 16px;
+  }
+
+  .student-schedule-box-header {
+    font-size: 16px;
+    padding: 10px 12px;
+  }
+
+  .student-schedule-day-selector-buttons {
+    gap: 6px;
+  }
+
+  .student-schedule-day-btn {
+    padding: 5px 10px;
+    font-size: 10px;
+  }
+  
+  .student-schedule-table {
+    font-size: 11px;
+  }
+  
+  .student-schedule-time-header, .student-schedule-session-header {
+    padding: 8px 10px;
+    font-size: 11px;
+  }
+  
+  .student-schedule-table .student-schedule-time-cell,
+  .student-schedule-table .student-schedule-session-cell {
+    padding: 6px 10px;
+  }
+}
+
+@media (max-width: 320px) {
+  .student-schedule-subtitle {
+    font-size: 14px;
+  }
+}
+
+/* Loading Animation */
+.student-schedule-loading {
+  position: relative;
+}
+
+.student-schedule-loading::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 20px;
+  height: 20px;
+  margin: -10px 0 0 -10px;
+  border: 2px solid #f3f3f3;
+  border-top: 2px solid #007bff;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}

@@ -1,0 +1,251 @@
+/* Signup Page Styles */
+.choice-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #f0f2f5;
+}
+
+.cards-wrapper {
+  display: flex;
+  width: 100%;
+  max-width: 1000px;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  /* margin: 1px; */
+}
+
+.card-container {
+  flex: 30%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #02121a;
+  padding: 2rem;
+  transition: all 0.5s ease;
+  
+}
+
+.signup-card {
+  flex: 70%;
+  background: #0a344a;
+  /* border-radius: 10px; */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+  transition: all 0.5s ease;
+}
+.signup-title {
+  color: white;
+}
+/* Role Selection Buttons */
+.buttons-card {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 100%;
+}
+
+.role-button {
+  padding: 12px 24px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 16px;
+  width: 100%;
+  /* background-color: yellow; */
+}
+
+.student-btn {
+  background-color: #ff0000;
+  color: white;
+}
+
+.mentor-btn {
+  background-color: #ff0000;
+  color: white;
+}
+
+.role-button:hover {
+  opacity: 0.9;
+  transform: scale(1.05);
+}
+
+/* Progress Bar and Step Indicators */
+.progress-bar {
+  display: flex;
+  justify-content: space-between;
+  margin: 2rem 0;
+  position: relative;
+  padding: 0 40px;
+}
+
+.progress-bar::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50px;
+  right: 50px;
+  height: 2px;
+  background: #e0e0e0;
+  transform: translateY(-50%);
+  z-index: 1;
+}
+
+.step-indicator {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #e0e0e0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 2;
+  transition: all 0.3s ease;
+  color: #333;
+  font-weight: bold;
+}
+
+.step-indicator.active {
+  background: #ff0000;
+  color: white;
+}
+
+.step-indicator.completed {
+  background: #22c55e;
+  color: white;
+}
+
+/* Form Styles */
+.form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1.5rem;
+}
+
+.password-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.signup-label {
+  font-size: 25px;
+  font-weight: 500;
+  margin-bottom: 1.5rem;
+  color: white;
+}
+
+.signup-input-field {
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 16px;
+  transition: border-color 0.3s ease;
+  margin: 10px;
+  width: calc(100% - 20px);
+}
+
+.password-toggle-icon {
+  position: absolute;
+  right: 20px;
+  cursor: pointer;
+  color: #666;
+}
+
+.signup-input-field:focus {
+  outline: none;
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.1);
+}
+
+.error {
+  color: red;
+  font-size: 0.875rem;
+  margin-top: 0.25rem;
+}
+
+/* Button Group */
+.button-groupsss {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 2rem;
+}
+
+.btn {
+  padding: 10px 20px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 16px;
+  transition: all 0.3s ease;
+}
+
+.btn-prev {
+  background: #02121A;
+  font-weight: bold;
+  color: white;
+}
+
+.btn-prev:hover:not(:disabled) {
+  /* background: #e5e7eb; */
+  background: #f3f4f6;
+  color: #02121A;
+  font-weight: bold;
+
+}
+ 
+.btn-next {
+  background: #ff0000;
+  color: rgb(255, 255, 255);
+  font-weight: bold;
+  width: 100px;
+  padding: 10px 33px;
+
+}
+
+.btn-next:hover:not(:disabled) {
+  background: #FDD5D5;
+  color: #ff0000;
+  font-weight: bold;
+}
+
+.btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+.signup-matter-div
+{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* flex-direction: column; */
+  gap: 1rem;
+}
+
+.signup-matter
+{
+  color: white;
+}
+a{
+  color: #3b82f6;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .cards-wrapper {
+    flex-direction: column;
+  }
+  
+  .card-container, .signup-card {
+    flex: 100%;
+  }
+}

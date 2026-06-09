@@ -1,0 +1,904 @@
+/* Problem Statements Page - Student CSS */
+
+/* Main Container */
+.problem-statements-container {
+  min-height: 100vh;
+  background-color: #f9fafb;
+  padding: 24px;
+  font-family: 'Roboto', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Loading State */
+.problem-statements-loading {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f9fafb;
+}
+
+.problem-statements-loading .ant-spin {
+  color: #2563eb;
+}
+
+/* Page Header */
+.problem-statements-header {
+  margin-bottom: 24px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.problem-statements-header h2 {
+  margin: 0;
+  font-size: 1.75rem;
+  font-weight: 600;
+  color: #111827;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.problem-statements-header .anticon {
+  color: #2563eb;
+  font-size: 1.5rem;
+}
+
+/* Team Info Card */
+.team-info-card {
+  background: white;
+  border-radius: 12px;
+  padding: 24px;
+  margin-bottom: 24px;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+  border: 1px solid #e5e7eb;
+}
+
+.team-info-card .info-label {
+  text-transform: uppercase;
+  font-size: 11px;
+  font-weight: 600;
+  color: #6b7280;
+  letter-spacing: 0.5px;
+  margin-bottom: 4px;
+}
+
+.team-info-card .info-value {
+  font-size: 15px;
+  font-weight: 500;
+  color: #111827;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.team-info-card .info-value .anticon {
+  color: #2563eb;
+}
+
+.team-info-card .ant-tag {
+  font-weight: 500;
+  border-radius: 6px;
+  padding: 4px 10px;
+}
+
+.team-tags-row {
+  margin-top: 16px;
+  padding-top: 16px;
+  border-top: 1px solid #f0f0f0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+/* Problem Cards Grid */
+.problem-cards-container {
+  margin-top: 16px;
+}
+
+.problem-section-title {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #111827;
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.problem-section-title.selected {
+  color: #16a34a;
+}
+
+.problem-count-text {
+  color: #6b7280;
+  font-size: 0.875rem;
+  margin-bottom: 16px;
+}
+
+/* Problem Card */
+.problem-card {
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  border: 1px solid #e5e7eb;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.problem-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.1);
+}
+
+.problem-card.selected-by-team {
+  border: 2px solid #16a34a;
+  background: linear-gradient(to bottom, #f0fdf4, #ffffff);
+  box-shadow: 0 4px 16px rgba(22, 163, 74, 0.15);
+}
+
+.problem-card.unavailable {
+  border: 1px solid #fecaca;
+  background: #fff5f5;
+  opacity: 0.85;
+}
+
+.problem-card.unavailable:hover {
+  transform: none;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+}
+
+/* Problem Card Header */
+.problem-card .ant-card-head {
+  background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+  border-bottom: 1px solid #e5e7eb;
+  padding: 16px 20px;
+  min-height: auto;
+}
+
+.problem-card.selected-by-team .ant-card-head {
+  background: linear-gradient(135deg, #dcfce7 0%, #d1fae5 100%);
+  border-bottom: 1px solid #bbf7d0;
+}
+
+.problem-card.unavailable .ant-card-head {
+  background: linear-gradient(135deg, #fef2f2 0%, #fee2e2 100%);
+  border-bottom: 1px solid #fecaca;
+}
+
+.problem-card-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex: 1;
+}
+
+.problem-card-title span {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #111827;
+  line-height: 1.4;
+}
+
+.problem-card.selected-by-team .problem-card-title span {
+  color: #15803d;
+}
+
+.problem-card-title .anticon {
+  font-size: 20px;
+}
+
+.problem-card-title .anticon-check-circle {
+  color: #16a34a;
+}
+
+.problem-card-title .anticon-lock {
+  color: #dc2626;
+}
+
+/* Problem Card Body */
+.problem-card .ant-card-body {
+  padding: 20px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.problem-description {
+  color: #4b5563;
+  font-size: 0.875rem;
+  line-height: 1.6;
+  margin-bottom: 16px;
+  flex: 1;
+}
+
+/* Technology Tags */
+.tech-tags-section {
+  margin-bottom: 16px;
+}
+
+.tech-tags-label {
+  font-size: 12px;
+  font-weight: 600;
+  color: #6b7280;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 8px;
+  display: block;
+}
+
+.tech-tags-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.tech-tag {
+  background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
+  color: #1d4ed8;
+  border: 1px solid #bfdbfe;
+  font-size: 12px;
+  font-weight: 500;
+  padding: 4px 10px;
+  border-radius: 6px;
+}
+
+/* Status Badge */
+.problem-status-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 6px 12px;
+  border-radius: 8px;
+}
+
+.problem-status-badge.available {
+  background: #eff6ff;
+  color: #2563eb;
+  border: 1px solid #bfdbfe;
+}
+
+.problem-status-badge.selected {
+  background: #dcfce7;
+  color: #16a34a;
+  border: 1px solid #bbf7d0;
+}
+
+.problem-status-badge.unavailable {
+  background: #fef2f2;
+  color: #dc2626;
+  border: 1px solid #fecaca;
+}
+
+/* Action Buttons */
+.problem-action-btn {
+  margin-top: auto;
+  height: 42px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: all 0.2s ease;
+}
+
+.problem-action-btn.select-btn {
+  background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+  border: none;
+  color: white;
+}
+
+.problem-action-btn.select-btn:hover {
+  background: linear-gradient(135deg, #1d4ed8 0%, #1e40af 100%);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+}
+
+.problem-action-btn.selected-btn {
+  background: linear-gradient(135deg, #16a34a 0%, #15803d 100%);
+  border: none;
+  color: white;
+  cursor: default;
+}
+
+.problem-action-btn.unavailable-btn {
+  background: #fef2f2;
+  border: 1px solid #fecaca;
+  color: #dc2626;
+  cursor: not-allowed;
+}
+
+.problem-action-btn.locked-btn {
+  background: #f9fafb;
+  border: 1px solid #e5e7eb;
+  color: #6b7280;
+  cursor: not-allowed;
+}
+
+.problem-action-btn.team-lead-only {
+  background: #f9fafb;
+  border: 1px solid #e5e7eb;
+  color: #6b7280;
+  cursor: not-allowed;
+}
+
+/* Empty State */
+.problem-empty-state {
+  background: white;
+  border-radius: 12px;
+  padding: 48px 24px;
+  text-align: center;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+}
+
+.problem-empty-state .ant-empty-image {
+  margin-bottom: 16px;
+}
+
+.problem-empty-state .ant-empty-description {
+  color: #6b7280;
+  font-size: 0.875rem;
+}
+
+/* Status Pages (Not in team, hackathon completed, etc.) */
+.problem-status-page {
+  min-height: 100vh;
+  background-color: #f9fafb;
+  padding: 24px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding-top: 60px;
+}
+
+.problem-status-card {
+  max-width: 500px;
+  width: 100%;
+  background: white;
+  border-radius: 16px;
+  padding: 48px 32px;
+  text-align: center;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
+  animation: fadeInUp 0.4s ease-out;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.problem-status-card .status-icon {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 24px;
+  font-size: 32px;
+}
+
+.problem-status-card .status-icon.info {
+  background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
+  color: #2563eb;
+}
+
+.problem-status-card .status-icon.warning {
+  background: linear-gradient(135deg, #fefce8 0%, #fef08a 100%);
+  color: #ca8a04;
+}
+
+.problem-status-card .status-icon.success {
+  background: linear-gradient(135deg, #dcfce7 0%, #bbf7d0 100%);
+  color: #16a34a;
+}
+
+.problem-status-card .status-icon.error {
+  background: linear-gradient(135deg, #fef2f2 0%, #fecaca 100%);
+  color: #dc2626;
+}
+
+.problem-status-card h3 {
+  font-size: 1.375rem;
+  font-weight: 600;
+  color: #111827;
+  margin-bottom: 12px;
+}
+
+.problem-status-card p {
+  color: #6b7280;
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  margin-bottom: 24px;
+}
+
+.problem-status-card .status-btn {
+  height: 44px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 14px;
+  padding: 0 24px;
+}
+
+.problem-status-card .status-btn.primary {
+  background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+  border: none;
+  color: white;
+}
+
+.problem-status-card .status-btn.primary:hover {
+  background: linear-gradient(135deg, #1d4ed8 0%, #1e40af 100%);
+}
+
+.problem-status-card .status-btn.secondary {
+  background: white;
+  border: 1px solid #e5e7eb;
+  color: #374151;
+}
+
+.problem-status-card .status-btn.secondary:hover {
+  background: #f9fafb;
+  border-color: #d1d5db;
+}
+
+/* Confirmation Modal */
+.problem-confirm-modal .ant-modal-content {
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.problem-confirm-modal .ant-modal-header {
+  background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+  border-bottom: 1px solid #e5e7eb;
+  padding: 20px 24px;
+}
+
+.problem-confirm-modal .ant-modal-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #111827;
+}
+
+.problem-confirm-modal .ant-modal-body {
+  padding: 24px;
+}
+
+.problem-confirm-modal .ant-modal-footer {
+  padding: 16px 24px;
+  border-top: 1px solid #e5e7eb;
+}
+
+.confirm-problem-details {
+  background: #f8fafc;
+  border-radius: 8px;
+  padding: 16px;
+  margin-top: 16px;
+  border: 1px solid #e5e7eb;
+}
+
+.confirm-problem-details h5 {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #111827;
+  margin-bottom: 8px;
+}
+
+.confirm-problem-details p {
+  color: #4b5563;
+  font-size: 0.875rem;
+  line-height: 1.6;
+  margin-bottom: 12px;
+}
+
+.confirm-hackathon-info {
+  background: #f0f9ff;
+  border-radius: 6px;
+  padding: 12px;
+  margin-top: 12px;
+  border: 1px solid #bae6fd;
+}
+
+.confirm-hackathon-info span {
+  font-weight: 600;
+  color: #0369a1;
+}
+
+/* Responsive Styles */
+@media (max-width: 1024px) {
+  .problem-statements-container {
+    padding: 18px;
+  }
+}
+
+@media (max-width: 768px) {
+  .problem-statements-container {
+    padding: 12px;
+  }
+
+  .problem-statements-header h2 {
+    font-size: 1.5rem;
+  }
+
+  .problem-statements-header .anticon {
+    font-size: 1.25rem;
+  }
+
+  .team-info-card {
+    padding: 16px;
+    margin-bottom: 16px;
+  }
+
+  .team-info-card .info-label {
+    font-size: 10px;
+  }
+
+  .team-info-card .info-value {
+    font-size: 14px;
+  }
+
+  .problem-card .ant-card-head {
+    padding: 12px 16px;
+  }
+
+  .problem-card .ant-card-body {
+    padding: 16px;
+  }
+
+  .problem-description {
+    font-size: 0.8125rem;
+  }
+
+  .tech-tag {
+    font-size: 11px;
+    padding: 3px 8px;
+  }
+
+  .problem-action-btn {
+    height: 38px;
+    font-size: 13px;
+  }
+
+  .problem-status-card {
+    padding: 32px 20px;
+  }
+
+  .problem-status-card h3 {
+    font-size: 1.25rem;
+  }
+
+  .problem-status-card .status-icon {
+    width: 64px;
+    height: 64px;
+    font-size: 28px;
+  }
+}
+
+@media (max-width: 640px) {
+  .problem-statements-container {
+    padding: 10px;
+  }
+
+  .problem-statements-header h2 {
+    font-size: 1.25rem;
+    margin-bottom: 10px;
+  }
+
+  .team-info-card {
+    padding: 12px;
+    margin-bottom: 14px;
+  }
+
+  .team-info-card .info-value {
+    font-size: 13px;
+    gap: 6px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    word-break: break-word;
+  }
+
+  .team-info-card .info-value .anticon {
+    min-width: 16px;
+    flex-shrink: 0;
+  }
+
+  .team-tags-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+  }
+
+  .problem-cards-container {
+    margin-top: 10px;
+  }
+
+  .problem-card {
+    margin-bottom: 10px;
+  }
+
+  .problem-card .ant-card-head {
+    padding: 10px 12px;
+    min-height: auto;
+  }
+
+  .problem-card .ant-card-body {
+    padding: 10px;
+  }
+
+  .problem-card-title span {
+    font-size: 0.9375rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    -webkit-box-orient: vertical;
+    word-break: break-word;
+  }
+
+  .problem-description {
+    font-size: 0.8rem;
+    margin-bottom: 8px;
+    line-height: 1.4;
+  }
+
+  .tech-tag {
+    font-size: 10px;
+    padding: 3px 7px;
+  }
+
+  .problem-action-btn {
+    height: 36px;
+    font-size: 12px;
+    margin-top: 8px;
+  }
+
+  .problem-status-page {
+    padding: 12px;
+    padding-top: 30px;
+  }
+
+  .problem-status-card {
+    padding: 24px 16px;
+  }
+
+  .problem-status-card h3 {
+    font-size: 1.125rem;
+  }
+
+  .problem-status-card .status-icon {
+    width: 56px;
+    height: 56px;
+    font-size: 24px;
+  }
+
+  .problem-status-card .status-btn {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .problem-statements-container {
+    padding: 8px;
+  }
+
+  .problem-statements-header h2 {
+    font-size: 1.125rem;
+    margin-bottom: 8px;
+  }
+
+  .problem-statements-header .anticon {
+    font-size: 1rem;
+  }
+
+  .team-info-card {
+    padding: 10px;
+    margin-bottom: 12px;
+  }
+
+  .team-info-card .info-label {
+    font-size: 9px;
+    margin-bottom: 2px;
+  }
+
+  .team-info-card .info-value {
+    font-size: 12px;
+    gap: 6px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    word-break: break-word;
+  }
+
+  .team-info-card .info-value .anticon {
+    min-width: 16px;
+    flex-shrink: 0;
+  }
+
+  .team-tags-row {
+    margin-top: 6px;
+    padding-top: 6px;
+    gap: 4px;
+  }
+
+  .team-tags-row .ant-tag {
+    font-size: 9px;
+    padding: 2px 6px;
+    line-height: 1.2;
+  }
+
+  .problem-cards-container {
+    margin-top: 8px;
+  }
+
+  .problem-section-title {
+    font-size: 1rem;
+    margin-bottom: 8px;
+    gap: 6px;
+  }
+
+  .problem-count-text {
+    font-size: 0.75rem;
+    margin-bottom: 8px;
+  }
+
+  .problem-card {
+    border-radius: 8px;
+    margin-bottom: 8px;
+  }
+
+  .problem-card .ant-card-head {
+    padding: 8px 10px;
+    min-height: auto;
+  }
+
+  .problem-card .ant-card-body {
+    padding: 8px;
+  }
+
+  .problem-card-title {
+    gap: 6px;
+  }
+
+  .problem-card-title span {
+    font-size: 0.8125rem;
+    font-weight: 600;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    -webkit-box-orient: vertical;
+    word-break: break-word;
+  }
+
+  .problem-card-title .anticon {
+    font-size: 12px;
+    min-width: 12px;
+    flex-shrink: 0;
+  }
+
+  .problem-description {
+    font-size: 0.7rem;
+    margin-bottom: 8px;
+    line-height: 1.4;
+  }
+
+  .tech-tags-section {
+    margin-bottom: 8px;
+  }
+
+  .tech-tags-label {
+    font-size: 9px;
+    margin-bottom: 4px;
+  }
+
+  .tech-tags-container {
+    gap: 4px;
+  }
+
+  .tech-tag {
+    font-size: 9px;
+    padding: 2px 6px;
+    border-radius: 4px;
+  }
+
+  .problem-status-badge {
+    font-size: 10px;
+    padding: 3px 6px;
+    border-radius: 4px;
+  }
+
+  .problem-action-btn {
+    height: 32px;
+    font-size: 10px;
+    gap: 4px;
+    margin-top: 8px;
+  }
+
+  .problem-empty-state {
+    padding: 20px 12px;
+  }
+
+  .problem-status-page {
+    padding: 8px;
+    padding-top: 20px;
+  }
+
+  .problem-status-card {
+    padding: 18px 12px;
+    border-radius: 10px;
+  }
+
+  .problem-status-card h3 {
+    font-size: 1rem;
+    margin-bottom: 8px;
+  }
+
+  .problem-status-card p {
+    font-size: 0.75rem;
+    margin-bottom: 12px;
+    line-height: 1.5;
+  }
+
+  .problem-status-card .status-icon {
+    width: 48px;
+    height: 48px;
+    font-size: 20px;
+    margin-bottom: 8px;
+  }
+
+  .problem-status-card .status-btn {
+    height: 32px;
+    font-size: 10px;
+    padding: 0 10px;
+  }
+
+  .problem-confirm-modal .ant-modal-header {
+    padding: 12px 14px;
+  }
+
+  .problem-confirm-modal .ant-modal-title {
+    font-size: 0.9rem;
+    gap: 6px;
+  }
+
+  .problem-confirm-modal .ant-modal-body {
+    padding: 12px;
+  }
+
+  .confirm-problem-details {
+    padding: 8px;
+    margin-top: 8px;
+  }
+
+  .confirm-problem-details h5 {
+    font-size: 0.8rem;
+    margin-bottom: 4px;
+  }
+
+  .confirm-problem-details p {
+    font-size: 0.7rem;
+    margin-bottom: 6px;
+  }
+
+  .confirm-hackathon-info {
+    font-size: 0.7rem;
+    padding: 6px;
+    margin-top: 6px;
+  }
+}

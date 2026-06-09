@@ -1,0 +1,501 @@
+/* Container and Layout */
+@import './devstack-common.css';
+
+.hack-coordinator-container {
+  min-height: 100vh;
+  background: var(--ds-bg-secondary);
+  padding: var(--ds-space-16) var(--ds-space-4) var(--ds-space-8) var(--ds-space-4);
+  font-family: var(--ds-font-family);
+}
+
+.hack-coordinator-loading-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hack-coordinator-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.hack-coordinator-card {
+  background: var(--ds-bg-primary);
+  border-radius: var(--ds-radius-lg);
+  box-shadow: var(--ds-shadow-sm);
+  overflow: hidden;
+  animation: ds-fade-in 0.5s ease-out;
+}
+
+/* Animations */
+@keyframes hack-coordinator-fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes hack-coordinator-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.hack-coordinator-spinner {
+  width: 50px;
+  height: 50px;
+  border: 4px solid var(--ds-primary-light);
+  border-top-color: var(--ds-primary);
+  border-radius: 50%;
+  animation: ds-spin 1s linear infinite;
+}
+
+/* Header */
+.hack-coordinator-header {
+  background: var(--ds-bg-primary);
+  padding: var(--ds-space-8);
+  border-bottom: 1px solid var(--ds-gray-200);
+}
+
+.hack-coordinator-header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.hack-coordinator-header-text {
+  flex: 1;
+}
+
+.hack-coordinator-title {
+  font-size: var(--ds-text-3xl);
+  font-weight: var(--ds-font-bold);
+  color: var(--ds-text-primary);
+  margin: 0 0 var(--ds-space-2) 0;
+}
+
+.hack-coordinator-subtitle {
+  color: var(--ds-text-secondary);
+  margin: 0;
+  font-size: var(--ds-text-base);
+}
+
+.hack-coordinator-edit-btn {
+  display: flex;
+  align-items: center;
+  gap: var(--ds-space-2);
+  background: var(--ds-primary);
+  color: var(--ds-text-inverse);
+  border: none;
+  padding: var(--ds-space-3) var(--ds-space-6);
+  border-radius: var(--ds-radius-lg);
+  font-size: var(--ds-text-base);
+  font-weight: var(--ds-font-semibold);
+  cursor: pointer;
+  transition: all var(--ds-transition-slow);
+}
+
+.hack-coordinator-edit-btn:hover {
+  background: var(--ds-primary-hover);
+  transform: translateY(-1px);
+  box-shadow: var(--ds-shadow-md);
+}
+
+/* Messages */
+.hack-coordinator-message {
+  margin: var(--ds-space-6) var(--ds-space-8);
+  padding: var(--ds-space-4) var(--ds-space-6);
+  border-radius: var(--ds-radius-lg);
+  font-weight: var(--ds-font-medium);
+  animation: ds-fade-in 0.3s ease-out;
+}
+
+.hack-coordinator-message-error {
+  background: var(--ds-danger-light);
+  border: 2px solid var(--ds-danger-border);
+  color: var(--ds-danger);
+}
+
+.hack-coordinator-message-success {
+  background: var(--ds-success-light);
+  border: 2px solid var(--ds-success-border);
+  color: var(--ds-success);
+}
+
+/* Content */
+.hack-coordinator-content {
+  padding: var(--ds-space-8);
+}
+
+/* Form */
+.hack-coordinator-form {
+  animation: ds-fade-in 0.4s ease-out;
+}
+
+.hack-coordinator-form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--ds-space-6);
+  margin-bottom: var(--ds-space-8);
+}
+
+.hack-coordinator-form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.hack-coordinator-label {
+  font-size: var(--ds-text-sm);
+  font-weight: var(--ds-font-semibold);
+  color: var(--ds-text-primary);
+  margin-bottom: var(--ds-space-2);
+}
+
+.hack-coordinator-input,
+.hack-coordinator-select {
+  padding: var(--ds-space-3) var(--ds-space-4);
+  border: 1px solid var(--ds-gray-300);
+  border-radius: var(--ds-radius-lg);
+  font-size: var(--ds-text-base);
+  transition: all var(--ds-transition-slow);
+  background: var(--ds-bg-secondary);
+}
+
+.hack-coordinator-input:focus,
+.hack-coordinator-select:focus {
+  outline: none;
+  border-color: var(--ds-primary);
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+  background: var(--ds-bg-primary);
+}
+
+.hack-coordinator-input::placeholder {
+  color: var(--ds-text-tertiary);
+}
+
+/* Action Buttons */
+.hack-coordinator-actions {
+  display: flex;
+  gap: var(--ds-space-4);
+  padding-top: var(--ds-space-4);
+  flex-wrap: wrap;
+}
+
+.hack-coordinator-btn {
+  display: flex;
+  align-items: center;
+  gap: var(--ds-space-2);
+  padding: var(--ds-space-3) var(--ds-space-6);
+  border: none;
+  border-radius: var(--ds-radius-lg);
+  font-size: var(--ds-text-base);
+  font-weight: var(--ds-font-semibold);
+  cursor: pointer;
+  transition: all var(--ds-transition-slow);
+}
+
+.hack-coordinator-btn-save {
+  background: var(--ds-primary);
+  color: var(--ds-text-inverse);
+}
+
+.hack-coordinator-btn-save:hover {
+  background: var(--ds-primary-hover);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+}
+
+.hack-coordinator-btn-cancel {
+  background: var(--ds-gray-100);
+  color: var(--ds-text-primary);
+}
+
+.hack-coordinator-btn-cancel:hover {
+  background: var(--ds-gray-200);
+  transform: translateY(-1px);
+}
+
+/* Display Mode */
+.hack-coordinator-display-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--ds-space-6);
+  animation: ds-fade-in 0.4s ease-out;
+}
+
+.hack-coordinator-info-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  padding: 0;
+  background: transparent;
+  border-radius: var(--ds-radius-lg);
+  transition: all var(--ds-transition-slow);
+  border: none;
+}
+
+.hack-coordinator-info-card:hover {
+  transform: none;
+  box-shadow: none;
+  border-color: transparent;
+}
+
+.hack-coordinator-icon {
+  display: none;
+}
+
+.hack-coordinator-info-content {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.hack-coordinator-info-label {
+  font-size: var(--ds-text-sm);
+  color: var(--ds-text-primary);
+  margin: 0 0 var(--ds-space-2) 0;
+  font-weight: var(--ds-font-semibold);
+}
+
+.hack-coordinator-info-value {
+  font-size: var(--ds-text-base);
+  font-weight: var(--ds-font-normal);
+  color: var(--ds-text-primary);
+  margin: 0;
+  word-wrap: break-word;
+  padding: var(--ds-space-3) var(--ds-space-4);
+  border: 1px solid var(--ds-gray-300);
+  border-radius: var(--ds-radius-lg);
+  background: var(--ds-bg-secondary);
+}
+
+.hack-coordinator-capitalize {
+  text-transform: capitalize;
+}
+
+.hack-coordinator-link {
+  font-size: var(--ds-text-base);
+  font-weight: var(--ds-font-normal);
+  color: var(--ds-primary);
+  text-decoration: none;
+  word-break: break-all;
+  transition: color var(--ds-transition-slow);
+  padding: var(--ds-space-3) var(--ds-space-4);
+  border: 1px solid var(--ds-gray-300);
+  border-radius: var(--ds-radius-lg);
+  background: var(--ds-bg-secondary);
+  display: block;
+}
+
+.hack-coordinator-link:hover {
+  color: var(--ds-primary-hover);
+  text-decoration: underline;
+}
+
+/* Responsive Design */
+/* Tablet - 768px and below */
+@media (max-width: 768px) {
+  .hack-coordinator-container {
+    padding: 0rem 1rem 1rem 1rem;
+  }
+
+  .hack-coordinator-header {
+    padding: 1.5rem;
+  }
+
+  .hack-coordinator-title {
+    font-size: 1.75rem;
+  }
+
+  .hack-coordinator-subtitle {
+    font-size: 0.95rem;
+  }
+
+  .hack-coordinator-content {
+    padding: 1.5rem;
+  }
+
+  .hack-coordinator-form-grid,
+  .hack-coordinator-display-grid {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+
+  .hack-coordinator-header-content {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .hack-coordinator-edit-btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .hack-coordinator-actions {
+    flex-direction: column;
+  }
+
+  .hack-coordinator-btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .hack-coordinator-message {
+    margin: 1rem 1.5rem;
+    padding: 0.875rem 1.25rem;
+  }
+}
+
+/* Mobile - 480px and below */
+@media (max-width: 480px) {
+  .hack-coordinator-container {
+    padding: 0rem 0.75rem 1rem 0.75rem;
+  }
+
+  .hack-coordinator-header {
+    padding: 1.25rem;
+  }
+
+  .hack-coordinator-title {
+    font-size: 1.5rem;
+  }
+
+  .hack-coordinator-subtitle {
+    font-size: 0.875rem;
+  }
+
+  .hack-coordinator-content {
+    padding: 1.25rem;
+  }
+
+  .hack-coordinator-form-grid,
+  .hack-coordinator-display-grid {
+    gap: 1rem;
+  }
+
+  .hack-coordinator-message {
+    margin: 0.875rem 1.25rem;
+    padding: 0.75rem 1rem;
+    font-size: 0.9rem;
+  }
+
+  .hack-coordinator-edit-btn {
+    padding: 0.65rem 1.25rem;
+    font-size: 0.95rem;
+  }
+
+  .hack-coordinator-btn {
+    padding: 0.65rem 1.25rem;
+    font-size: 0.95rem;
+  }
+
+  .hack-coordinator-label {
+    font-size: 0.8125rem;
+  }
+
+  .hack-coordinator-input,
+  .hack-coordinator-select {
+    padding: 0.65rem 0.875rem;
+    font-size: 0.95rem;
+  }
+
+  .hack-coordinator-info-value,
+  .hack-coordinator-link {
+    padding: 0.65rem 0.875rem;
+    font-size: 0.95rem;
+  }
+
+  .hack-coordinator-info-label {
+    font-size: 0.8125rem;
+  }
+}
+
+/* Small Mobile - 320px and below */
+@media (max-width: 320px) {
+  .hack-coordinator-container {
+    padding: 0rem 0.5rem 0.75rem 0.5rem;
+  }
+
+  .hack-coordinator-header {
+    padding: 1rem;
+  }
+
+  .hack-coordinator-title {
+    font-size: 1.25rem;
+  }
+
+  .hack-coordinator-subtitle {
+    font-size: 0.8125rem;
+  }
+
+  .hack-coordinator-content {
+    padding: 1rem;
+  }
+
+  .hack-coordinator-form-grid,
+  .hack-coordinator-display-grid {
+    gap: 0.875rem;
+  }
+
+  .hack-coordinator-message {
+    margin: 0.75rem 1rem;
+    padding: 0.625rem 0.875rem;
+    font-size: 0.85rem;
+    border-radius: 8px;
+  }
+
+  .hack-coordinator-card {
+    border-radius: 8px;
+  }
+
+  .hack-coordinator-edit-btn {
+    padding: 0.6rem 1rem;
+    font-size: 0.9rem;
+    border-radius: 6px;
+  }
+
+  .hack-coordinator-btn {
+    padding: 0.6rem 1rem;
+    font-size: 0.9rem;
+    border-radius: 8px;
+  }
+
+  .hack-coordinator-actions {
+    gap: 0.75rem;
+  }
+
+  .hack-coordinator-label {
+    font-size: 0.75rem;
+    margin-bottom: 0.375rem;
+  }
+
+  .hack-coordinator-input,
+  .hack-coordinator-select {
+    padding: 0.6rem 0.75rem;
+    font-size: 0.875rem;
+    border-radius: 6px;
+  }
+
+  .hack-coordinator-info-value,
+  .hack-coordinator-link {
+    padding: 0.6rem 0.75rem;
+    font-size: 0.875rem;
+    border-radius: 6px;
+  }
+
+  .hack-coordinator-info-label {
+    font-size: 0.75rem;
+    margin-bottom: 0.375rem;
+  }
+
+  .hack-coordinator-form-grid {
+    margin-bottom: 1.5rem;
+  }
+}

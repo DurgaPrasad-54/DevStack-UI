@@ -1,0 +1,394 @@
+/* ===========================
+   CSV Student Registration Styles
+   =========================== */
+
+.csv-registration-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  padding-top: 80px;
+}
+
+.csv-registration-title {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.csv-card {
+  height: 100%;
+}
+
+.csv-card .ant-card-body {
+  padding: 32px;
+}
+
+.csv-section-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.csv-upload-dragger {
+  border: none !important;
+  background: #fafafa !important;
+  border-radius: 8px !important;
+}
+
+.csv-upload-dragger .ant-upload {
+  padding: 40px 20px !important;
+  border: 2px dashed #d9d9d9 !important;
+  border-radius: 8px !important;
+  background: transparent !important;
+}
+
+.csv-upload-dragger .ant-upload-btn {
+  padding: 0 !important;
+}
+
+.csv-upload-dragger .ant-upload-drag-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.csv-upload-dragger:hover .ant-upload {
+  border-color: #1890ff !important;
+}
+
+.csv-upload-icon {
+  font-size: 48px !important;
+  color: #1890ff !important;
+}
+
+.csv-upload-text {
+  font-size: 16px;
+  color: #1890ff;
+}
+
+.csv-upload-btn {
+  background-color: #8c8c8c;
+  border-color: #8c8c8c;
+  height: 48px;
+}
+
+.csv-template-btn {
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  text-align: left;
+  border: 1px solid #d9d9d9;
+  border-radius: 6px;
+}
+
+.csv-results-section {
+  margin-top: 40px;
+}
+
+.csv-success-title {
+  color: #52c41a;
+}
+
+.csv-warning-title {
+  color: #faad14;
+}
+
+.csv-error-title {
+  color: #ff4d4f;
+}
+
+.csv-list {
+  margin-bottom: 20px;
+}
+
+/* ===========================
+   Responsive Styles
+   =========================== */
+
+/* Tablet - 768px */
+@media (max-width: 768px) {
+  .csv-registration-container {
+    padding: 30px 16px;
+    padding-top: 70px;
+  }
+
+  .csv-registration-title {
+    font-size: 22px !important;
+    margin-bottom: 30px;
+  }
+
+  .csv-card .ant-card-body {
+    padding: 24px;
+  }
+
+  .csv-upload-dragger {
+    padding: 30px 16px;
+  }
+
+  .csv-upload-icon {
+    font-size: 40px;
+  }
+
+  .csv-upload-text {
+    font-size: 14px;
+  }
+
+  .csv-upload-btn {
+    height: 44px;
+  }
+
+  .csv-template-btn {
+    height: 52px;
+    font-size: 13px;
+  }
+
+  .csv-results-section {
+    margin-top: 30px;
+  }
+}
+
+/* Small Tablet - 576px */
+@media (max-width: 576px) {
+  .csv-registration-container {
+    padding: 24px 12px;
+    padding-top: 65px;
+  }
+
+  .csv-registration-title {
+    font-size: 20px !important;
+    margin-bottom: 24px;
+  }
+
+  .csv-card .ant-card-body {
+    padding: 20px;
+  }
+
+  .csv-section-title {
+    font-size: 16px !important;
+  }
+
+  .csv-upload-dragger {
+    padding: 24px 12px;
+  }
+
+  .csv-upload-icon {
+    font-size: 36px;
+  }
+
+  .csv-upload-text {
+    font-size: 13px;
+  }
+
+  .csv-upload-btn {
+    height: 42px;
+    font-size: 14px;
+  }
+
+  .csv-template-btn {
+    height: 48px;
+    font-size: 12px;
+    padding: 8px 12px;
+  }
+
+  .csv-template-btn span {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 200px;
+  }
+
+  .csv-results-section {
+    margin-top: 24px;
+  }
+
+  .ant-list-item {
+    padding: 12px;
+    font-size: 13px;
+  }
+}
+
+/* Mobile - 480px */
+@media (max-width: 480px) {
+  .csv-registration-container {
+    padding: 20px 10px;
+    padding-top: 60px;
+  }
+
+  .csv-registration-title {
+    font-size: 18px !important;
+    margin-bottom: 20px;
+  }
+
+  .csv-card .ant-card-body {
+    padding: 16px;
+  }
+
+  .csv-section-title {
+    font-size: 15px !important;
+    gap: 6px;
+  }
+
+  .csv-upload-dragger {
+    padding: 20px 10px;
+  }
+
+  .csv-upload-icon {
+    font-size: 32px;
+  }
+
+  .csv-upload-text {
+    font-size: 13px;
+  }
+
+  .csv-upload-btn {
+    height: 44px;
+    font-size: 14px;
+  }
+
+  .csv-template-btn {
+    height: 52px;
+    font-size: 13px;
+    padding: 10px 12px;
+  }
+
+  .csv-template-btn span {
+    font-size: 13px;
+  }
+
+  .ant-alert {
+    padding: 8px 12px;
+  }
+
+  .ant-alert-message {
+    font-size: 12px;
+  }
+}
+
+/* Small Mobile - 360px */
+@media (max-width: 360px) {
+  .csv-registration-container {
+    padding: 16px 8px;
+    padding-top: 55px;
+  }
+
+  .csv-registration-title {
+    font-size: 17px !important;
+    margin-bottom: 16px;
+  }
+
+  .csv-card .ant-card-body {
+    padding: 14px;
+  }
+
+  .csv-section-title {
+    font-size: 14px !important;
+  }
+
+  .csv-upload-dragger {
+    padding: 16px 8px;
+  }
+
+  .csv-upload-icon {
+    font-size: 28px;
+  }
+
+  .csv-upload-text {
+    font-size: 12px;
+  }
+
+  .csv-upload-btn {
+    height: 42px;
+    font-size: 13px;
+  }
+
+  .csv-template-btn {
+    height: 50px;
+    font-size: 12px;
+    padding: 10px;
+  }
+
+  .csv-template-btn span {
+    font-size: 12px;
+  }
+
+  .ant-card-head-title {
+    font-size: 14px;
+  }
+}
+
+/* Extra Small Mobile - 320px */
+@media (max-width: 320px) {
+  .csv-registration-container {
+    padding: 14px 6px;
+    padding-top: 50px;
+  }
+
+  .csv-registration-title {
+    font-size: 16px !important;
+    margin-bottom: 14px;
+  }
+
+  .csv-card .ant-card-body {
+    padding: 12px;
+  }
+
+  .csv-section-title {
+    font-size: 13px !important;
+    gap: 4px;
+  }
+
+  .csv-upload-dragger {
+    padding: 14px 6px;
+  }
+
+  .csv-upload-icon {
+    font-size: 26px;
+  }
+
+  .csv-upload-text {
+    font-size: 12px;
+  }
+
+  .csv-upload-btn {
+    height: 40px;
+    font-size: 13px;
+  }
+
+  .csv-template-btn {
+    height: 48px;
+    font-size: 11px;
+    padding: 8px;
+  }
+
+  .csv-template-btn span {
+    font-size: 11px;
+    white-space: normal;
+    line-height: 1.3;
+  }
+
+  .ant-space {
+    gap: 12px !important;
+  }
+
+  .ant-list-item {
+    padding: 10px;
+    font-size: 12px;
+  }
+
+  .ant-card-head-title {
+    font-size: 13px;
+  }
+
+  .ant-alert {
+    padding: 8px 10px;
+  }
+
+  .ant-alert-message {
+    font-size: 11px;
+  }
+
+  .ant-alert-description {
+    font-size: 11px;
+  }
+}

@@ -1,0 +1,669 @@
+/* ===========================
+   Base Navbar Styles
+   =========================== */
+.student-header-navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 24px;
+  padding-bottom: 0px;
+  background-color: #669bbc;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  position: sticky;
+  top: 0;
+  z-index: 1050;
+  height: 70px;
+}
+
+.student-header-navbar-left {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+
+.student-header-logo img {
+  height: 45px;
+  width: auto;
+}
+
+.student-header-nav-links {
+  display: flex;
+  list-style: none;
+  gap: 28px;
+  margin: 0;
+  padding: 0;
+}
+
+.student-header-nav-links li a {
+  text-decoration: none;
+  color: #000;
+  font-weight: 500;
+  font-size: 24px;
+  transition: color 0.2s;
+  white-space: nowrap;
+}
+
+.student-header-nav-icons {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.student-header-icon {
+  position: relative;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.student-header-icon img {
+  width: 40px;
+  height: 35px;
+  object-fit: contain;
+}
+
+.student-header-notification-icon-wrapper {
+  position: relative;
+  z-index: 1100;
+}
+
+.student-header-profile-icon {
+  position: relative;
+  cursor: pointer;
+  z-index: 1100;
+}
+
+.student-header-profile-icon img {
+  width: 46px;
+  height: 42px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.student-header-dropdown-menu {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  margin-top: 8px;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+  list-style: none;
+  padding: 8px 0;
+  min-width: 200px;
+  z-index: 1100;
+}
+
+.student-header-dropdown-menu li {
+  padding: 0;
+}
+
+.student-header-dropdown-menu li a,
+.student-header-dropdown-menu li.student-header-logout {
+  display: block;
+  padding: 12px 20px;
+  color: #374151;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: background-color 0.2s;
+  cursor: pointer;
+  background: none;
+  border: none;
+  width: 100%;
+  text-align: left;
+}
+
+.student-header-dropdown-menu li.student-header-logout {
+  color: #ef4444;
+  font-weight: 600;
+}
+
+/* ===========================
+   Hamburger Menu Icon
+   =========================== */
+.student-header-hamburger-menu {
+  display: none;
+  width: 32px;
+  height: 24px;
+  position: relative;
+  cursor: pointer;
+  z-index: 2100;
+}
+
+.student-header-hamburger-menu span {
+  display: block;
+  position: absolute;
+  height: 3px;
+  width: 100%;
+  background: #374151;
+  border-radius: 3px;
+  opacity: 1;
+  left: 0;
+  transform: rotate(0deg);
+  transition: 0.25s ease-in-out;
+}
+
+.student-header-hamburger-menu span:nth-child(1) {
+  top: 0px;
+}
+
+.student-header-hamburger-menu span:nth-child(2),
+.student-header-hamburger-menu span:nth-child(3) {
+  top: 10px;
+}
+
+.student-header-hamburger-menu span:nth-child(4) {
+  top: 20px;
+}
+
+.student-header-hamburger-menu.student-header-open span:nth-child(1) {
+  top: 10px;
+  width: 0%;
+  left: 50%;
+}
+
+.student-header-hamburger-menu.student-header-open span:nth-child(2) {
+  transform: rotate(45deg);
+}
+
+.student-header-hamburger-menu.student-header-open span:nth-child(3) {
+  transform: rotate(-45deg);
+}
+
+.student-header-hamburger-menu.student-header-open span:nth-child(4) {
+  top: 10px;
+  width: 0%;
+  left: 50%;
+}
+
+/* ===========================
+   Mobile Sidebar Styles
+   =========================== */
+.student-header-mobile-sidebar-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 2000;
+  display: flex;
+  justify-content: flex-start;
+  align-items: stretch;
+  padding-top: 70px;
+}
+
+.student-header-img {
+  font-size: 1.5rem;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  color: black;
+}
+
+.student-header-mobile-sidebar {
+  background: #669bbc;
+  width: 80vw;
+  max-width: 320px;
+  height: 100vh;
+  box-shadow: 2px 0 16px rgba(0, 0, 0, 0.10);
+  padding-top: 32px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  animation: slideInSidebar 0.2s ease;
+}
+
+@keyframes slideInSidebar {
+  from { transform: translateX(-100%); }
+  to { transform: translateX(0); }
+}
+
+.student-header-close-sidebar-btn {
+  position: absolute;
+  top: 12px;
+  right: 16px;
+  background: none;
+  border: none;
+  font-size: 2rem;
+  color: #374151;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.student-header-mobile-sidebar-menu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+}
+
+.student-header-mobile-sidebar-menu li:last-child {
+  border-bottom: none;
+}
+
+.student-header-mobile-sidebar-menu a,
+.student-header-mobile-sidebar-menu .student-header-logout {
+  display: block;
+  padding: 16px 24px;
+  font-size: 1rem;
+  color: #000;
+  text-decoration: none;
+  background: none;
+  border: none;
+  width: 100%;
+  text-align: left;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.student-header-mobile-sidebar-menu a:hover,
+.student-header-mobile-sidebar-menu .student-header-logout:hover {
+  background: #f3f4f6;
+  color: #2563eb;
+}
+
+.student-header-mobile-sidebar-menu .student-header-logout {
+  color: #ef4444;
+  font-weight: 600;
+}
+
+/* ===========================
+   Gallery Icon Styles
+   =========================== */
+.student-header-gallery-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.student-header-gallery-icon {
+  font-size: 18px !important;
+  width: 30px !important;
+  height: 28px !important;
+  min-width: 30px;
+  min-height: 28px;
+  color: black;
+  transition: color 0.2s ease;
+}
+
+/* ===========================
+   Notification Dropdown Styles
+   =========================== */
+.student-header-notification-dropdown {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  left: auto;
+  margin-top: 8px;
+  width: 380px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+  border: 1px solid #e5e7eb;
+  z-index: 1000;
+  overflow: hidden;
+}
+
+.student-header-dropdown-header {
+  padding: 16px 20px;
+  border-bottom: 1px solid #f1f3f4;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #f8f9fa;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.student-header-dropdown-header span {
+  font-size: 14px;
+  font-weight: 600;
+  color: #374151;
+}
+
+.student-header-actions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.student-header-actions button {
+  background: none;
+  border: none;
+  color: #3b82f6;
+  font-size: 12px;
+  cursor: pointer;
+  padding: 4px 8px;
+  border-radius: 4px;
+  transition: background-color 0.2s;
+  font-weight: 500;
+}
+
+.student-header-actions button:hover {
+  background-color: #eff6ff;
+}
+
+.student-header-dropdown-list {
+  max-height: 400px;
+  overflow-y: auto;
+}
+
+.student-header-dropdown-item {
+  display: flex;
+  align-items: flex-start;
+  padding: 12px 20px;
+  border-bottom: 1px solid #f1f3f4;
+  transition: background-color 0.2s;
+  cursor: pointer;
+}
+
+.student-header-dropdown-item:hover {
+  background-color: #f8f9fa;
+}
+
+.student-header-dropdown-item:last-child {
+  border-bottom: none;
+}
+
+.student-header-dropdown-item.student-header-unread {
+  background-color: #eff6ff;
+  border-left: 3px solid #3b82f6;
+}
+
+.student-header-dropdown-item.student-header-read {
+  background-color: white;
+}
+
+.student-header-notif-icon {
+  margin-right: 12px;
+  margin-top: 2px;
+  flex-shrink: 0;
+}
+
+.student-header-notif-icon span {
+  font-size: 16px;
+  width: 28px;
+  height: 28px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: #f3f4f6;
+  border-radius: 50%;
+  font-size: 14px;
+}
+
+.student-header-notif-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.student-header-notif-content h4 {
+  margin: 0 0 4px 0;
+  font-size: 14px;
+  font-weight: 600;
+  color: #111827;
+  line-height: 1.3;
+}
+
+.student-header-notif-content p {
+  margin: 0 0 4px 0;
+  font-size: 13px;
+  color: #6b7280;
+  line-height: 1.4;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+.student-header-notif-content small {
+  font-size: 11px;
+  color: #9ca3af;
+}
+
+.student-header-no-notifications {
+  text-align: center;
+  padding: 40px 20px;
+  color: #6b7280;
+  font-size: 14px;
+}
+
+.student-header-notification-badge {
+  position: absolute;
+  top: -4px;
+  right: -4px;
+  background: #ef4444;
+  color: white;
+  border-radius: 50%;
+  width: 18px;
+  height: 18px;
+  font-size: 10px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid white;
+}
+
+/* Different notification type icons */
+.student-header-notif-icon .student-header-team-icon {
+  background: #3b82f6;
+  color: white;
+}
+
+.student-header-notif-icon .student-header-warning-icon {
+  background: #f59e0b;
+  color: white;
+}
+
+.student-header-notif-icon .student-header-success-icon {
+  background: #10b981;
+  color: white;
+}
+
+.student-header-notif-icon .student-header-info-icon {
+  background: #6b7280;
+  color: white;
+}
+
+/* ===========================
+   Profile Dropdown Styles
+   =========================== */
+.student-header-profile-dropdown {
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+  width: 220px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+  border: 1px solid #e5e7eb;
+  z-index: 1100;
+  overflow: hidden;
+}
+
+.student-header-profile-dropdown ul {
+  margin: 0;
+  padding: 8px 0;
+  list-style: none;
+}
+
+.student-header-profile-dropdown li {
+  padding: 12px 16px;
+  font-size: 14px;
+  color: #000000;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.student-header-profile-dropdown li a {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+/* ===========================
+   Responsive Styles
+   =========================== */
+@media (min-width: 769px) {
+  .student-header-mobile-sidebar-overlay {
+    display: none !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .student-header-hamburger-menu {
+    display: block;
+    position: absolute;
+    left: 16px;
+    top: 18px;
+  }
+  
+  .student-header-navbar-left {
+    margin-left: 56px;
+  }
+  
+  .student-header-navbar-left .student-header-nav-links {
+    display: none;
+  }
+  
+  .student-header-navbar {
+    padding: 12px 16px;
+  }
+  
+  .student-header-nav-icons {
+    gap: 20px;
+  }
+  
+  .student-header-notification-dropdown {
+    width: 260px;
+    max-width: calc(100vw - 20px);
+    right: -100px;
+    left: auto;
+  }
+  
+  .student-header-dropdown-header {
+    padding: 12px 16px;
+    font-size: 13px;
+  }
+  
+  .student-header-actions button {
+    font-size: 11px;
+    padding: 3px 6px;
+  }
+  
+  .student-header-gallery-icon {
+    font-size: 18px !important;
+    width: 30px !important;
+    height: 28px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .student-header-logo img {
+    height: 35px;
+  }
+  
+  .student-header-nav-icons {
+    gap: 10px;
+  }
+  
+  .student-header-notification-dropdown {
+    width: 240px;
+    max-width: calc(100vw - 16px);
+    right: -90px;
+    left: auto;
+    position: absolute;
+    top: 100%;
+  }
+  
+  .student-header-dropdown-header {
+    padding: 10px 14px;
+  }
+  
+  .student-header-dropdown-header span {
+    font-size: 12px;
+  }
+  
+  .student-header-actions {
+    gap: 8px;
+  }
+  
+  .student-header-actions button {
+    font-size: 10px;
+    padding: 2px 5px;
+  }
+  
+  .student-header-notification-icon-wrapper {
+    position: relative;
+  }
+  
+  .student-header-dropdown-menu {
+    width: 220px;
+    position: absolute;
+    top: 100%;
+    right: 0;
+  }
+}
+
+@media (max-width: 375px) {
+  .student-header-navbar {
+    padding: 12px 0px;
+  }
+  
+  .student-header-notification-dropdown {
+    width: 220px;
+    max-width: calc(100vw - 12px);
+    right: -80px;
+    left: auto;
+  }
+  
+  .student-header-dropdown-header {
+    padding: 8px 12px;
+  }
+  
+  .student-header-dropdown-header span {
+    font-size: 11px;
+  }
+  
+  .student-header-actions button {
+    font-size: 9px;
+    padding: 2px 4px;
+  }
+}
+
+@media (max-width: 320px) {
+  .student-header-navbar {
+    padding: 12px 0px;
+  }
+  
+  .student-header-notification-dropdown {
+    width: 200px;
+    max-width: calc(100vw - 10px);
+    right: -70px;
+    left: auto;
+  }
+  
+  .student-header-dropdown-header {
+    padding: 8px 10px;
+  }
+  
+  .student-header-dropdown-header span {
+    font-size: 10px;
+  }
+  
+  .student-header-actions {
+    gap: 6px;
+  }
+  
+  .student-header-actions button {
+    font-size: 9px;
+    padding: 2px 4px;
+  }
+  
+  .student-header-nav-icons {
+    gap: 0px;
+  }
+}

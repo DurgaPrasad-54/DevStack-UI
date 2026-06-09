@@ -1,0 +1,1763 @@
+/* Problem Statements Page - Mentor CSS */
+
+/* Main Container */
+.mentor-problems-container {
+  min-height: 100vh;
+  background-color: #f9fafb;
+  padding: 24px;
+  font-family: 'Roboto', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  overflow-x: hidden;
+}
+
+.mentor-problem-container {
+  min-height: 100vh;
+  background-color: #f9fafb;
+  padding: 24px;
+  font-family: 'Roboto', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  overflow-x: hidden;
+}
+
+.mentor-problem-content {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  min-height: calc(100vh - 48px);
+}
+
+/* Loading State */
+.mentor-loading-state {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f9fafb;
+}
+
+.mentor-loading-state .ant-spin {
+  color: #2563eb;
+}
+
+/* Page Header */
+.mentor-problem-header {
+  margin-bottom: 24px;
+}
+
+.mentor-problems-header {
+  margin-bottom: 24px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.mentor-problem-header h3,
+.mentor-problems-header h2 {
+  font-size: 1.75rem;
+  font-weight: 600;
+  color: #111827;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.mentor-problem-header .anticon,
+.mentor-problems-header .anticon {
+  color: #2563eb;
+  font-size: 1.5rem;
+}
+
+/* Hackathon Selector Section */
+.hackathon-selector-section {
+  background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+  border-radius: 14px;
+  padding: 28px;
+  margin-bottom: 28px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  border: 1px solid #e5e7eb;
+  transition: all 0.3s ease;
+}
+
+.hackathon-selector-section:hover {
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+  border-color: #d1d5db;
+}
+
+.hackathon-selector-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  font-weight: 700;
+  color: #374151;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  margin-bottom: 16px;
+}
+
+.hackathon-selector-label::before {
+  content: '';
+  width: 4px;
+  height: 4px;
+  background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+  border-radius: 50%;
+}
+
+.hackathon-selector-dropdown {
+  width: 100%;
+}
+
+.hackathon-selector {
+  width: 100%;
+  max-width: 100%;
+}
+
+.hackathon-selector .ant-select-selector {
+  border-radius: 10px !important;
+  border: 2px solid #e5e7eb !important;
+  height: 48px !important;
+  padding: 8px 14px !important;
+  background: white !important;
+  transition: all 0.2s ease !important;
+  font-weight: 500;
+}
+
+.hackathon-selector .ant-select-selector:hover {
+  border-color: #2563eb !important;
+  box-shadow: 0 2px 8px rgba(37, 99, 235, 0.1) !important;
+}
+
+.hackathon-selector .ant-select-focused .ant-select-selector {
+  border-color: #2563eb !important;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15) !important;
+  background: linear-gradient(135deg, #f8fafc 0%, #ffffff 100%) !important;
+}
+
+.hackathon-selector .ant-select-selection-item {
+  color: #111827 !important;
+  font-weight: 500;
+}
+
+.hackathon-selector .ant-select-selection-placeholder {
+  color: #9ca3af !important;
+  font-weight: 400;
+}
+
+/* Search input styling */
+.hackathon-selector .ant-select-focused .ant-select-selection-search-input {
+  color: #111827 !important;
+  font-weight: 500;
+}
+
+.hackathon-selector .ant-select-selection-search-input::placeholder {
+  color: #9ca3af !important;
+}
+
+.hackathon-option-content {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 0.875rem;
+}
+
+/* Status Alerts */
+.hackathon-status-alert {
+  margin-bottom: 24px;
+  border-radius: 10px;
+}
+
+.hackathon-status-alert.completed {
+  background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%);
+  border: 1px solid #bbf7d0;
+}
+
+.hackathon-status-alert.upcoming {
+  background: linear-gradient(135deg, #fefce8 0%, #fef08a 100%);
+  border: 1px solid #fde047;
+}
+
+/* Hackathon Cards Section */
+.hackathon-cards-section {
+  margin-top: 24px;
+}
+
+.hackathon-cards-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #111827;
+  margin-bottom: 24px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Hackathon Card */
+.hackathon-card {
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+  border: 1px solid #e5e7eb;
+  margin-bottom: 24px;
+  transition: all 0.2s ease;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-height: 500px;
+}
+
+.hackathon-card:hover {
+  box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.08);
+  border-color: #d1d5db;
+}
+
+.hackathon-card .ant-card-head {
+  background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+  border-bottom: 1px solid #e5e7eb;
+  padding: 16px 24px;
+  min-height: auto;
+}
+
+.hackathon-card .ant-card-head-title {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #111827;
+}
+
+.hackathon-card .ant-card-body {
+  padding: 24px;
+  overflow-y: auto;
+  max-height: none;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Ensure no unintended content displays */
+.hackathon-card > p,
+.hackathon-card > span,
+.hackathon-card > div > p:first-child {
+  display: none;
+}
+
+.problems-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.hackathon-card .ant-card-extra {
+  margin-left: auto;
+}
+
+/* Add Problem Button */
+.add-problem-btn {
+  height: 40px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+  border: none;
+  color: white;
+  padding: 0 16px;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.add-problem-btn:hover {
+  background: linear-gradient(135deg, #1d4ed8 0%, #1e40af 100%);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.25);
+}
+
+.add-problem-btn:disabled {
+  background: #f3f4f6;
+  color: #9ca3af;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+/* Problems List */
+.problems-list {
+  margin-top: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  flex: 1;
+}
+
+.problem-list-empty {
+  text-align: center;
+  padding: 32px 24px;
+  color: #6b7280;
+}
+
+/* Problem Statement Card */
+.mentor-problem-card {
+  background: white;
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 16px;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.06);
+  border: 1px solid #e5e7eb;
+  transition: all 0.2s ease;
+}
+
+.mentor-problem-card:hover {
+  border-color: #d1d5db;
+  box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.08);
+  border-color: #2563eb;
+}
+
+.mentor-problem-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 12px;
+  gap: 12px;
+  margin-top: 0;
+  padding-top: 0;
+}
+
+.mentor-problem-card-title {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #111827;
+  margin: 0;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.mentor-problem-card-title .anticon {
+  color: #2563eb;
+  flex-shrink: 0;
+}
+
+.mentor-problem-card-meta {
+  display: flex;
+  gap: 16px;
+  font-size: 0.875rem;
+  color: #6b7280;
+  margin-bottom: 12px;
+}
+
+.mentor-problem-description {
+  color: #4b5563;
+  font-size: 0.875rem;
+  line-height: 1.6;
+  margin-bottom: 16px;
+}
+
+/* Technology Tags */
+.mentor-tech-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.mentor-problem-techs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.mentor-tech-tag {
+  background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
+  color: #1d4ed8;
+  border: 1px solid #bfdbfe;
+  font-size: 12px;
+  font-weight: 500;
+  padding: 4px 12px;
+  border-radius: 6px;
+  display: inline-block;
+}
+
+/* Action Buttons */
+.mentor-problem-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 16px;
+  padding-top: 16px;
+  border-top: 1px solid #f0f0f0;
+}
+
+.mentor-edit-btn {
+  height: 36px;
+  border-radius: 6px;
+  font-weight: 500;
+  font-size: 13px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: #f8fafc;
+  border: 1px solid #e5e7eb;
+  color: #374151;
+  padding: 0 14px;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.mentor-edit-btn:hover {
+  background: #f1f5f9;
+  border-color: #d1d5db;
+  color: #111827;
+}
+
+.mentor-delete-btn {
+  height: 36px;
+  border-radius: 6px;
+  font-weight: 500;
+  font-size: 13px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: #fef2f2;
+  border: 1px solid #fecaca;
+  color: #dc2626;
+  padding: 0 14px;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.mentor-delete-btn:hover {
+  background: #fee2e2;
+  border-color: #fca5a5;
+  color: #b91c1c;
+}
+
+/* Empty State */
+.empty-state-box {
+  background: white;
+  border-radius: 12px;
+  padding: 48px 24px;
+  text-align: center;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+}
+
+.empty-state-box h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #111827;
+  margin-bottom: 12px;
+}
+
+.empty-state-box p {
+  color: #6b7280;
+  font-size: 0.875rem;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.status-icon {
+  font-size: 48px;
+  margin-bottom: 16px;
+  color: #9ca3af;
+}
+
+.status-btn {
+  height: 40px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 14px;
+  padding: 0 20px;
+  background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+.status-btn:hover {
+  background: linear-gradient(135deg, #1d4ed8 0%, #1e40af 100%);
+}
+
+/* Modal Styles */
+.problem-modal {
+  width: 100%;
+}
+
+.problem-modal .ant-modal-content {
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.problem-modal .ant-modal-header {
+  background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+  border-bottom: 1px solid #e5e7eb;
+  padding: 20px 24px;
+}
+
+.problem-modal .ant-modal-title {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #111827;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.problem-modal .ant-modal-body {
+  padding: 24px;
+}
+
+.problem-modal .ant-modal-footer {
+  padding: 16px 24px;
+  border-top: 1px solid #e5e7eb;
+  background: #f9fafb;
+}
+
+/* Mentor Problem Modal - Responsive */
+.mentor-problem-modal {
+  width: 100%;
+}
+
+.mentor-problem-modal .ant-modal {
+  max-width: 600px;
+}
+
+.mentor-problem-modal .ant-modal-content {
+  border-radius: 12px;
+  overflow: visible;
+  margin-top: 100px;
+}
+
+.mentor-problem-modal .ant-modal-header {
+  background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+  border-bottom: 1px solid #e5e7eb;
+  padding: 20px 24px;
+  border-radius: 12px 12px 0 0;
+}
+
+.mentor-problem-modal .ant-modal-title {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #111827;
+  max-width: 85%;
+  word-break: break-word;
+  white-space: normal;
+}
+
+.mentor-problem-modal .ant-modal-close {
+  top: 16px;
+  right: 16px;
+  font-size: 1.5rem;
+}
+
+.mentor-problem-modal .ant-modal-body {
+  padding: 24px;
+  max-height: 70vh;
+  overflow-y: auto;
+}
+
+.mentor-problem-modal .ant-modal-footer {
+  padding: 16px 24px;
+  border-top: 1px solid #e5e7eb;
+  background: #f9fafb;
+  display: flex;
+  gap: 12px;
+}
+
+.mentor-problem-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.mentor-problem-form .ant-form-item {
+  margin-bottom: 0;
+}
+
+.mentor-problem-form .ant-form-item-label > label {
+  font-weight: 600;
+  color: #374151;
+  font-size: 0.875rem;
+}
+
+.mentor-problem-form .ant-input,
+.mentor-problem-form .ant-input-textarea > textarea {
+  border-radius: 8px;
+  border: 1px solid #e5e7eb;
+  font-size: 14px;
+  padding: 10px 12px;
+  transition: all 0.2s ease;
+}
+
+.mentor-problem-form .ant-input:hover,
+.mentor-problem-form .ant-input-textarea > textarea:hover {
+  border-color: #d1d5db;
+}
+
+.mentor-problem-form .ant-input:focus,
+.mentor-problem-form .ant-input-textarea > textarea:focus {
+  border-color: #2563eb !important;
+  box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.1) !important;
+}
+
+.tech-input-section {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.tech-input-wrapper {
+  display: flex;
+  gap: 8px;
+}
+
+.tech-input-wrapper .ant-input {
+  flex: 1;
+  border-radius: 8px;
+  border: 1px solid #e5e7eb;
+  padding: 10px 12px;
+}
+
+.tech-input-wrapper .add-tech-btn {
+  flex-shrink: 0;
+}
+
+.form-actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 16px;
+  justify-content: flex-start;
+}
+
+.form-submit-btn,
+.form-cancel-btn {
+  flex: 0 0 auto;
+  min-width: 120px;
+}
+
+/* Form Styles */
+.problem-form-section {
+  background: white;
+  border-radius: 12px;
+  padding: 24px;
+  margin-bottom: 24px;
+  border: 1px solid #e5e7eb;
+}
+
+.problem-form-title {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #111827;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.problem-form-group {
+  margin-bottom: 20px;
+}
+
+.problem-form-group label {
+  font-weight: 600;
+  color: #374151;
+  font-size: 0.875rem;
+  margin-bottom: 8px;
+  display: block;
+}
+
+.problem-form-group input,
+.problem-form-group textarea {
+  width: 100%;
+  border-radius: 8px;
+  border: 1px solid #e5e7eb;
+  padding: 10px 12px;
+  font-size: 14px;
+  font-family: 'Roboto', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  transition: all 0.2s ease;
+}
+
+.problem-form-group input:hover,
+.problem-form-group textarea:hover {
+  border-color: #d1d5db;
+}
+
+.problem-form-group input:focus,
+.problem-form-group textarea:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.1);
+  outline: none;
+}
+
+.problem-form-group textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+/* Technology Input Section */
+.problem-technologies-section {
+  background: linear-gradient(135deg, #eff6ff 0%, #f0f9ff 100%);
+  border: 1px solid #bfdbfe;
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.problem-technologies-label {
+  font-weight: 600;
+  color: #1d4ed8;
+  font-size: 0.875rem;
+  margin-bottom: 12px;
+  display: block;
+}
+
+.tech-input-container {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.tech-input-container input {
+  flex: 1;
+  border-radius: 8px;
+  border: 1px solid #bfdbfe;
+  padding: 8px 12px;
+  font-size: 14px;
+}
+
+.tech-input-container input:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.1);
+  outline: none;
+}
+
+.add-tech-btn {
+  height: 40px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 13px;
+  padding: 0 16px;
+  background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+  border: none;
+  color: white;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.add-tech-btn:hover {
+  background: linear-gradient(135deg, #1d4ed8 0%, #1e40af 100%);
+}
+
+.tech-tags-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+/* Form Action Buttons */
+.problem-form-actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 24px;
+}
+
+.mentor-problem-modal .form-submit-btn {
+  height: 40px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 14px;
+  padding: 0 20px;
+  background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+  border: none;
+  color: white;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  flex: 0 0 auto;
+  min-width: 120px;
+}
+
+.mentor-problem-modal .form-submit-btn:hover {
+  background: linear-gradient(135deg, #1d4ed8 0%, #1e40af 100%);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.25);
+}
+
+.mentor-problem-modal .form-cancel-btn {
+  height: 40px;
+  border-radius: 8px;
+  font-weight: 500;
+  font-size: 14px;
+  padding: 0 20px;
+  background: white;
+  border: 1px solid #e5e7eb;
+  color: #374151;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  flex: 0 0 auto;
+  min-width: 120px;
+}
+
+.mentor-problem-modal .form-cancel-btn:hover {
+  background: #f9fafb;
+  border-color: #d1d5db;
+}
+
+/* Responsive Styles */
+@media (max-width: 1024px) {
+  .mentor-problem-container,
+  .mentor-problem-container {
+    padding: 18px;
+  }
+
+  .mentor-problem-card {
+    padding: 16px;
+  }
+
+  .hackathon-selector {
+    max-width: 100%;
+  }
+  
+  .mentor-problem-modal .ant-modal-body {
+    max-height: 65vh;
+  }
+}
+
+@media (max-width: 768px) {
+  .mentor-problems-container,
+  .mentor-problem-container {
+    padding: 12px;
+  }
+
+  .mentor-problems-header h2,
+  .mentor-problem-header h3 {
+    font-size: 1.5rem;
+  }
+
+  .hackathon-selector-section {
+    padding: 18px;
+    margin-bottom: 20px;
+    border-radius: 12px;
+  }
+
+  .hackathon-selector-label {
+    font-size: 12px;
+    margin-bottom: 14px;
+  }
+
+  .hackathon-selector {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .hackathon-selector .ant-select-selector {
+    height: 42px !important;
+    padding: 6px 10px !important;
+    border-radius: 9px !important;
+    border: 2px solid #e5e7eb !important;
+    font-size: 14px;
+  }
+
+  .hackathon-selector .ant-select-selection-item {
+    font-size: 14px !important;
+  }
+
+  .hackathon-card .ant-card-head {
+    padding: 12px 16px;
+  }
+
+  .hackathon-card .ant-card-body {
+    padding: 16px;
+  }
+
+  .add-problem-btn {
+    height: 36px;
+    font-size: 13px;
+  }
+
+  .mentor-problem-card {
+    padding: 16px;
+  }
+
+  .mentor-problem-card-header {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .mentor-problem-card-title {
+    font-size: 1rem;
+  }
+
+  .mentor-problem-description {
+    font-size: 0.8125rem;
+  }
+
+  .mentor-problem-actions {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .mentor-edit-btn,
+  .mentor-delete-btn {
+    width: 100%;
+  }
+
+  .problem-form-section {
+    padding: 16px;
+  }
+
+  .problem-form-group {
+    margin-bottom: 16px;
+  }
+
+  .problem-form-actions {
+    flex-direction: column;
+  }
+
+  .form-submit-btn,
+  .form-cancel-btn {
+    width: 100%;
+  }
+
+  .problem-modal .ant-modal-header {
+    padding: 14px 16px;
+  }
+
+  .problem-modal .ant-modal-body {
+    padding: 16px;
+  }
+
+  .problem-modal .ant-modal-footer {
+    padding: 12px 16px;
+  }
+  
+  /* Mentor Problem Modal Responsive */
+  .mentor-problem-modal .ant-modal {
+    max-width: 90vw;
+    margin: 0 auto;
+  }
+  
+  .mentor-problem-modal .ant-modal-content {
+    max-height: 90vh;
+    overflow: hidden;
+  }
+  
+  .mentor-problem-modal .ant-modal-header {
+    padding: 16px 20px;
+  }
+  
+  .mentor-problem-modal .ant-modal-title {
+    font-size: 1rem;
+  }
+  
+  .mentor-problem-modal .ant-modal-body {
+    padding: 20px;
+    max-height: 60vh;
+  }
+  
+  .mentor-problem-form .ant-form-item-label > label {
+    font-size: 0.85rem;
+  }
+  
+  .mentor-problem-form .ant-input,
+  .mentor-problem-form .ant-input-textarea > textarea {
+    font-size: 13px;
+    padding: 8px 10px;
+  }
+  
+  .tech-input-wrapper .ant-input {
+    font-size: 13px;
+  }
+  
+  .form-actions {
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .mentor-problem-modal .form-submit-btn,
+  .mentor-problem-modal .form-cancel-btn {
+    height: 36px;
+    font-size: 13px;
+    flex: 0 0 auto;
+    min-width: 110px;
+  }
+}
+
+@media (max-width: 640px) {
+  .mentor-problems-container,
+  .mentor-problem-container {
+    padding: 10px;
+  }
+
+  .mentor-problems-header h2,
+  .mentor-problem-header h3 {
+    font-size: 1.25rem;
+    margin-bottom: 10px;
+  }
+
+  .hackathon-selector-section {
+    padding: 14px;
+    margin-bottom: 14px;
+    border-radius: 10px;
+  }
+
+  .hackathon-selector-label {
+    font-size: 11px;
+    margin-bottom: 8px;
+  }
+
+  .hackathon-selector .ant-select-selector {
+    height: 40px !important;
+    padding: 6px 10px !important;
+    font-size: 13px;
+    border-radius: 8px !important;
+    border: 2px solid #e5e7eb !important;
+  }
+
+  .hackathon-selector .ant-select-selection-item {
+    font-size: 13px !important;
+  }
+
+  .hackathon-card {
+    padding: 12px;
+    margin-bottom: 12px;
+  }
+
+  .hackathon-card .ant-card-head {
+    padding: 10px 12px;
+    min-height: auto;
+  }
+
+  .hackathon-card .ant-card-head-title {
+    font-size: 0.9375rem;
+  }
+
+  .hackathon-card .ant-card-body {
+    padding: 12px;
+  }
+
+  .hackathon-card .add-problem-btn {
+    height: 34px;
+    font-size: 12px;
+    width: 100%;
+    margin-top: 8px;
+  }
+
+  .problems-list {
+    margin-top: 8px;
+  }
+
+  .mentor-problem-card {
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+  }
+
+  .mentor-problem-card-header {
+    flex-direction: column;
+    gap: 6px;
+    align-items: flex-start;
+  }
+
+  .mentor-problem-card-title {
+    font-size: 0.9375rem;
+    font-weight: 600;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    -webkit-box-orient: vertical;
+    word-break: break-word;
+  }
+
+  .mentor-problem-description {
+    font-size: 0.8rem;
+    margin-top: 6px;
+    line-height: 1.4;
+  }
+
+  .mentor-tech-tags {
+    gap: 4px;
+    margin-top: 8px;
+  }
+
+  .mentor-tech-tag {
+    font-size: 10px;
+    padding: 3px 7px;
+  }
+
+  .mentor-problem-actions {
+    flex-direction: column;
+    gap: 6px;
+    margin-top: 8px;
+    padding-top: 8px;
+    border-top: 1px solid #f0f0f0;
+  }
+
+  .mentor-edit-btn,
+  .mentor-delete-btn {
+    width: 100%;
+    height: 32px;
+    font-size: 12px;
+  }
+
+  .problem-form-section {
+    padding: 10px;
+    margin-bottom: 8px;
+    border-radius: 8px;
+  }
+
+  .problem-form-title {
+    font-size: 0.95rem;
+    margin-bottom: 8px;
+  }
+
+  .problem-form-group label {
+    font-size: 0.85rem;
+    margin-bottom: 4px;
+  }
+
+  .problem-form-group input,
+  .problem-form-group textarea {
+    font-size: 12px;
+    padding: 6px;
+  }
+
+  .problem-form-group textarea {
+    min-height: 90px;
+  }
+
+  .problem-technologies-section {
+    padding: 8px;
+    margin-bottom: 8px;
+  }
+
+  .tech-input-container {
+    gap: 4px;
+    flex-direction: column;
+  }
+
+  .tech-input-container input {
+    font-size: 12px;
+    padding: 6px;
+  }
+
+  .problem-form-actions {
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .problem-form-actions button {
+    height: 34px;
+    font-size: 12px;
+    width: 100%;
+  }
+  
+  /* Mentor Problem Modal Responsive - 640px */
+  .mentor-problem-modal .ant-modal {
+    max-width: 95vw;
+    position: fixed;
+    top: 50% !important;
+    left: 50% !important;
+    transform: translate(-50%, -50%) !important;
+    margin: 0 !important;
+  }
+  
+  .mentor-problem-modal .ant-modal-wrap {
+    position: fixed;
+  }
+  
+  .mentor-problem-modal .ant-modal-content {
+    max-height: 85vh;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .mentor-problem-modal .ant-modal-header {
+    padding: 14px 16px;
+    flex-shrink: 0;
+  }
+  
+  .mentor-problem-modal .ant-modal-title {
+    font-size: 0.95rem;
+    max-width: 80%;
+  }
+  
+  .mentor-problem-modal .ant-modal-close {
+    top: 12px;
+    right: 12px;
+  }
+  
+  .mentor-problem-modal .ant-modal-body {
+    padding: 16px;
+    max-height: calc(85vh - 140px);
+    overflow-y: auto;
+    flex: 1;
+  }
+  
+  .mentor-problem-modal .ant-modal-footer {
+    padding: 14px 16px;
+    flex-shrink: 0;
+  }
+  
+  .mentor-problem-form .ant-form-item {
+    margin-bottom: 12px;
+  }
+  
+  .mentor-problem-form .ant-form-item-label > label {
+    font-size: 0.8rem;
+    margin-bottom: 4px;
+  }
+  
+  .mentor-problem-form .ant-input,
+  .mentor-problem-form .ant-input-textarea > textarea {
+    font-size: 12px;
+    padding: 7px 10px;
+    border-radius: 6px;
+  }
+  
+  .mentor-problem-form .ant-input-textarea > textarea {
+    min-height: 80px;
+  }
+  
+  .tech-input-section {
+    gap: 10px;
+  }
+  
+  .tech-input-wrapper {
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+  
+  .tech-input-wrapper .ant-input {
+    flex: 1;
+    min-width: 120px;
+    font-size: 12px;
+  }
+  
+  .tech-input-wrapper .add-tech-btn {
+    white-space: nowrap;
+  }
+  
+  .tech-tags-list {
+    gap: 6px;
+  }
+  
+  .form-actions {
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .form-submit-btn,
+  .form-cancel-btn {
+    height: 34px;
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .mentor-problems-container,
+  .mentor-problem-container {
+    padding: 6px;
+  }
+
+  .mentor-problems-header h2,
+  .mentor-problem-header h3 {
+    font-size: 1.125rem;
+    margin-bottom: 8px;
+  }
+
+  .mentor-problems-header .anticon,
+  .mentor-problem-header .anticon {
+    font-size: 1rem;
+  }
+
+  .hackathon-selector-section {
+    padding: 12px;
+    margin-bottom: 12px;
+    border-radius: 8px;
+  }
+
+  .hackathon-selector-label {
+    font-size: 10px;
+    margin-bottom: 8px;
+    font-weight: 700;
+  }
+
+  .hackathon-selector {
+    width: 100%;
+  }
+
+  .hackathon-selector .ant-select-selector {
+    height: 36px !important;
+    padding: 6px 10px !important;
+    font-size: 12px;
+    border-radius: 8px !important;
+    border: 2px solid #e5e7eb !important;
+  }
+
+  .hackathon-selector .ant-select-selector .anticon {
+    font-size: 10px;
+  }
+
+  .hackathon-cards-section {
+    margin-top: 6px;
+  }
+
+  .hackathon-card {
+    padding: 8px;
+    margin-bottom: 8px;
+    border-radius: 8px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+  }
+
+  .hackathon-card .ant-card-head {
+    padding: 8px 10px;
+    min-height: auto;
+  }
+
+  .hackathon-card .ant-card-head-title {
+    font-size: 0.8125rem;
+    font-weight: 600;
+  }
+
+  .hackathon-card .ant-card-body {
+    padding: 8px;
+  }
+
+  .hackathon-card .add-problem-btn {
+    height: 32px;
+    font-size: 11px;
+    width: 100%;
+    margin-top: 6px;
+    padding: 0 8px;
+  }
+
+  .problems-list {
+    margin-top: 6px;
+  }
+
+  .mentor-problem-card {
+    padding: 8px;
+    margin-bottom: 8px;
+    border-radius: 8px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+  }
+
+  .mentor-problem-card-header {
+    flex-direction: column;
+    gap: 6px;
+    align-items: flex-start;
+    margin-bottom: 6px;
+  }
+
+  .mentor-problem-card-title {
+    font-size: 0.8125rem;
+    font-weight: 600;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    -webkit-box-orient: vertical;
+    word-break: break-word;
+    width: 100%;
+  }
+
+  .mentor-problem-card-title .anticon {
+    font-size: 12px;
+    min-width: 12px;
+    flex-shrink: 0;
+  }
+
+  .mentor-problem-card-meta {
+    font-size: 0.7rem;
+    gap: 8px;
+    margin-top: 6px;
+    flex-wrap: wrap;
+  }
+
+  .mentor-problem-description {
+    font-size: 0.75rem;
+    line-height: 1.4;
+    margin-top: 4px;
+    margin-bottom: 6px;
+  }
+
+  .mentor-tech-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+    margin-bottom: 6px;
+  }
+
+  .mentor-tech-tag {
+    font-size: 0.65rem;
+    padding: 2px 6px;
+    border-radius: 4px;
+  }
+
+  .mentor-problem-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin-top: 6px;
+    padding-top: 6px;
+    border-top: 1px solid #f0f0f0;
+  }
+
+  .mentor-problem-actions button {
+    height: 30px;
+    font-size: 10px;
+    padding: 0 8px;
+  }
+
+  .mentor-edit-btn,
+  .mentor-delete-btn {
+    width: 100%;
+    height: 30px;
+    font-size: 10px;
+  }
+
+  .problem-form-section {
+    padding: 10px;
+    margin-bottom: 8px;
+    border-radius: 8px;
+  }
+
+  .problem-form-title {
+    font-size: 0.95rem;
+    margin-bottom: 8px;
+    gap: 6px;
+  }
+
+  .problem-form-title .anticon {
+    font-size: 14px;
+  }
+
+  .problem-form-group label {
+    font-size: 0.8rem;
+    margin-bottom: 4px;
+  }
+
+  .problem-form-group input,
+  .problem-form-group textarea {
+    font-size: 12px;
+    padding: 6px;
+    border-radius: 6px;
+  }
+
+  .problem-form-group textarea {
+    min-height: 80px;
+    font-size: 12px;
+  }
+
+  .problem-technologies-section {
+    padding: 8px;
+    margin-bottom: 8px;
+    border-radius: 6px;
+  }
+
+  .problem-technologies-label {
+    font-size: 0.8rem;
+    margin-bottom: 6px;
+  }
+
+  .tech-input-container {
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .tech-input-container input {
+    font-size: 12px;
+    padding: 6px;
+    width: 100%;
+  }
+
+  .problem-form-actions {
+    flex-direction: column;
+    gap: 6px;
+    margin-top: 8px;
+  }
+
+  .problem-form-actions button {
+    height: 32px;
+    font-size: 10px;
+    padding: 0 10px;
+    width: 100%;
+  }
+
+  .problem-modal-content {
+    padding: 0;
+  }
+
+  .problem-modal .ant-modal-header {
+    padding: 10px 12px;
+  }
+
+  .problem-modal .ant-modal-title {
+    font-size: 0.85rem;
+    gap: 6px;
+  }
+
+  .problem-modal .ant-modal-body {
+    padding: 10px;
+    max-height: 70vh;
+    overflow-y: auto;
+  }
+
+  .problem-modal .ant-modal-footer {
+    padding: 8px;
+    gap: 6px;
+  }
+
+  .problem-modal .ant-modal-footer button {
+    font-size: 10px;
+    height: 32px;
+    padding: 0 8px;
+    flex: 1;
+  }
+
+  .confirm-problem-delete-message {
+    font-size: 0.8rem;
+  }
+
+  .confirm-problem-delete-details {
+    font-size: 0.7rem;
+    padding: 6px;
+    margin-top: 6px;
+  }
+
+  .empty-state-box {
+    padding: 16px 10px;
+  }
+
+  .empty-state-box h3 {
+    font-size: 0.95rem;
+    margin-bottom: 6px;
+  }
+
+  .empty-state-box p {
+    font-size: 0.7rem;
+    margin-bottom: 10px;
+    line-height: 1.5;
+  }
+
+  .empty-state-box .status-icon {
+    width: 40px;
+    height: 40px;
+    font-size: 18px;
+    margin-bottom: 8px;
+  }
+
+  .empty-state-box .status-btn {
+    height: 32px;
+    font-size: 10px;
+    padding: 0 10px;
+  }
+  
+  /* Mentor Problem Modal Responsive - 480px */
+  .mentor-problem-modal {
+    z-index: 1050;
+  }
+  
+  .mentor-problem-modal .ant-modal-mask {
+    z-index: 1049;
+  }
+  
+  .mentor-problem-modal .ant-modal {
+    max-width: 98vw;
+    position: fixed;
+    top: 50% !important;
+    left: 50% !important;
+    transform: translate(-50%, -50%) !important;
+    margin: 0 !important;
+  }
+  
+  .mentor-problem-modal .ant-modal-content {
+    max-height: 90vh;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+  }
+  
+  .mentor-problem-modal .ant-modal-header {
+    padding: 12px 14px;
+    flex-shrink: 0;
+    border-radius: 10px 10px 0 0;
+  }
+  
+  .mentor-problem-modal .ant-modal-title {
+    font-size: 0.9rem;
+    max-width: 75%;
+    line-height: 1.3;
+  }
+  
+  .mentor-problem-modal .ant-modal-close {
+    top: 10px;
+    right: 10px;
+    font-size: 1.3rem;
+    line-height: 1;
+  }
+  
+  .mentor-problem-modal .ant-modal-body {
+    padding: 14px;
+    max-height: calc(90vh - 130px);
+    overflow-y: auto;
+    flex: 1;
+  }
+  
+  .mentor-problem-modal .ant-modal-footer {
+    padding: 12px 14px;
+    flex-shrink: 0;
+    border-top: 1px solid #e5e7eb;
+  }
+  
+  .mentor-problem-form {
+    gap: 12px;
+  }
+  
+  .mentor-problem-form .ant-form-item {
+    margin-bottom: 0;
+  }
+  
+  .mentor-problem-form .ant-form-item-label > label {
+    font-size: 0.75rem;
+    font-weight: 600;
+    margin-bottom: 3px;
+  }
+  
+  .mentor-problem-form .ant-input,
+  .mentor-problem-form .ant-input-textarea > textarea {
+    font-size: 11px;
+    padding: 6px 8px;
+    border-radius: 6px;
+    border: 1px solid #e5e7eb;
+  }
+  
+  .mentor-problem-form .ant-input-textarea > textarea {
+    min-height: 70px;
+    max-height: 120px;
+  }
+  
+  .tech-input-section {
+    gap: 8px;
+  }
+  
+  .tech-input-wrapper {
+    flex-direction: column;
+    gap: 6px;
+  }
+  
+  .tech-input-wrapper .ant-input {
+    width: 100%;
+    font-size: 11px;
+  }
+  
+  .tech-input-wrapper .add-tech-btn {
+    width: 100%;
+    height: 32px;
+    font-size: 11px;
+  }
+  
+  .tech-tags-list {
+    gap: 4px;
+    flex-wrap: wrap;
+  }
+  
+  .tech-tags-list .ant-tag {
+    font-size: 10px;
+    padding: 2px 6px;
+  }
+  
+  .form-actions {
+    flex-direction: column;
+    gap: 8px;
+  }
+  
+  .form-submit-btn,
+  .form-cancel-btn {
+    height: 32px;
+    font-size: 11px;
+    border-radius: 6px;
+  }
+}
+
+@media (max-width: 360px) {
+  .mentor-problem-modal .ant-modal {
+    max-width: 99vw;
+    position: fixed;
+    top: 50% !important;
+    left: 50% !important;
+    transform: translate(-50%, -50%) !important;
+    margin: 0 !important;
+  }
+  
+  .mentor-problem-modal .ant-modal-content {
+    max-height: 92vh;
+    border-radius: 8px;
+  }
+  
+  .mentor-problem-modal .ant-modal-header {
+    padding: 8px 10px;
+  }
+  
+  .mentor-problem-modal .ant-modal-title {
+    font-size: 0.8rem;
+    max-width: 65%;
+  }
+  
+  .mentor-problem-modal .ant-modal-close {
+    top: 8px;
+    right: 8px;
+    font-size: 1.1rem;
+  }
+  
+  .mentor-problem-modal .ant-modal-body {
+    padding: 10px;
+    max-height: calc(92vh - 120px);
+  }
+  
+  .mentor-problem-modal .ant-modal-footer {
+    padding: 10px;
+  }
+  
+  .mentor-problem-form .ant-form-item-label > label {
+    font-size: 0.7rem;
+  }
+  
+  .mentor-problem-form .ant-input,
+  .mentor-problem-form .ant-input-textarea > textarea {
+    font-size: 10px;
+    padding: 5px 7px;
+  }
+  
+  .mentor-problem-form .ant-input-textarea > textarea {
+    min-height: 60px;
+    max-height: 100px;
+  }
+  
+  .tech-input-wrapper .ant-input {
+    font-size: 10px;
+  }
+  
+  .tech-input-wrapper .add-tech-btn {
+    height: 30px;
+    font-size: 10px;
+  }
+  
+  .tech-tags-list .ant-tag {
+    font-size: 9px;
+    padding: 2px 5px;
+  }
+  
+  .form-submit-btn,
+  .form-cancel-btn {
+    height: 30px;
+    font-size: 10px;
+  }
+}

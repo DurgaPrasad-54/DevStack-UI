@@ -1,0 +1,1210 @@
+/* Teams Management - Mobile Responsive Styles */
+
+/* Main container */
+.teams-container {
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  font-family: system-ui, -apple-system, sans-serif;
+  padding-top: 90px;
+}
+
+/* Teams list wrapper - enables horizontal scroll on mobile */
+.teams-list-wrapper {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  margin: 0 -20px;
+  padding: 0 20px;
+}
+
+/* Teams grid */
+.teams-grid {
+  display: grid;
+  gap: 20px;
+  min-width: min-content;
+}
+
+/* Team card */
+.team-card {
+  border: 1px solid #e0e0e0;
+  padding: 20px;
+  border-radius: 8px;
+  background-color: white;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  min-width: 280px;
+}
+
+/* Search and filter row */
+.teams-filter-row {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+/* Stats grid */
+.teams-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 16px;
+  margin-bottom: 30px;
+}
+
+/* Tablet - 768px */
+@media screen and (max-width: 768px) {
+  .teams-container {
+    padding: 15px;
+    padding-top: 85px;
+  }
+  
+  .teams-list-wrapper {
+    margin: 0 -15px;
+    padding: 0 15px;
+  }
+  
+  .teams-filter-row {
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .teams-filter-row input,
+  .teams-filter-row select {
+    width: 100% !important;
+  }
+  
+  .team-card {
+    padding: 16px;
+  }
+  
+  .teams-stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Mobile - 480px */
+@media screen and (max-width: 480px) {
+  .teams-container {
+    padding: 12px;
+    padding-top: 80px;
+  }
+  
+  .teams-list-wrapper {
+    margin: 0 -12px;
+    padding: 0 12px;
+  }
+  
+  .team-card {
+    padding: 14px;
+    min-width: 260px;
+  }
+  
+  .teams-stats-grid {
+    grid-template-columns: 1fr;
+    display: flex;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    gap: 10px;
+    margin: 0 -12px 20px;
+    padding: 0 12px 10px;
+  }
+  
+  .teams-stats-grid > div {
+    min-width: 150px;
+    flex-shrink: 0;
+  }
+}
+
+/* Small Mobile - 360px and below */
+@media screen and (max-width: 360px) {
+  .teams-container {
+    padding: 10px;
+    padding-top: 75px;
+  }
+  
+  .teams-list-wrapper {
+    margin: 0 -10px;
+    padding: 0 10px;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+  
+  .teams-grid {
+    min-width: 280px;
+  }
+  
+  .team-card {
+    padding: 12px;
+    min-width: 260px;
+  }
+  
+  .team-card h4 {
+    font-size: 15px !important;
+  }
+  
+  /* Team card header - stack buttons on mobile */
+  .team-card-header {
+    display: flex;
+    flex-direction: column;
+    gap: 10px !important;
+  }
+  
+  .team-card-header > div:last-child {
+    display: flex;
+    gap: 8px;
+    width: 100%;
+  }
+  
+  .team-card-header button {
+    flex: 1;
+    padding: 6px 10px !important;
+    font-size: 12px !important;
+  }
+  
+  /* Mentor and Team Lead sections */
+  .team-card .info-section {
+    padding: 10px !important;
+    margin-bottom: 12px !important;
+  }
+  
+  .team-card .info-section strong {
+    font-size: 12px !important;
+  }
+  
+  .team-card .info-section .info-name {
+    font-size: 13px !important;
+  }
+  
+  /* Team members list */
+  .team-members-container {
+    max-height: 200px;
+    overflow-y: auto;
+  }
+  
+  .team-member-item {
+    padding: 10px !important;
+    margin-bottom: 8px !important;
+  }
+  
+  .team-member-item strong {
+    font-size: 13px !important;
+  }
+  
+  .team-member-item .member-info {
+    font-size: 11px !important;
+  }
+  
+  /* Filter controls */
+  .teams-filter-row input {
+    padding: 8px 12px !important;
+    font-size: 13px !important;
+  }
+  
+  .teams-filter-row select {
+    padding: 8px 10px !important;
+    font-size: 13px !important;
+  }
+  
+  .teams-filter-row button {
+    padding: 8px 14px !important;
+    font-size: 12px !important;
+  }
+  
+  /* Stats cards horizontal scroll */
+  .teams-stats-grid {
+    display: flex;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scroll-snap-type: x mandatory;
+    gap: 8px;
+    margin: 0 -10px 15px;
+    padding: 0 10px 8px;
+  }
+  
+  .teams-stats-grid > div {
+    min-width: 130px;
+    flex-shrink: 0;
+    scroll-snap-align: start;
+    padding: 12px !important;
+  }
+  
+  .teams-stats-grid > div > div:first-child {
+    font-size: 12px !important;
+  }
+  
+  .teams-stats-grid > div > div:nth-child(2) {
+    font-size: 22px !important;
+  }
+  
+  .teams-stats-grid > div > div:last-child {
+    font-size: 11px !important;
+  }
+}
+
+/* Extra Small - 320px */
+@media screen and (max-width: 320px) {
+  .teams-container {
+    padding: 8px;
+    padding-top: 70px;
+  }
+  
+  .teams-list-wrapper {
+    margin: 0 -8px;
+    padding: 0 8px;
+  }
+  
+  .teams-grid {
+    min-width: 270px;
+  }
+  
+  .team-card {
+    padding: 10px;
+    min-width: 250px;
+  }
+  
+  .team-card h4 {
+    font-size: 14px !important;
+  }
+  
+  .team-card-header button {
+    padding: 5px 8px !important;
+    font-size: 11px !important;
+  }
+  
+  .team-card .info-section {
+    padding: 8px !important;
+  }
+  
+  .team-card .info-section strong {
+    font-size: 11px !important;
+  }
+  
+  .team-card .info-section .info-name {
+    font-size: 12px !important;
+  }
+  
+  .team-member-item {
+    padding: 8px !important;
+    margin-bottom: 6px !important;
+  }
+  
+  .team-member-item strong {
+    font-size: 12px !important;
+  }
+  
+  .member-name {
+    word-break: break-word !important;
+  }
+  
+  .team-member-item .member-info {
+    font-size: 10px !important;
+    word-break: break-all !important;
+  }
+  
+  /* Filter row */
+  .teams-filter-row input,
+  .teams-filter-row select {
+    padding: 6px 8px !important;
+    font-size: 12px !important;
+  }
+  
+  .teams-filter-row button {
+    padding: 6px 10px !important;
+    font-size: 11px !important;
+  }
+  
+  /* Stats scroll */
+  .teams-stats-grid {
+    gap: 6px;
+    margin: 0 -8px 12px;
+    padding: 0 8px 6px;
+  }
+  
+  .teams-stats-grid > div {
+    min-width: 120px;
+    padding: 10px !important;
+  }
+  
+  .teams-stats-grid > div > div:first-child {
+    font-size: 11px !important;
+  }
+  
+  .teams-stats-grid > div > div:nth-child(2) {
+    font-size: 20px !important;
+  }
+  
+  .teams-stats-grid > div > div:last-child {
+    font-size: 10px !important;
+  }
+  
+  /* Section headers */
+  .teams-container h1 {
+    font-size: 18px !important;
+    margin-bottom: 15px !important;
+  }
+  
+  .teams-container h2 {
+    font-size: 15px !important;
+  }
+  
+  .teams-container h3 {
+    font-size: 14px !important;
+  }
+}
+
+/* ===== Student Selection Cards - Mobile Fix ===== */
+
+/* Student cards container */
+.teams-container div[style*="maxHeight: '400px'"],
+.teams-container div[style*="max-height"] {
+  padding: 8px !important;
+}
+
+/* Student selection card */
+.student-select-card {
+  padding: 12px !important;
+  margin-bottom: 8px !important;
+}
+
+/* Student card inner content */
+.student-card-content {
+  flex-direction: column !important;
+  align-items: flex-start !important;
+  gap: 8px !important;
+}
+
+/* Student name row - stack on mobile */
+.student-name-row {
+  flex-direction: column !important;
+  align-items: flex-start !important;
+  gap: 6px !important;
+  width: 100%;
+}
+
+/* Student name */
+.student-name {
+  word-break: break-word !important;
+  line-height: 1.3 !important;
+}
+
+/* Student details (roll no, email) */
+.student-details {
+  word-break: break-all !important;
+  max-width: 100% !important;
+  display: inline-block !important;
+}
+/* ===== Team Info Sections - Responsive Typography ===== */
+
+/* Team info container (Mentor, Team Lead sections) */
+.team-info-section {
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+/* Team info label */
+.team-info-label {
+  display: block !important;
+  margin-bottom: 6px !important;
+}
+
+/* Team info content */
+.team-info-content {
+  display: block;
+}
+
+/* Team info name */
+.team-info-name {
+  word-break: break-word !important;
+  line-height: 1.4 !important;
+}
+
+/* Team info details - email, roll no */
+.team-info-details {
+  word-break: break-all !important;
+  overflow-wrap: break-word !important;
+  hyphens: auto !important;
+  line-height: 1.3 !important;
+}
+
+/* Mobile - 480px and below - Text responsive */
+@media screen and (max-width: 480px) {
+  .team-info-section {
+    padding: 10px !important;
+    margin-bottom: 12px !important;
+  }
+  
+  .team-info-label {
+    font-size: 12px !important;
+  }
+  
+  .team-info-name {
+    font-size: 13px !important;
+  }
+  
+  .team-info-details {
+    font-size: 11px !important;
+    margin-top: 6px !important;
+  }
+}
+
+/* Small Mobile - 360px - Text responsive */
+@media screen and (max-width: 360px) {
+  .team-info-section {
+    padding: 8px !important;
+    margin-bottom: 10px !important;
+  }
+  
+  .team-info-label {
+    font-size: 11px !important;
+    display: block !important;
+    margin-bottom: 4px !important;
+  }
+  
+  .team-info-name {
+    font-size: 12px !important;
+    line-height: 1.3 !important;
+  }
+  
+  .team-info-details {
+    font-size: 10px !important;
+    margin-top: 4px !important;
+    word-wrap: break-word !important;
+    display: block !important;
+  }
+}
+
+/* Extra Small - 320px - Text responsive */
+@media screen and (max-width: 320px) {
+  .team-info-section {
+    padding: 6px 8px !important;
+    margin-bottom: 8px !important;
+  }
+  
+  .team-info-label {
+    font-size: 10px !important;
+    display: block !important;
+    margin-bottom: 4px !important;
+  }
+  
+  .team-info-name {
+    font-size: 11px !important;
+    line-height: 1.3 !important;
+    word-wrap: break-word !important;
+  }
+  
+  .team-info-details {
+    font-size: 9px !important;
+    margin-top: 3px !important;
+    word-wrap: break-word !important;
+    word-break: break-all !important;
+    display: block !important;
+    max-width: 100% !important;
+    overflow-wrap: break-word !important;
+  }
+  
+  /* Team member card text */
+  .team-member-item strong {
+    font-size: 12px !important;
+  }
+  
+  .member-name {
+    word-break: break-word !important;
+    line-height: 1.3 !important;
+  }
+  
+  .team-member-item .member-info {
+    font-size: 9px !important;
+    word-break: break-all !important;
+  }
+}
+/* Mobile - 480px and below - Student cards */
+@media screen and (max-width: 480px) {
+  .student-select-card {
+    padding: 10px !important;
+  }
+  
+  .student-name {
+    font-size: 14px !important;
+  }
+  
+  .student-details {
+    font-size: 11px !important;
+    padding: 3px 8px !important;
+  }
+}
+
+/* Small Mobile - 360px - Student cards */
+@media screen and (max-width: 360px) {
+  .student-select-card {
+    padding: 8px !important;
+    margin-bottom: 6px !important;
+  }
+  
+  .student-name {
+    font-size: 13px !important;
+  }
+  
+  .student-details {
+    font-size: 10px !important;
+    padding: 2px 6px !important;
+  }
+}
+
+/* Extra Small - 320px - Student cards */
+@media screen and (max-width: 320px) {
+  .student-select-card {
+    padding: 6px !important;
+    margin-bottom: 5px !important;
+  }
+  
+  .student-name {
+    font-size: 12px !important;
+  }
+  
+  .student-details {
+    font-size: 9px !important;
+    padding: 2px 4px !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+  }
+  
+  .student-name-row {
+    gap: 4px !important;
+    margin-bottom: 6px !important;
+  }
+}
+
+/* Mobile - 480px and below */
+@media screen and (max-width: 480px) {
+  /* Form container adjustments */
+  .teams-container form,
+  .teams-container div[style*="backgroundColor: '#f8f9fa'"] {
+    padding: 12px !important;
+  }
+  
+  /* Search input in student selection */
+  .teams-container input[placeholder*="Search by name"] {
+    width: 100% !important;
+    margin-bottom: 8px !important;
+    margin-right: 0 !important;
+    box-sizing: border-box;
+  }
+  
+  /* Student card inner content - fix alignment */
+  .teams-container div[style*="justifyContent: 'space-between'"] {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 8px !important;
+  }
+  
+  /* Student name and info row */
+  .teams-container div[style*="gap: '10px'"][style*="flexWrap"] {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 6px !important;
+  }
+  
+  /* Roll number badge */
+  .teams-container span[style*="backgroundColor: '#f5f5f5'"] {
+    display: block !important;
+    width: fit-content !important;
+    word-break: break-all !important;
+    max-width: 100% !important;
+    font-size: 11px !important;
+    padding: 4px 8px !important;
+  }
+  
+  /* Already in team badge container */
+  .teams-container div[style*="backgroundColor: '#ffebee'"][style*="justifyContent: 'end'"] {
+    justify-content: flex-start !important;
+    margin-top: 8px !important;
+  }
+  
+  /* Mentor dropdown */
+  .teams-container select[style*="width: '100%'"] {
+    font-size: 13px !important;
+  }
+}
+
+/* Small Mobile - 360px and below */
+@media screen and (max-width: 360px) {
+  /* Further reduce padding */
+  .teams-container form,
+  .teams-container div[style*="backgroundColor: '#f8f9fa'"] {
+    padding: 10px !important;
+  }
+  
+  /* Student card */
+  .teams-container div[style*="padding: '16px'"][style*="marginBottom: '10px'"] {
+    padding: 10px !important;
+  }
+  
+  /* Student name */
+  .teams-container strong[style*="fontSize: '16px'"] {
+    font-size: 14px !important;
+    word-break: break-word !important;
+  }
+  
+  /* Roll number and email badge */
+  .teams-container span[style*="backgroundColor: '#f5f5f5'"] {
+    font-size: 10px !important;
+    padding: 3px 6px !important;
+    word-break: break-all !important;
+  }
+  
+  /* Badges - current member, already in team */
+  .teams-container span[style*="borderRadius: '16px'"] {
+    font-size: 10px !important;
+    padding: 4px 10px !important;
+  }
+  
+  /* Form labels */
+  .teams-container label {
+    font-size: 14px !important;
+    flex-wrap: wrap !important;
+  }
+  
+  /* Input and select fields */
+  .teams-container input,
+  .teams-container select {
+    font-size: 13px !important;
+  }
+  
+  /* Buttons in form */
+  .teams-container button[style*="backgroundColor: '#007bff'"],
+  .teams-container button[style*="backgroundColor: '#6c757d'"],
+  .teams-container button[style*="backgroundColor: '#ffc107'"] {
+    padding: 10px 16px !important;
+    font-size: 13px !important;
+  }
+}
+
+/* Extra Small - 320px */
+@media screen and (max-width: 320px) {
+  /* Form container */
+  .teams-container form,
+  .teams-container div[style*="backgroundColor: '#f8f9fa'"] {
+    padding: 8px !important;
+  }
+  
+  /* Student card further reduction */
+  .teams-container div[style*="padding: '16px'"][style*="marginBottom: '10px'"] {
+    padding: 8px !important;
+    margin-bottom: 6px !important;
+  }
+  
+  /* Student name */
+  .teams-container strong[style*="fontSize: '16px'"] {
+    font-size: 13px !important;
+    line-height: 1.3 !important;
+    display: block !important;
+    word-break: break-word !important;
+  }
+  
+  /* Roll number and email */
+  .teams-container span[style*="backgroundColor: '#f5f5f5'"] {
+    font-size: 9px !important;
+    padding: 2px 5px !important;
+    max-width: 100% !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+    display: block !important;
+    word-break: break-all !important;
+  }
+  
+  /* Badges */
+  .teams-container span[style*="borderRadius: '16px'"] {
+    font-size: 9px !important;
+    padding: 3px 8px !important;
+  }
+  
+  /* Form labels */
+  .teams-container label {
+    font-size: 13px !important;
+    display: block !important;
+  }
+  
+  .teams-container label span {
+    display: inline !important;
+    font-size: 12px !important;
+  }
+  
+  /* Buttons */
+  .teams-container button {
+    padding: 8px 12px !important;
+    font-size: 12px !important;
+  }
+  
+  /* Section heading adjustments */
+  .teams-container h2 {
+    font-size: 14px !important;
+  }
+  
+  .teams-container h3 {
+    font-size: 13px !important;
+  }
+  
+  /* Dropdown/Select */
+  .teams-container select {
+    font-size: 12px !important;
+    padding: 8px !important;
+  }
+  
+  /* Student list container */
+  .teams-container div[style*="maxHeight: '400px'"] {
+    max-height: 300px !important;
+    padding: 6px !important;
+  }
+  
+  /* Warning/info messages */
+  .teams-container div[style*="backgroundColor: '#ffebee'"] {
+    padding: 6px 10px !important;
+    font-size: 11px !important;
+  }
+}
+/* ==========================================
+   ASSIGNED MENTORS - RESPONSIVE STYLES
+   ========================================== */
+
+/* Assigned mentor section */
+.assigned-mentor-section {
+  margin-bottom: 16px;
+  padding: 12px;
+  background-color: #e3f2fd;
+  border-radius: 6px;
+  border-left: 4px solid #1976d2;
+}
+
+.assigned-mentor-label {
+  color: #1976d2;
+  font-size: 14px;
+  font-weight: 600;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.assigned-mentor-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.assigned-mentor-info {
+  flex: 1;
+}
+
+.assigned-mentor-name {
+  font-size: 15px;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin-bottom: 4px;
+  word-break: break-word;
+}
+
+.assigned-mentor-email {
+  font-size: 13px;
+  color: #666;
+  margin-top: 4px;
+  word-break: break-all;
+}
+
+.assigned-mentor-github {
+  font-size: 13px;
+  color: #666;
+  margin-top: 2px;
+  word-break: break-all;
+}
+
+.assigned-mentor-linkedin {
+  font-size: 13px;
+  color: #666;
+  margin-top: 2px;
+  word-break: break-all;
+}
+
+/* Team Lead section in assigned mentors */
+.assigned-team-lead-section {
+  margin-bottom: 16px;
+  padding: 12px;
+  background-color: #fff3cd;
+  border-radius: 6px;
+  border-left: 4px solid #856404;
+}
+
+.assigned-team-lead-label {
+  color: #856404;
+  font-size: 14px;
+  font-weight: 600;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.assigned-team-lead-name {
+  font-size: 15px;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin-bottom: 4px;
+  word-break: break-word;
+}
+
+.assigned-team-lead-details {
+  font-size: 13px;
+  color: #666;
+  margin-top: 4px;
+  word-break: break-word;
+  line-height: 1.5;
+}
+
+.assigned-team-lead-college {
+  font-size: 13px;
+  color: #666;
+  margin-top: 2px;
+  word-break: break-word;
+}
+
+/* Team members section in assigned mentors */
+.assigned-team-members-section {
+  display: flex;
+  flex-direction: column;
+}
+
+.assigned-team-members-title {
+  font-size: 15px;
+  color: #1a1a1a;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+.assigned-member-item {
+  padding: 12px;
+  margin-bottom: 10px;
+  background-color: #f8f9fa;
+  border-radius: 6px;
+  border-left: 3px solid #007bff;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.assigned-member-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.assigned-member-name {
+  font-size: 15px;
+  color: #1a1a1a;
+  font-weight: 600;
+  word-break: break-word;
+}
+
+.assigned-member-badge {
+  padding: 3px 10px;
+  background-color: #ffc107;
+  border-radius: 4px;
+  font-size: 11px;
+  font-weight: 700;
+  color: #000;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.assigned-member-info {
+  font-size: 13px;
+  color: #666;
+  word-break: break-word;
+  line-height: 1.4;
+}
+
+/* Filter section in assigned mentors */
+.assigned-filter-section {
+  margin-bottom: 30px;
+  padding: 20px;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  border: 1px solid #e0e0e0;
+}
+
+.assigned-filter-row {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  align-items: flex-end;
+}
+
+.assigned-filter-group {
+  flex: 1;
+  min-width: 200px;
+}
+
+.assigned-filter-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 8px;
+}
+
+/* Tabs styling for assigned mentors */
+.assigned-tabs-container {
+  display: flex;
+  gap: 0;
+  margin-bottom: 30px;
+  border-bottom: 2px solid #e0e0e0;
+  flex-wrap: wrap;
+}
+
+.assigned-tab-button {
+  padding: 14px 28px;
+  font-size: 15px;
+  font-weight: 600;
+  border: none;
+  border-bottom: 3px solid transparent;
+  cursor: pointer;
+  transition: all 0.2s;
+  border-radius: 6px 6px 0 0;
+  margin-bottom: -2px;
+  white-space: nowrap;
+}
+
+/* Responsive styles for assigned mentors */
+@media screen and (max-width: 768px) {
+  .assigned-mentor-content {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .assigned-filter-group {
+    min-width: 150px;
+  }
+  
+  .assigned-tab-button {
+    padding: 12px 20px;
+    font-size: 14px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .assigned-mentor-section {
+    padding: 10px;
+  }
+  
+  .assigned-mentor-label {
+    font-size: 13px;
+  }
+  
+  .assigned-mentor-name {
+    font-size: 14px;
+  }
+  
+  .assigned-mentor-email,
+  .assigned-mentor-github,
+  .assigned-mentor-linkedin {
+    font-size: 12px;
+  }
+  
+  .assigned-team-lead-section {
+    padding: 10px;
+  }
+  
+  .assigned-team-lead-label {
+    font-size: 13px;
+  }
+  
+  .assigned-team-lead-name {
+    font-size: 14px;
+  }
+  
+  .assigned-team-lead-details,
+  .assigned-team-lead-college {
+    font-size: 12px;
+  }
+  
+  .assigned-member-item {
+    padding: 10px;
+  }
+  
+  .assigned-member-name {
+    font-size: 14px;
+  }
+  
+  .assigned-member-badge {
+    padding: 2px 8px;
+    font-size: 10px;
+  }
+  
+  .assigned-member-info {
+    font-size: 12px;
+  }
+  
+  .assigned-filter-section {
+    padding: 15px;
+  }
+  
+  .assigned-filter-row {
+    flex-direction: column;
+    gap: 12px;
+  }
+  
+  .assigned-filter-group {
+    width: 100%;
+    min-width: unset;
+  }
+  
+  .assigned-tab-button {
+    padding: 10px 16px;
+    font-size: 13px;
+  }
+}
+
+@media screen and (max-width: 360px) {
+  .assigned-mentor-section {
+    padding: 8px;
+    margin-bottom: 12px;
+  }
+  
+  .assigned-mentor-label {
+    font-size: 12px;
+  }
+  
+  .assigned-mentor-name {
+    font-size: 13px;
+  }
+  
+  .assigned-mentor-email,
+  .assigned-mentor-github,
+  .assigned-mentor-linkedin {
+    font-size: 11px;
+  }
+  
+  .assigned-team-lead-section {
+    padding: 8px;
+    margin-bottom: 12px;
+  }
+  
+  .assigned-team-lead-label {
+    font-size: 12px;
+  }
+  
+  .assigned-team-lead-name {
+    font-size: 13px;
+  }
+  
+  .assigned-team-lead-details,
+  .assigned-team-lead-college {
+    font-size: 11px;
+  }
+  
+  .assigned-member-item {
+    padding: 8px;
+    margin-bottom: 8px;
+  }
+  
+  .assigned-member-name {
+    font-size: 13px;
+  }
+  
+  .assigned-member-badge {
+    padding: 2px 6px;
+    font-size: 9px;
+  }
+  
+  .assigned-member-info {
+    font-size: 11px;
+  }
+  
+  .assigned-filter-section {
+    padding: 10px;
+  }
+  
+  .assigned-filter-label {
+    font-size: 12px;
+  }
+  
+  .assigned-tab-button {
+    padding: 8px 12px;
+    font-size: 12px;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .assigned-mentor-section {
+    padding: 6px;
+    margin-bottom: 10px;
+  }
+  
+  .assigned-mentor-label {
+    font-size: 11px;
+  }
+  
+  .assigned-mentor-name {
+    font-size: 12px;
+    word-break: break-all;
+  }
+  
+  .assigned-mentor-email,
+  .assigned-mentor-github,
+  .assigned-mentor-linkedin {
+    font-size: 10px;
+    word-break: break-all;
+  }
+  
+  .assigned-team-lead-section {
+    padding: 6px;
+    margin-bottom: 10px;
+  }
+  
+  .assigned-team-lead-label {
+    font-size: 11px;
+  }
+  
+  .assigned-team-lead-name {
+    font-size: 12px;
+    word-break: break-all;
+  }
+  
+  .assigned-team-lead-details,
+  .assigned-team-lead-college {
+    font-size: 10px;
+    word-break: break-all;
+  }
+  
+  .assigned-member-item {
+    padding: 6px;
+    margin-bottom: 6px;
+    gap: 4px;
+  }
+  
+  .assigned-member-name {
+    font-size: 12px;
+    word-break: break-all;
+  }
+  
+  .assigned-member-badge {
+    padding: 2px 5px;
+    font-size: 8px;
+  }
+  
+  .assigned-member-info {
+    font-size: 10px;
+    word-break: break-all;
+  }
+  
+  .assigned-filter-section {
+    padding: 8px;
+  }
+  
+  .assigned-filter-label {
+    font-size: 11px;
+  }
+  
+  .assigned-tab-button {
+    padding: 6px 10px;
+    font-size: 11px;
+  }
+}

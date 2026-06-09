@@ -1,0 +1,227 @@
+/* ==========================================
+   Profile Page Premium Stylesheet
+   ========================================== */
+@import '../../Devstack/devstack-common.css';
+
+.profile-page {
+  min-height: 100vh;
+  background: var(--ds-bg-secondary, #f8fafc);
+  padding: 80px 20px 40px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  font-family: var(--ds-font-family, 'Inter', sans-serif);
+}
+
+.profile-containers {
+  width: 100%;
+  max-width: 1000px;
+  background: var(--ds-bg-primary, #ffffff);
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.profile-header {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  padding: 32px;
+  color: white;
+}
+
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.profile-info {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.profile-image {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid rgba(255, 255, 255, 0.8);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.profile-title {
+  font-size: 26px;
+  font-weight: 700;
+  color: white;
+  margin: 0;
+}
+
+.edit-button {
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  border: 1.5px solid rgba(255, 255, 255, 0.6);
+  padding: 10px 24px;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.edit-button:hover {
+  background: white;
+  color: #667eea;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.profile-content {
+  padding: 32px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+  margin-bottom: 32px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.form-label {
+  font-size: 14px;
+  font-weight: 600;
+  color: #4a5568;
+}
+
+.form-input, .form-value {
+  padding: 12px 16px;
+  border-radius: 8px;
+  border: 1.5px solid #e2e8f0;
+  font-size: 15px;
+  color: #1a202c;
+  background: #f8fafc;
+  transition: all 0.3s ease;
+}
+
+.form-input:focus {
+  outline: none;
+  border-color: #667eea;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.15);
+  background: white;
+}
+
+.form-input.disabled, .form-value {
+  background: #f1f5f9;
+  color: #64748b;
+  border-color: #e2e8f0;
+  cursor: not-allowed;
+}
+
+.form-value {
+  min-height: 48px;
+  display: flex;
+  align-items: center;
+}
+
+.button-group {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.save-button {
+  background: #667eea;
+  color: white;
+  border: none;
+  padding: 12px 32px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.2);
+}
+
+.save-button:hover {
+  background: #5a67d8;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(102, 126, 234, 0.3);
+}
+
+.contact-icons {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  padding-top: 24px;
+  border-top: 1px solid #e2e8f0;
+}
+
+.icon-link {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+  color: #4a5568;
+  font-size: 15px;
+  transition: color 0.3s ease;
+}
+
+.icon-link:hover {
+  color: #667eea;
+}
+
+.icon-circle {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #f0f4ff;
+  color: #667eea;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  transition: all 0.3s ease;
+}
+
+.icon-link:hover .icon-circle {
+  background: #667eea;
+  color: white;
+  transform: scale(1.1);
+}
+
+.icon-text {
+  font-weight: 500;
+}
+
+/* ==========================================
+   Responsive Adjustments
+   ========================================== */
+@media (max-width: 768px) {
+  .profile-page {
+    padding: 60px 16px 20px;
+  }
+  
+  .profile-header {
+    padding: 24px;
+  }
+  
+  .profile-title {
+    font-size: 22px;
+  }
+  
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  
+  .profile-content {
+    padding: 24px;
+  }
+}

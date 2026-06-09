@@ -1,0 +1,674 @@
+/* ===========================
+   Coordinator Schedule - Container
+   =========================== */
+.coordinator-schedule-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* ===========================
+   Header Section
+   =========================== */
+.coordinator-schedule-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.coordinator-schedule-title {
+  font-size: 28px;
+  font-weight: 700;
+  color: #1e293b;
+  margin: 0 0 8px 0;
+}
+
+.coordinator-schedule-subtitle {
+  font-size: 14px;
+  color: #64748b;
+  margin: 0;
+}
+
+/* ===========================
+   Status Filter Buttons
+   =========================== */
+.coordinator-schedule-status-filters {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+}
+
+.coordinator-schedule-status-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 18px;
+  font-size: 14px;
+  font-weight: 600;
+  border: 2px solid #e2e8f0;
+  background: #fff;
+  color: #64748b;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.coordinator-schedule-status-btn:hover {
+  border-color: #cbd5e1;
+  background: #f8fafc;
+}
+
+.coordinator-schedule-status-btn.active {
+  border-color: #667eea;
+  background: #667eea;
+  color: #fff;
+}
+
+.coordinator-schedule-status-btn.upcoming:hover,
+.coordinator-schedule-status-btn.upcoming.active {
+  border-color: #3b82f6;
+  background: #3b82f6;
+  color: #fff;
+}
+
+.coordinator-schedule-status-btn.ongoing:hover,
+.coordinator-schedule-status-btn.ongoing.active {
+  border-color: #10b981;
+  background: #10b981;
+  color: #fff;
+}
+
+.coordinator-schedule-status-btn.completed:hover,
+.coordinator-schedule-status-btn.completed.active {
+  border-color: #6b7280;
+  background: #6b7280;
+  color: #fff;
+}
+
+.coordinator-schedule-status-count {
+  background: rgba(255, 255, 255, 0.2);
+  padding: 2px 8px;
+  border-radius: 12px;
+  font-size: 12px;
+  min-width: 24px;
+  text-align: center;
+}
+
+.coordinator-schedule-status-btn:not(.active) .coordinator-schedule-status-count {
+  background: #f1f5f9;
+  color: #475569;
+}
+
+/* ===========================
+   Search Section
+   =========================== */
+.coordinator-schedule-search-section {
+  position: relative;
+  margin-bottom: 24px;
+}
+
+.coordinator-schedule-search-wrapper {
+  position: relative;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.coordinator-schedule-search-input-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.coordinator-schedule-search-icon {
+  position: absolute;
+  left: 14px;
+  width: 20px;
+  height: 20px;
+  color: #94a3b8;
+  pointer-events: none;
+}
+
+.coordinator-schedule-search-input {
+  width: 100%;
+  padding: 14px 44px;
+  font-size: 15px;
+  border: 2px solid #e2e8f0;
+  border-radius: 12px;
+  background: #fff;
+  color: #1e293b;
+  transition: all 0.2s ease;
+}
+
+.coordinator-schedule-search-input:focus {
+  outline: none;
+  border-color: #667eea;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.coordinator-schedule-search-input::placeholder {
+  color: #94a3b8;
+}
+
+.coordinator-schedule-clear-btn {
+  position: absolute;
+  right: 12px;
+  width: 24px;
+  height: 24px;
+  border: none;
+  background: #e2e8f0;
+  color: #64748b;
+  border-radius: 50%;
+  font-size: 16px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.coordinator-schedule-clear-btn:hover {
+  background: #cbd5e1;
+  color: #475569;
+}
+
+/* ===========================
+   Dropdown
+   =========================== */
+.coordinator-schedule-dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: #fff;
+  border: 2px solid #e2e8f0;
+  border-radius: 12px;
+  margin-top: 8px;
+  max-height: 300px;
+  overflow-y: auto;
+  z-index: 100;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+}
+
+.coordinator-schedule-dropdown-empty {
+  padding: 20px;
+  text-align: center;
+  color: #94a3b8;
+  font-size: 14px;
+}
+
+.coordinator-schedule-dropdown-item {
+  padding: 12px 16px;
+  cursor: pointer;
+  border-bottom: 1px solid #f1f5f9;
+  transition: background 0.2s ease;
+}
+
+.coordinator-schedule-dropdown-item:last-child {
+  border-bottom: none;
+}
+
+.coordinator-schedule-dropdown-item:hover {
+  background: #f8fafc;
+}
+
+.coordinator-schedule-dropdown-item.selected {
+  background: #eff6ff;
+  border-left: 3px solid #667eea;
+}
+
+.coordinator-schedule-dropdown-item-name {
+  font-size: 15px;
+  font-weight: 600;
+  color: #1e293b;
+  margin-bottom: 4px;
+}
+
+.coordinator-schedule-dropdown-item-info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.coordinator-schedule-dropdown-year {
+  font-size: 12px;
+  color: #64748b;
+}
+
+.coordinator-schedule-dropdown-status {
+  font-size: 11px;
+  padding: 2px 8px;
+  border-radius: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.coordinator-schedule-dropdown-status.upcoming {
+  background: #dbeafe;
+  color: #1d4ed8;
+}
+
+.coordinator-schedule-dropdown-status.ongoing {
+  background: #dcfce7;
+  color: #15803d;
+}
+
+.coordinator-schedule-dropdown-status.completed {
+  background: #f3f4f6;
+  color: #6b7280;
+}
+
+/* ===========================
+   Selected Hackathon Info
+   =========================== */
+.coordinator-schedule-selected-info {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 24px;
+}
+
+.coordinator-schedule-selected-badge {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: #f8fafc;
+  padding: 10px 20px;
+  border-radius: 30px;
+  border: 1px solid #e2e8f0;
+}
+
+.coordinator-schedule-selected-label {
+  font-size: 13px;
+  color: #64748b;
+}
+
+.coordinator-schedule-selected-name {
+  font-size: 15px;
+  font-weight: 600;
+  color: #1e293b;
+}
+
+.coordinator-schedule-selected-status {
+  font-size: 11px;
+  padding: 3px 10px;
+  border-radius: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.coordinator-schedule-selected-status.upcoming {
+  background: #dbeafe;
+  color: #1d4ed8;
+}
+
+.coordinator-schedule-selected-status.ongoing {
+  background: #dcfce7;
+  color: #15803d;
+}
+
+.coordinator-schedule-selected-status.completed {
+  background: #f3f4f6;
+  color: #6b7280;
+}
+
+/* ===========================
+   Error & Loading States
+   =========================== */
+.coordinator-schedule-error {
+  text-align: center;
+  padding: 16px 20px;
+  background: #fef2f2;
+  border: 1px solid #fecaca;
+  border-radius: 10px;
+  color: #dc2626;
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+
+.coordinator-schedule-loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 20px;
+  color: #64748b;
+}
+
+.coordinator-schedule-spinner {
+  width: 40px;
+  height: 40px;
+  border: 3px solid #e2e8f0;
+  border-top-color: #667eea;
+  border-radius: 50%;
+  animation: coordinator-schedule-spin 0.8s linear infinite;
+  margin-bottom: 16px;
+}
+
+@keyframes coordinator-schedule-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* ===========================
+   No Data State
+   =========================== */
+.coordinator-schedule-no-data {
+  text-align: center;
+  padding: 60px 20px;
+  background: #f8fafc;
+  border-radius: 16px;
+  border: 2px dashed #e2e8f0;
+}
+
+.coordinator-schedule-no-data-icon {
+  font-size: 48px;
+  margin-bottom: 16px;
+}
+
+.coordinator-schedule-no-data h3 {
+  font-size: 20px;
+  color: #1e293b;
+  margin: 0 0 8px 0;
+}
+
+.coordinator-schedule-no-data p {
+  font-size: 14px;
+  color: #64748b;
+  margin: 0;
+}
+
+/* ===========================
+   Schedule Display
+   =========================== */
+.coordinator-schedule-display {
+  margin-top: 20px;
+}
+
+/* Day Selector Buttons */
+.coordinator-schedule-day-buttons {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.coordinator-schedule-day-btn {
+  padding: 10px 20px;
+  font-size: 14px;
+  font-weight: 600;
+  border: 2px solid #667eea;
+  background: #fff;
+  color: #667eea;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.coordinator-schedule-day-btn:hover {
+  background: #f0f4ff;
+  transform: translateY(-2px);
+}
+
+.coordinator-schedule-day-btn.active {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: #fff;
+  border-color: #667eea;
+  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+}
+
+/* Schedule Table Container */
+.coordinator-schedule-table-container {
+  background: #fff;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  border: 1px solid #e2e8f0;
+}
+
+.coordinator-schedule-table-header {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: #fff;
+  padding: 18px 24px;
+  font-size: 20px;
+  font-weight: 600;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.coordinator-schedule-table-content {
+  overflow-x: auto;
+}
+
+.coordinator-schedule-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.coordinator-schedule-table thead tr {
+  background: #f8fafc;
+}
+
+.coordinator-schedule-th-time,
+.coordinator-schedule-th-session {
+  padding: 14px 20px;
+  text-align: left;
+  font-weight: 600;
+  font-size: 13px;
+  color: #475569;
+  border-bottom: 2px solid #e2e8f0;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.coordinator-schedule-th-time {
+  width: 30%;
+  min-width: 140px;
+}
+
+.coordinator-schedule-th-session {
+  width: 70%;
+}
+
+.coordinator-schedule-table tbody tr {
+  transition: background 0.2s ease;
+}
+
+.coordinator-schedule-table tbody tr:nth-child(even) {
+  background: #f8fafc;
+}
+
+.coordinator-schedule-table tbody tr:hover {
+  background: #eff6ff;
+}
+
+.coordinator-schedule-td-time {
+  padding: 14px 20px;
+  font-weight: 600;
+  color: #1e293b;
+  border-bottom: 1px solid #e2e8f0;
+  white-space: nowrap;
+}
+
+.coordinator-schedule-td-session {
+  padding: 14px 20px;
+  color: #334155;
+  border-bottom: 1px solid #e2e8f0;
+  font-weight: 500;
+}
+
+.coordinator-schedule-no-sessions {
+  padding: 30px 20px;
+  text-align: center;
+  color: #94a3b8;
+  font-style: italic;
+}
+
+/* ===========================
+   Multiple Schedules Selector
+   =========================== */
+.coordinator-schedule-selector {
+  margin-top: 24px;
+  padding: 16px 20px;
+  background: #f8fafc;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  justify-content: center;
+}
+
+.coordinator-schedule-selector label {
+  font-size: 14px;
+  font-weight: 600;
+  color: #475569;
+}
+
+.coordinator-schedule-selector select {
+  padding: 10px 16px;
+  font-size: 14px;
+  border: 2px solid #e2e8f0;
+  border-radius: 8px;
+  background: #fff;
+  color: #1e293b;
+  cursor: pointer;
+  min-width: 200px;
+}
+
+.coordinator-schedule-selector select:focus {
+  outline: none;
+  border-color: #667eea;
+}
+
+/* ===========================
+   Responsive Design
+   =========================== */
+@media (max-width: 768px) {
+  .coordinator-schedule-container {
+    padding: 16px;
+  }
+
+  .coordinator-schedule-title {
+    font-size: 22px;
+  }
+
+  .coordinator-schedule-subtitle {
+    font-size: 13px;
+  }
+
+  .coordinator-schedule-status-filters {
+    gap: 8px;
+  }
+
+  .coordinator-schedule-status-btn {
+    padding: 8px 14px;
+    font-size: 12px;
+    gap: 6px;
+  }
+
+  .coordinator-schedule-status-count {
+    padding: 2px 6px;
+    font-size: 11px;
+  }
+
+  .coordinator-schedule-search-input {
+    padding: 12px 40px;
+    font-size: 14px;
+  }
+
+  .coordinator-schedule-dropdown-item {
+    padding: 10px 14px;
+  }
+
+  .coordinator-schedule-selected-badge {
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+    gap: 6px;
+  }
+
+  .coordinator-schedule-day-buttons {
+    gap: 8px;
+  }
+
+  .coordinator-schedule-day-btn {
+    padding: 8px 16px;
+    font-size: 12px;
+  }
+
+  .coordinator-schedule-table-header {
+    font-size: 18px;
+    padding: 14px 18px;
+  }
+
+  .coordinator-schedule-th-time,
+  .coordinator-schedule-th-session,
+  .coordinator-schedule-td-time,
+  .coordinator-schedule-td-session {
+    padding: 12px 14px;
+    font-size: 13px;
+  }
+
+  .coordinator-schedule-selector {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .coordinator-schedule-selector select {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .coordinator-schedule-container {
+    padding: 12px;
+  }
+
+  .coordinator-schedule-title {
+    font-size: 20px;
+  }
+
+  .coordinator-schedule-day-btn {
+    padding: 6px 12px;
+    font-size: 11px;
+  }
+
+  .coordinator-schedule-table-header {
+    font-size: 16px;
+    padding: 12px 14px;
+  }
+
+  .coordinator-schedule-th-time,
+  .coordinator-schedule-th-session,
+  .coordinator-schedule-td-time,
+  .coordinator-schedule-td-session {
+    padding: 10px 12px;
+    font-size: 12px;
+  }
+
+  .coordinator-schedule-th-time,
+  .coordinator-schedule-td-time {
+    min-width: 100px;
+  }
+
+  .coordinator-schedule-status-filters {
+    gap: 6px;
+  }
+
+  .coordinator-schedule-status-btn {
+    padding: 6px 12px;
+    font-size: 11px;
+    gap: 4px;
+  }
+
+  .coordinator-schedule-status-count {
+    padding: 1px 5px;
+    font-size: 10px;
+    min-width: 20px;
+  }
+}

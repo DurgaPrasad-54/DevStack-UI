@@ -1,0 +1,624 @@
+.adminlogin-container {
+  display: flex;
+  min-height: 100vh;
+   /* background: linear-gradient(135deg, #717c8b 0%, #54688a 100%);  */
+  padding: 20px;
+  position: relative;
+  overflow: hidden;
+}
+/* Admin Authentication Styles */
+.adminlogin-auth-container {
+  display: flex;
+  min-height: 100vh;
+  background: linear-gradient(145deg, #f6f9fc 0%, #e9f2fb 100%);
+  padding: 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Background elements */
+.adminlogin-auth-container::before {
+  content: '';
+  position: absolute;
+  width: 1000px;
+  height: 1000px;
+  border-radius: 50%;
+  background: linear-gradient(45deg, rgba(66, 153, 225, 0.05) 0%, rgba(99, 179, 237, 0.05) 100%);
+  top: -30%;
+  left: -10%;
+  z-index: 0;
+  animation: adminlogin-float 25s infinite linear;
+}
+
+.adminlogin-auth-container::after {
+  content: '';
+  position: absolute;
+  width: 800px;
+  height: 800px;
+  border-radius: 50%;
+  background: linear-gradient(45deg, rgba(56, 178, 172, 0.05) 0%, rgba(129, 230, 217, 0.05) 100%);
+  bottom: -20%;
+  right: -5%;
+  z-index: 0;
+  animation: adminlogin-float 20s infinite linear reverse;
+}
+
+@keyframes adminlogin-float {
+  0% { transform: rotate(0deg) translateY(0px); }
+  50% { transform: rotate(180deg) translateY(15px); }
+  100% { transform: rotate(360deg) translateY(0px); }
+}
+
+/* Authentication card */
+.adminlogin-auth-card {
+  background: rgba(255, 255, 255, 0.95);
+  padding: 2.5rem 3rem; /* Slightly reduced top padding */
+  border-radius: 16px;
+  box-shadow: 0 10px 40px rgba(0, 24, 80, 0.1), 
+              0 1px 3px rgba(0, 0, 0, 0.05);
+  width: 100%;
+  max-width: 450px;
+  margin: auto;
+  position: relative;
+  z-index: 1;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  transition: all 0.3s ease;
+}
+
+.adminlogin-auth-card:hover {
+  box-shadow: 0 15px 60px rgba(0, 24, 80, 0.15), 
+              0 1px 3px rgba(0, 0, 0, 0.1);
+  transform: translateY(-5px);
+}
+
+/* Title styling */
+.adminlogin-auth-title {
+  font-weight: 700 !important;
+  text-align: center;
+  margin-top: 0.5rem !important; /* Reduced from previous spacing */
+  margin-bottom: 2rem !important;
+  color: #2d3748 !important;
+  font-size: 1.75rem !important;
+  letter-spacing: -0.5px;
+}
+
+.adminlogin-auth-title::after {
+  content: '';
+  display: block;
+  width: 50px;
+  height: 4px;
+  background: linear-gradient(90deg, #4299e1, #63b3ed);
+  border-radius: 2px;
+  margin: 0.75rem auto 0;
+}
+
+/* Form styling */
+.adminlogin-auth-form {
+  margin-top: 1rem;
+}
+
+.adminlogin-auth-input {
+  height: 55px;
+  border-radius: 12px;
+  border: 2px solid #e2e8f0;
+  transition: all 0.3s ease;
+  font-size: 1rem;
+}
+
+.adminlogin-auth-input:hover, .adminlogin-auth-input:focus {
+  border-color: #4299e1;
+  box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.15);
+}
+
+.adminlogin-input-icon {
+  color: #a0aec0;
+  margin-right: 0.5rem;
+}
+
+/* Button styling */
+.adminlogin-auth-button {
+  height: 55px;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 12px;
+  background: linear-gradient(90deg, #3182ce, #4299e1);
+  border: none;
+  box-shadow: 0 4px 12px rgba(66, 153, 225, 0.3);
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-top: 0.5rem;
+}
+
+.adminlogin-auth-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(66, 153, 225, 0.4);
+  background: linear-gradient(90deg, #2b6cb0, #3182ce);
+}
+
+.adminlogin-auth-button:active {
+  transform: translateY(0);
+}
+
+/* OTP verification styling */
+.adminlogin-otp-verification {
+  padding: 0.5rem 0;
+}
+
+.adminlogin-otp-message {
+  display: block;
+  text-align: center;
+  margin-bottom: 1.5rem;
+  color: #4a5568;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.adminlogin-otp-input-group {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin: 2rem 0;
+}
+
+.adminlogin-otp-digit {
+  width: 55px;
+  height: 60px;
+  font-size: 1.5rem;
+  font-weight: 600;
+  border: 2px solid #e2e8f0;
+  border-radius: 12px;
+  text-align: center;
+  transition: all 0.3s ease;
+  padding: 0;
+}
+
+.adminlogin-otp-digit:focus {
+  border-color: #4299e1;
+  box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.15);
+}
+
+.adminlogin-otp-actions {
+  margin-top: 1.5rem;
+}
+
+.adminlogin-back-button {
+  display: block;
+  text-align: center;
+  margin-top: 1rem;
+  font-size: 0.95rem;
+  color: #718096;
+  transition: color 0.3s ease;
+}
+
+.adminlogin-back-button:hover {
+  color: #4299e1;
+}
+
+/* Footer styling */
+.adminlogin-auth-footer {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid #edf2f7;
+}
+
+.adminlogin-auth-footer .ant-btn-link {
+  color: #718096;
+  font-size: 0.95rem;
+  font-weight: 500;
+  padding: 0;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.adminlogin-auth-footer .ant-btn-link:hover {
+  color: #4299e1;
+}
+
+.adminlogin-auth-footer .ant-btn-link::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: #4299e1;
+  transition: width 0.3s ease;
+}
+
+.adminlogin-auth-footer .ant-btn-link:hover::after {
+  width: 100%;
+}
+
+/* Loading state */
+.adminlogin-loading-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.85);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+  backdrop-filter: blur(4px);
+  border-radius: 16px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 480px) {
+  .adminlogin-auth-card {
+    padding: 2rem 1.5rem;
+    margin: 0.5rem;
+  }
+
+  .adminlogin-auth-title {
+    font-size: 1.5rem !important;
+  }
+
+  .adminlogin-otp-input-group {
+    gap: 6px;
+  }
+
+  .adminlogin-otp-digit {
+    width: 45px;
+    height: 50px;
+    font-size: 1.25rem;
+  }
+
+  .adminlogin-auth-footer .ant-btn-link {
+    font-size: 0.85rem;
+  }
+}
+.adminlogin-container::before {
+  content: '';
+  position: absolute;
+  width: 1000px;
+  height: 1000px;
+  border-radius: 50%;
+  background: linear-gradient(45deg, rgba(177, 175, 23, 0.1) 0%, rgba(129, 230, 217, 0.1) 100%);
+  top: -50%;
+  left: -20%;
+  z-index: 0;
+  animation: adminlogin-float 15s infinite linear;
+}
+
+.adminlogin-container::after {
+  content: '';
+  position: absolute;
+  width: 800px;
+  height: 800px;
+  border-radius: 50%;
+  background: linear-gradient(45deg, rgba(66, 153, 225, 0.1) 0%, rgba(129, 230, 217, 0.1) 100%);
+  bottom: -40%;
+  right: -10%;
+  z-index: 0;
+  animation: adminlogin-float 20s infinite linear reverse;
+}
+
+@keyframes adminlogin-float {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.adminlogin-forgot-password-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  padding: 10px;
+  /* background: #f0f2f5; */
+}
+
+.adminlogin-admin-login {
+  margin-bottom: 10px;
+}
+
+.adminlogin-login-card {
+  background: rgba(255, 255, 255, 0.95);
+  padding: 40px;
+  border-radius: 24px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+  width: 100%;
+  max-width: 450px;
+  margin: auto;
+  position: relative;
+  z-index: 1;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.adminlogin-login-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 5px;
+  background: linear-gradient(90deg, #3498db, #2980b9);
+}
+
+.adminlogin-Admin-login {
+  color: #1a365d;
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 40px;
+  text-align: center;
+  letter-spacing: -0.5px;
+  position: relative;
+}
+
+.adminlogin-Admin-login::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 4px;
+  background: linear-gradient(90deg, #4299e1, #81e6d9);
+  border-radius: 2px;
+}
+
+.adminlogin-ant-form-item {
+  margin-bottom: 28px;
+}
+
+.adminlogin-ant-form-item-label > label {
+  color: #4a5568;
+  font-weight: 500;
+}
+
+.adminlogin-ant-input {
+  height: 50px;
+  font-size: 16px;
+  border-radius: 12px;
+  border: 2px solid #e2e8f0;
+  transition: all 0.3s ease;
+  padding: 0 20px;
+  background: rgba(255, 255, 255, 0.9);
+}
+
+.adminlogin-ant-input:hover {
+  border-color: #4299e1;
+}
+
+.adminlogin-ant-input:focus {
+  border-color: #4299e1;
+  box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.2);
+  background: white;
+}
+
+.adminlogin-ant-input-password {
+  height: 50px;
+  border-radius: 12px;
+}
+
+.adminlogin-ant-btn-primary {
+  height: 50px;
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 12px;
+  background: linear-gradient(90deg, #4299e1, #81e6d9);
+  border: none;
+  box-shadow: 0 4px 15px rgba(66, 153, 225, 0.3);
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.adminlogin-ant-btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(66, 153, 225, 0.4);
+  background: linear-gradient(90deg, #3182ce, #4fd1c5);
+}
+
+.adminlogin-ant-btn-primary:active {
+  transform: translateY(0);
+}
+
+.adminlogin-otp-input-container {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin: 35px 0;
+}
+
+.adminlogin-otp-input-admin {
+  width: 50px;
+  height: 50px;
+  font-size: 24px;
+  border: 2px solid #e2e8f0;
+  border-radius: 12px;
+  text-align: center;
+  transition: all 0.3s ease;
+  background: rgba(255, 255, 255, 0.9);
+}
+
+.adminlogin-otp-input-admin:focus {
+  border-color: #4299e1;
+  box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.2);
+  background: white;
+}
+
+.adminlogin-extra-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 25px;
+  padding-top: 25px;
+  border-top: 2px solid #e2e8f0;
+}
+
+.adminlogin-ant-btn-link {
+  color: #4299e1;
+  font-size: 15px;
+  font-weight: 500;
+  padding: 0;
+  position: relative;
+}
+
+.adminlogin-ant-btn-link::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: #4299e1;
+  transition: width 0.3s ease;
+}
+
+.adminlogin-ant-btn-link:hover::after {
+  width: 100%;
+}
+
+/* Responsive adjustments */
+@media (max-width: 480px) {
+  .adminlogin-login-card {
+    padding: 30px 20px;
+    margin: 10px;
+  }
+
+  .adminlogin-Admin-login {
+    font-size: 28px;
+  }
+
+  .adminlogin-otp-input-container {
+    gap: 8px;
+  }
+
+  .adminlogin-otp-input-admin {
+    width: 45px;
+    height: 45px;
+    font-size: 20px;
+  }
+
+  .adminlogin-ant-btn-link {
+    font-size: 14px;
+  }
+}
+
+.adminlogin-wide-input {
+  width: 140%; /* Ensures full width of the container */
+  max-width: 400px; /* Sets a maximum width for better layout control */
+}
+
+/*Reset Password */
+.adminlogin-reset-password-container {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  margin-top: 50px;
+  background: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.adminlogin-reset-password-container h2 {
+  margin-bottom: 20px;
+  color: #333;
+}
+
+/* .adminlogin-ant-input, .adminlogin-ant-input-password {
+  width: 100%;
+} */
+
+.adminlogin-ant-btn {
+  font-size: 16px;
+  height: 40px;
+}
+
+/* Loading State */
+.adminlogin-loading-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+  backdrop-filter: blur(5px);
+}
+
+.adminlogin-loading-spinner {
+  width: 40px;
+  height: 40px;
+  border: 3px solid #e2e8f0;
+  border-top-color: #4299e1;
+  border-radius: 50%;
+  animation: adminlogin-spin 1s linear infinite;
+}
+
+@keyframes adminlogin-spin {
+  to { transform: rotate(360deg); }
+}
+
+/* Reset Password */
+.adminlogin-reset-password-container {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  margin-top: 50px;
+  background: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.adminlogin-reset-password-container h2 {
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.adminlogin-reset-password-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.adminlogin-reset-password-form .adminlogin-ant-form-item {
+  margin-bottom: 20px;
+}
+
+.adminlogin-reset-password-form .adminlogin-ant-input {
+  height: 50px;
+  font-size: 16px;
+  border-radius: 12px;
+  border: 2px solid #e2e8f0;
+  transition: all 0.3s ease;
+  padding: 0 20px;
+  background: rgba(255, 255, 255, 0.9);
+}
+
+.adminlogin-reset-password-form .adminlogin-ant-input:hover {
+  border-color: #4299e1;
+}
+
+.adminlogin-reset-password-form .adminlogin-ant-input:focus {
+  border-color: #4299e1;
+  box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.2);
+  background: white;
+}
+
+.adminlogin-reset-password-form .adminlogin-ant-btn {
+  font-size: 16px;
+  height: 50px;
+  font-weight: 600;
+  border-radius: 12px;
+  background: linear-gradient(90deg, #4299e1, #81e6d9);
+  border: none;
+  box-shadow: 0 4px 15px rgba(66, 153, 225, 0.3);
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.adminlogin-reset-password-form .adminlogin-ant-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(66, 153, 225, 0.4);
+  background: linear-gradient(90deg, #3182ce, #4fd1c5);
+}
+
+.adminlogin-reset-password-form .adminlogin-ant-btn:active {
+  transform: translateY(0);
+}

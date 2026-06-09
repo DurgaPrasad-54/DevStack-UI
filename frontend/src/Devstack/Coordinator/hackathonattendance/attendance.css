@@ -1,0 +1,475 @@
+/* ==========================================
+   HACKATHON ATTENDANCE - RESPONSIVE STYLES
+   Fixes for 320px and small mobile devices
+   ========================================== */
+
+/* Container responsive fixes */
+.attendance-container {
+  padding: 24px;
+  max-width: 1400px;
+  margin: 0 auto;
+  font-family: system-ui, -apple-system, sans-serif;
+  background: #f8f9fa;
+  min-height: 100vh;
+}
+
+/* Card and Section containers */
+.attendance-card {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  margin-bottom: 24px;
+  overflow: hidden;
+}
+
+.attendance-card-header {
+  padding: 20px;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.attendance-card-body {
+  padding: 24px;
+}
+
+/* Stats Grid */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.stat-box {
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+/* Filter Grid */
+.filter-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 16px;
+}
+
+/* Session Controls */
+.session-controls {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+/* Button Groups */
+.button-group {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+/* Table Container */
+.table-container {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.attendance-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 600px;
+}
+
+/* Search Container */
+.search-container {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.search-input-wrapper {
+  position: relative;
+  flex: 1;
+  min-width: 200px;
+}
+
+/* Attendance Buttons in Table */
+.attendance-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+/* Page Header */
+.page-header {
+  margin-bottom: 32px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+/* Footer Actions */
+.footer-actions {
+  margin-top: 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+/* ==========================================
+   RESPONSIVE BREAKPOINTS
+   ========================================== */
+
+/* Tablet and below (768px) */
+@media (max-width: 768px) {
+  .attendance-container {
+    padding: 16px;
+  }
+  
+  .attendance-card-body {
+    padding: 16px;
+  }
+  
+  .attendance-card-header {
+    padding: 16px;
+  }
+  
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+  
+  .filter-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .page-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .page-header h1 {
+    font-size: 24px !important;
+  }
+}
+
+/* Small mobile (480px) */
+@media (max-width: 480px) {
+  .attendance-container {
+    padding: 12px;
+  }
+  
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .stat-box {
+    padding: 16px;
+  }
+  
+  .stat-box .stat-value {
+    font-size: 24px !important;
+  }
+  
+  .button-group {
+    flex-direction: column;
+    width: 100%;
+  }
+  
+  .button-group button {
+    width: 100%;
+    justify-content: center;
+  }
+  
+  .search-container {
+    flex-direction: column;
+  }
+  
+  .search-input-wrapper {
+    width: 100%;
+    min-width: unset;
+  }
+  
+  .footer-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  .footer-actions button {
+    width: 100%;
+  }
+}
+
+/* Extra small mobile (320px) */
+@media (max-width: 360px) {
+  .attendance-container {
+    padding: 8px;
+    padding-top: 70px !important;
+  }
+  
+  .attendance-card {
+    border-radius: 8px;
+    margin-bottom: 12px;
+  }
+  
+  .attendance-card-body {
+    padding: 12px;
+  }
+  
+  .attendance-card-header {
+    padding: 12px;
+  }
+  
+  .stats-grid {
+    gap: 8px;
+  }
+  
+  .stat-box {
+    padding: 12px;
+  }
+  
+  .stat-box .stat-label {
+    font-size: 12px !important;
+  }
+  
+  .stat-box .stat-value {
+    font-size: 20px !important;
+  }
+  
+  .filter-grid {
+    gap: 12px;
+  }
+  
+  .session-controls {
+    flex-direction: column;
+  }
+  
+  .session-controls select,
+  .session-controls input,
+  .session-controls button {
+    width: 100% !important;
+  }
+  
+  .page-header {
+    margin-bottom: 16px;
+  }
+  
+  .page-header h1 {
+    font-size: 20px !important;
+  }
+  
+  .page-header p {
+    font-size: 13px !important;
+  }
+  
+  /* Table fixes for 320px */
+  .attendance-table {
+    min-width: 500px;
+  }
+  
+  .attendance-table th,
+  .attendance-table td {
+    padding: 10px 8px !important;
+    font-size: 12px !important;
+  }
+  
+  .attendance-buttons {
+    flex-direction: column;
+    gap: 6px;
+  }
+  
+  .attendance-buttons button {
+    padding: 6px 12px !important;
+    font-size: 11px !important;
+    width: 100%;
+  }
+  
+  /* Form elements */
+  select, input[type="text"] {
+    font-size: 14px !important;
+    padding: 10px !important;
+  }
+  
+  /* Button sizing */
+  button {
+    font-size: 13px !important;
+    padding: 10px 16px !important;
+  }
+  
+  /* Remarks input row */
+  .remarks-row {
+    padding: 8px 12px !important;
+  }
+  
+  .remarks-row label {
+    font-size: 12px !important;
+    min-width: unset !important;
+  }
+  
+  .remarks-row input {
+    font-size: 12px !important;
+  }
+}
+
+/* Inline style overrides for 320px */
+@media (max-width: 360px) {
+  /* Override inline padding */
+  [style*="padding: 24"] {
+    padding: 8px !important;
+  }
+  
+  [style*="padding: 20"] {
+    padding: 12px !important;
+  }
+  
+  /* Override inline grid columns */
+  [style*="gridTemplateColumns"] {
+    grid-template-columns: 1fr !important;
+  }
+  
+  /* Override inline minWidth */
+  [style*="minWidth: 250"] {
+    min-width: 100% !important;
+  }
+  
+  [style*="minWidth: 240"] {
+    min-width: 100% !important;
+  }
+  
+  [style*="minWidth: 200"] {
+    min-width: 100% !important;
+  }
+  
+  /* Override font sizes */
+  [style*="fontSize: 32"] {
+    font-size: 24px !important;
+  }
+  
+  [style*="fontSize: 18"] {
+    font-size: 16px !important;
+  }
+  
+  /* Override gaps */
+  [style*="gap: 16"] {
+    gap: 8px !important;
+  }
+  
+  [style*="gap: 12"] {
+    gap: 8px !important;
+  }
+  
+  /* Override margins */
+  [style*="marginBottom: 32"] {
+    margin-bottom: 16px !important;
+  }
+  
+  [style*="marginBottom: 24"] {
+    margin-bottom: 12px !important;
+  }
+}
+
+/* Fix for flex containers on small screens */
+@media (max-width: 360px) {
+  div[style*="display: flex"][style*="gap"] {
+    flex-wrap: wrap !important;
+  }
+  
+  div[style*="display: grid"] {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* Ensure tables scroll horizontally */
+.table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  margin-bottom: 16px;
+}
+
+@media (max-width: 360px) {
+  .table-wrapper {
+    margin: 0 -8px;
+    padding: 0 8px;
+    width: calc(100% + 16px);
+  }
+}
+
+/* Selected hackathon info box */
+@media (max-width: 360px) {
+  .info-box {
+    padding: 12px !important;
+    font-size: 13px !important;
+  }
+  
+  .info-box strong {
+    display: block;
+    margin-bottom: 4px;
+  }
+}
+
+/* Empty state styling */
+@media (max-width: 360px) {
+  .empty-state {
+    padding: 32px 16px !important;
+  }
+  
+  .empty-state svg {
+    width: 48px !important;
+    height: 48px !important;
+  }
+  
+  .empty-state h3 {
+    font-size: 16px !important;
+  }
+  
+  .empty-state p {
+    font-size: 13px !important;
+  }
+}
+
+/* Error and success alerts */
+@media (max-width: 360px) {
+  .alert {
+    padding: 12px !important;
+    font-size: 13px !important;
+  }
+  
+  .alert svg {
+    width: 18px !important;
+    height: 18px !important;
+    flex-shrink: 0;
+  }
+}
+
+/* Download button specific */
+@media (max-width: 360px) {
+  .download-btn {
+    width: 100% !important;
+    justify-content: center !important;
+  }
+}
+
+/* Student name cell adjustments */
+@media (max-width: 360px) {
+  .student-name {
+    font-size: 13px !important;
+  }
+  
+  .student-email {
+    font-size: 11px !important;
+  }
+}
+
+/* Status badge */
+@media (max-width: 360px) {
+  .status-badge {
+    padding: 3px 8px !important;
+    font-size: 10px !important;
+  }
+}

@@ -1,0 +1,220 @@
+@import '../devstack-common.css';
+
+/* hackathonnotification.css - Mentor */
+
+.mentor-notification-page {
+  min-height: 100vh;
+  /* background-color: var(--ds-bg-secondary); */
+}
+
+.mentor-notification-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: var(--ds-bg-primary);
+  box-shadow: var(--ds-shadow-sm);
+}
+
+.mentor-notification-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0px var(--ds-space-10) var(--ds-space-10) var(--ds-space-10);
+
+}
+
+.mentor-notification-content {
+  width: 100%;
+}
+
+.mentor-notification-title {
+  font-size: var(--ds-text-3xl);
+  font-weight: var(--ds-font-semibold);
+  color: var(--ds-text-primary);
+  /* text-align: center; */
+  margin: var(--ds-space-10) 0 var(--ds-space-5) 0;
+  font-family: var(--ds-font-family);
+}
+
+.mentor-notification-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: var(--ds-space-3);
+}
+
+.mentor-notification-card {
+  background: var(--ds-bg-primary);
+  border-radius: var(--ds-radius-xl);
+  padding: var(--ds-space-5) var(--ds-space-6);
+  box-shadow: var(--ds-shadow-sm);
+  border: 1px solid var(--ds-gray-200);
+  display: flex;
+  align-items: flex-start;
+  gap: var(--ds-space-4);
+  transition: all var(--ds-transition-fast);
+  cursor: pointer;
+  position: relative;
+  min-height: 80px;
+}
+
+.mentor-notification-card:hover {
+  box-shadow: var(--ds-shadow-md);
+  transform: translateY(-1px);
+}
+
+.mentor-notification-card.unread {
+  background: var(--ds-bg-primary);
+  border-left: 3px solid var(--ds-primary);
+}
+
+.mentor-notification-card.read {
+  background: var(--ds-bg-primary);
+  opacity: 0.9;
+}
+
+.mentor-notification-avatar {
+  flex-shrink: 0;
+  width: 44px;
+  height: 44px;
+  border-radius: var(--ds-radius-lg);
+  overflow: hidden;
+  background: var(--ds-gray-100);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mentor-notification-avatar-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: var(--ds-radius-lg);
+}
+
+.mentor-notification-details {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: var(--ds-space-1);
+  min-width: 0;
+}
+
+.mentor-notification-heading {
+  font-size: var(--ds-text-base);
+  font-weight: 600;
+  color: #1f2937;
+  margin: 0;
+  line-height: 1.4;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+.mentor-notification-description {
+  font-size: 14px;
+  color: #6b7280;
+  margin: 0;
+  line-height: 1.5;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+.mentor-notification-date {
+  font-size: 13px;
+  color: #9ca3af;
+  margin-top: 4px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+.mentor-notification-unread-dot {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 8px;
+  height: 8px;
+  background: #3b82f6;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.mentor-notification-no-container {
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.mentor-notification-no-text {
+  font-size: 16px;
+  color: #6b7280;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+.mentor-notification-loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  font-size: 16px;
+  color: #6b7280;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .mentor-notification-container {
+    padding: 20px 16px;
+  }
+  
+  .mentor-notification-title {
+    font-size: 28px;
+    margin-bottom: 24px;
+  }
+  
+  .mentor-notification-card {
+    padding: 16px 20px;
+    gap: 12px;
+  }
+  
+  .mentor-notification-avatar {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .mentor-notification-heading {
+    font-size: 15px;
+  }
+  
+  .mentor-notification-description {
+    font-size: 13px;
+  }
+  
+  .mentor-notification-date {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .mentor-notification-container {
+    padding: 16px 12px;
+  }
+  
+  .mentor-notification-title {
+    font-size: 24px;
+  }
+  
+  .mentor-notification-card {
+    padding: 14px 16px;
+  }
+}
+
+/* Animation for new notifications */
+@keyframes mentorSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.mentor-notification-card.new {
+  animation: mentorSlideIn 0.3s ease-out;
+}

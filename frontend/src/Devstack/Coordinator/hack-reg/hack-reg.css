@@ -1,0 +1,436 @@
+/* Dashboard Container */
+.coordinator-hackreg-container {
+  min-height: 100vh;
+  /* background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); */
+  padding: 2rem 1rem;
+  padding-top: 20px;
+}
+
+.coordinator-hackreg-wrapper {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* Header */
+.coordinator-hackreg-header {
+  text-align: center;
+  margin-bottom: 2rem;
+  color: rgb(0, 0, 0);
+}
+
+.coordinator-hackreg-header h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.coordinator-hackreg-header p {
+  font-size: 1.125rem;
+  opacity: 0.9;
+}
+
+/* Section Box */
+.coordinator-hackreg-section-box {
+  background: white;
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Select Input */
+.coordinator-hackreg-select-input {
+  width: 100%;
+  min-width: 0;
+  padding: 0.75rem 1rem;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  font-size: 0.875rem;
+  transition: all 0.2s;
+  background: white;
+}
+
+.coordinator-hackreg-select-input:focus {
+  outline: none;
+  border-color: #667eea;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+/* Stats Grid */
+.coordinator-hackreg-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.coordinator-hackreg-stat-card {
+  background: white;
+  border-radius: 12px;
+  padding: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+}
+
+.coordinator-hackreg-stat-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.coordinator-hackreg-stat-card.cursor-pointer {
+  cursor: pointer;
+}
+
+.coordinator-hackreg-stat-card .coordinator-hackreg-icon {
+  width: 2.5rem;
+  height: 2.5rem;
+  flex-shrink: 0;
+}
+
+.coordinator-hackreg-stat-card .coordinator-hackreg-label {
+  font-size: 0.875rem;
+  color: #6b7280;
+  margin-bottom: 0.25rem;
+}
+
+.coordinator-hackreg-stat-card .coordinator-hackreg-value {
+  font-size: 1.875rem;
+  font-weight: 700;
+  color: #111827;
+}
+
+/* Filters */
+.coordinator-hackreg-filters {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 1rem;
+  align-items: center;
+}
+
+/* Bulk Actions */
+.coordinator-hackreg-bulk-actions {
+  background: white;
+  border-radius: 12px;
+  padding: 1rem 1.5rem;
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-left: 4px solid #667eea;
+}
+
+.coordinator-hackreg-bulk-actions span {
+  font-weight: 600;
+  color: #111827;
+}
+
+.coordinator-hackreg-bulk-actions div {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.coordinator-hackreg-bulk-actions button {
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.coordinator-hackreg-bulk-actions .coordinator-hackreg-approve {
+  background: #10b981;
+  color: white;
+}
+
+.coordinator-hackreg-bulk-actions .coordinator-hackreg-approve:hover {
+  background: #059669;
+}
+
+.coordinator-hackreg-bulk-actions .coordinator-hackreg-reject {
+  background: #ef4444;
+  color: white;
+}
+
+.coordinator-hackreg-bulk-actions .coordinator-hackreg-reject:hover {
+  background: #dc2626;
+}
+
+.coordinator-hackreg-bulk-actions .coordinator-hackreg-cancel {
+  background: #e5e7eb;
+  color: #374151;
+}
+
+.coordinator-hackreg-bulk-actions .coordinator-hackreg-cancel:hover {
+  background: #d1d5db;
+}
+
+/* Table Container */
+.coordinator-hackreg-table-container {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.coordinator-hackreg-table-container table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.coordinator-hackreg-table-container thead {
+  background: #f9fafb;
+}
+
+.coordinator-hackreg-table-container th {
+  padding: 1rem;
+  text-align: left;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #6b7280;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border-bottom: 2px solid #e5e7eb;
+}
+
+.coordinator-hackreg-table-container td {
+  padding: 1rem;
+  border-bottom: 1px solid #e5e7eb;
+  font-size: 0.875rem;
+}
+
+.coordinator-hackreg-table-container tbody tr {
+  transition: background-color 0.2s;
+}
+
+.coordinator-hackreg-table-container tbody tr:hover {
+  background: #f9fafb;
+}
+
+/* Status Badge */
+.coordinator-hackreg-status-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.375rem 0.75rem;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
+.coordinator-hackreg-status-approved {
+  background: #d1fae5;
+  color: #065f46;
+}
+
+.coordinator-hackreg-status-rejected {
+  background: #fee2e2;
+  color: #991b1b;
+}
+
+.coordinator-hackreg-status-pending {
+  background: #fef3c7;
+  color: #92400e;
+}
+
+.coordinator-hackreg-status-default {
+  background: #f3f4f6;
+  color: #374151;
+}
+
+/* Buttons */
+.coordinator-hackreg-btn {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.coordinator-hackreg-btn-view {
+  background: #667eea;
+  color: white;
+}
+
+.coordinator-hackreg-btn-view:hover {
+  background: #5568d3;
+}
+
+.coordinator-hackreg-btn-approve {
+  background: #10b981;
+  color: white;
+}
+
+.coordinator-hackreg-btn-approve:hover {
+  background: #059669;
+}
+
+.coordinator-hackreg-btn-reject {
+  background: #ef4444;
+  color: white;
+}
+
+.coordinator-hackreg-btn-reject:hover {
+  background: #dc2626;
+}
+
+.coordinator-hackreg-btn-pending {
+  background: #f59e0b;
+  color: white;
+}
+
+.coordinator-hackreg-btn-pending:hover {
+  background: #d97706;
+}
+
+/* Modal */
+.coordinator-hackreg-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.75);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 1rem;
+}
+
+.coordinator-hackreg-modal-content {
+  background: white;
+  border-radius: 12px;
+  padding: 1.5rem;
+  max-width: 900px;
+  max-height: 90vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 20px 25px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.coordinator-hackreg-modal-close-btn {
+  background: #f3f4f6;
+  border: none;
+  border-radius: 6px;
+  padding: 0.5rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s;
+}
+
+.coordinator-hackreg-modal-close-btn:hover {
+  background: #e5e7eb;
+}
+
+.coordinator-hackreg-modal-receipt-img {
+  max-width: 100%;
+  max-height: 70vh;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  object-fit: contain;
+}
+
+/* Spinner */
+.coordinator-hackreg-spinner {
+  width: 24px;
+  height: 24px;
+  border: 3px solid #e5e7eb;
+  border-top-color: #667eea;
+  border-radius: 50%;
+  animation: coordinator-hackreg-spin 0.8s linear infinite;
+}
+
+@keyframes coordinator-hackreg-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .coordinator-hackreg-header h1 {
+    font-size: 1.875rem;
+  }
+ .coordinator-hackreg-filters {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+  .coordinator-hackreg-stats-grid {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  }
+
+  .coordinator-hackreg-stat-card {
+    padding: 1rem;
+  }
+
+  .coordinator-hackreg-stat-card .coordinator-hackreg-icon {
+    width: 2rem;
+    height: 2rem;
+  }
+
+  .coordinator-hackreg-stat-card .coordinator-hackreg-value {
+    font-size: 1.5rem;
+  }
+
+  .coordinator-hackreg-filters {
+    display: flex;             
+    flex-direction: column;     
+    gap: 0.75rem;
+  }
+
+  .coordinator-hackreg-bulk-actions {
+    flex-direction: column;
+    gap: 1rem;
+    align-items: flex-start;
+  }
+
+  .coordinator-hackreg-bulk-actions div {
+    width: 100%;
+  }
+
+  .coordinator-hackreg-bulk-actions button {
+    flex: 1;
+  }
+
+  .coordinator-hackreg-table-container table {
+    font-size: 0.75rem;
+  }
+
+  .coordinator-hackreg-table-container th, 
+  .coordinator-hackreg-table-container td {
+    padding: 0.75rem 0.5rem;
+  }
+
+  .coordinator-hackreg-btn {
+    padding: 0.375rem 0.75rem;
+    font-size: 0.75rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .coordinator-hackreg-container {
+    padding: 1rem 0.5rem;
+  }
+
+  .coordinator-hackreg-section-box {
+    padding: 1rem;
+  }
+
+  .coordinator-hackreg-modal-content {
+    padding: 1rem;
+    max-height: 95vh;
+  }
+}

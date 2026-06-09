@@ -1,0 +1,219 @@
+@import '../devstack-common.css';
+
+/* hackathonnotification.css - Student */
+
+.student-notification-page {
+  min-height: 100vh;
+  background-color: var(--ds-bg-secondary);
+}
+
+.student-notification-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: var(--ds-bg-primary);
+  box-shadow: var(--ds-shadow-sm);
+}
+
+.student-notification-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: var(--ds-space-10) var(--ds-space-10);
+}
+
+.student-notification-content {
+  width: 100%;
+}
+
+.student-notification-title {
+  font-size: var(--ds-text-3xl);
+  font-weight: var(--ds-font-semibold);
+  color: var(--ds-text-primary);
+  /* text-align: center; */
+  margin: var(--ds-space-10) 0 var(--ds-space-5) 0;
+  font-family: var(--ds-font-family);
+}
+
+.student-notification-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: var(--ds-space-3);
+}
+
+.student-notification-card {
+  background: var(--ds-bg-primary);
+  border-radius: var(--ds-radius-xl);
+  padding: var(--ds-space-5) var(--ds-space-6);
+  box-shadow: var(--ds-shadow-sm);
+  border: 1px solid var(--ds-gray-200);
+  display: flex;
+  align-items: flex-start;
+  gap: var(--ds-space-4);
+  transition: all var(--ds-transition-fast);
+  cursor: pointer;
+  position: relative;
+  min-height: 80px;
+}
+
+.student-notification-card:hover {
+  box-shadow: var(--ds-shadow-md);
+  transform: translateY(-1px);
+}
+
+.student-notification-card.unread {
+  background: var(--ds-bg-primary);
+  border-left: 3px solid var(--ds-primary);
+}
+
+.student-notification-card.read {
+  background: var(--ds-bg-primary);
+  opacity: 0.9;
+}
+
+.student-notification-avatar {
+  flex-shrink: 0;
+  width: 44px;
+  height: 44px;
+  border-radius: var(--ds-radius-lg);
+  overflow: hidden;
+  background: var(--ds-gray-100);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.student-notification-avatar-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: var(--ds-radius-lg);
+}
+
+.student-notification-details {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: var(--ds-space-1);
+  min-width: 0;
+}
+
+.student-notification-heading {
+  font-size: var(--ds-text-base);
+  font-weight: var(--ds-font-semibold);
+  color: var(--ds-text-primary);
+  margin: 0;
+  line-height: 1.4;
+  font-family: var(--ds-font-family);
+}
+
+.student-notification-description {
+  font-size: var(--ds-text-sm);
+  color: var(--ds-text-secondary);
+  margin: 0;
+  line-height: 1.5;
+  font-family: var(--ds-font-family);
+}
+
+.student-notification-date {
+  font-size: var(--ds-text-sm);
+  color: var(--ds-text-tertiary);
+  margin-top: var(--ds-space-1);
+  font-family: var(--ds-font-family);
+}
+
+.student-notification-unread-dot {
+  position: absolute;
+  top: var(--ds-space-5);
+  right: var(--ds-space-5);
+  width: 8px;
+  height: 8px;
+  background: var(--ds-primary);
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.student-notification-no-container {
+  text-align: center;
+  padding: var(--ds-space-16) var(--ds-space-5);
+}
+
+.student-notification-no-text {
+  font-size: var(--ds-text-base);
+  color: var(--ds-text-secondary);
+  margin: 0;
+  font-family: var(--ds-font-family);
+}
+
+.student-notification-loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  font-size: var(--ds-text-base);
+  color: var(--ds-text-secondary);
+  font-family: var(--ds-font-family);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .student-notification-container {
+    padding: 20px 16px;
+  }
+  
+  .student-notification-title {
+    font-size: 28px;
+    margin-bottom: 24px;
+  }
+  
+  .student-notification-card {
+    padding: 16px 20px;
+    gap: 12px;
+  }
+  
+  .student-notification-avatar {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .student-notification-heading {
+    font-size: 15px;
+  }
+  
+  .student-notification-description {
+    font-size: 13px;
+  }
+  
+  .student-notification-date {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .student-notification-container {
+    padding: 16px 12px;
+  }
+  
+  .student-notification-title {
+    font-size: 24px;
+  }
+  
+  .student-notification-card {
+    padding: 14px 16px;
+  }
+}
+
+/* Animation for new notifications */
+@keyframes studentSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.student-notification-card.new {
+  animation: studentSlideIn 0.3s ease-out;
+}

@@ -1,0 +1,272 @@
+@import '../../devstack-common.css';
+
+/* ================================
+   PAGE WRAPPER
+================================ */
+.progress-page-wrapper {
+  padding: var(--ds-space-5) var(--ds-space-6) var(--ds-space-6);
+  background: var(--ds-bg-secondary);
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* ================================
+   TOGGLE CONTAINER (CENTER & SMALL)
+================================ */
+.progress-toggle-container {
+  display:flex;
+  justify-content: center;
+  align-items: center;
+
+  margin: 0 auto var(--ds-space-6) auto;      /* center of page */
+  width: fit-content;
+
+  height: 40px;
+  width:200px;
+
+  background-color: var(--ds-bg-primary);
+  border-radius: var(--ds-radius-md);            /* sharp, not pill */
+
+  box-shadow: var(--ds-shadow-md);
+}
+
+/* ================================
+   TOGGLE BUTTONS (AntD override)
+================================ */
+.combine-toggle-btn {
+  height: 44px;
+  line-height: 44px;
+
+  padding: 0 26px;
+  margin: 0;
+
+  font-size: var(--ds-text-base);
+  font-weight: var(--ds-font-semibold);
+
+  border-radius: var(--ds-radius-sm);            /* 🔥 small radius */
+  border: none !important;
+  background-color: transparent !important;
+  color: var(--ds-text-secondary) !important;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+
+  cursor: pointer;
+  transition: background-color 0.25s ease, color 0.25s ease;
+  box-shadow: none !important;
+  outline: none !important;
+}
+
+/* ================================
+   HOVER STATE (NO CIRCLE)
+================================ */
+.combine-toggle-btn:hover {
+  background-color: var(--ds-gray-100) !important;
+  color: var(--ds-primary) !important;
+  border-radius: var(--ds-radius-sm) !important;
+}
+
+/* ================================
+   ACTIVE STATE
+================================ */
+.combine-toggle-btn.active {
+  background-color: var(--ds-primary) !important;
+  color: var(--ds-text-inverse) !important;
+  border-radius: var(--ds-radius-sm) !important;
+}
+
+.combine-toggle-btn.active:hover {
+  background-color: var(--ds-primary-hover) !important;
+  color: var(--ds-text-inverse) !important;
+}
+
+/* ================================
+   REMOVE ANT FOCUS STYLES
+================================ */
+.combine-toggle-btn:focus,
+.combine-toggle-btn:focus-visible {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+/* ================================
+   RESPONSIVE DESIGN - TABLET & MOBILE
+================================ */
+
+/* Large Tablet (1024px and below) */
+@media (max-width: 1024px) {
+  .progress-page-wrapper {
+    padding: 18px 20px 20px;
+    overflow-y: auto;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .progress-page-wrapper::-webkit-scrollbar {
+    display: none;
+  }
+
+  .progress-toggle-container {
+    width: 220px;
+    height: 42px;
+    margin-bottom: 22px;
+  }
+
+  .combine-toggle-btn {
+    height: 42px;
+    line-height: 42px;
+    padding: 0 24px;
+    font-size: 14px;
+  }
+}
+
+/* Tablet (768px and below) */
+@media (max-width: 768px) {
+  .progress-page-wrapper {
+    padding: 16px 14px 20px;
+    overflow-y: auto;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .progress-page-wrapper::-webkit-scrollbar {
+    display: none;
+  }
+
+  .progress-toggle-container {
+    width: 200px;
+    height: 40px;
+    padding: 3px;
+    margin-bottom: 18px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+
+  .combine-toggle-btn {
+    height: 38px;
+    line-height: 38px;
+    padding: 0 20px;
+    font-size: 14px;
+    font-weight: 600;
+  }
+}
+
+/* Large Mobile (640px and below) */
+@media (max-width: 640px) {
+  .progress-page-wrapper {
+    padding: 14px 12px 18px;
+    overflow-y: auto;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .progress-page-wrapper::-webkit-scrollbar {
+    display: none;
+  }
+
+  .progress-toggle-container {
+    width: 190px;
+    height: 38px;
+    padding: 3px;
+    margin-bottom: 16px;
+  }
+
+  .combine-toggle-btn {
+    height: 36px;
+    line-height: 36px;
+    padding: 0 18px;
+    font-size: 13px;
+  }
+}
+
+/* Standard Mobile (480px and below) */
+@media (max-width: 480px) {
+  .progress-page-wrapper {
+    padding: 12px 10px 16px;
+    overflow-y: auto;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .progress-page-wrapper::-webkit-scrollbar {
+    display: none;
+  }
+
+  .progress-toggle-container {
+    width: 180px;
+    height: 36px;
+    padding: 3px;
+    margin-bottom: 14px;
+    border-radius: 5px;
+  }
+
+  .combine-toggle-btn {
+    height: 34px;
+    line-height: 34px;
+    padding: 0 16px;
+    font-size: 13px;
+    border-radius: 3px;
+  }
+
+  .combine-toggle-btn:hover {
+    border-radius: 3px !important;
+  }
+
+  .combine-toggle-btn.active {
+    border-radius: 3px !important;
+  }
+}
+
+/* Small Mobile (375px and below) */
+@media (max-width: 375px) {
+  .progress-page-wrapper {
+    padding: 10px 8px 14px;
+  }
+
+  .progress-toggle-container {
+    width: 170px;
+    height: 34px;
+    padding: 2px;
+    margin-bottom: 12px;
+  }
+
+  .combine-toggle-btn {
+    height: 32px;
+    line-height: 32px;
+    padding: 0 14px;
+    font-size: 12px;
+  }
+}
+
+/* Extra Small Mobile (320px and below) */
+@media (max-width: 320px) {
+  .progress-page-wrapper {
+    padding: 8px 6px 12px;
+  }
+
+  .progress-toggle-container {
+    width: 160px;
+    height: 32px;
+    padding: 2px;
+    margin-bottom: 10px;
+    border-radius: 4px;
+  }
+
+  .combine-toggle-btn {
+    height: 30px;
+    line-height: 30px;
+    padding: 0 12px;
+    font-size: 11px;
+    font-weight: 600;
+    border-radius: 3px;
+  }
+
+  .combine-toggle-btn:hover {
+    border-radius: 3px !important;
+  }
+
+  .combine-toggle-btn.active {
+    border-radius: 3px !important;
+  }
+}

@@ -1,0 +1,524 @@
+@import '../../devstack-common.css';
+
+/* ===========================
+   Base Navbar Styles
+   =========================== */
+.user-navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--ds-space-3) var(--ds-space-6);
+  padding-bottom: 0px;
+  background-color: var(--ds-navbar-bg);
+  box-shadow: var(--ds-shadow);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  height: 70px;
+}
+
+.user-header-navbar-left {
+  display: flex;
+  align-items: center;
+  gap: var(--ds-space-8);
+}
+
+.user-header-logo img {
+  height: 45px;
+  width: auto;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: var(--ds-space-7);
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links li a {
+  text-decoration: none;
+  color: var(--ds-text-primary);
+  font-weight: var(--ds-font-medium);
+  font-size: var(--ds-text-2xl);
+  transition: color var(--ds-transition-fast);
+  white-space: nowrap;
+}
+
+.student-header-nav-icons {
+  display: flex;
+  align-items: center;
+  gap: var(--ds-space-5);
+}
+
+.icon {
+  position: relative;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon img {
+  width: 40px;
+  height: 35px;
+  object-fit: contain;
+}
+
+.notification-icon-wrapper {
+  position: relative;
+}
+
+.profile-icon {
+  position: relative;
+  cursor: pointer;
+}
+
+.profile-icon img {
+  width: 46px;
+  height: 42px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+/* ===========================
+   Gallery Icon Styles
+   =========================== */
+.coordinator-header-gallery-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.coordinator-header-gallery-icon {
+  font-size: var(--ds-text-lg) !important;
+  width: 30px !important;
+  height: 28px !important;
+  min-width: 30px;
+  min-height: 28px;
+  color: var(--ds-text-primary);
+  transition: color var(--ds-transition-fast);
+}
+
+/* ===========================
+   Coordinator Header - Hamburger Menu Styles
+   =========================== */
+.coordinator-header-hamburger-menu {
+  display: none;
+  width: 32px;
+  height: 24px;
+  position: relative;
+  cursor: pointer;
+  z-index: 2100;
+}
+
+.coordinator-header-hamburger-menu span {
+  display: block;
+  position: absolute;
+  height: 3px;
+  width: 100%;
+  background: var(--ds-gray-700);
+  border-radius: 3px;
+  opacity: 1;
+  left: 0;
+  transform: rotate(0deg);
+  transition: 0.25s ease-in-out;
+}
+
+.coordinator-header-hamburger-menu span:nth-child(1) {
+  top: 0px;
+}
+
+.coordinator-header-hamburger-menu span:nth-child(2),
+.coordinator-header-hamburger-menu span:nth-child(3) {
+  top: 10px;
+}
+
+.coordinator-header-hamburger-menu span:nth-child(4) {
+  top: 20px;
+}
+
+.coordinator-header-hamburger-menu.coordinator-header-open span:nth-child(1) {
+  top: 10px;
+  width: 0%;
+  left: 50%;
+}
+
+.coordinator-header-hamburger-menu.coordinator-header-open span:nth-child(2) {
+  transform: rotate(45deg);
+}
+
+.coordinator-header-hamburger-menu.coordinator-header-open span:nth-child(3) {
+  transform: rotate(-45deg);
+}
+
+.coordinator-header-hamburger-menu.coordinator-header-open span:nth-child(4) {
+  top: 10px;
+  width: 0%;
+  left: 50%;
+}
+
+/* ===========================
+   Mobile Sidebar Styles
+   =========================== */
+.mobile-sidebar-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 2000;
+  display: flex;
+  justify-content: flex-start;
+  align-items: stretch;
+  padding-top: 70px;
+}
+
+.mobile-sidebar {
+  background: var(--ds-navbar-bg);
+  width: 80vw;
+  max-width: 320px;
+  height: 100vh;
+  box-shadow: var(--ds-shadow-lg);
+  padding-top: var(--ds-space-8);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  animation: slideInSidebar var(--ds-transition-fast) ease;
+}
+
+@keyframes slideInSidebar {
+  from { transform: translateX(-100%); }
+  to { transform: translateX(0); }
+}
+
+.mobile-sidebar-menu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+}
+
+.mobile-sidebar-menu li:last-child {
+  border-bottom: none;
+}
+
+.mobile-sidebar-menu a {
+  display: block;
+  padding: var(--ds-space-4) var(--ds-space-6);
+  font-size: var(--ds-text-base);
+  color: var(--ds-text-primary);
+  text-decoration: none;
+  background: none;
+  border: none;
+  width: 100%;
+  text-align: left;
+  cursor: pointer;
+  transition: background var(--ds-transition-fast);
+}
+
+.mobile-sidebar-menu a:hover {
+  background: #f3f4f6;
+  color: #2563eb;
+}
+
+/* ===========================
+   Coordinator Header - Notification Dropdown Styles
+   =========================== */
+.coordinator-header-notification-dropdown {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  margin-top: 8px;
+  width: 380px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+  border: 1px solid #e5e7eb;
+  z-index: 1000;
+  overflow: hidden;
+}
+
+.coordinator-header-dropdown-header {
+  padding: 16px 20px;
+  border-bottom: 1px solid #f1f3f4;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #f8f9fa;
+}
+
+.coordinator-header-dropdown-header span {
+  font-size: 14px;
+  font-weight: 600;
+  color: #374151;
+}
+
+.coordinator-header-actions {
+  display: flex;
+  gap: 12px;
+}
+
+.coordinator-header-actions button {
+  background: none;
+  border: none;
+  color: #3b82f6;
+  font-size: 12px;
+  cursor: pointer;
+  padding: 4px 8px;
+  border-radius: 4px;
+  transition: background-color 0.2s;
+  font-weight: 500;
+}
+
+.coordinator-header-actions button:hover {
+  background-color: #eff6ff;
+}
+
+.coordinator-header-dropdown-list {
+  max-height: 400px;
+  overflow-y: auto;
+}
+
+.coordinator-header-dropdown-item {
+  display: flex;
+  align-items: flex-start;
+  padding: 12px 20px;
+  border-bottom: 1px solid #f1f3f4;
+  transition: background-color 0.2s;
+  cursor: pointer;
+}
+
+.coordinator-header-dropdown-item:hover {
+  background-color: #f8f9fa;
+}
+
+.coordinator-header-dropdown-item:last-child {
+  border-bottom: none;
+}
+
+.coordinator-header-dropdown-item.unread {
+  background-color: #eff6ff;
+  border-left: 3px solid #3b82f6;
+}
+
+.coordinator-header-dropdown-item.read {
+  background-color: white;
+}
+
+.coordinator-header-notif-icon {
+  margin-right: 12px;
+  margin-top: 2px;
+  flex-shrink: 0;
+}
+
+.coordinator-header-notif-icon span {
+  font-size: 16px;
+  width: 28px;
+  height: 28px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: #f3f4f6;
+  border-radius: 50%;
+  font-size: 14px;
+}
+
+.coordinator-header-notif-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.coordinator-header-notif-content h4 {
+  margin: 0 0 4px 0;
+  font-size: 14px;
+  font-weight: 600;
+  color: #111827;
+  line-height: 1.3;
+}
+
+.coordinator-header-notif-content p {
+  margin: 0 0 4px 0;
+  font-size: 13px;
+  color: #6b7280;
+  line-height: 1.4;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+.coordinator-header-notif-content small {
+  font-size: 11px;
+  color: #9ca3af;
+}
+
+.coordinator-header-no-notifications {
+  text-align: center;
+  padding: 40px 20px;
+  color: #6b7280;
+  font-size: 14px;
+}
+
+.notification-badge {
+  position: absolute;
+  top: -4px;
+  right: -4px;
+  background: #ef4444;
+  color: white;
+  border-radius: 50%;
+  width: 18px;
+  height: 18px;
+  font-size: 10px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid white;
+}
+
+/* Different notification type icons */
+.coordinator-header-notif-icon .coordinator-header-team-icon {
+  background: #3b82f6;
+  color: white;
+}
+
+.coordinator-header-notif-icon .coordinator-header-warning-icon {
+  background: #f59e0b;
+  color: white;
+}
+
+.coordinator-header-notif-icon .coordinator-header-success-icon {
+  background: #10b981;
+  color: white;
+}
+
+.coordinator-header-notif-icon .coordinator-header-info-icon {
+  background: #6b7280;
+  color: white;
+}
+
+/* ===========================
+   Coordinator Header - Profile Dropdown Styles
+   =========================== */
+.coordinator-header-profile-dropdown {
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+  width: 220px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+  border: 1px solid #e5e7eb;
+  z-index: 1000;
+  overflow: hidden;
+}
+
+.coordinator-header-profile-dropdown ul {
+  margin: 0;
+  padding: 8px 0;
+  list-style: none;
+}
+
+.coordinator-header-profile-dropdown li {
+  padding: 12px 16px;
+  font-size: 14px;
+  color: #000000;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.coordinator-header-profile-dropdown li a {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+/* ===========================
+   Responsive Styles
+   =========================== */
+@media (min-width: 769px) {
+  .mobile-sidebar-overlay {
+    display: none !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .coordinator-header-hamburger-menu {
+    display: block;
+    position: absolute;
+    left: 16px;
+    top: 18px;
+  }
+  
+  .user-header-navbar-left {
+    margin-left: 56px;
+  }
+  
+  .user-header-navbar-left .nav-links {
+    display: none;
+  }
+  
+  .user-navbar {
+    padding: 12px 16px;
+  }
+  
+  .student-header-nav-icons {
+    gap: 20px;
+  }
+  
+  .coordinator-header-notification-dropdown {
+    width: 340px;
+    right: -30px;
+  }
+  
+  .coordinator-header-gallery-icon {
+    font-size: 18px !important;
+    width: 30px !important;
+    height: 28px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .user-header-logo img {
+    height: 35px;
+  }
+  
+  .user-navbar {
+    padding: 12px 16px;
+  }
+  
+  .student-header-nav-icons {
+    gap: 20px;
+  }
+  
+  .coordinator-header-notification-dropdown {
+    position: fixed;
+    top: 70px;
+    right: 10px;
+    left: 10px;
+    width: auto;
+    max-width: none;
+  }
+  
+  .notification-icon-wrapper {
+    position: static;
+  }
+  
+  .coordinator-header-profile-dropdown {
+    position: fixed;
+    top: 70px;
+    right: 10px;
+    left: 10px;
+    width: auto;
+    max-width: none;
+  }
+}
+
+@media (max-width: 375px) {
+  .user-navbar {
+    padding: 12px 0px;
+  }
+}
+

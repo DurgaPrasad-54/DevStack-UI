@@ -1,0 +1,864 @@
+@import '../devstack-common.css';
+
+/* ============================================
+   WINNERS PAGE - PROFESSIONAL STYLES
+   Responsive Design: Mobile, Tablet, Desktop
+   ============================================ */
+
+/* === ROOT & GENERAL STYLES === */
+.wp-page-wrapper {
+  min-height: calc(100vh - 80px);
+  background-color: var(--ds-bg-secondary);
+  padding: var(--ds-space-6);
+  font-family: var(--ds-font-family);
+  display: flex;
+  flex-direction: column;
+}
+
+.wp-page-container {
+  max-width: 100%;
+  margin: 0;
+  background-color: transparent;
+  border-radius: 0;
+  padding: 0;
+  box-shadow: none;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+/* === HEADER & SEARCH LAYOUT === */
+.wp-header-search-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: var(--ds-space-8);
+  gap: var(--ds-space-6);
+  flex-wrap: wrap;
+}
+
+.wp-header-content {
+  flex: 1;
+  min-width: 250px;
+}
+
+.wp-page-title {
+  font-size: var(--ds-text-3xl);
+  font-weight: var(--ds-font-semibold);
+  color: var(--ds-text-primary);
+  margin: 0 0 var(--ds-space-2) 0;
+  display: flex;
+  align-items: center;
+  gap: var(--ds-space-3);
+}
+
+.wp-title-icon {
+  color: var(--ds-primary);
+  font-size: var(--ds-text-3xl);
+}
+
+.wp-page-subtitle {
+  color: var(--ds-text-secondary);
+  font-size: var(--ds-text-base);
+  margin: 0;
+  line-height: 1.5;
+}
+
+/* === SEARCH SECTION === */
+.wp-search-wrapper {
+  position: relative;
+  min-width: 450px;
+  flex: 0 1 auto;
+}
+
+.wp-search-input-group {
+  display: flex;
+  gap: var(--ds-space-3);
+  align-items: center;
+}
+
+.wp-search-input-container {
+  position: relative;
+  flex: 1;
+}
+
+.wp-search-input {
+  width: 100%;
+  padding: 12px 44px 12px 14px;
+  border: 1px solid var(--ds-gray-300);
+  border-radius: var(--ds-radius-md);
+  font-size: var(--ds-text-sm);
+  outline: none;
+  transition: all var(--ds-transition-slow);
+  font-family: inherit;
+  background: var(--ds-bg-primary);
+}
+
+.wp-search-input:focus {
+  border-color: var(--ds-primary);
+  box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.1);
+}
+
+.wp-search-input:hover {
+  border-color: var(--ds-primary);
+}
+
+.wp-search-icon {
+  position: absolute;
+  right: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: var(--ds-text-base);
+  color: var(--ds-text-tertiary);
+  pointer-events: none;
+}
+
+/* === DROPDOWN MENU === */
+.wp-dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  margin-top: var(--ds-space-1);
+  background-color: var(--ds-bg-primary);
+  border: 1px solid var(--ds-gray-300);
+  border-radius: var(--ds-radius-md);
+  box-shadow: var(--ds-shadow-lg);
+  max-height: 300px;
+  overflow-y: auto;
+  z-index: 1000;
+}
+
+.wp-dropdown-item {
+  padding: var(--ds-space-3) var(--ds-space-4);
+  cursor: pointer;
+  border-bottom: 1px solid var(--ds-gray-200);
+  background-color: var(--ds-bg-primary);
+  transition: background-color var(--ds-transition-fast);
+}
+
+.wp-dropdown-item:last-child {
+  border-bottom: none;
+}
+
+.wp-dropdown-item:hover {
+  background-color: var(--ds-gray-100);
+}
+
+.wp-dropdown-item.wp-active {
+  background-color: var(--ds-primary-light);
+}
+
+.wp-dropdown-item h4 {
+  margin: 0 0 var(--ds-space-1) 0;
+  font-size: 14px;
+  font-weight: 600;
+  color: #1e293b;
+}
+
+.wp-dropdown-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.wp-dropdown-tech {
+  font-size: 12px;
+  color: #64748b;
+}
+
+.wp-dropdown-year {
+  font-size: 12px;
+  color: #94a3b8;
+  font-weight: 500;
+}
+
+/* === CLEAR BUTTON === */
+.wp-clear-btn {
+  padding: 10px 18px;
+  background-color: #ff4d4f;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+  font-family: inherit;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-shrink: 0;
+}
+
+.wp-clear-btn:hover {
+  background-color: #ff7875;
+}
+
+.wp-clear-btn:active {
+  background-color: #d9363e;
+}
+
+/* === ERROR MESSAGE === */
+.wp-error-message {
+  padding: 14px 16px;
+  background-color: #fff2f0;
+  border: 1px solid #ffccc7;
+  border-left: 4px solid #ff4d4f;
+  border-radius: 6px;
+  margin-bottom: 24px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #cf1322;
+  font-size: 14px;
+}
+
+.wp-error-icon {
+  font-size: 18px;
+  flex-shrink: 0;
+  color: #ff4d4f;
+}
+
+/* === LOADING STATE === */
+.wp-loading-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 80px 20px;
+  gap: 16px;
+  flex: 1;
+}
+
+.wp-spinner-icon {
+  font-size: 48px;
+  color: #1890ff;
+}
+
+.wp-loading-text {
+  color: #64748b;
+  margin: 0;
+  font-size: 16px;
+}
+
+/* === WINNERS CARDS GRID === */
+.wp-cards-section {
+  margin-top: 24px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.wp-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-bottom: 32px;
+  max-width: 1200px;
+}
+
+.wp-winner-card {
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.06);
+  transition: all 0.3s ease;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  border: 1px solid #e5e7eb;
+}
+
+.wp-winner-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12);
+}
+
+/* === CARD TOP SECTION (Colored Banner) === */
+.wp-card-header {
+  padding: 24px 20px;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 16px;
+  min-height: 120px;
+  position: relative;
+}
+
+/* === MEDAL BADGE - TOP RIGHT === */
+.wp-medal-badge {
+  position: absolute;
+  top: 12px;
+  right: 14px;
+}
+
+.wp-rank-icon {
+  font-size: 28px;
+  color: #fff;
+}
+
+.wp-rank-icon.wp-rank-gold {
+  color: #ffd700;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+}
+
+.wp-rank-icon.wp-rank-silver {
+  color: #c0c0c0;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+}
+
+.wp-rank-icon.wp-rank-bronze {
+  color: #cd7f32;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+}
+
+/* === RANK CIRCLE - LEFT SIDE === */
+.wp-rank-circle {
+  width: 52px;
+  height: 52px;
+  background-color: rgba(255, 255, 255, 0.25);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  font-weight: 700;
+  flex-shrink: 0;
+  border: 2px solid rgba(255, 255, 255, 0.4);
+}
+
+.wp-team-name-header {
+  font-size: 18px;
+  font-weight: 600;
+  margin: 0;
+  flex: 1;
+  word-wrap: break-word;
+  line-height: 1.4;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.wp-team-icon {
+  font-size: 18px;
+  opacity: 0.9;
+}
+
+/* === CARD BOTTOM SECTION (White Content) === */
+.wp-card-body {
+  padding: 20px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+}
+
+.wp-event-name {
+  font-size: 12px;
+  color: #94a3b8;
+  margin: 0 0 14px 0;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.wp-team-lead-name {
+  font-size: 14px;
+  color: #475569;
+  margin: 0 0 14px 0;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.wp-lead-icon {
+  font-size: 14px;
+  color: #64748b;
+}
+
+.wp-team-lead-label {
+  font-weight: 600;
+  color: #1e293b;
+}
+
+/* === TECHNOLOGY STACK === */
+.wp-tech-stack-box {
+  background-color: #f8fafc;
+  border-radius: 6px;
+  padding: 12px;
+  margin-bottom: 16px;
+  border: 1px solid #e2e8f0;
+}
+
+.wp-tech-stack-header {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 6px;
+}
+
+.wp-tech-icon {
+  font-size: 14px;
+  color: #f59e0b;
+}
+
+.wp-tech-label {
+  font-size: 10px;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  color: #64748b;
+  font-weight: 600;
+}
+
+.wp-tech-stack-list {
+  font-size: 13px;
+  margin: 0;
+  color: #475569;
+  line-height: 1.5;
+}
+
+/* === RANK BADGE === */
+.wp-rank-badge {
+  display: inline-block;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  margin-bottom: 16px;
+  width: fit-content;
+  background-color: #f3f4f6;
+  color: #64748b;
+}
+
+.wp-rank-badge-1 {
+  background-color: #e6f7ff;
+  color: #1890ff;
+  border: 1px solid #91d5ff;
+}
+
+.wp-rank-badge-2 {
+  background-color: #f6ffed;
+  color: #52c41a;
+  border: 1px solid #b7eb8f;
+}
+
+.wp-rank-badge-3 {
+  background-color: #fff7e6;
+  color: #fa8c16;
+  border: 1px solid #ffd591;
+}
+
+/* === VIEW CODE BUTTON === */
+.wp-view-code-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  padding: 10px;
+  background-color: #1e293b;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 14px;
+  transition: all 0.3s ease;
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+  margin-top: auto;
+}
+
+.wp-view-code-btn:hover {
+  background-color: #334155;
+}
+
+/* === LEGEND SECTION === */
+.wp-legend {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  padding: 20px;
+  background-color: #f8fafc;
+  border-radius: 8px;
+  border: 1px solid #e2e8f0;
+  flex-wrap: wrap;
+}
+
+.wp-legend-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.wp-legend-circle {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.wp-legend-circle.wp-gold {
+  background: linear-gradient(135deg, #1890ff 0%, #003a8c 100%);
+}
+
+.wp-legend-circle.wp-silver {
+  background: linear-gradient(135deg, #52c41a 0%, #237804 100%);
+}
+
+.wp-legend-circle.wp-bronze {
+  background: linear-gradient(135deg, #fa8c16 0%, #ad4e00 100%);
+}
+
+.wp-legend-text {
+  font-size: 14px;
+  font-weight: 500;
+  color: #475569;
+}
+
+/* === EMPTY STATES === */
+.wp-empty-state {
+  text-align: center;
+  padding: 80px 20px;
+  color: #64748b;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.wp-empty-icon {
+  font-size: 64px;
+  display: block;
+  margin-bottom: 20px;
+  color: #cbd5e1;
+}
+
+.wp-empty-state h3 {
+  font-size: 20px;
+  color: #1e293b;
+  margin: 0 0 8px 0;
+  font-weight: 600;
+}
+
+.wp-empty-state p {
+  margin: 0;
+  color: #94a3b8;
+  font-size: 15px;
+}
+
+/* === ANIMATIONS === */
+@keyframes wpSpin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* ============================================
+   TABLET RESPONSIVE (768px and below)
+   ============================================ */
+@media (max-width: 768px) {
+  .wp-page-container {
+    padding: 24px;
+  }
+
+  .wp-header-search-wrapper {
+    flex-direction: column;
+    align-items: stretch;
+    margin-bottom: 24px;
+  }
+
+  .wp-header-content {
+    width: 100%;
+  }
+
+  .wp-page-title {
+    font-size: 1.5rem;
+  }
+
+  .wp-page-subtitle {
+    font-size: 14px;
+  }
+
+  .wp-search-wrapper {
+    width: 100%;
+    min-width: unset;
+  }
+
+  .wp-search-input-group {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .wp-search-input-container {
+    width: 100%;
+  }
+
+  .wp-clear-btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .wp-cards-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+    margin-bottom: 24px;
+  }
+
+  .wp-card-header {
+    padding: 20px 16px;
+    min-height: 110px;
+  }
+
+  .wp-rank-circle {
+    width: 46px;
+    height: 46px;
+    font-size: 22px;
+  }
+
+  .wp-team-name-header {
+    font-size: 16px;
+  }
+
+  .wp-rank-icon {
+    font-size: 24px;
+  }
+
+  .wp-legend {
+    gap: 20px;
+  }
+
+  .wp-dropdown-menu {
+    max-height: 250px;
+  }
+}
+
+/* ============================================
+   MOBILE RESPONSIVE (480px and below)
+   ============================================ */
+@media (max-width: 480px) {
+  .wp-page-wrapper {
+    padding: 16px 12px;
+  }
+
+  .wp-page-container {
+    padding: 16px;
+    border-radius: 8px;
+  }
+
+  .wp-header-search-wrapper {
+    gap: 16px;
+    margin-bottom: 20px;
+  }
+
+  .wp-page-title {
+    font-size: 1.25rem;
+    gap: 8px;
+  }
+
+  .wp-title-icon {
+    font-size: 1.375rem;
+  }
+
+  .wp-page-subtitle {
+    font-size: 13px;
+  }
+
+  .wp-cards-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+    margin-bottom: 24px;
+  }
+
+  .wp-winner-card:hover {
+    transform: translateY(-2px);
+  }
+
+  .wp-card-header {
+    padding: 18px 14px;
+    min-height: 100px;
+  }
+
+  .wp-rank-circle {
+    width: 42px;
+    height: 42px;
+    font-size: 20px;
+  }
+
+  .wp-team-name-header {
+    font-size: 15px;
+  }
+
+  .wp-rank-icon {
+    font-size: 22px;
+  }
+
+  .wp-card-body {
+    padding: 16px;
+  }
+
+  .wp-event-name {
+    font-size: 11px;
+    margin-bottom: 12px;
+  }
+
+  .wp-tech-stack-box {
+    padding: 10px;
+    margin-bottom: 14px;
+  }
+
+  .wp-rank-badge {
+    padding: 5px 12px;
+    font-size: 11px;
+    margin-bottom: 14px;
+  }
+
+  .wp-view-code-btn {
+    padding: 10px;
+    font-size: 13px;
+  }
+
+  .wp-legend {
+    flex-direction: column;
+    gap: 12px;
+    padding: 16px;
+  }
+
+  .wp-legend-item {
+    justify-content: center;
+  }
+
+  .wp-error-message {
+    padding: 12px;
+    font-size: 13px;
+  }
+
+  .wp-loading-container {
+    padding: 60px 16px;
+  }
+
+  .wp-spinner-icon {
+    font-size: 40px;
+  }
+
+  .wp-loading-text {
+    font-size: 14px;
+  }
+
+  .wp-empty-state {
+    padding: 60px 16px;
+  }
+
+  .wp-empty-icon {
+    font-size: 48px;
+    margin-bottom: 16px;
+  }
+
+  .wp-empty-state h3 {
+    font-size: 18px;
+  }
+
+  .wp-empty-state p {
+    font-size: 13px;
+  }
+
+  .wp-dropdown-menu {
+    max-height: 220px;
+  }
+
+  .wp-dropdown-item {
+    padding: 10px 12px;
+  }
+
+  .wp-search-input {
+    padding: 10px 36px 10px 12px;
+    font-size: 14px;
+  }
+
+  .wp-search-icon {
+    right: 12px;
+    font-size: 14px;
+  }
+
+  .wp-clear-btn {
+    padding: 10px 16px;
+    font-size: 13px;
+  }
+}
+
+/* ============================================
+   EXTRA SMALL DEVICES (320px and below)
+   ============================================ */
+@media (max-width: 320px) {
+  .wp-page-title {
+    font-size: 1.125rem;
+  }
+
+  .wp-cards-grid {
+    gap: 12px;
+  }
+
+  .wp-card-header {
+    padding: 14px 12px;
+    min-height: 90px;
+    gap: 12px;
+  }
+
+  .wp-rank-circle {
+    width: 38px;
+    height: 38px;
+    font-size: 18px;
+  }
+
+  .wp-team-name-header {
+    font-size: 14px;
+  }
+
+  .wp-legend-circle {
+    width: 28px;
+    height: 28px;
+    font-size: 12px;
+  }
+
+  .wp-legend-text {
+    font-size: 12px;
+  }
+}
+
+/* === PRINT STYLES === */
+@media print {
+  .wp-page-wrapper {
+    background-color: #fff;
+    padding: 0;
+  }
+
+  .wp-page-container {
+    box-shadow: none;
+    padding: 0;
+  }
+
+  .wp-search-wrapper,
+  .wp-clear-btn {
+    display: none;
+  }
+
+  .wp-winner-card {
+    page-break-inside: avoid;
+    box-shadow: none;
+    border: 1px solid #e5e7eb;
+  }
+}

@@ -1,0 +1,480 @@
+/* Resource Page CSS */
+@import './devstack-common.css';
+
+/* Container */
+.resource-container {
+  min-height: 100vh;
+  background-color: var(--ds-bg-secondary);
+  padding: var(--ds-space-6);
+}
+
+.resource-content {
+  max-width: 1400px;
+  margin: 0 auto;
+  margin-top: 0;
+}
+
+/* Header */
+.resource-header {
+  margin-bottom: var(--ds-space-8);
+}
+
+.resource-main-title {
+  font-size: var(--ds-text-3xl);
+  font-weight: var(--ds-font-bold);
+  color: var(--ds-text-primary);
+  margin-bottom: var(--ds-space-2);
+  display: flex;
+  justify-content: center;
+}
+.resource-nav-container{
+    display: flex;
+    justify-content: center;
+}
+
+/* Navigation */
+.resource-navigation {
+  display: flex;
+  gap: var(--ds-space-1);
+  margin-bottom: var(--ds-space-8);
+  padding: var(--ds-space-1);
+  background-color: var(--ds-bg-tertiary);
+  border-radius: var(--ds-radius-md);
+  width: fit-content;
+}
+
+.resource-nav-tab {
+  display: flex;
+  align-items: center;
+  gap: var(--ds-space-2);
+  padding: var(--ds-space-2) var(--ds-space-4);
+  border: none;
+  border-radius: var(--ds-radius);
+  background-color: transparent;
+  color: var(--ds-text-secondary);
+  font-weight: var(--ds-font-medium);
+  cursor: pointer;
+  transition: all var(--ds-transition);
+}
+
+.resource-nav-tab:hover {
+  background-color: var(--ds-gray-200);
+  color: var(--ds-text-primary);
+}
+
+.resource-nav-tab.active {
+  background-color: var(--ds-primary);
+  color: var(--ds-text-inverse);
+}
+
+.resource-nav-icon {
+  width: 1rem;
+  height: 1rem;
+}
+
+/* Section Header */
+.resource-section-header {
+  margin-bottom: var(--ds-space-6);
+}
+
+.resource-section-title {
+  font-size: var(--ds-text-2xl);
+  font-weight: var(--ds-font-semibold);
+  color: var(--ds-text-primary);
+}
+
+/* Back Button */
+.resource-back-btn {
+  display: flex;
+  align-items: center;
+  gap: var(--ds-space-2);
+  background: none;
+  border: 1px solid var(--ds-gray-300);
+  color: var(--ds-text-primary);
+  padding: var(--ds-space-2) var(--ds-space-4);
+  border-radius: var(--ds-radius);
+  cursor: pointer;
+  margin-bottom: var(--ds-space-4);
+  transition: all var(--ds-transition);
+}
+
+.resource-back-btn:hover {
+  background-color: var(--ds-bg-secondary);
+}
+
+.resource-back-icon {
+  width: 1rem;
+  height: 1rem;
+}
+
+/* Grid Layout */
+.resource-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--ds-space-6);
+}
+
+/* Card */
+.resource-card {
+  background-color: var(--ds-bg-primary);
+  border-radius: var(--ds-radius-lg);
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform var(--ds-transition), box-shadow var(--ds-transition);
+  box-shadow: var(--ds-shadow-sm);
+}
+
+.resource-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--ds-shadow-md);
+}
+
+.resource-card-title {
+  font-size: var(--ds-text-base);
+  font-weight: var(--ds-font-semibold);
+  color: var(--ds-text-primary);
+  padding: var(--ds-space-4);
+  text-align: center;
+  margin: 0;
+}
+
+/* Thumbnail */
+.resource-thumbnail {
+  position: relative;
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+}
+
+/* YouTube Thumbnail */
+.resource-youtube-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.resource-youtube-thumb {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.resource-play-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(0, 0, 0, 0.7);
+  border-radius: 50%;
+  padding: 1rem;
+  transition: background-color 0.2s ease;
+}
+
+.resource-card:hover .resource-play-overlay {
+  background-color: rgba(0, 0, 0, 0.9);
+}
+
+.resource-play-overlay-icon {
+  width: 2rem;
+  height: 2rem;
+  color: white;
+}
+
+/* Placeholders */
+.resource-placeholder,
+.resource-video-placeholder,
+.resource-folder-placeholder,
+.resource-notes-folder-placeholder,
+.resource-link-placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.resource-video-placeholder {
+  background-color: #f3f4f6;
+}
+
+.resource-folder-placeholder {
+  background-color: #f3f4f6;
+  display: none;
+}
+
+.resource-notes-folder-placeholder {
+  background-color: #fef3c7;
+}
+
+.resource-link-placeholder {
+  background-color: #dbeafe;
+}
+
+.resource-play-icon,
+.resource-folder-icon {
+  width: 3rem;
+  height: 3rem;
+  color: #6b7280;
+}
+
+.resource-folder-thumb {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.resource-link-icon {
+  width: 2rem;
+  height: 2rem;
+  color: #1d4ed8;
+}
+
+/* Notes List */
+.resource-notes-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.resource-note-item {
+  background-color: white;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  transition: box-shadow 0.2s ease;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+}
+
+.resource-note-item:hover {
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.resource-note-content {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.resource-note-icon-container {
+  width: 3rem;
+  height: 3rem;
+  background-color: #fef3c7;
+  border-radius: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.resource-note-icon {
+  width: 1.5rem;
+  height: 1.5rem;
+  color: #92400e;
+}
+
+.resource-note-title {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #1f2937;
+  margin: 0;
+}
+
+.resource-note-download,
+.resource-visit-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: #10b981;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 0.375rem;
+  text-decoration: none;
+  font-size: 0.875rem;
+  font-weight: 500;
+  transition: background-color 0.2s ease;
+}
+
+.resource-note-download:hover,
+.resource-visit-btn:hover {
+  background-color: #059669;
+}
+
+.resource-download-icon,
+.resource-visit-icon {
+  width: 1rem;
+  height: 1rem;
+}
+
+/* Item Actions */
+.resource-item-actions {
+  padding: 0 1rem 1rem;
+  text-align: center;
+}
+
+.resource-visit-btn {
+  background-color: #3b82f6;
+}
+
+.resource-visit-btn:hover {
+  background-color: #2563eb;
+}
+
+/* Empty State */
+.resource-empty-state {
+  text-align: center;
+  padding: 3rem;
+  color: #6b7280;
+}
+
+.resource-empty-icon {
+  width: 3rem;
+  height: 3rem;
+  margin: 0 auto 1rem;
+  opacity: 0.5;
+}
+
+/* Overlay */
+.resource-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.resource-overlay-content {
+  background-color: white;
+  border-radius: 0.5rem;
+  padding: 1.5rem;
+  max-width: 90vw;
+  max-height: 90vh;
+  position: relative;
+  overflow: auto;
+}
+
+.resource-overlay-close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+  border-radius: 0.25rem;
+  transition: background-color 0.2s ease;
+}
+
+.resource-overlay-close:hover {
+  background-color: #f3f4f6;
+}
+
+.resource-overlay-close-icon {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.resource-overlay-title {
+  margin-bottom: 1rem;
+  padding-right: 3rem;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #1f2937;
+}
+
+.resource-note-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+  padding-right: 3rem;
+}
+
+.resource-download-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: #10b981;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 0.375rem;
+  text-decoration: none;
+  font-weight: 500;
+  transition: background-color 0.2s ease;
+}
+
+.resource-download-btn:hover {
+  background-color: #059669;
+}
+
+/* Video/PDF Viewer */
+.resource-video-iframe,
+.resource-video,
+.resource-pdf-viewer {
+  border-radius: 0.5rem;
+}
+
+.resource-pdf-viewer {
+  border: 1px solid #d1d5db;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+  .resource-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .resource-container {
+    padding: 1rem;
+  }
+  
+  .resource-main-title {
+    font-size: 1.5rem;
+  }
+  
+  .resource-navigation {
+    flex-direction: column;
+    width: 100%;
+  }
+  
+  .resource-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+  
+  .resource-overlay {
+    padding: 1rem;
+  }
+  
+  .resource-video-iframe,
+  .resource-video {
+    width: 100%;
+    height: 250px;
+  }
+  
+  .resource-pdf-viewer {
+    width: 100%;
+    height: 400px;
+  }
+}
+
+@media (max-width: 480px) {
+  .resource-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .resource-note-content {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+}

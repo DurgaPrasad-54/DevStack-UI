@@ -1,0 +1,257 @@
+@import '../devstack-common.css';
+
+/* hackathonnotification.css - Coordinator */
+
+.coordinator-notification-page {
+  min-height: 100vh;
+  background-color: var(--ds-bg-secondary);
+}
+
+.coordinator-notification-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: var(--ds-bg-primary);
+  box-shadow: var(--ds-shadow-sm);
+}
+
+.coordinator-notification-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: var(--ds-space-10) var(--ds-space-10);
+}
+
+.coordinator-notification-content {
+  width: 100%;
+}
+
+.coordinator-notification-title {
+  font-size: var(--ds-text-3xl);
+  font-weight: var(--ds-font-semibold);
+  color: var(--ds-text-primary);
+  /* text-align: center; */
+  margin: var(--ds-space-10) 0 var(--ds-space-5) 0;
+  font-family: var(--ds-font-family);
+}
+
+.coordinator-notification-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: var(--ds-space-3);
+}
+
+.coordinator-notification-card {
+  background: var(--ds-bg-primary);
+  border-radius: var(--ds-radius-xl);
+  padding: var(--ds-space-5) var(--ds-space-6);
+  box-shadow: var(--ds-shadow-sm);
+  border: 1px solid var(--ds-gray-200);
+  display: flex;
+  align-items: flex-start;
+  gap: var(--ds-space-4);
+  transition: all var(--ds-transition-fast);
+  cursor: pointer;
+  position: relative;
+  min-height: 80px;
+}
+
+.coordinator-notification-card:hover {
+  box-shadow: var(--ds-shadow-md);
+  transform: translateY(-1px);
+}
+
+.coordinator-notification-card.unread {
+  background: var(--ds-bg-primary);
+  border-left: 3px solid var(--ds-primary);
+}
+
+.coordinator-notification-card.read {
+  background: var(--ds-bg-primary);
+  opacity: 0.9;
+}
+
+.coordinator-notification-avatar {
+  flex-shrink: 0;
+  width: 44px;
+  height: 44px;
+  border-radius: var(--ds-radius-lg);
+  overflow: hidden;
+  background: var(--ds-gray-100);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.coordinator-notification-avatar-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: var(--ds-radius-lg);
+}
+
+.coordinator-notification-details {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: var(--ds-space-1);
+  min-width: 0;
+}
+
+.coordinator-notification-heading {
+  font-size: var(--ds-text-base);
+  font-weight: var(--ds-font-semibold);
+  color: #1f2937;
+  margin: 0;
+  line-height: 1.4;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+.coordinator-notification-description {
+  font-size: 14px;
+  color: #6b7280;
+  margin: 0;
+  line-height: 1.5;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+.coordinator-notification-date {
+  font-size: 13px;
+  color: #9ca3af;
+  margin-top: 4px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+.coordinator-notification-unread-dot {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 8px;
+  height: 8px;
+  background: #3b82f6;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.coordinator-notification-no-container {
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.coordinator-notification-no-text {
+  font-size: 16px;
+  color: #6b7280;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+.coordinator-notification-loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  font-size: 16px;
+  color: #6b7280;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .coordinator-notification-container {
+    padding: 20px 8px;
+  }
+  .coordinator-notification-title {
+    font-size: 32px;
+    margin: 40px 0 20px 0;
+  }
+  .coordinator-notification-card {
+    padding: 12px 10px;
+    gap: 10px;
+    min-height: 60px;
+  }
+  .coordinator-notification-avatar {
+    width: 36px;
+    height: 36px;
+  }
+  .coordinator-notification-heading {
+    font-size: 14px;
+  }
+  .coordinator-notification-description {
+    font-size: 12px;
+  }
+  .coordinator-notification-date {
+    font-size: 11px;
+  }
+}
+
+@media (max-width: 600px) {
+  .coordinator-notification-container {
+    padding: 8px 2px;
+    max-width: 100vw;
+  }
+  .coordinator-notification-title {
+    font-size: 32px;
+    margin: 40px 0 20px 0;
+  }
+  .coordinator-notification-card {
+    padding: 8px 6px;
+    gap: 8px;
+    min-height: 48px;
+  }
+  .coordinator-notification-avatar {
+    width: 28px;
+    height: 28px;
+  }
+  .coordinator-notification-heading {
+    font-size: 12px;
+  }
+  .coordinator-notification-description {
+    font-size: 11px;
+  }
+  .coordinator-notification-date {
+    font-size: 10px;
+  }
+}
+
+@media (max-width: 400px) {
+  .coordinator-notification-container {
+    padding: 2px 0;
+  }
+  .coordinator-notification-title {
+    font-size: 32px;
+    margin: 10px 0 8px 0;
+  }
+  .coordinator-notification-card {
+    padding: 4px 2px;
+    gap: 4px;
+    min-height: 36px;
+  }
+  .coordinator-notification-avatar {
+    width: 20px;
+    height: 20px;
+  }
+  .coordinator-notification-heading {
+    font-size: 10px;
+  }
+  .coordinator-notification-description {
+    font-size: 9px;
+  }
+  .coordinator-notification-date {
+    font-size: 8px;
+  }
+}
+
+/* Animation for new notifications */
+@keyframes coordinatorSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.coordinator-notification-card.new {
+  animation: coordinatorSlideIn 0.3s ease-out;
+}

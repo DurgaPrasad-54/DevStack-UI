@@ -1,0 +1,865 @@
+/* StudentSubmission.css */
+
+/* Container */
+.studentsub-container {
+  min-height: 100vh;
+  background: #f8fafc; /* very light neutral */
+  padding: 2rem 0.75rem;
+  padding-top: 16px;
+  color: #0f172a;
+}
+
+.studentsub-wrapper {
+  max-width: 68rem;
+  margin: 0 auto;
+  padding: 0 0.75rem;
+}
+
+@media (max-width: 640px) {
+  .studentsub-container { padding: 1.5rem 0.75rem; }
+  .studentsub-wrapper { padding: 0 0.5rem; }
+} 
+
+/* Loading State */
+.studentsub-loading {
+  min-height: 100vh;
+  background: linear-gradient(to bottom right, #eff6ff, #e0e7ff);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.studentsub-loading-content {
+  text-align: center;
+}
+
+.studentsub-loading-icon {
+  width: 3rem;
+  height: 3rem;
+  color: #4f46e5;
+  animation: spin 1s linear infinite;
+  margin: 0 auto 1rem;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.studentsub-loading-text {
+  color: #4b5563;
+}
+
+/* Card */
+.studentsub-card {
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(15, 23, 42, 0.06);
+  border: 1px solid rgba(15,23,42,0.04);
+  overflow: hidden;
+  padding: 0; /* keep header and content separate */
+} 
+
+/* Header */
+.studentsub-header {
+  background: linear-gradient(90deg, #eef2ff 0%, #f8fafc 100%);
+  padding: 0.9rem 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.studentsub-header-success {
+  background: linear-gradient(90deg, #ecfdf5 0%, #f8fafc 100%);
+}
+
+.studentsub-header-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.studentsub-header-subtitle {
+  color: #475569;
+  margin: 0;
+} 
+
+./* legacy subtitle styles removed in favor of light theme */
+
+.studentsub-header-subtitle {
+  color: #475569;
+  margin: 0;
+}
+
+.studentsub-header-subtitle-success {
+  color: #14532d;
+}
+
+/* Info Section */
+.studentsub-info-section {
+  padding: 1.25rem 1.5rem;
+  background: #ffffff;
+  border-bottom: 1px solid rgba(15,23,42,0.04);
+}
+
+.studentsub-info-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+@media (min-width: 768px) {
+  .studentsub-info-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.studentsub-info-item h3 {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #6b7280;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin: 0 0 0.25rem 0;
+}
+
+.studentsub-info-item p {
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: #1f2937;
+  margin: 0;
+}
+
+/* Team Info Cards */
+.studentsub-team-card {
+  margin-top: 0.75rem;
+  padding: 0.65rem;
+  background: #ffffff;
+  border-radius: 0.5rem;
+  border: 1px solid rgba(15,23,42,0.04);
+} 
+
+.studentsub-team-header {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #4f46e5;
+  margin: 0 0 0.5rem 0;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.studentsub-team-lead-name {
+  color: #1f2937;
+  font-weight: 500;
+  margin: 0;
+}
+
+.studentsub-team-lead-email {
+  font-size: 0.875rem;
+  color: #4b5563;
+  margin: 0;
+}
+
+.studentsub-team-lead-info {
+  font-size: 0.75rem;
+  color: #6b7280;
+  margin: 0.25rem 0 0 0;
+}
+
+.studentsub-members-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.studentsub-member-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid #f3f4f6;
+}
+
+.studentsub-member-item:last-child {
+  border-bottom: none;
+}
+
+.studentsub-member-name {
+  color: #1f2937;
+  font-weight: 500;
+  margin: 0;
+}
+
+.studentsub-lead-badge {
+  margin-left: 0.5rem;
+  font-size: 0.75rem;
+  background-color: #e0e7ff;
+  color: #4338ca;
+  padding: 0.125rem 0.5rem;
+  border-radius: 9999px;
+}
+
+.studentsub-member-details {
+  font-size: 0.75rem;
+  color: #4b5563;
+  margin: 0;
+}
+
+/* Alerts */
+.studentsub-alert {
+  margin: 0.9rem 0;
+  padding: 0.6rem 0.75rem;
+  border-radius: 0.5rem;
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+} 
+
+.studentsub-alert-error {
+  background-color: #fef2f2;
+  border: 1px solid #fecaca;
+}
+
+.studentsub-alert-success {
+  background-color: #f0fdf4;
+  border: 1px solid #bbf7d0;
+}
+
+.studentsub-alert-warning {
+  background-color: #fef3c7;
+  border: 1px solid #fde68a;
+}
+
+.studentsub-alert-info {
+  background-color: #eff6ff;
+  border: 1px solid #bfdbfe;
+}
+
+.studentsub-alert-icon {
+  width: 1.25rem;
+  height: 1.25rem;
+  flex-shrink: 0;
+  margin-top: 0.125rem;
+}
+
+.studentsub-alert-icon-error {
+  color: #dc2626;
+}
+
+.studentsub-alert-icon-success {
+  color: #16a34a;
+}
+
+.studentsub-alert-icon-warning {
+  color: #ca8a04;
+}
+
+.studentsub-alert-icon-info {
+  color: #2563eb;
+}
+
+.studentsub-alert-text {
+  margin: 0;
+}
+
+.studentsub-alert-text-error {
+  color: #991b1b;
+}
+
+.studentsub-alert-text-success {
+  color: #14532d;
+}
+
+.studentsub-alert-text-warning {
+  color: #78350f;
+}
+
+.studentsub-alert-text-info {
+  color: #1e40af;
+}
+
+/* Submission Details */
+.studentsub-details-box {
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+  border: 1px solid #d1d5db;
+}
+
+.studentsub-details-box-success {
+  background-color: #f0fdf4;
+  border-color: #bbf7d0;
+}
+
+.studentsub-details-box-info {
+  background-color: #eef2ff;
+  border-color: #c7d2fe;
+}
+
+.studentsub-details-title {
+  font-size: 1.125rem;
+  font-weight: 600;
+  margin: 0 0 0.5rem 0;
+}
+
+.studentsub-details-title-success {
+  color: #15803d;
+}
+
+.studentsub-details-title-info {
+  color: #3730a3;
+}
+
+.studentsub-details-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  font-size: 0.875rem;
+}
+
+.studentsub-details-list-success {
+  color: #166534;
+}
+
+.studentsub-details-list p {
+  margin: 0;
+}
+
+.studentsub-details-list strong {
+  font-weight: 600;
+}
+
+/* Content Section */
+.studentsub-content {
+  padding: 1.5rem 2rem;
+}
+
+.studentsub-form-section {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+/* Problem Statement */
+.studentsub-problem-box {
+  padding: 1rem;
+  background-color: #eef2ff;
+  border: 1px solid #c7d2fe;
+  border-radius: 0.5rem;
+}
+
+.studentsub-problem-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.studentsub-problem-content {
+  flex: 1;
+}
+
+.studentsub-problem-title {
+  font-weight: 600;
+  color: #1f2937;
+  margin: 0 0 0.25rem 0;
+}
+
+.studentsub-problem-desc {
+  font-size: 0.875rem;
+  color: #4b5563;
+  margin: 0 0 0.5rem 0;
+}
+
+.studentsub-problem-mentor {
+  font-size: 0.75rem;
+  color: #6b7280;
+  margin: 0 0 0.5rem 0;
+}
+
+.studentsub-problem-mentor strong {
+  font-weight: 600;
+}
+
+.studentsub-tech-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.studentsub-tech-tag {
+  font-size: 0.75rem;
+  background: white;
+  color: #4338ca;
+  padding: 0.25rem 0.5rem;
+  border-radius: 9999px;
+  border: 1px solid #c7d2fe;
+}
+
+.studentsub-problem-check {
+  width: 1.25rem;
+  height: 1.25rem;
+  color: #16a34a;
+  flex-shrink: 0;
+  margin-left: 0.75rem;
+}
+
+/* Form Groups */
+.studentsub-form-group {
+  margin-bottom: 1rem;
+} 
+
+.studentsub-label {
+  display: block;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #374151;
+  margin-bottom: 0.5rem;
+}
+
+.studentsub-required {
+  color: #ef4444;
+}
+
+.studentsub-label-icon {
+  display: inline;
+  width: 1rem;
+  height: 1rem;
+  margin-right: 0.25rem;
+}
+
+.studentsub-section-header {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #1f2937;
+  margin: 0 0 0.5rem 0;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.studentsub-section-icon {
+  width: 1.25rem;
+  height: 1.25rem;
+  color: #4f46e5;
+}
+
+.studentsub-section-desc {
+  font-size: 0.875rem;
+  color: #4b5563;
+  margin: 0 0 1rem 0;
+}
+
+/* Contribution Cards */
+.studentsub-contribution-card {
+  background-color: #f9fafb;
+  border-radius: 0.5rem;
+  padding: 0.65rem;
+  border: 1px solid #e5e7eb;
+  margin-bottom: 0.75rem;
+} 
+
+.studentsub-contribution-label {
+  display: block;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #374151;
+  margin-bottom: 0.5rem;
+}
+
+.studentsub-contribution-member {
+  font-size: 0.75rem;
+  color: #6b7280;
+  margin: 0 0 0.5rem 0;
+}
+
+/* Inputs */
+.studentsub-textarea,
+.studentsub-input {
+  width: 100%;
+  padding: 0.9rem 1rem;
+  border: 1px solid #e6e9f2;
+  border-radius: 8px;
+  transition: box-shadow 0.15s ease, border-color 0.15s ease;
+  background: #ffffff;
+  color: #0f172a;
+}
+
+.studentsub-textarea:focus,
+.studentsub-input:focus {
+  outline: none;
+  border-color: #6366f1;
+  box-shadow: 0 6px 18px rgba(99,102,241,0.08);
+}
+
+.studentsub-textarea:disabled,
+.studentsub-input:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.studentsub-textarea {
+  resize: none;
+}
+
+.studentsub-char-count {
+  font-size: 0.8rem;
+  color: #64748b;
+  margin-top: 0.35rem;
+} 
+
+/* File Input */
+.studentsub-file-input {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 1px solid #d1d5db;
+  border-radius: 0.5rem;
+  transition: all 0.2s;
+  cursor: pointer;
+}
+
+.studentsub-file-input:focus {
+  outline: none;
+  ring: 2px;
+  ring-color: #4f46e5;
+  border-color: transparent;
+}
+
+.studentsub-file-input:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.studentsub-file-input::file-selector-button {
+  margin-right: 1rem;
+  padding: 0.5rem 1rem;
+  border-radius: 9999px;
+  border: none;
+  font-size: 0.875rem;
+  font-weight: 600;
+  background-color: #eef2ff;
+  color: #4338ca;
+  cursor: pointer;
+}
+
+.studentsub-file-input::file-selector-button:hover {
+  background-color: #e0e7ff;
+}
+
+.studentsub-file-hint {
+  font-size: 0.75rem;
+  color: #6b7280;
+  margin-top: 0.25rem;
+}
+
+.studentsub-file-hint strong {
+  font-weight: 600;
+}
+
+/* File Preview */
+.studentsub-file-preview {
+  margin-top: 0.5rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 0.5rem;
+}
+
+.studentsub-file-success {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #15803d;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin: 0;
+}
+
+.studentsub-file-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.875rem;
+  color: #475569;
+  background: #f8fafc;
+  padding: 0.45rem;
+  border-radius: 6px;
+  border: 1px solid rgba(15,23,42,0.03);
+} 
+
+.studentsub-file-icon {
+  width: 1rem;
+  height: 1rem;
+  color: #4f46e5;
+}
+
+.studentsub-file-name {
+  flex: 1;
+}
+
+.studentsub-file-size {
+  font-size: 0.75rem;
+  color: #9ca3af;
+}
+
+/* Submission Info Sections */
+.studentsub-info-box {
+  margin-bottom: 1.5rem;
+}
+
+.studentsub-info-box-title {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #1f2937;
+  margin: 0 0 0.75rem 0;
+}
+
+.studentsub-info-text {
+  color: #374151;
+  background-color: #f9fafb;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  border: 1px solid #e5e7eb;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.studentsub-links-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+@media (min-width: 768px) {
+  .studentsub-links-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.studentsub-link-box h3 {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #374151;
+  margin: 0 0 0.5rem 0;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.studentsub-link {
+  color: #4f46e5;
+  text-decoration: underline;
+  word-break: break-all;
+  font-size: 0.875rem;
+  transition: color 0.2s;
+}
+
+.studentsub-link:hover {
+  color: #3730a3;
+}
+
+/* Team Contributions Display */
+.studentsub-contributions {
+  margin-bottom: 1.5rem;
+}
+
+.studentsub-contribution-display {
+  margin-bottom: 1rem;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  border: 1px solid #e5e7eb;
+}
+
+.studentsub-contribution-display-lead {
+  background-color: #eef2ff;
+  border-color: #c7d2fe;
+}
+
+.studentsub-contribution-display-member {
+  background-color: #f9fafb;
+}
+
+.studentsub-contribution-header {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.studentsub-contribution-name {
+  font-weight: 600;
+  color: #1f2937;
+  margin: 0;
+}
+
+.studentsub-contribution-role {
+  font-size: 0.75rem;
+  background-color: #4f46e5;
+  color: white;
+  padding: 0.125rem 0.5rem;
+  border-radius: 9999px;
+}
+
+.studentsub-contribution-roll {
+  font-size: 0.875rem;
+  color: #4b5563;
+  margin: 0 0 0.5rem 0;
+}
+
+.studentsub-contribution-text {
+  font-size: 0.875rem;
+  color: #374151;
+  margin: 0;
+}
+
+/* Documents */
+.studentsub-documents {
+  margin-bottom: 1.5rem;
+}
+
+.studentsub-doc-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.studentsub-doc-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem;
+  background-color: #f9fafb;
+  border: 1px solid #e5e7eb;
+  border-radius: 0.5rem;
+}
+
+.studentsub-doc-icon {
+  width: 1.25rem;
+  height: 1.25rem;
+  color: #4f46e5;
+}
+
+.studentsub-doc-name {
+  flex: 1;
+  font-size: 0.875rem;
+  color: #374151;
+}
+
+.studentsub-doc-date {
+  font-size: 0.75rem;
+  color: #6b7280;
+}
+
+/* Buttons */
+.studentsub-button {
+  width: auto;
+  background: #6366f1; /* indigo-500 */
+  color: white;
+  font-weight: 600;
+  padding: 0.65rem 1rem;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  transition: transform 120ms ease, box-shadow 120ms ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  box-shadow: 0 6px 14px rgba(99,102,241,0.08);
+}
+
+.studentsub-button:hover:not(:disabled) {
+  transform: translateY(-1px);
+  box-shadow: 0 10px 20px rgba(99,102,241,0.14);
+}
+
+.studentsub-button:focus {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(99,102,241,0.12);
+}
+
+.studentsub-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.studentsub-button-secondary {
+  background: #64748b; /* slate */
+  color: white;
+}
+
+.studentsub-button-secondary:hover:not(:disabled) {
+  background: #475569;
+}
+
+.studentsub-button-icon {
+  width: 1.125rem;
+  height: 1.125rem;
+}
+
+@media (max-width: 640px) {
+  .studentsub-button { width: 100%; padding: 0.9rem; }
+} 
+
+.studentsub-button-hint {
+  text-align: center;
+  font-size: 0.875rem;
+  margin-top: 0.5rem;
+}
+
+.studentsub-button-hint-warning {
+  color: #6b7280;
+}
+
+.studentsub-button-hint-error {
+  color: #ef4444;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.25rem;
+}
+
+/* Divider */
+.studentsub-divider {
+  padding-top: 0.85rem;
+  border-top: 1px solid rgba(15,23,42,0.04);
+} 
+
+/* Warning Box */
+.studentsub-warning-box {
+  padding: 1rem;
+  background-color: #fef3c7;
+  border-left: 4px solid #fbbf24;
+  border-radius: 0.25rem;
+}
+
+.studentsub-warning-content {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+}
+
+.studentsub-warning-icon {
+  width: 1.25rem;
+  height: 1.25rem;
+  color: #ca8a04;
+  flex-shrink: 0;
+  margin-top: 0.125rem;
+}
+
+.studentsub-warning-title {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #78350f;
+  margin: 0;
+}
+
+.studentsub-warning-text {
+  font-size: 0.75rem;
+  color: #92400e;
+  margin: 0.25rem 0 0 0;
+}

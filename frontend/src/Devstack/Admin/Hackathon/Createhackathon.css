@@ -1,0 +1,237 @@
+/* ================================
+   Create Hackathon Page Styles
+   ================================ */
+
+.create-hackathon-page {
+  padding: 0;
+  margin: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Form Container */
+.create-hackathon-page .form-container {
+  margin: 0 auto;
+  padding: 24px;
+  padding-top: 20px;
+  max-width: 1200px;
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+/* Top View Hackathons Button */
+.create-hackathon-page .view-hackathons-btn-wrapper {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+/* Full Width Inputs (Select, DatePicker, InputNumber) */
+.create-hackathon-page .full-width-input {
+  width: 100% !important;
+}
+
+/* Ant Form Headings */
+.create-hackathon-page h2.ant-typography {
+  margin-bottom: 8px;
+}
+
+.create-hackathon-page h4.ant-typography {
+  margin-top: 20px;
+  margin-bottom: 12px;
+  color: #003049;
+  font-weight: 600;
+}
+
+/* Upload Section */
+.create-hackathon-page .ant-upload {
+  display: block;
+  margin-top: 8px;
+}
+
+.create-hackathon-page .ant-upload-list {
+  margin-top: 8px;
+}
+
+/* Divider Styling */
+.create-hackathon-page .ant-divider {
+  margin: 24px 0;
+}
+
+/* Buttons at bottom */
+.create-hackathon-page .ant-space {
+  margin-top: 16px;
+}
+
+/* Success Text under Poster */
+.create-hackathon-page .ant-typography-success {
+  display: block;
+  margin-top: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #28a745;
+}
+
+/* Team and Location Section */
+.team-location-row {
+  margin-bottom: 24px;
+}
+
+.team-location-card {
+  background: #f8fafc;
+  border-radius: 10px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04);
+  padding: 18px 20px 10px 20px;
+  min-height: 160px;
+}
+
+.date-team-location-row {
+  margin-bottom: 24px;
+  align-items: stretch;
+}
+
+.date-team-location-card {
+  background: #f8fafc;
+  border-radius: 10px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04);
+  padding: 18px 20px 10px 20px;
+  min-height: 380px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  height: 100%;
+}
+
+.date-team-location-card .ant-row {
+  margin-bottom: 0;
+}
+
+.date-team-location-card .ant-form-item {
+  margin-bottom: 16px;
+}
+
+.date-team-location-card .ant-form-item-label > label {
+  font-weight: 500;
+}
+
+.date-team-location-card .ant-input,
+.date-team-location-card .ant-input-number {
+  font-size: 15px;
+}
+
+.date-team-location-card .ant-input-number {
+  width: 100%;
+}
+
+.date-team-location-card .ant-row > .ant-col {
+  margin-bottom: 0;
+}
+
+@media (max-width: 992px) {
+  .date-team-location-row {
+    flex-direction: column;
+  }
+  .date-team-location-card {
+    min-height: unset;
+    padding: 14px 10px 6px 10px;
+    margin-bottom: 18px;
+  }
+}
+
+@media (max-width: 768px) {
+  .team-location-row .ant-col {
+    margin-bottom: 18px;
+  }
+  .team-location-card {
+    min-height: unset;
+    padding: 14px 10px 6px 10px;
+  }
+  .date-team-location-row .ant-col {
+    margin-bottom: 18px;
+  }
+  .date-team-location-card {
+    min-height: unset;
+    padding: 14px 10px 6px 10px;
+  }
+  .header-row {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 8px;
+  }
+  .header-left {
+    align-items: flex-start;
+    text-align: left;
+    margin-bottom: 8px;
+  }
+  .header-right {
+    align-items: flex-end;
+    justify-content: flex-end;
+    margin-top: 0;
+  }
+  .date-team-location-card .ant-row {
+    flex-direction: column;
+  }
+  .date-team-location-card .ant-col {
+    width: 100%;
+    margin-bottom: 0;
+  }
+}
+
+/* Right-aligned form buttons */
+.form-buttons-right {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+}
+
+/* Header Right Align */
+.header-right-align {
+  width: 100%;
+  justify-content: flex-end !important;
+  display: flex !important;
+}
+
+.header-row-sidebyside {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.header-left {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  text-align: left;
+}
+
+.header-right,
+.header-right-align {
+  flex: 1;
+  display: flex !important;
+  align-items: center;
+  justify-content: flex-end !important;
+  width: auto;
+}
+
+@media (max-width: 768px) {
+  .header-row-sidebyside {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 8px;
+  }
+  .header-left {
+    align-items: flex-start;
+    text-align: left;
+    margin-bottom: 8px;
+  }
+  .header-right,
+  .header-right-align {
+    align-items: flex-end;
+    justify-content: flex-end !important;
+    margin-top: 0;
+    width: 100%;
+  }
+}
